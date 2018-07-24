@@ -1,0 +1,70 @@
+@import "../../Themes/first";
+.papers__panel {
+  background: #fff;
+  padding: 15px;
+  min-width: 344px;
+  flex-grow: 1;
+  &.CalenderProfile {
+    background-image: linear-gradient(-315deg, #2662d7 0, #358fe5 100%);
+    .CalenderProfileHeader {
+      display: flex;
+      margin: 0 15px 20px;
+      color: #fff;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      h5,
+      p {
+        color: #fff;
+        margin: 0;
+      }
+      h5 {
+        font-weight: bold;
+      }
+      .CalenderProfileHeader-avatar {
+        width: 80px;
+        height: 80px;
+        margin-right: 30px;
+      }
+      .CalenderProfileHeader-header-description {
+        width: 85%;
+      }
+      .CalenderProfileHeader-header-button {
+        color: #fff;
+      }
+    }
+  }
+  .PanelHeader {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $highlightGrey;
+    padding: 8px;
+    h4,
+    h5 {
+      margin: 0;
+      color: $grey;
+      font-weight: normal;
+    }
+    h4 {
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+  }
+  .md-btn--icon {
+    padding: 0;
+  }
+  .PanelBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: stretch;
+  }
+  .panelbutton {
+    flex-grow: 0;
+    align-self: flex-end;
+    margin: 8px 0;
+    border: 1px solid #2a7bdb;
+    &.md-text {
+      color: #2a7bdb;
+    }
+  }
+}

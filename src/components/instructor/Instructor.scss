@@ -1,0 +1,35 @@
+.Instructor {
+  display: flex;
+  &.md-cell {
+    margin: 50px auto 8px;
+  }
+  .CalenderProfile {
+    margin-bottom: 16px;
+  }
+  .Instructor-CalendarComponent {
+    border: none;
+    width: 100%;
+    .rc-calendar-input-wrap {
+      display: none;
+    }
+    .rc-calendar-date-panel {
+      .rc-calendar-header {
+        .rc-calendar-prev-year-btn {
+          display: none;
+        }
+        .rc-calendar-next-year-btn {
+          display: none;
+        }
+      }
+      .rc-calendar-body {
+        margin: 0 auto;
+      }
+      .rc-calendar-footer {
+        display: none;
+      }
+    }
+  }
+  .rightContent {
+    flex-grow: 1;
+  }
+}

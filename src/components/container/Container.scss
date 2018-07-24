@@ -1,0 +1,44 @@
+.App-container {
+  .container {
+    display: flex;
+    .sideBar {
+      width: 20%;
+      overflow: hidden;
+      transition: all ease-in-out 400ms;
+      position: fixed;
+      bottom: 0;
+      height: 100%;
+      &.sideBarOut {
+        transform: translateX(0);
+      }
+      &.sideBarIn {
+        transform: translateX(-100%);
+        width: 0%;
+      }
+    }
+    .content {
+      width: 80%;
+      transition: all ease-in-out 400ms;
+      &.sideBarOut {
+        transform: translateX(20%);
+      }
+      &.sideBarIn {
+        width: 100%;
+        transform: translateX(0);
+      }
+    }
+  }
+  @media (max-width: 1024px) {
+    .container {
+      .sideBar {
+        width: 30%;
+      }
+      .content {
+        width: 70%;
+        &.sideBarOut {
+          transform: translateX(42%);
+        }
+      }
+    }
+  }
+}
