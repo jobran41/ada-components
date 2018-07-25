@@ -1,0 +1,9 @@
+.dddIcon {
+  margin: 10px;
+  cursor: pointer;
+  &:hover {
+    svg {
+      fill: blueviolet;
+    }
+  }
+}
