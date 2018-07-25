@@ -1,17 +1,18 @@
 import React, { Component } from 'react'
-import { Snackbar } from 'react-md'
+import { connect } from "react-redux"
 
+import { addToast } from "modules/app/actions"
 import AdaIcon from 'components/adaIcon'
 
+@connect(null, {
+  addToast
+})
 export default class Icons extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { toasts: [], autohide: true }
-  }
+
 
   renderName = (name) => {
-    console.log(name)
-    this.toastHello()
+    const { addToast } = this.props
+    addToast(name, 'ok')
   }
   renderIcon = () => {
     const listIcons = ["addBlock", "add", "minimize", "bookmark"]
@@ -20,32 +21,14 @@ export default class Icons extends Component {
     })
     return allIcons
   }
-  addToast = (text, action, autohide = true) => {
-    this.setState((state) => {
-      const toasts = state.toasts.slice()
-      toasts.push({ text, action })
-      return { toasts, autohide }
-    })
-  };
-  dismissToast = () => {
-    const [, ...toasts] = this.state.toasts
-    this.setState({ toasts })
-  };
 
   toastHello = () => {
-    this.addToast('Hello, World!')
+    //addToast('test', "Hide")
   };
   render() {
-    const { autohide, toasts } = this.props
     return (
       <div className="icons" style={{ display: 'flex', justifyContent: 'center' }}>
         {this.renderIcon()}
-        <Snackbar
-          id="example-snackbar"
-          toasts={toasts}
-          autohide={autohide}
-          onDismiss={this.dismissToast}
-        />
       </div >
     )
   }

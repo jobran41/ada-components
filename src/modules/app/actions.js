@@ -9,3 +9,12 @@ export const addUserRoles = createAction("APP_ADD_USER_ROLES", roles => ({
   roles,
 }))
 
+export const addToast = createAction("APP_ADD_TOAST", (text, action) => {
+  return {
+    text,
+    action,
+  }
+
+})
+
+export const dismissToast = createAction("APP_DISMISS_TOAST")
