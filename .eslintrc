@@ -11,6 +11,7 @@
       "never"
     ],
     "no-console": "warn",
-    "no-unexpected-multiline": "error"
+    "no-unexpected-multiline": "error",
+    "react/prop-types": "warn"
   }
 }

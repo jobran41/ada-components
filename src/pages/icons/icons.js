@@ -29,6 +29,8 @@ export default class Icons extends Component {
     return (
       <div className="icons" style={{ display: 'flex', justifyContent: 'center' }}>
         {this.renderIcon()}
+        jnfsjndf
+        <AdaIcon icon="favorite" />
       </div >
     )
   }

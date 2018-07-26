@@ -46,20 +46,6 @@ class Navigation extends Component {
         Form
       </Button>
       <Button
-        onClick={() => this.pushurl(`${routes.Container}${routes.Search}`)}
-        flat
-        className="menuButton"
-      >
-        Search
-      </Button>
-      <Button
-        onClick={() => this.pushurl(`${routes.Container}${routes.Instructor}`)}
-        flat
-        className="menuButton"
-      >
-        Instructor
-      </Button>
-      <Button
         onClick={() => this.pushurl(`${routes.Container}${routes.Tuto}`)}
         flat
         className="menuButton"

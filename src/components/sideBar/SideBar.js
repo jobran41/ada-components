@@ -50,13 +50,14 @@ class SideBar extends Component {
   };
   render() {
     const {
-      profileName,
-      adress,
-      tel,
-      Email,
-      grade,
-      ProgressBar: { level, indicatorMax, indicatorMin }
-    } = this.props.data
+      data: {
+        profileName,
+        adress,
+        tel,
+        Email,
+        grade,
+        ProgressBar: { level, indicatorMax, indicatorMin }
+      } } = this.props
     return (
       <div className="SideBar">
         <div className="SideBar-header">
