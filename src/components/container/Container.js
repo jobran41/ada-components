@@ -11,6 +11,8 @@ import Forms from "pages/forms"
 import Menu from "pages/menu"
 import Icons from "pages/icons"
 import Navigation from "pages/navigation"
+import Graphs from "pages/graphs"
+import BlockList from "pages/blocks-list.js"
 
 
 import "./Container.scss"
@@ -59,6 +61,16 @@ export default class Container extends Component {
                 exact
                 path={`${routes.Navigation_Horizontal}`}
                 component={Navigation}
+              />
+              <Route
+                exact
+                path={`${routes.Graphs}`}
+                component={Graphs}
+              />
+              <Route
+                exact
+                path={`${routes.BlockList}`}
+                component={BlockList}
               />
             </Switch>
           </div>

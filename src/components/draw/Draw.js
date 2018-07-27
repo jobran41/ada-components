@@ -32,6 +32,16 @@ const navItems = [{
     to: `${routes.Forms}`,
     icon: 'dashboard'
 },
+{
+    label: 'Graphs',
+    to: `${routes.Graphs}`,
+    icon: 'dashboard'
+},
+{
+    label: 'BlocksList',
+    to: `${routes.BlockList}`,
+    icon: 'dashboard'
+},
 ]
 @connect(({ app }) => ({
     sideBarIsTrue: app.topbarCollapsed
