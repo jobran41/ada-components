@@ -46,7 +46,7 @@ class SignIn extends Component {
         <h3>Login</h3>
         <TextField
           placeholder="Email"
-          id="email"
+          id="email-signIn"
           type="email"
           block
           onChange={v => this.setState({ email: v })}
@@ -55,7 +55,7 @@ class SignIn extends Component {
         <TextField
           placeholder="Passwoprd"
           type="password"
-          id="password"
+          id="password-signIn"
           block
           onChange={v => this.setState({ password: v })}
           value={password}
