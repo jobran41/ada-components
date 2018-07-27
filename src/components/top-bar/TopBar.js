@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Button, Avatar } from "react-md"
+import PropTypes from "prop-types"
 import { cls } from "reactutils"
 import { connect } from 'react-redux'
 
@@ -66,4 +67,8 @@ class TopBar extends Component {
   };
 }
 */
+TopBar.propTypes = {
+  toggleTopbar: PropTypes.func,
+  sideBarIsTrue: PropTypes.bool
+}
 export default TopBar 

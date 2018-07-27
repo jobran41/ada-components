@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from "prop-types"
 import { connect } from "react-redux"
 
 import { addToast } from "modules/app/actions"
@@ -7,7 +8,7 @@ import AdaIcon from 'components/adaIcon'
 @connect(null, {
   addToast
 })
-export default class Icons extends Component {
+class Icons extends Component {
 
 
   renderName = (name) => {
@@ -15,7 +16,7 @@ export default class Icons extends Component {
     addToast(name, 'ok')
   }
   renderIcon = () => {
-    const listIcons = ["addBlock", "add", "minimize", "bookmark"]
+    const listIcons = ["addBlock", "add", "minimize", "bookmark", "favorite"]
     const allIcons = listIcons.map((item, i) => {
       return <AdaIcon renderName={() => this.renderName(item)} key={i} icon={item} />
     })
@@ -29,9 +30,12 @@ export default class Icons extends Component {
     return (
       <div className="icons" style={{ display: 'flex', justifyContent: 'center' }}>
         {this.renderIcon()}
-        jnfsjndf
-        <AdaIcon icon="favorite" />
       </div >
     )
   }
 }
+
+Icons.propTypes = {
+  addToast: PropTypes.func,
+}
+export default Icons

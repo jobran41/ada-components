@@ -1,16 +1,20 @@
 import React from "react"
+import PropTypes from "prop-types"
+
 import Error from "./Error"
 
-export default class GenerallErrorBoundary extends React.Component {
+class GenerallErrorBoundary extends React.Component {
   state = {
     hasError: false
   };
 
   render() {
-    if (this.state.hasError) {
+    const { hasError } = this.state
+    const { children } = this.props
+    if (hasError) {
       return <Error />
     } else {
-      return this.props.children
+      return children
     }
   }
 
@@ -18,3 +22,7 @@ export default class GenerallErrorBoundary extends React.Component {
     this.setState({ hasError: true })
   }
 }
+GenerallErrorBoundary.propTypes = {
+  children: PropTypes.node,
+}
+export default GenerallErrorBoundary

@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import PropTypes from "prop-types"
 import GeneralErrorBoundary from "components/general-error-boundary"
 import { withRouter } from "react-router"
 import { Snackbar } from "react-md"
@@ -31,6 +32,11 @@ class App extends Component {
       </GeneralErrorBoundary>
     )
   }
+}
+
+App.propTypes = {
+  toasts: PropTypes.func,
+  dismissToast: PropTypes.func,
 }
 
 export default App

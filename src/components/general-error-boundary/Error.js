@@ -1,11 +1,13 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { cls } from "reactutils"
 import i18n from "i18n-js"
+
 import l from "libs/langs/keys"
 
 import "./style.css"
 
-export default class Error extends React.PureComponent {
+class Error extends React.PureComponent {
   render() {
     const { className, ...attrs } = this.props
     return (
@@ -15,3 +17,7 @@ export default class Error extends React.PureComponent {
     )
   }
 }
+Error.propTypes = {
+  className: PropTypes.string,
+}
+export default Error

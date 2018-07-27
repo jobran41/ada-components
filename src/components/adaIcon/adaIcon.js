@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import PropTypes from "prop-types"
 
 import ListIcons from './list-icon'
 
 import './adaIcon.scss'
 
-export default class AddIcon extends Component {
+class AddIcon extends Component {
     renderGroupe = () => {
         const { width, height, viewBox, fill, icon } = this.props
         let view = viewBox ? viewBox : "0 0 330 330"
@@ -40,3 +41,13 @@ export default class AddIcon extends Component {
         return (<div className="dddIcon" onClick={this.renderName} >{this.renderGroupe()}</div>)
     }
 }
+
+AddIcon.propTypes = {
+    width: PropTypes.string,
+    height: PropTypes.string,
+    viewBox: PropTypes.string,
+    fill: PropTypes.string,
+    renderName: PropTypes.func,
+    icon: PropTypes.string
+}
+export default AddIcon 

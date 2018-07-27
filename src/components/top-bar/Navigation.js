@@ -1,6 +1,7 @@
 import { Button } from "react-md"
 import { connect } from "react-redux"
 import { withRouter } from "react-router"
+import PropTypes from "prop-types"
 
 import * as routes from "libs/constants/routes"
 
@@ -75,4 +76,8 @@ class Navigation extends Component {
   }
 }
 
+Navigation.propTypes = {
+  authUser: PropTypes.bool,
+  history: PropTypes.func
+}
 export default Navigation
