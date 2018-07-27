@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import PropTypes from "prop-types"
 import { TextField, Button, Paper } from "react-md"
 import { withRouter } from "react-router"
 
@@ -60,6 +61,8 @@ class SignUp extends Component {
   }
 }
 
+SignUp.propTypes = {
+  history: PropTypes.func,
+}
+
 export default SignUp
-
-

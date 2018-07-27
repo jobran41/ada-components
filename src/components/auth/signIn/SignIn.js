@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import PropTypes from "prop-types"
 import { TextField, Button, Paper, Snackbar } from "react-md"
 import { withRouter } from "react-router-dom"
 import * as cookies from "tiny-cookie"
@@ -75,4 +76,9 @@ class SignIn extends Component {
     )
   }
 }
+
+SignIn.propTypes = {
+  history: PropTypes.func,
+}
+
 export default SignIn

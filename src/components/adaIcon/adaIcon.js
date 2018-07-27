@@ -48,6 +48,6 @@ AddIcon.propTypes = {
     viewBox: PropTypes.string,
     fill: PropTypes.string,
     renderName: PropTypes.func,
-    icon: PropTypes.string
+    icon: PropTypes.string.isRequired,
 }
 export default AddIcon 
