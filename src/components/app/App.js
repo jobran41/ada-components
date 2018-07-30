@@ -25,7 +25,7 @@ class App extends Component {
     const { toasts, dismissToast } = this.props
     return (
       <GeneralErrorBoundary>
-        <div className="App">
+        <div className="App-container">
           <Container />
         </div>
         <Snackbar autohide toasts={toasts} onDismiss={dismissToast} />
