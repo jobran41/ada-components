@@ -7,6 +7,8 @@ import { toggleTopbar } from "modules/app/actions"
 import NavItemLink from './NavItemLink'
 import * as routes from "libs/constants/routes"
 
+import './style.scss'
+
 const navItems = [{
     label: 'Home',
     to: `${routes.LANDING}`,
@@ -64,18 +66,17 @@ export default class SimpleDrawer extends PureComponent {
         const { visible, position } = this.state
 
         return (
-            <div>
-                <Drawer
-                    id="simple-drawer-example"
-                    type={Drawer.DrawerTypes.TEMPORARY}
-                    overlay={false}
-                    visible={visible}
-                    position={position}
-                    onVisibilityChange={this.handleVisibility}
-                    navItems={navItems.map(props => <NavItemLink {...props} key={props.to} />)}
-                    header="ada components"
-                />
-            </div>
+            <Drawer
+                id="simple-drawer-example"
+                type={Drawer.DrawerTypes.TEMPORARY}
+                overlay={false}
+                visible={visible}
+                position={position}
+                onVisibilityChange={this.handleVisibility}
+                navItems={navItems.map(props => <NavItemLink {...props} key={props.to} />)}
+                header={<h3>ada components</h3>}
+                className="sideBarContainer"
+            />
         )
     }
 }

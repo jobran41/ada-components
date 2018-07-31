@@ -1,0 +1,26 @@
+.contentHeader {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &::after {
+    position: absolute;
+    width: 100%;
+    border-top: 1px solid;
+    top: 50%;
+    content: "";
+  }
+  &.white-text {
+    color: #fff;
+    > span {
+      background: #2a7bdb;
+      z-index: 1;
+      &:first-child {
+        padding-right: 15px;
+      }
+      &:last-child {
+        padding-left: 15px;
+      }
+    }
+  }
+}

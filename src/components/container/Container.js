@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component, Fragment } from "react"
 import { Switch, Route } from "react-router-dom"
 import { withRouter } from "react-router"
 
@@ -22,8 +22,7 @@ export default class Container extends Component {
   render() {
     const sideBarIsTrue = true
     return (
-      <div className="App-container">
-        <div className="container">
+      <Fragment>
           <div
             className={`${
               sideBarIsTrue ? "sideBarOut sideBar" : "sideBarIn sideBar"
@@ -74,8 +73,7 @@ export default class Container extends Component {
               />
             </Switch>
           </div>
-        </div>
-      </div>
+      </Fragment>
     )
   }
 }
