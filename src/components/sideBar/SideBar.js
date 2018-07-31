@@ -14,7 +14,7 @@ class SideBar extends Component {
     history.push("/")
   };
   renderBadge = () => {
-    const { badget } = this.props.data
+    const { dataSideBar: { badget } } = this.props
     if (Array.isArray(badget)) {
       let badgetLocal = badget.map((item, i) => {
         return (
@@ -31,7 +31,7 @@ class SideBar extends Component {
   };
 
   renderSocial = () => {
-    const { social } = this.props.data
+    const { dataSideBar: { social } } = this.props
     if (Array.isArray(social)) {
       let socialLocal = social.map((item, i) => {
         return <li key={i}>{item}</li>
@@ -50,7 +50,7 @@ class SideBar extends Component {
   };
   render() {
     const {
-      data: {
+      dataSideBar: {
         profileName,
         adress,
         tel,
@@ -75,8 +75,8 @@ class SideBar extends Component {
               <p className="Email">{Email}</p>
             </div>
           </div>
-          {!this.isEmptyObject(this.props.data.ProgressBar) &&
-            typeof this.props.data.ProgressBar === "object" && (
+          {!this.isEmptyObject(this.props.dataSideBar.ProgressBar) &&
+            typeof this.props.dataSideBar.ProgressBar === "object" && (
               <div className="skillProgress">
                 <LinearProgress
                   value={level || 0}
@@ -129,7 +129,9 @@ class SideBar extends Component {
 
 SideBar.propTypes = {
   ProgressBar: PropTypes.object,
+  dataSideBar: PropTypes.array,
   logout: PropTypes.func,
+  history: PropTypes.func,
   profileName: PropTypes.string,
   skillsName: PropTypes.string,
   Email: PropTypes.string,
