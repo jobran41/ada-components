@@ -8,12 +8,25 @@
     width: 100%;
     border-top: 1px solid;
     top: 50%;
-    content: "";
+    content: '';
   }
   &.white-text {
     color: #fff;
     > span {
       background: #2a7bdb;
+      z-index: 1;
+      &:first-child {
+        padding-right: 15px;
+      }
+      &:last-child {
+        padding-left: 15px;
+      }
+    }
+  }
+  &.gray-text {
+    color: grey;
+    > span {
+      background: #ebebeb;
       z-index: 1;
       &:first-child {
         padding-right: 15px;
