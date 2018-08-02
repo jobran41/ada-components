@@ -13,6 +13,7 @@ import Icons from "pages/icons"
 import Navigation from "pages/navigation"
 import Graphs from "pages/graphs"
 import BlockList from "pages/blocks-list.js"
+import Colors from "pages/colors"
 
 
 import "./Container.scss"
@@ -40,6 +41,11 @@ export default class Container extends Component {
                 exact
                 path={`${routes.LANDING}`}
                 component={Landing}
+              />
+              <Route
+                exact
+                path={`${routes.colors}`}
+                component={Colors}
               />
               <Route
                 exact
