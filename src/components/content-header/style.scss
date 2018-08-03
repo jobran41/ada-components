@@ -23,4 +23,17 @@
       }
     }
   }
+  &.gray-text {
+    color: grey;
+    > span {
+      background: #ebebeb;
+      z-index: 1;
+      &:first-child {
+        padding-right: 15px;
+      }
+      &:last-child {
+        padding-left: 15px;
+      }
+    }
+  }
 }

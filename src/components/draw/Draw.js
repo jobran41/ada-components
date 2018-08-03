@@ -17,6 +17,11 @@ const navItems = [{
     icon: 'home'
 },
 {
+    label: 'Colors',
+    to: `${routes.colors}`,
+    icon: 'dashboard'
+},
+{
     label: 'Icons',
     to: `${routes.Icons}`,
     icon: 'dashboard'
