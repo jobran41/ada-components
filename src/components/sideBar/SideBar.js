@@ -129,7 +129,7 @@ class SideBar extends Component {
 
 SideBar.propTypes = {
   ProgressBar: PropTypes.object,
-  dataSideBar: PropTypes.array,
+  dataSideBar: PropTypes.object,
   logout: PropTypes.func,
   history: PropTypes.func,
   profileName: PropTypes.string,

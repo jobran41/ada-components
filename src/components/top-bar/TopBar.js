@@ -2,73 +2,59 @@ import React, { Component } from "react"
 import { Button, Avatar } from "react-md"
 import PropTypes from "prop-types"
 import { cls } from "reactutils"
-import { connect } from 'react-redux'
 
-//import Logo from "images/logo.png"
-//import * as cookies from "tiny-cookie"
 import { withRouter } from "react-router-dom"
 import Navigation from "./Navigation"
-import { toggleTopbar } from "modules/app/actions"
 
 import "./styles.scss"
 
-
 @withRouter
-@connect(({ app }) => ({
-  sideBarIsTrue: app.topbarCollapsed
-}), { toggleTopbar })
 class TopBar extends Component {
-  onToggleClick = (collapsed) => {
-    const { toggleTopbar } = this.props
-    toggleTopbar(collapsed)
+  onToggleClick = (v) => {
+    const { onToggleClick } = this.props
+    onToggleClick(!v)
   };
   render() {
-    // const me = this.props.query.data;
-    const letter = "jobran".charAt(0).toUpperCase()
-    const { sideBarIsTrue } = this.props
-
+    const { sideBarIsTrue, userName, menu, authUser, logoName, ProfileBar, underline, color } = this.props
+    const letter = userName ? userName.charAt(0).toUpperCase() : ''
     return (
-      <div className="topBar">
+      <div className={`${color ? "topBar " + color : "topBar"
+        }`}>
         <div className="topBar-logo">
-          <span>ada.</span>
+          <span>{logoName}</span>
         </div>
-        <Navigation />
-        <div className="topBar-info">
-          <Avatar className="title-bar-item-right-space-half" suffix="light-blue">
-            {letter}
-          </Avatar>
-          <div className="nameStudent">Jobran amairi</div>
-          <Button
-            icon
-            className="apptitlebar-collapse-btn"
-            iconClassName={cls(
-              "topBar-collapseicon",
-              "mdi",
-              sideBarIsTrue ? "mdi-close" : "mdi-menu"
-            )}
-            onClick={() => this.onToggleClick(sideBarIsTrue)}
-          />
-        </div>
-      </div>
+        <Navigation underline={underline} menu={menu} authUser={authUser} />
+        {
+          authUser && ProfileBar && <div className="topBar-info">
+            <Avatar className="title-bar-item-right-space-half" suffix="light-blue">
+              {letter}
+            </Avatar>
+            <div className="nameStudent">{userName}</div>
+            <Button
+              icon
+              className="apptitlebar-collapse-btn"
+              iconClassName={cls(
+                "topBar-collapseicon",
+                "mdi",
+                sideBarIsTrue ? "mdi-close" : "mdi-menu"
+              )}
+              onClick={() => this.onToggleClick(sideBarIsTrue)}
+            />
+          </div>
+        }
+      </div >
     )
   }
-
-
-
 }
-/*
-  signOut = () => {
-    cookies.remove("access_token")
-    cookies.remove("__Secure-access_token")
-    cookies.remove("__Secure-id_token")
-    cookies.remove("refresh_token")
-    cookies.remove("JSESSIONID")
-    window.location.href = "/login"
-  };
-}
-*/
 TopBar.propTypes = {
-  toggleTopbar: PropTypes.func,
-  sideBarIsTrue: PropTypes.bool
+  onToggleClick: PropTypes.func,
+  sideBarIsTrue: PropTypes.bool,
+  userName: PropTypes.string,
+  menu: PropTypes.array,
+  authUser: PropTypes.bool,
+  logoName: PropTypes.string,
+  ProfileBar: PropTypes.bool,
+  underline: PropTypes.bool,
+  color: PropTypes.string
 }
 export default TopBar 

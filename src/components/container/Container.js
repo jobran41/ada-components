@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react"
+import { Button } from 'react-md'
 import { Switch, Route } from "react-router-dom"
 import { withRouter } from "react-router"
 import { connect } from 'react-redux'
@@ -51,6 +52,7 @@ export default class Container extends Component {
             sideBarIsTrue ? "sideBarOut content" : "sideBarIn content"
             } `}
         >
+          {!sideBarIsTrue && <Button icon onClick={() => this.closeDrawer(true)} >Close</Button>}
           <Switch>
             <Route
               exact
