@@ -1,0 +1,13 @@
+.Graphs {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+.GraphsContainer {
+  &.md-grid {
+    margin: 0 -16px;
+  }
+  .Graphs-item {
+    flex-grow: 0;
+  }
+}

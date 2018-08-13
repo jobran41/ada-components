@@ -4,20 +4,21 @@ import { Paper, Button } from "react-md"
 import { cls } from "reactutils"
 
 import "rc-calendar/assets/index.css"
+import './calendar.scss'
 
 export default class NewCalendar extends Component {
   render() {
     const { className, title, year, addNewCalendar } = this.props
     return (
-      <Paper zDepth={1} className={cls("new-calendar", className)}>
-        <div className="new-calendar-header">
-          <div className="new-calendar-title">{title}</div>
-          {year && <div className="new-calendar-year">{year}</div>}
+      <Paper zDepth={1} className={cls("calendar", className)}>
+        <div className="calendar-header">
+          <div className="calendar-title">{title}</div>
+          {year && <div className="calendar-year">{year}</div>}
         </div>
         <div className="new-calendar-content">
-          <Button icon onClick={addNewCalendar} />
+          <Button icon onClick={addNewCalendar} className="add-calendar">add_circle_outline</Button>
         </div>
-        <div className="new-calendar-footer">Fill a New Agenda</div>
+        <div className="calendar-footer">Fill a New Agenda</div>
       </Paper>
     )
   }

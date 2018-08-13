@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import ContentHeader from 'components/content-header'
 
 import {
   Evaluation,
@@ -8,6 +9,8 @@ import {
   NewCalendar,
   NewChart
 } from "components/charts"
+
+import './style.scss'
 
 export default class Graphs extends Component {
   render() {
@@ -48,18 +51,6 @@ export default class Graphs extends Component {
       {
         label: "Other",
         progress: 0
-      },
-      {
-        label: "Other",
-        progress: 0
-      },
-      {
-        label: "Other",
-        progress: 0
-      },
-      {
-        label: "Other",
-        progress: 0
       }
     ]
     const itemsActivities = [
@@ -76,27 +67,33 @@ export default class Graphs extends Component {
     ]
     return (
       <div className="Graphs">
-        <Evaluation
-          title="Expertise"
-          description="Expertise levels"
-          menuButton={menuButtonExpertise}
-          items={itemsExpertise}
-        />
-        <PieCircle
-          title="Activities"
-          description="Total Skills progress graph"
-          items={itemsActivities}
-          menuButton={menuButtonExpertise}
-        />
-        <LogChart
-          title="LogTime"
-          description="weekly in and Out"
-          items={LogTimeItems}
-          menuButton={menuButtonExpertise}
-        />
-        <Calendar title="Calendar" year={"2018"} />
-        <NewCalendar title="Calendar" year={"2018"} />
-        <NewChart menuButton={menuButtonExpertise} />
+        <ContentHeader title="ADA INTERFACES / BRAND BOOK" date="2018" subclass="gray-text" />
+        <div className="GraphsContainer md-grid">
+          <Evaluation
+            title="Expertise"
+            description="Expertise levels"
+            menuButton={menuButtonExpertise}
+            items={itemsExpertise}
+            className="Graphs-item md-cell md-cell--4"
+          />
+          <PieCircle
+            title="Activities"
+            description="Total Skills progress graph"
+            items={itemsActivities}
+            menuButton={menuButtonExpertise}
+            className="Graphs-item md-cell md-cell--4"
+          />
+          <LogChart
+            title="LogTime"
+            description="weekly in and Out"
+            items={LogTimeItems}
+            menuButton={menuButtonExpertise}
+            className="Graphs-item md-cell md-cell--4"
+          />
+          <Calendar title="Calendar" year={"2018"} className="Graphs-item md-cell md-cell--4" />
+          <NewCalendar title="Calendar" year={"2018"} className="Graphs-item md-cell md-cell--4" />
+          <NewChart menuButton={menuButtonExpertise} className="Graphs-item md-cell md-cell--4" />
+        </div>
       </div>
     )
   }

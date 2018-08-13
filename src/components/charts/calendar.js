@@ -5,16 +5,13 @@ import { cls } from "reactutils"
 import MyCalendar from "rc-calendar"
 
 import "rc-calendar/assets/index.css"
+import './calendar.scss'
 
 export default class Calendar extends Component {
   render() {
     const { className, title, year, dateCellRender } = this.props
     return (
       <Paper zDepth={1} className={cls("calendar", className)}>
-        <div className="calendar-header">
-          <div className="calendar-title">{title}</div>
-          {year && <div className="calendar-year">{year}</div>}
-        </div>
         <div className="calendar-content">
           <MyCalendar
             showDateInput={false}

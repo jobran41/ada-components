@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import { Paper, MenuButton, LinearProgress } from "react-md"
 import { cls } from "reactutils"
 
+import './evaluation.scss'
+
 export default class Evaluation extends Component {
   renderEvaluation = () => {
     const { items } = this.props
@@ -25,12 +27,14 @@ export default class Evaluation extends Component {
     return (
       <Paper zDepth={1} className={cls("evaluation", className)}>
         <div className="evaluation-header">
-          <div className="evaluation-title">{title}</div>
-          {description && (
-            <div className="evaluation-description">{description}</div>
-          )}
+          <div className="evaluation-header-content">
+            <div className="evaluation-title">{title}</div>
+            {description && (
+              <div className="evaluation-description">{description}</div>
+            )}
+          </div>
           {menuButton && (
-            <MenuButton id={"evaluation_id"} icon menuItems={menuButton}>
+            <MenuButton id={"evaluation_id"} icon menuItems={menuButton} className="evaluation-header-buttons">
               more_vert
             </MenuButton>
           )}

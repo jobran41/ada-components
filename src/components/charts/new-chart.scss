@@ -1,0 +1,30 @@
+.new-chart-circle {
+  display: flex;
+  flex-direction: column;
+  background: #444;
+  color: #ccc;
+  padding: 16px;
+  .md-btn--icon {
+    color: #ccc;
+  }
+  .new-chart-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .new-chart-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .add-chart {
+      width: 80px;
+      height: 80px;
+      .md-icon {
+        font-size: 60px;
+      }
+    }
+  }
+  .new-chart-footer {
+    margin-left: auto;
+  }
+}

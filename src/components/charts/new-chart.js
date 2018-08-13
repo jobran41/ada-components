@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import { Paper, MenuButton, Button } from "react-md"
 import { cls } from "reactutils"
 
+import './new-chart.scss'
+
 export default class NewChart extends Component {
   render() {
     const {
@@ -26,7 +28,7 @@ export default class NewChart extends Component {
           )}
         </div>
         <div className="new-chart-content">
-          <Button icon onClick={addNewChart} />
+          <Button icon onClick={addNewChart} className="add-chart">add_circle_outline</Button>
         </div>
         <div className="new-chart-footer">Add a New Graph</div>
       </Paper>
