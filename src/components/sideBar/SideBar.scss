@@ -1,6 +1,29 @@
 @import "../../Themes/first";
 
 .SideBar {
+  &.ada-xs {
+    width: 10%;
+    .SideBar-footer {
+      padding: 0;
+    }
+  }
+  &.ada-md {
+    width: 15%;
+    .SideBar-header {
+      .SideBar-header-info {
+        display: block;
+        .SideBar-header-avatar {
+          text-align: center;
+        }
+      }
+    }
+    .SideBar-footer {
+      padding: 0;
+    }
+  }
+  &.ada-lg {
+    width: 30%;
+  }
   hr {
     border-left: 0;
     border-right: 0;
@@ -21,7 +44,6 @@
       color: white;
       h5,
       p {
-        color: white;
         margin: 0;
       }
       h5 {
@@ -102,19 +124,26 @@
         color: #115bba;
       }
     }
-  }
-  .SideBar-footer {
-    padding: 20px;
-    max-width: 290px;
-    margin: 0 auto;
-    color: #bfbfbf;
-    display: flex;
-    flex-direction: column;
-    justify-content: stretch;
-    button {
-      flex-grow: 1;
-      &.md-text {
-        color: #bfbfbf;
+    .SideBar-footer {
+      padding: 20px;
+      max-width: 290px;
+      margin: 0 auto;
+      color: #bfbfbf;
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+      button {
+        flex-grow: 1;
+        &.md-text {
+          color: #bfbfbf;
+        }
+      }
+      .addMore {
+        text-align: center;
+        border: 2px solid #eee;
+        width: 150px;
+        margin: 0 auto;
+        margin-top: 25px;
       }
     }
   }
