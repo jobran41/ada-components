@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import { Paper, MenuButton, Checkbox, Button, Avatar } from "react-md"
+import { Paper, MenuButton, Button, Avatar } from "react-md"
 import { cls } from "reactutils"
 
 export default class UserList extends Component {
