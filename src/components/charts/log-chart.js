@@ -43,10 +43,12 @@ export default class LogChart extends Component {
     return (
       <Paper zDepth={1} className={cls("log-chart", className)}>
         <div className="log-chart-header">
-          <div className="log-chart-title">{title}</div>
-          {description && (
-            <div className="log-chart-description">{description}</div>
-          )}
+          <div className="log-chart-header-centent">
+            <div className="log-chart-title">{title}</div>
+            {description && (
+              <div className="log-chart-description">{description}</div>
+            )}
+          </div>
           {menuButton && (
             <MenuButton id={"log-chart_id"} icon menuItems={menuButton}>
               more_vert

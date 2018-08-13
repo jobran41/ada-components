@@ -1,19 +1,26 @@
-.log-chart {
+.evaluation {
   background: #fff;
   padding: 16px;
-  .log-chart-header {
+  .evaluation-header {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #e8e8e8;
     padding-bottom: 8px;
     margin-bottom: 8px;
     color: #adadad;
-    .log-chart-title {
+    .evaluation-title {
       font-size: 20px;
     }
   }
-  .log-chart-content {
-    height: 300px;
-    width: 300px;
+
+  .evaluation-items {
+    display: flex;
+    align-items: center;
+    .item-label {
+      min-width: 90px;
+    }
+    .item-progress {
+      flex-grow: 1;
+    }
   }
 }

@@ -67,10 +67,12 @@ export default class PieCircle extends Component {
     return (
       <Paper zDepth={1} className={cls("pie-circle", className)}>
         <div className="pie-circle-header">
-          <div className="pie-circle-title">{title}</div>
-          {description && (
-            <div className="pie-circle-description">{description}</div>
-          )}
+          <div className="pie-circle-header-content">
+            <div className="pie-circle-title">{title}</div>
+            {description && (
+              <div className="pie-circle-description">{description}</div>
+            )}
+          </div>
           {menuButton && (
             <MenuButton id={"pie-circle_id"} icon menuItems={menuButton}>
               more_vert

@@ -26,7 +26,7 @@ export default class NewChart extends Component {
           )}
         </div>
         <div className="new-chart-content">
-          <Button icon onClick={addNewChart} />
+          <Button icon onClick={addNewChart} className="add-chart">add_circle_outline</Button>
         </div>
         <div className="new-chart-footer">Add a New Graph</div>
       </Paper>
