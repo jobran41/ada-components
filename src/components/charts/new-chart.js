@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import { Paper, MenuButton, Button } from "react-md"
 import { cls } from "reactutils"
 
+import './new-chart.scss'
+
 export default class NewChart extends Component {
   render() {
     const {
