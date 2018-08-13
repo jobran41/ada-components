@@ -1,8 +1,19 @@
 .navigation {
-  display: "flex";
+  display: flex;
   justify-content: center;
+  padding: 20px;
+  .menuIcon {
+    margin: 10px;
+  }
   .SideBar {
-    width: 40%;
-    left: 100px;
+    margin: 10px;
+    .SideBar-header {
+      &.white {
+        background-color: #fff;
+        .SideBar-header-info {
+          color: grey;
+        }
+      }
+    }
   }
 }

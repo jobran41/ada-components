@@ -1,22 +1,15 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { LinearProgress, Avatar, Button } from "react-md"
-import * as cookies from "tiny-cookie"
-import { withRouter } from "react-router-dom"
 
 import "./SideBar.scss"
 
-@withRouter
 class SideBar extends Component {
-  logout = () => {
-    const { history } = this.props
-    cookies.remove("login")
-    history.push("/")
-  };
-  renderBadge = () => {
-    const { dataSideBar: { badget } } = this.props
-    if (Array.isArray(badget)) {
-      let badgetLocal = badget.map((item, i) => {
+
+  renderBadges = () => {
+    const { badges } = this.props
+    if (Array.isArray(badges)) {
+      let badgesLocal = badges.map((item, i) => {
         return (
           <Avatar key={i} className="SideBar-budges-avatar">
             {" "}
@@ -24,14 +17,14 @@ class SideBar extends Component {
           </Avatar>
         )
       })
-      return badgetLocal
+      return badgesLocal
     } else {
       return []
     }
   };
 
   renderSocial = () => {
-    const { dataSideBar: { social } } = this.props
+    const { social } = this.props
     if (Array.isArray(social)) {
       let socialLocal = social.map((item, i) => {
         return <li key={i}>{item}</li>
@@ -50,17 +43,21 @@ class SideBar extends Component {
   };
   render() {
     const {
-      dataSideBar: {
-        profileName,
-        adress,
-        tel,
-        Email,
-        grade,
-        ProgressBar: { level, indicatorMax, indicatorMin }
-      } } = this.props
+      profileName,
+      address,
+      tel,
+      Email,
+      grade,
+      ProgressBar: { level, indicatorMax, indicatorMin },
+      className,
+      responsive,
+      renderButton,
+      colorHeader,
+      colorBody
+    } = this.props
     return (
-      <div className="SideBar">
-        <div className="SideBar-header">
+      <div className={`SideBar ${className}`}>
+        <div className={`SideBar-header ${colorHeader ? colorHeader : ''}`}>
           <div className="SideBar-header-info">
             <div className="SideBar-header-avatar">
               <Avatar
@@ -70,14 +67,15 @@ class SideBar extends Component {
             </div>
             <div className="SideBar-header-description">
               <h5>{profileName}</h5>
-              <span>{adress}</span>
+              <span>{address}</span>
               <p className="tel">{tel}</p>
               <p className="Email">{Email}</p>
             </div>
+
           </div>
-          {!this.isEmptyObject(this.props.dataSideBar.ProgressBar) &&
-            typeof this.props.dataSideBar.ProgressBar === "object" && (
-              <div className="skillProgress">
+          {!this.isEmptyObject(this.props.ProgressBar) &&
+            typeof this.props.ProgressBar === "object" && (
+              !(responsive === "md") && <div className="skillProgress">
                 <LinearProgress
                   value={level || 0}
                   id="SideBar-LinearProgress"
@@ -92,36 +90,34 @@ class SideBar extends Component {
               </div>
             )}
         </div>
-        <div className="SideBar-body">
+        <div className={`SideBar-body ${colorBody ? colorBody : ''}`}>
           <ul className="SideBar-block socialLink">{this.renderSocial()}</ul>
           <hr />
-          <div className="SideBar-block budges">
-            <div className="budges-header">Badges</div>
-            <div className="budges-container">{this.renderBadge()}</div>
+          {!(responsive === "md") && <div className="SideBar-block-budges-grade">
+            <div className="SideBar-block budges">
+              <div className="budges-header">Badges</div>
+              <div className="budges-container">{this.renderBadges()}</div>
+            </div>
+            <hr />
+            <div className="SideBar-block grade">
+              <h5>Grade</h5>
+              <p>{grade}</p>
+            </div>
+            <hr />
           </div>
-          <hr />
-          <div className="SideBar-block grade">
-            <h5>Grade</h5>
-            <p>{grade}</p>
+          }
+          <div className="SideBar-footer">
+            {renderButton && renderButton()}
+            {!(responsive === "md") && <div className="addMore" onClick={this.addMore}>
+              <Button flat onClick={this.addMore} iconBefore={false} iconClassName="mdi mdi-plus">
+                Add more
+              </Button>
+            </div>}
+
           </div>
-          <hr />
+
         </div>
-        <div className="SideBar-footer">
-          <Button flat iconBefore={false} iconClassName="mdi mdi-pencil">
-            Edit Profil
-          </Button>
-          <Button flat iconBefore={false} iconClassName="mdi mdi-information">
-            Information
-          </Button>
-          <Button
-            onClick={this.logout}
-            flat
-            iconBefore={false}
-            iconClassName="mdi mdi-home"
-          >
-            Logout
-          </Button>
-        </div>
+
       </div>
     )
   }
@@ -129,14 +125,22 @@ class SideBar extends Component {
 
 SideBar.propTypes = {
   ProgressBar: PropTypes.object,
-  dataSideBar: PropTypes.array,
+  className: PropTypes.string,
+  dataSideBar: PropTypes.object,
   logout: PropTypes.func,
   history: PropTypes.func,
   profileName: PropTypes.string,
+  address: PropTypes.string,
+  grade: PropTypes.string,
+  tel: PropTypes.string,
   skillsName: PropTypes.string,
   Email: PropTypes.string,
   social: PropTypes.array,
-  badget: PropTypes.array
+  badges: PropTypes.array,
+  renderButton: PropTypes.func,
+  responsive: PropTypes.string,
+  colorHeader: PropTypes.string,
+  colorBody: PropTypes.string,
 }
 
 export default SideBar

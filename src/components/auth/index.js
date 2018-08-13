@@ -3,7 +3,7 @@ import SignUp from './signUp'
 import ForgetPassword from './forgetpassword'
 
 
-export default {
+export {
   SignIn,
   SignUp,
   ForgetPassword

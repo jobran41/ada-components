@@ -1,68 +1,41 @@
+import React, { Component } from "react"
 import { Button } from "react-md"
-import { connect } from "react-redux"
 import { withRouter } from "react-router"
 import PropTypes from "prop-types"
 
 import * as routes from "libs/constants/routes"
 
-import React, { Component } from "react"
-
 @withRouter
-@connect(({ userState }) => ({
-  authUser: userState.users
-}))
 class Navigation extends Component {
-  pushurl = url => {
+  pushUrl = url => {
     const { history } = this.props
     history.push(url)
   };
-  NavigationAuth = () => (
-    <div className="menu-withLogin">
-      <Button
-        onClick={() => this.pushurl(`${routes.Container}${routes.Dashboard}`)}
-        flat
-        className="menuButton"
-      >
-        Dashboard
-      </Button>
-      <Button
-        onClick={() => this.pushurl(`${routes.Container}${routes.Aquarium}`)}
-        flat
-        className="menuButton"
-      >
-        Aquarium
-      </Button>
-      <Button
-        onClick={() => this.pushurl(`${routes.Container}${routes.Lab}`)}
-        flat
-        className="menuButton"
-      >
-        Lab
-      </Button>
-      <Button
-        onClick={() => this.pushurl(`${routes.Container}${routes.Form}`)}
-        flat
-        className="menuButton"
-      >
-        Form
-      </Button>
-      <Button
-        onClick={() => this.pushurl(`${routes.Container}${routes.Tuto}`)}
-        flat
-        className="menuButton"
-      >
-        Tuto
-      </Button>
-    </div>
-  );
+  NavigationAuth = () => {
+    const { menu, underline, history } = this.props
+    const active = history.location.pathname.substr(1)
+    const items = menu.map((item, i) => {
+      return (
+        <Button
+          key={i}
+          onClick={() => this.pushUrl(`${item}`)}
+          flat
+          className={`${underline && active === item ? 'menuButton underline' : 'menuButton'}`}
+        >
+          {item}
+        </Button>
+      )
+    })
+    return (<div className="menu-withLogin">{items}</div>)
+  }
 
   NavigationNonAuth = () => (
     <div className="menu-withoutLogin">
-      <Button onClick={() => this.pushurl(`${routes.SIGN_IN}`)} raised>
-        SIGN_IN
+      <Button className="menuButton" flat onClick={() => this.pushUrl(`${routes.SIGN_IN}`)} >
+        SIGN IN
       </Button>
-      <Button onClick={() => this.pushurl(`${routes.SIGN_UP}`)} raised>
-        SIGN_UP
+      <Button className="menuButton" flat onClick={() => this.pushUrl(`${routes.SIGN_UP}`)} >
+        SIGN UP
       </Button>
     </div>
   );
@@ -78,6 +51,8 @@ class Navigation extends Component {
 
 Navigation.propTypes = {
   authUser: PropTypes.bool,
-  history: PropTypes.func
+  history: PropTypes.func,
+  menu: PropTypes.array,
+  underline: PropTypes.bool
 }
 export default Navigation

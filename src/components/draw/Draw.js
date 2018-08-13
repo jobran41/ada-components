@@ -1,7 +1,9 @@
 
 import React, { PureComponent } from 'react'
-import { Drawer } from 'react-md'
+import PropTypes from "prop-types"
+import { Drawer, Button } from 'react-md'
 import { connect } from 'react-redux'
+
 
 import { toggleTopbar } from "modules/app/actions"
 import NavItemLink from './NavItemLink'
@@ -53,14 +55,16 @@ const navItems = [{
 @connect(({ app }) => ({
     sideBarIsTrue: app.topbarCollapsed
 }), { toggleTopbar })
-export default class SimpleDrawer extends PureComponent {
+class Draw extends PureComponent {
     state = { visible: true, position: 'left' };
     openDrawerRight = () => {
         this.setState({ visible: true, position: 'right' })
     };
 
     closeDrawer = () => {
-        this.setState({ visible: false })
+        const { closeDrawer } = this.props
+        closeDrawer(false)
+        /*this.setState({ visible: false })*/
     };
 
     handleVisibility = (visible) => {
@@ -79,9 +83,13 @@ export default class SimpleDrawer extends PureComponent {
                 position={position}
                 onVisibilityChange={this.handleVisibility}
                 navItems={navItems.map(props => <NavItemLink {...props} key={props.to} />)}
-                header={<h3>ada components</h3>}
+                header={<Button onClick={this.closeDrawer} flat primary iconChildren="arrow_back">ada components</Button>}
                 className="sideBarContainer"
             />
         )
     }
 }
+Draw.propTypes = {
+    closeDrawer: PropTypes.func,
+}
+export default Draw
