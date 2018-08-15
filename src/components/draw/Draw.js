@@ -83,7 +83,7 @@ class Draw extends PureComponent {
                 position={position}
                 onVisibilityChange={this.handleVisibility}
                 navItems={navItems.map(props => <NavItemLink {...props} key={props.to} />)}
-                header={<Button onClick={this.closeDrawer} flat primary iconChildren="arrow_back">ada components</Button>}
+                header={<Button onClick={this.closeDrawer} icon className="closeMenuButton">clear</Button>}
                 className="sideBarContainer"
             />
         )
