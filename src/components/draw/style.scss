@@ -7,4 +7,10 @@
     line-height: 1em;
     box-shadow: 0 -8px 18px -6px rgba(0, 0, 0, 0.15) inset;
   }
+  .closeMenuButton {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 999;
+  }
 }
