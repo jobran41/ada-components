@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import ContentHeader from 'components/content-header'
 
 import {
   ToDoList,
@@ -10,7 +11,12 @@ import {
   TrackInfo
 } from "components/block-list"
 
+import './style.scss'
+
 export default class BlockList extends Component {
+  onAddProject() {
+    alert("Action button")
+  }
   render() {
     const menuButtonExpertise = ["View", "Edit"]
     const itemsToDoList = [
@@ -67,58 +73,58 @@ export default class BlockList extends Component {
     ]
     const itemsUserList = [
       {
-        path: "",
+        path: "http://i.pravatar.cc/150?img=3",
         name: "Student Name",
         job: "web",
         notification: true
       },
       {
-        path: "",
+        path: "http://i.pravatar.cc/150?img=68",
         name: "Student Name",
         job: "web",
         notification: true
       },
       {
-        path: "",
+        path: "http://i.pravatar.cc/150?img=49",
         name: "Student Name",
         job: "web",
         notification: true
       },
       {
-        path: "",
+        path: "http://i.pravatar.cc/150?img=36",
+        name: "Student Name",
+        job: "web",
+        notification: false
+      },
+      {
+        path: "http://i.pravatar.cc/150?img=33",
         name: "Student Name",
         job: "web",
         notification: true
       },
       {
-        path: "",
+        path: "http://i.pravatar.cc/150?img=12",
         name: "Student Name",
         job: "web",
         notification: true
       },
       {
-        path: "",
+        path: "http://i.pravatar.cc/150?img=11",
+        name: "Student Name",
+        job: "web",
+        notification: false
+      },
+      {
+        path: "http://i.pravatar.cc/150?img=56",
         name: "Student Name",
         job: "web",
         notification: true
       },
       {
-        path: "",
+        path: "http://i.pravatar.cc/150?img=25",
         name: "Student Name",
         job: "web",
-        notification: true
-      },
-      {
-        path: "",
-        name: "Student Name",
-        job: "web",
-        notification: true
-      },
-      {
-        path: "",
-        name: "Student Name",
-        job: "web",
-        notification: true
+        notification: false
       }
     ]
     const itemsProjectList = [
@@ -242,8 +248,21 @@ export default class BlockList extends Component {
         createdAt: "21 Oct",
         time: "12:37",
         avatars: [
-          "http://via.placeholder.com/350x150",
-          "http://via.placeholder.com/350x150"
+          "http://i.pravatar.cc/150?img=25",
+          "http://i.pravatar.cc/150?img=68",
+          "http://i.pravatar.cc/150?img=3",
+          "http://i.pravatar.cc/150?img=12"
+        ],
+        status: "Closed"
+      },
+      {
+        color: "red",
+        title: "Workshop 1",
+        createdAt: "21 Oct",
+        time: "12:37",
+        avatars: [
+          "http://i.pravatar.cc/150?img=49",
+          "http://i.pravatar.cc/150?img=36"
         ],
         status: "2 Places left"
       },
@@ -253,8 +272,30 @@ export default class BlockList extends Component {
         createdAt: "21 Oct",
         time: "12:37",
         avatars: [
-          "http://via.placeholder.com/350x150",
-          "http://via.placeholder.com/350x150"
+          "http://i.pravatar.cc/150?img=33"
+        ],
+        status: "3 Places left"
+      },
+      {
+        color: "red",
+        title: "Workshop 1",
+        createdAt: "21 Oct",
+        time: "12:37",
+        avatars: [
+          "http://i.pravatar.cc/150?img=12",
+          "http://i.pravatar.cc/150?img=11",
+          "http://i.pravatar.cc/150?img=56"
+        ],
+        status: "1 Places left"
+      },
+      {
+        color: "red",
+        title: "Workshop 1",
+        createdAt: "21 Oct",
+        time: "12:37",
+        avatars: [
+          "http://i.pravatar.cc/150?img=3",
+          "http://i.pravatar.cc/150?img=49"
         ],
         status: "2 Places left"
       },
@@ -264,8 +305,8 @@ export default class BlockList extends Component {
         createdAt: "21 Oct",
         time: "12:37",
         avatars: [
-          "http://via.placeholder.com/350x150",
-          "http://via.placeholder.com/350x150"
+          "http://i.pravatar.cc/150?img=68",
+          "http://i.pravatar.cc/150?img=25"
         ],
         status: "2 Places left"
       },
@@ -275,86 +316,69 @@ export default class BlockList extends Component {
         createdAt: "21 Oct",
         time: "12:37",
         avatars: [
-          "http://via.placeholder.com/350x150",
-          "http://via.placeholder.com/350x150"
+          "http://i.pravatar.cc/150?img=33",
+          "http://i.pravatar.cc/150?img=12",
+          "http://i.pravatar.cc/150?img=49"
         ],
-        status: "2 Places left"
-      },
-      {
-        color: "red",
-        title: "Workshop 1",
-        createdAt: "21 Oct",
-        time: "12:37",
-        avatars: [
-          "http://via.placeholder.com/350x150",
-          "http://via.placeholder.com/350x150"
-        ],
-        status: "2 Places left"
-      },
-      {
-        color: "red",
-        title: "Workshop 1",
-        createdAt: "21 Oct",
-        time: "12:37",
-        avatars: [
-          "http://via.placeholder.com/350x150",
-          "http://via.placeholder.com/350x150"
-        ],
-        status: "2 Places left"
-      },
-      {
-        color: "red",
-        title: "Workshop 1",
-        createdAt: "21 Oct",
-        time: "12:37",
-        avatars: [
-          "http://via.placeholder.com/350x150",
-          "http://via.placeholder.com/350x150"
-        ],
-        status: "2 Places left"
+        status: "1 Places left"
       }
     ]
     return (
-      <div>
-        <ToDoList
-          title="To do list"
-          description="Mon 20 January"
-          items={itemsToDoList}
-        />
-        <UserList
-          title="User list"
-          description="These students can help you"
-          items={itemsUserList}
-        />
-        <ProjectList
-          title="Projects"
-          description="All projects in progress"
-          items={itemsProjectList}
-        />
-        <TrackList
-          title="Recent Updates"
-          description="Student’s recents achievements"
-          menuButton={menuButtonExpertise}
-          items={itemsTrackList}
-        />
-        <NotificationList
-          title="Notifications"
-          description="Mon 20 January"
-          menuButton={menuButtonExpertise}
-          items={itemsNotificationList}
-        />
-        <EventList
-          title="Agenda"
-          description="Weekly events"
-          items={itemsEventList}
-        />
-        <TrackInfo
-          imagePath="http://via.placeholder.com/350x150"
-          title="Track"
-          description="Project details and infomation"
-          items={itemsTrackInfo}
-          progress={50}
-        />
+      <div className="blocklist">
+        <ContentHeader title="ADA INTERFACES / BRAND BOOK" date="2018" subclass="gray-text" />
+        <div className="blocklistContainer md-grid">
+          <ToDoList
+            title="To do list"
+            description="Mon 20 January"
+            items={itemsToDoList}
+            className="blocklist-item md-cell md-cell--4"
+            menuButton={menuButtonExpertise}
+          />
+          <UserList
+            title="User list"
+            description="These students can help you"
+            items={itemsUserList}
+            className="blocklist-item md-cell md-cell--4"
+            menuButton={menuButtonExpertise}
+          />
+          <ProjectList
+            title="Projects"
+            description="All projects in progress"
+            items={itemsProjectList}
+            className="blocklist-item md-cell md-cell--4"
+            onAddProject
+          />
+          <TrackList
+            title="Recent Updates"
+            description="Student’s recents achievements"
+            menuButton={menuButtonExpertise}
+            items={itemsTrackList}
+            className="blocklist-item md-cell md-cell--4"
+          />
+          <NotificationList
+            title="Notifications"
+            description="Mon 20 January"
+            menuButton={menuButtonExpertise}
+            items={itemsNotificationList}
+            className="blocklist-item md-cell md-cell--4"
+          />
+          <EventList
+            title="Agenda"
+            description="Weekly events"
+            items={itemsEventList}
+            className="blocklist-item md-cell md-cell--4"
+            onAddEvent
+          />
+          <TrackInfo
+            imagePath="https://picsum.photos/300/200?image=1"
+            title="Track"
+            description="Project details and infomation"
+            items={itemsTrackInfo}
+            progress={50}
+            className="blocklist-item md-cell md-cell--6"
+            menuButton={menuButtonExpertise}
+          />
+        </div>
       </div>
     )
   }
