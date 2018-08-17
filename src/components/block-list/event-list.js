@@ -3,13 +3,14 @@ import PropTypes from "prop-types"
 import { Paper, Button, Checkbox } from "react-md"
 import { cls } from "reactutils"
 
+import './event-list.scss'
 export default class EventList extends Component {
   initClass = "event-list";
   renderEventList = () => {
     const { items } = this.props
     return items.map((it, index) => {
       return (
-        <div className={cls(this.initClass + "-list")}>
+        <div className={cls(this.initClass + "-item")}>
           <div className="item-created-date">
             <div className="item-day">{it.createdDate.day}</div>
             <div className="item-month">{it.createdDate.month}</div>
@@ -42,15 +43,17 @@ export default class EventList extends Component {
     return (
       <Paper zDepth={1} className={cls(this.initClass, className)}>
         <div className={cls(this.initClass + "-header")}>
-          <div className={cls(this.initClass + "-title")}>{title}</div>
-          {description && (
-            <div className={cls(this.initClass + "-description")}>
-              {description}
-            </div>
-          )}
+          <div className={cls(this.initClass + "-headerContainer")}>
+            <div className={cls(this.initClass + "-title")}>{title}</div>
+            {description && (
+              <div className={cls(this.initClass + "-description")}>
+                {description}
+              </div>
+            )}
+          </div>
           {onAddEvent && (
             <Button icon onClick={onAddEvent}>
-              plus
+              add_circle_outline
             </Button>
           )}
         </div>

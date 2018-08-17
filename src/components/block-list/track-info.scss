@@ -1,0 +1,67 @@
+.track-info {
+  background: #fff;
+  .track-info-header {
+    display: flex;
+    justify-content: stretch;
+    .track-info-header-image {
+      width: 190px;
+      height: 150px;
+      overflow: hidden;
+    }
+    .track-info-headerContainer {
+      flex-grow: 1;
+      padding: 16px;
+      display: flex;
+      position: relative;
+      justify-content: stretch;
+      align-items: center;
+      .progress-details {
+        flex-grow: 1;
+      }
+      .avatar-list {
+        .md-avatar {
+          margin: 0 8px;
+        }
+      }
+      .track-button {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        .md-btn {
+          border: 2px solid;
+          border-radius: 0;
+          height: 30px;
+          width: 30px;
+          padding: 3px;
+        }
+      }
+    }
+  }
+  .track-info-content {
+    .track-info-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      background: #fff;
+      &:nth-child(odd) {
+        background: #f3f3f3;
+      }
+      .avatar-item {
+        display: flex;
+        justify-content: flex-start;
+        .avatar-item-child {
+          margin: 0 2px;
+          width: 40px;
+          height: 40px;
+          border: 1px solid #cccccc;
+          border-radius: 50%;
+        }
+      }
+      .avatar-status {
+        width: 90px;
+        text-align: center;
+      }
+    }
+  }
+}

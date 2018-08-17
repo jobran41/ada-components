@@ -3,20 +3,22 @@ import PropTypes from "prop-types"
 import { Paper, MenuButton, Button, Badge } from "react-md"
 import { cls } from "reactutils"
 
+import './notification-list.scss'
+
 export default class NotificationList extends Component {
   initClass = "notification-list";
   renderNotificationList = () => {
     const { items } = this.props
     if (Array.isArray(items)) {
       return items.map((it, index) => (
-        <div className={cls(this.initClass, "notification-items")} key={index}>
+        <div className={cls(this.initClass + "-item")} key={index}>
           <div className="item-notification">
             <Badge
               badgeContent={it.numberOfNotification}
-              primary
               badgeId="notifications-1"
+              className="notifications-badge"
             >
-              <Button icon>notifications</Button>
+              <Button icon>notifications_none</Button>
             </Badge>
           </div>
           <div className="item-info">
@@ -33,12 +35,14 @@ export default class NotificationList extends Component {
     return (
       <Paper zDepth={1} className={cls(this.initClass, className)}>
         <div className={cls(this.initClass + "-header")}>
-          <div className={cls(this.initClass + "-title")}>{title}</div>
-          {description && (
-            <div className={cls(this.initClass + "-description")}>
-              {description}
-            </div>
-          )}
+          <div className={cls(this.initClass + "-headerContainer")}>
+            <div className={cls(this.initClass + "-title")}>{title}</div>
+            {description && (
+              <div className={cls(this.initClass + "-description")}>
+                {description}
+              </div>
+            )}
+          </div>
           {menuButton && (
             <MenuButton id={`${this.initClass}_id`} icon menuItems={menuButton}>
               more_vert

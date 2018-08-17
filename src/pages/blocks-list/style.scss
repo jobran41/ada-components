@@ -1,0 +1,13 @@
+.blocklist {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+.blocklistContainer {
+  &.md-grid {
+    margin: 0 -16px;
+  }
+  .Graphs-item {
+    flex-grow: 0;
+  }
+}
