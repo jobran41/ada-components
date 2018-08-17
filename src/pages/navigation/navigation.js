@@ -88,31 +88,31 @@ class Navigation extends Component {
               <Fragment>
                 <Button
                   onClick={this.logout}
-                  flat
+                  icon
                   iconBefore={false}
                   iconClassName="mdi mdi-home"
                 />
                 <Button
                   onClick={this.logout}
-                  flat
+                  icon
                   iconBefore={false}
                   iconClassName="mdi mdi-home"
                 />
                 <Button
                   onClick={this.logout}
-                  flat
+                  icon
                   iconBefore={false}
                   iconClassName="mdi mdi-home"
                 />
                 <Button
                   onClick={this.logout}
-                  flat
+                  icon
                   iconBefore={false}
                   iconClassName="mdi mdi-home"
                 />
                 <Button
                   onClick={this.logout}
-                  flat
+                  icon
                   iconBefore={false}
                   iconClassName="mdi mdi-home"
                 />
