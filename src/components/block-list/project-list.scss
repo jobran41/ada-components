@@ -1,0 +1,46 @@
+@import '../../Themes/first';
+
+.project-list {
+  background: #fff;
+  padding: 16px;
+  .project-list-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e8e8e8;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    color: #adadad;
+    .project-list-title {
+      font-size: 20px;
+    }
+  }
+  .project-list-content {
+    .project-list-item {
+      display: flex;
+      justify-content: stretch;
+      align-items: center;
+      margin: 8px 0;
+      color: #adadad;
+      .item-progress {
+        flex-grow: 1;
+        margin: 0 16px;
+        .md-progress--linear {
+          background: #e4e4e4;
+        }
+      }
+      .item-percent {
+        color: $blue;
+        font-weight: bold;
+      }
+    }
+  }
+  .project-list-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px 0;
+    .addProject {
+      border: 2px solid;
+      height: auto;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+@import '../../Themes/first';
+
+.user-list {
+  background: #fff;
+  padding: 16px;
+  .user-list-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e8e8e8;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    color: #adadad;
+    .user-list-title {
+      font-size: 20px;
+    }
+  }
+  .user-list-content {
+    .user-list-list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 16px 0;
+      color: #adadad;
+      .user-list-info-title {
+        font-size: 18px;
+      }
+      .avatarContainer {
+        position: relative;
+        &::before {
+          position: absolute;
+          content: '';
+          width: 8px;
+          height: 8px;
+          right: 1px;
+          top: 3px;
+          border-radius: 50%;
+          background: #ffb741;
+        }
+      }
+      .notifications {
+        width: 20px;
+        height: 20px;
+        padding: 2px;
+        background: #adadad;
+        .md-icon {
+          color: #fff;
+          font-size: 16px;
+        }
+      }
+      &.notification-active {
+        .notifications {
+          background: $blue;
+        }
+        .avatarContainer {
+          &::before {
+            background: #79ec44;
+          }
+        }
+      }
+    }
+  }
+
+  .user-list-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px 0;
+    .addUser {
+      border: 2px solid;
+      height: auto;
+    }
+  }
+}

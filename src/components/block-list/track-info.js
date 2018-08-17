@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import { Paper, Button, LinearProgress, Avatar } from "react-md"
 import { cls } from "reactutils"
 
+import "./track-info.scss"
+
 export default class TrackInfo extends Component {
   initClass = "track-info";
   renderEventList = () => {
@@ -21,7 +23,7 @@ export default class TrackInfo extends Component {
         }
       }
       return (
-        <div className={cls(this.initClass + `item`)}>
+        <div className={cls(this.initClass + `-item`)}>
           <div className={cls("item-color-" + it.color)} />
           <div className="title-item">{it.title}</div>
           <div className="created-item">{it.createdAt}</div>
@@ -29,7 +31,7 @@ export default class TrackInfo extends Component {
           <div className="avatar-item">{avatars}</div>
           <div className={cls("avatar-status", it.color)}>{it.status}</div>
           <div className="avatar-click">
-            <Button icon>plus</Button>
+            <Button icon>add_circle</Button>
           </div>
         </div>
       )
@@ -43,27 +45,29 @@ export default class TrackInfo extends Component {
           <div className={cls(this.initClass + "-header-image")}>
             <img alt="track" src={imagePath} />
           </div>
-          <div className="progress-details">
-            <div className="progress-title">{title}</div>
-            <div className="progress-description">{description}</div>
-            <LinearProgress id={`item-LinearProgress`} value={progress} />
-          </div>
-          <div className="avatar-list">
-            <Avatar
-              src={"http://via.placeholder.com/350x150"}
-              role="presentation"
-            />
-            <Avatar
-              src={"http://via.placeholder.com/350x150"}
-              role="presentation"
-            />
-            <Avatar
-              src={"http://via.placeholder.com/350x150"}
-              role="presentation"
-            />
-          </div>
-          <div className="track-button">
-            <Button icon>arrow</Button>
+          <div className={cls(this.initClass + "-headerContainer")}>
+            <div className="progress-details">
+              <div className="progress-title">{title}</div>
+              <div className="progress-description">{description}</div>
+              <LinearProgress id={`item-LinearProgress`} value={progress} />
+            </div>
+            <div className="avatar-list">
+              <Avatar
+                src={"http://i.pravatar.cc/150?img=68"}
+                role="presentation"
+              />
+              <Avatar
+                src={"http://i.pravatar.cc/150?img=49"}
+                role="presentation"
+              />
+              <Avatar
+                src={"http://i.pravatar.cc/150?img=12"}
+                role="presentation"
+              />
+            </div>
+            <div className="track-button">
+              <Button icon primary>near_me</Button>
+            </div>
           </div>
         </div>
         <div className={cls(this.initClass + "-content")}>

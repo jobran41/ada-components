@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import { Paper, MenuButton } from "react-md"
 import { cls } from "reactutils"
 
+import './track-list.scss'
+
 export default class TrackList extends Component {
   initClass = "track-list";
   renderTrackList = () => {
@@ -10,7 +12,7 @@ export default class TrackList extends Component {
     if (Array.isArray(items)) {
       return items.map((it, index) => (
         <div
-          className={cls(this.initClass, "track-items")}
+          className={cls(this.initClass + "-item")}
           key={index}
           onClick={onClickItem}
         >
@@ -25,12 +27,14 @@ export default class TrackList extends Component {
     return (
       <Paper zDepth={1} className={cls(this.initClass, className)}>
         <div className={cls(this.initClass + "-header")}>
-          <div className={cls(this.initClass + "-title")}>{title}</div>
-          {description && (
-            <div className={cls(this.initClass + "-description")}>
-              {description}
-            </div>
-          )}
+          <div className={cls(this.initClass + "-headerContainer")}>
+            <div className={cls(this.initClass + "-title")}>{title}</div>
+            {description && (
+              <div className={cls(this.initClass + "-description")}>
+                {description}
+              </div>
+            )}
+          </div>
           {menuButton && (
             <MenuButton id={`${this.initClass}_id`} icon menuItems={menuButton}>
               more_vert
