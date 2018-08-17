@@ -52,7 +52,7 @@ export default class Container extends Component {
             sideBarIsTrue ? "sideBarOut content" : "sideBarIn content"
             } `}
         >
-          {!sideBarIsTrue && <Button className="menuButton" icon onClick={() => this.closeDrawer(true)}>dehaze</Button>}
+          {!sideBarIsTrue && <Button className="toggleButton" icon onClick={() => this.closeDrawer(true)}>dehaze</Button>}
           <Switch>
             <Route
               exact
