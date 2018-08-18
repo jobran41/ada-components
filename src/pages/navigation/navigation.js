@@ -4,12 +4,20 @@ import { Button } from "react-md"
 import { withRouter } from "react-router"
 
 import * as cookies from "tiny-cookie"
-import { SideBar, MenuIcon } from 'components/sideBar'
+import { SideBar, MenuIcon, MenuList } from 'components/sideBar'
 
 import './navigation.scss'
 
 @withRouter
 class Navigation extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      listPeople: [{ name: "jobran", url: "http://i.pravatar.cc/150?img=11" }, { name: "hamdi", url: "http://i.pravatar.cc/150?img=11" }],
+      listRoom: [{ name: "Romm1", url: "http://i.pravatar.cc/150?img=11" }, { name: "Room2", url: "http://i.pravatar.cc/150?img=11" }]
+    }
+  }
+
   editProfile = () => {
 
   }
@@ -19,6 +27,7 @@ class Navigation extends Component {
     history.push("/")
   };
   render() {
+    const { listPeople, listRoom } = this.state
     return (
       <div className="navigation">
         <SideBar
@@ -82,6 +91,7 @@ class Navigation extends Component {
             )
           }}
         />
+        <MenuList icon="mdi-plus" listPeople={listPeople} listRoom={listRoom} />
         <MenuIcon
           renderButton={() => {
             return (

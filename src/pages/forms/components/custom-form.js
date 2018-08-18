@@ -67,7 +67,8 @@ export function Form({
         <Field
           name="userName"
           props={{
-            placeholder: 'UserName',
+            onBlur: value => validateName(value),
+            placeholder: 'User Name',
             type: 'string',
           }}
         />
