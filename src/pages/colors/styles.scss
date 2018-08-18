@@ -1,4 +1,4 @@
-@import "../../Themes/first";
+@import '../../Themes/first';
 
 .colorsContainer {
   padding: 40px;
@@ -9,6 +9,7 @@
   height: 100%;
   .colorsWapper {
     margin: auto 0;
+    padding: 40px 0;
   }
   .colorgroup {
     display: flex;

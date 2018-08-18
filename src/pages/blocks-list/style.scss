@@ -6,8 +6,15 @@
 .blocklistContainer {
   &.md-grid {
     margin: 0 -16px;
+    padding: 40px 0;
   }
-  .Graphs-item {
-    flex-grow: 0;
+  .blocklist-item {
+    margin-bottom: 30px;
   }
+  .blocklist-grid {
+    align-items: center;
+  }
+}
+.rightText {
+  text-align: right;
 }

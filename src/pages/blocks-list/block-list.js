@@ -49,26 +49,6 @@ export default class BlockList extends Component {
         title: "Task",
         description: "Lorem ipsum to do",
         checked: false
-      },
-      {
-        title: "Task",
-        description: "Lorem ipsum to do",
-        checked: false
-      },
-      {
-        title: "Task",
-        description: "Lorem ipsum to do",
-        checked: false
-      },
-      {
-        title: "Task",
-        description: "Lorem ipsum to do",
-        checked: true
-      },
-      {
-        title: "Task",
-        description: "Lorem ipsum to do",
-        checked: true
       }
     ]
     const itemsUserList = [
@@ -82,7 +62,7 @@ export default class BlockList extends Component {
         path: "http://i.pravatar.cc/150?img=68",
         name: "Student Name",
         job: "web",
-        notification: true
+        notification: false
       },
       {
         path: "http://i.pravatar.cc/150?img=49",
@@ -107,24 +87,6 @@ export default class BlockList extends Component {
         name: "Student Name",
         job: "web",
         notification: true
-      },
-      {
-        path: "http://i.pravatar.cc/150?img=11",
-        name: "Student Name",
-        job: "web",
-        notification: false
-      },
-      {
-        path: "http://i.pravatar.cc/150?img=56",
-        name: "Student Name",
-        job: "web",
-        notification: true
-      },
-      {
-        path: "http://i.pravatar.cc/150?img=25",
-        name: "Student Name",
-        job: "web",
-        notification: false
       }
     ]
     const itemsProjectList = [
@@ -327,57 +289,75 @@ export default class BlockList extends Component {
       <div className="blocklist">
         <ContentHeader title="ADA INTERFACES / BRAND BOOK" date="2018" subclass="gray-text" />
         <div className="blocklistContainer md-grid">
-          <ToDoList
-            title="To do list"
-            description="Mon 20 January"
-            items={itemsToDoList}
-            className="blocklist-item md-cell md-cell--4"
-            menuButton={menuButtonExpertise}
-          />
+          <div className="blocklist-cell md-cell md-cell--3">
+            <h3><strong>Text blocks & lists</strong></h3>
+            <ToDoList
+              title="To do list"
+              description="Mon 20 January"
+              items={itemsToDoList}
+              className="blocklist-item"
+              menuButton={menuButtonExpertise}
+            />
+            <NotificationList
+              title="Notifications"
+              description="Mon 20 January"
+              menuButton={menuButtonExpertise}
+              items={itemsNotificationList}
+              className="blocklist-item"
+            />
+          </div>
+
+          <div className="blocklist-cell md-cell md-cell--3">
           <UserList
             title="User list"
             description="These students can help you"
             items={itemsUserList}
-            className="blocklist-item md-cell md-cell--4"
+            className="blocklist-item"
             menuButton={menuButtonExpertise}
-          />
-          <ProjectList
-            title="Projects"
-            description="All projects in progress"
-            items={itemsProjectList}
-            className="blocklist-item md-cell md-cell--4"
-            onAddProject
-          />
-          <TrackList
-            title="Recent Updates"
-            description="Student’s recents achievements"
-            menuButton={menuButtonExpertise}
-            items={itemsTrackList}
-            className="blocklist-item md-cell md-cell--4"
-          />
-          <NotificationList
-            title="Notifications"
-            description="Mon 20 January"
-            menuButton={menuButtonExpertise}
-            items={itemsNotificationList}
-            className="blocklist-item md-cell md-cell--4"
           />
           <EventList
             title="Agenda"
             description="Weekly events"
             items={itemsEventList}
-            className="blocklist-item md-cell md-cell--4"
+            className="blocklist-item"
             onAddEvent
           />
-          <TrackInfo
-            imagePath="https://picsum.photos/300/200?image=1"
-            title="Track"
-            description="Project details and infomation"
-            items={itemsTrackInfo}
-            progress={50}
-            className="blocklist-item md-cell md-cell--6"
-            menuButton={menuButtonExpertise}
-          />
+          </div>
+          
+          <div className="blocklist-cell md-cell md-cell--6">
+            <h3 className="rightText">Text Blocks & Content list</h3>
+            <div className="blocklist-grid md-grid">
+             <div className="blocklist-cell md-cell md-cell--6">
+              <TrackList
+                title="Recent Updates"
+                description="Student’s recents achievements"
+                menuButton={menuButtonExpertise}
+                items={itemsTrackList}
+                className="blocklist-item"
+              />
+             </div>
+             <div className="blocklist-cell md-cell md-cell--6">
+             <ProjectList
+                title="Projects"
+                description="All projects in progress"
+                items={itemsProjectList}
+                className="blocklist-item"
+                onAddProject
+              />
+             </div>
+            </div>
+            <div className="blocklist-cell md-cell md-cell--12">
+              <TrackInfo
+                imagePath="https://picsum.photos/300/200?image=1"
+                title="Track"
+                description="Project details and infomation"
+                items={itemsTrackInfo}
+                progress={50}
+                className="blocklist-item"
+                menuButton={menuButtonExpertise}
+              />
+            </div>
+          </div>
         </div>
       </div>
     )
