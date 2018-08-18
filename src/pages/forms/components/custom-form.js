@@ -10,9 +10,19 @@ import './custom-form.scss'
 const validateName = (value = '') => {
   if (value.trim() === '') {
     return Promise.reject('Please enter an username')
+  } else {
+    return Promise.resolve()
   }
 }
 
+
+const validateUserName = (value = '') => {
+  if (value.trim() === '') {
+    return Promise.reject('Please enter an username')
+  } else {
+    return Promise.resolve()
+  }
+}
 
 const validateEmail = (value = '') => {
   if (value.trim() === '') {
@@ -22,7 +32,7 @@ const validateEmail = (value = '') => {
   if (value.trim() !== '') {
     let filter = (/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
     if (!filter.test(value)) {
-      return Promise.reject('Please enter an username wrong')
+      return Promise.reject('Please enter an email wrong')
     } else {
       return Promise.resolve()
     }
@@ -64,14 +74,16 @@ export function Form({
             type: 'string',
           }}
         />
+
         <Field
           name="userName"
           props={{
-            onBlur: value => validateName(value),
+            onBlur: value => validateUserName(value),
             placeholder: 'User Name',
             type: 'string',
           }}
         />
+
         <Field
           name="email"
           props={{
@@ -108,6 +120,7 @@ export default HocForm({
 
     return Promise.all([
       errorCatcher('name', validateName),
+      errorCatcher('userName', validateUserName),
       errorCatcher('email', validateEmail),
       errorCatcher('mobile', validateNumber)
     ]).then((errors) => {

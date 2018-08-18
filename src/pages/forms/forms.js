@@ -7,7 +7,6 @@ import './forms.scss'
 
 export default class Forms extends Component {
   onSubmit = () => {
-
   }
   render() {
     return (
