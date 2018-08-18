@@ -1,8 +1,16 @@
 import React, { Component } from 'react'
+import PropTypes from "prop-types"
+
 export const FormContext = React.createContext({})
 
 const HOC = hocProps => WrappedComponent => {
   return class Form extends Component {
+    static propTypes = {
+      initialValues: PropTypes.object,
+      validate: PropTypes.func,
+      onSubmit: PropTypes.func,
+      errors: PropTypes.object
+    }
     static removeObjectEntry = function (name, values) {
       return Object
         .entries(values)
@@ -32,7 +40,7 @@ const HOC = hocProps => WrappedComponent => {
 
     onSubmit(e) {
       e && e.preventDefault()
-      const { errors, values } = this.state
+      const { values } = this.state
 
       if (!this.validate) {
 
@@ -91,5 +99,4 @@ const HOC = hocProps => WrappedComponent => {
     }
   }
 }
-
 export default HOC

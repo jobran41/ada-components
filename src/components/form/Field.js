@@ -1,5 +1,7 @@
 import React from 'react'
-import { FormContext } from './HocForm'
+import PropTypes from "prop-types"
+
+import { FormContext } from './hoc-form'
 import Input from './Input'
 import ContextedField from './ContextedField'
 
@@ -28,5 +30,10 @@ function Field({ name, props }) {
     </FormContext.Consumer>
   )
 }
-
+Field.propTypes = {
+  name: PropTypes.string,
+  props: PropTypes.any,
+  onBlur: PropTypes.func,
+  onChange: PropTypes.func,
+}
 export default Field

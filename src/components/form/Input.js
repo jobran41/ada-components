@@ -1,33 +1,11 @@
 import React from 'react'
+import PropTypes from "prop-types"
+
+import './input.scss'
 
 const style = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    position: 'relative',
-  },
-  error: {
-    bottom: '1em',
-    color: 'crimson',
-    fontSize: '.8em',
-    position: 'absolute',
-  },
-  field: {
-    border: '1px solid lightgrey',
-    borderColor: 'lightgrey',
-    borderRadius: '.3em',
-    fontSize: '1em',
-    fontWeight: 300,
-    height: '2em',
-    marginBottom: '2em',
-    padding: '.5em 1em',
-  },
   invalidField: {
     borderColor: 'crimson',
-  },
-  label: {
-    fontWeight: 300,
-    marginBottom: '.5em',
   },
 }
 
@@ -39,8 +17,8 @@ function Input({
   type = 'text', }) {
 
   return (
-    <div style={style.container}>
-      <label style={style.label}>
+    <div className="form-inputText">
+      <label className="form-label">
         {label}
       </label>
       <input
@@ -49,16 +27,22 @@ function Input({
         {...input}
         onBlur={e => input.onBlur && input.onBlur(e.target.value)}
         onChange={e => input.onChange(e.target.value)}
+        className="form-input"
         style={{
-          ...style.field,
           ...(meta.error ? style.invalidField : {}),
         }}
       />
-      {meta.error && <span style={style.error}>
+      {meta.error && <span className="form-error">
         {meta.error}
       </span>}
     </div>
   )
 }
-
+Input.propTypes = {
+  input: PropTypes.object,
+  label: PropTypes.string,
+  meta: PropTypes.object,
+  placeholder: PropTypes.string,
+  type: PropTypes.string,
+}
 export default Input

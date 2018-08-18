@@ -1,4 +1,4 @@
-import HocForm from './HocForm'
+import HocForm from './hoc-form'
 import Field from './Field'
 import Input from './Input'
 

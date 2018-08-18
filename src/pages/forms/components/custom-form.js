@@ -1,59 +1,38 @@
 import React from 'react'
-import { Field, Input, HocForm } from 'components/form'
+import PropTypes from "prop-types"
+import { Paper, Avatar } from "react-md"
 
-const style = {
-  field: {
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  form: {
-    margin: 'auto',
-    width: '18em',
-  },
-  submitButton: {
-    background: 'mediumseagreen',
-    color: 'white',
-    border: '0',
-    borderRadius: '.3em',
-    cursor: 'pointer',
-    fontSize: '.9em',
-    fontWeight: '300',
-    height: '3.5em',
-    width: '100%',
-  },
+import { Field, HocForm } from 'components/form'
+
+import './custom-form.scss'
+
+const validateName = (value = '') => {
+  if (value.trim() === '') {
+    return Promise.reject('Please enter an username')
+  }
 }
 
-const unavailableUsernames = [
-  'elonmusk',
-  'ironman',
-  'lukeskywalker',
-]
 
-function validateLogin(value = '') {
+const validateEmail = (value = '') => {
   if (value.trim() === '') {
     return Promise.reject('Please enter an username')
   }
 
-  return unavailableUsernames.includes(value)
-    ? Promise.reject('This username is unavailable')
-    : Promise.resolve()
-}
-
-function validatePassword(value = '') {
-  if (value.trim() === '') {
-    return Promise.reject('Please enter a password')
-  } else if (value.trim().length < 6) {
-    return Promise.reject('Password must contain 6 characters or more')
-  } else {
-    return Promise.resolve()
+  if (value.trim() !== '') {
+    let filter = (/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
+    if (!filter.test(value)) {
+      return Promise.reject('Please enter an username wrong')
+    } else {
+      return Promise.resolve()
+    }
   }
 }
 
-function validatePasswordConfirmation(value = '', password = '') {
+function validateNumber(value = '') {
   if (value.trim() === '') {
-    return Promise.reject('Please enter a password')
-  } else if (value !== password) {
-    return Promise.reject('Please enter the same password as below')
+    return Promise.reject('Please enter a mobile number')
+  } else if (value.trim().length < 6) {
+    return Promise.reject('mobile number must contain 6 characters or more')
   } else {
     return Promise.resolve()
   }
@@ -61,60 +40,84 @@ function validatePasswordConfirmation(value = '', password = '') {
 
 export function Form({
   onSubmit,
+  title,
+  avatar,
+  notification
 }) {
   return (
-    <form onSubmit={onSubmit} noValidate style={style.form}>
-      <Field
-        name="login"
-        component={Input}
-        props={{
-          label: 'Login *',
-          onBlur: value => validateLogin(value),
-          placeholder: 'elonmusk',
-          type: 'string',
-        }}
-      />
-      <Field
-        name="pwd"
-        props={{
-          label: 'Password *',
-          onBlur: value => validatePassword(value),
-          type: 'password',
-        }}
-      />
-      <Field
-        name="referrer"
-        props={{
-          label: 'How did you find us? *',
-          placeholder: 'Google Search, Facebook or else',
-          type: 'string',
-        }}
-      />
-      <button style={style.submitButton} type="submit">
-        Sign up
+    < Paper
+      zDepth={1}
+      className="authForm forgetpassword"
+    >
+      <div className="header-form">
+        <h3>{title}</h3>
+        <Avatar icon={avatar && avatar()} />
+      </div>
+
+      <form onSubmit={onSubmit} noValidate className="form">
+        <Field
+          name="name"
+          props={{
+            onBlur: value => validateName(value),
+            placeholder: 'Name *',
+            type: 'string',
+          }}
+        />
+        <Field
+          name="userName"
+          props={{
+            placeholder: 'UserName',
+            type: 'string',
+          }}
+        />
+        <Field
+          name="email"
+          props={{
+            onBlur: value => validateEmail(value),
+            placeholder: 'E-mail *',
+            type: 'string',
+          }}
+        />
+        <Field
+          name="mobile"
+          props={{
+            onBlur: value => validateNumber(value),
+            placeholder: 'Mobile *',
+            type: 'number',
+          }}
+        />
+        <button className="submitButton" type="submit">
+          Sign up
       </button>
-    </form>
+      </form>
+      <ul>{notification.map((item, j) => {
+        return <li key={j}>{item}</li>
+      })}</ul>
+    </Paper >
   )
 }
 
 export default HocForm({
   validate(values, props) {
-    let errors = {}
     const errorCatcher = (key, callback, ...args) => (
       callback(values[key], args)
         .catch(error => ({ [key]: error }))
     )
 
     return Promise.all([
-      errorCatcher('login', validateLogin),
-      errorCatcher('pwd', validatePassword),
+      errorCatcher('name', validateName),
+      errorCatcher('email', validateEmail),
+      errorCatcher('mobile', validateNumber)
     ]).then((errors) => {
-      if (!values.referrer) {
-        errors = errors.concat({ referrer: 'Please give us something! 😇🙏' })
-      }
-
       const results = errors.reduce((acc, item) => ({ ...acc, ...item }), {})
       return Object.keys(results).length ? Promise.reject(results) : Promise.resolve()
     })
   }
 })(Form)
+
+Form.propTypes = {
+  onSubmit: PropTypes.func,
+  title: PropTypes.string,
+  avatar: PropTypes.node,
+  notification: PropTypes.array
+}

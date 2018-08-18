@@ -1,0 +1,25 @@
+.form-inputText {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  .form-error {
+    bottom: 1em;
+    color: crimson;
+    font-size: 0.8em;
+    position: absolute;
+  }
+  .form-label {
+    font-weight: 300;
+    margin-bottom: 0.5em;
+  }
+  .form-input {
+    border: 1px solid lightgrey;
+    border-color: lightgrey;
+    border-radius: 0.3em;
+    font-size: 1em;
+    font-weight: 300;
+    height: 2em;
+    margin-bottom: 2em;
+    padding: 0.5em 1em;
+  }
+}

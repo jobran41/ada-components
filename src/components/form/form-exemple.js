@@ -1,4 +1,4 @@
-import React from 'react'
+/*import React from 'react'
 import { Field, Input, HocForm } from 'components/form/hoc-form'
 
 const style = {
@@ -118,3 +118,5 @@ export default HocForm({
     })
   }
 })(Form)
+
+*/
