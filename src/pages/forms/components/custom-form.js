@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from "prop-types"
 import { Paper, Avatar } from "react-md"
 
+import AdaIcon from 'components/adaIcon'
 import { Field, HocForm } from 'components/form'
 
 import './custom-form.scss'
@@ -51,7 +52,7 @@ export function Form({
     >
       <div className="header-form">
         <h3>{title}</h3>
-        <Avatar icon={avatar && avatar()} />
+        <Avatar icon={<AdaIcon icon={avatar} />} />
       </div>
 
       <form onSubmit={onSubmit} noValidate className="form">

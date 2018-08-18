@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
-import AdaIcon from 'components/adaIcon'
-import { ForgetPassword, SignIn } from 'components/auth'
+import { ForgetPassword, SignIn, SignUp, Confirmation } from 'components/auth'
 import SimpleForm from './components/custom-form'
 
 import './forms.scss'
@@ -16,7 +15,7 @@ export default class Forms extends Component {
         <ForgetPassword />
         <SignIn />
         <SimpleForm
-          avatar={() => <AdaIcon icon="add" />}
+          avatar={"add"}
           title="Profile Setting"
           onSubmit={this.onSubmit}
           notification={[
@@ -24,6 +23,8 @@ export default class Forms extends Component {
             "receive a daily notification",
           ]}
         />
+        <SignUp />
+        <Confirmation checked={false} checkedItem={() => null} />
       </div>
     )
   }
