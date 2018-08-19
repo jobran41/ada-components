@@ -12,7 +12,7 @@ class Navigation extends Component {
     history.push(url)
   };
   NavigationAuth = () => {
-    const { menu, underline, history } = this.props
+    const { menu, history } = this.props
     const active = history.location.pathname.substr(1)
     const items = menu.map((item, i) => {
       return (
@@ -20,7 +20,7 @@ class Navigation extends Component {
           key={i}
           onClick={() => this.pushUrl(`${item}`)}
           flat
-          className={`${underline && active === item ? 'menuButton underline' : 'menuButton'}`}
+          className={`${active === item ? 'menuButton active' : 'menuButton'}`}
         >
           {item}
         </Button>
@@ -40,9 +40,9 @@ class Navigation extends Component {
     </div>
   );
   render() {
-    const { authUser } = this.props
+    const { authUser, underline } = this.props
     return (
-      <div className="Navigation">
+      <div className={`${underline ? 'navigationMenu underline' : 'navigationMenu'}`}>
         {authUser ? this.NavigationAuth() : this.NavigationNonAuth()}
       </div>
     )

@@ -1,3 +1,18 @@
 .menu {
-  padding: 30px;
+  padding: 40px;
+}
+
+.menuContainer {
+  padding: 40px 0;
+  .barsContainer {
+    > h4 {
+      color: #949090;
+      border-bottom: 1px dashed;
+      padding-bottom: 10px;
+      margin-bottom: 25px;
+    }
+    .navBar {
+      margin-bottom: 20px;
+    }
+  }
 }

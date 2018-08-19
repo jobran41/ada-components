@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ContentHeader from 'components/content-header'
 
 import TopBar from 'components/top-bar'
 import { menu } from './helpers'
@@ -21,19 +22,24 @@ export default class Menu extends Component {
     const { sideBarIsTrue } = this.state
     return (
       <div className="menu">
-        <h3>Navigation Bar Blue</h3>
-        <TopBar color="blue" logoName="Lorem" authUser={true} menu={menu} userName="Jobran amairi" sideBarIsTrue={sideBarIsTrue} onToggleClick={this.onToggleClick} />
+        <ContentHeader title="ADA INTERFACES / BRAND BOOK" date="2018" subclass="gray-text" />
+        <div className="menuContainer">
+          <div className="barsContainer">
+            <h4>Navigation Bar</h4>
+            <TopBar className="navBar" color="blue" logoName="Logo" authUser={true} menu={menu} userName="Jobran amairi" sideBarIsTrue={sideBarIsTrue} onToggleClick={this.onToggleClick} />
+            <TopBar className="navBar" underline color="blue" logoName="Logo" authUser={true} menu={menu} userName="Jobran amairi" sideBarIsTrue={sideBarIsTrue} onToggleClick={this.onToggleClick} />
+            <TopBar className="navBar" logoName="Logo" authUser={true} menu={menu} userName="Jobran amairi" sideBarIsTrue={sideBarIsTrue} onToggleClick={this.onToggleClick} />
+            <TopBar className="navBar" underline logoName="Logo" authUser={true} menu={menu} userName="Jobran amairi" sideBarIsTrue={sideBarIsTrue} onToggleClick={this.onToggleClick} />
+          </div>
 
-        <h3>Navigation Bar</h3>
-        <TopBar underline logoName="Lorem" authUser={true} menu={menu} userName="Jobran amairi" sideBarIsTrue={sideBarIsTrue} onToggleClick={this.onToggleClick} />
-
-
-        <h3>Profile Bar</h3>
-        <TopBar ProfileBar logoName="Lorem" authUser={true} menu={menu} userName="Jobran amairi" sideBarIsTrue={sideBarIsTrue} onToggleClick={this.onToggleClick} />
-
-        <h3>Profile Bar Black</h3>
-        <TopBar color="black" ProfileBar logoName="Lorem" authUser={true} menu={menu} userName="Jobran amairi" sideBarIsTrue={sideBarIsTrue} onToggleClick={this.onToggleClick} />
-
+          <div className="barsContainer">
+            <h4>Profile Bar</h4>
+            <TopBar className="navBar" ProfileBar logoName="Logo" authUser={true} menu={menu} userName="Jobran amairi" sideBarIsTrue={sideBarIsTrue} onToggleClick={this.onToggleClick} />
+            <TopBar className="navBar" color="black" ProfileBar logoName="Logo" authUser={true} menu={menu} userName="Jobran amairi" sideBarIsTrue={sideBarIsTrue} onToggleClick={this.onToggleClick} />
+            <TopBar className="navBar" underline color="black" ProfileBar logoName="Logo" authUser={true} menu={menu} userName="Jobran amairi" sideBarIsTrue={sideBarIsTrue} onToggleClick={this.onToggleClick} />
+          </div>
+        </div>
+        
       </div>
     )
   }
