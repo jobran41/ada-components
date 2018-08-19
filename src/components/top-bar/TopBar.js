@@ -15,10 +15,10 @@ class TopBar extends Component {
     onToggleClick(!v)
   };
   render() {
-    const { sideBarIsTrue, userName, menu, authUser, logoName, ProfileBar, underline, color } = this.props
+    const { sideBarIsTrue, userName, menu, authUser, logoName, ProfileBar, underline, color, className } = this.props
     const letter = userName ? userName.charAt(0).toUpperCase() : ''
     return (
-      <div className={`${color ? "topBar " + color : "topBar"
+      <div className={`${color ? "topBar " + color + " " + className : "topBar " + className 
         }`}>
         <div className="topBar-logo">
           <span>{logoName}</span>
@@ -53,6 +53,7 @@ TopBar.propTypes = {
   menu: PropTypes.array,
   authUser: PropTypes.bool,
   logoName: PropTypes.string,
+  className: PropTypes.string,
   ProfileBar: PropTypes.bool,
   underline: PropTypes.bool,
   color: PropTypes.string
