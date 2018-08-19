@@ -19,37 +19,37 @@ const navItems = [{
 {
     label: 'Colors',
     to: `${routes.colors}`,
-    icon: 'dashboard'
+    icon: 'color_lens'
 },
 {
     label: 'Icons',
     to: `${routes.Icons}`,
-    icon: 'dashboard'
+    icon: 'mood'
 },
 {
     label: 'Menu',
     to: `${routes.Menu}`,
-    icon: 'dashboard'
+    icon: 'menu'
 },
 {
     label: 'Vertical Navigation',
     to: `${routes.Navigation_Horizontal}`,
-    icon: 'dashboard'
+    icon: 'menu'
 },
 {
     label: 'Forms',
     to: `${routes.Forms}`,
-    icon: 'dashboard'
+    icon: 'list_alt'
 },
 {
     label: 'Graphs',
     to: `${routes.Graphs}`,
-    icon: 'dashboard'
+    icon: 'pie_chart'
 },
 {
     label: 'BlocksList',
     to: `${routes.BlockList}`,
-    icon: 'dashboard'
+    icon: 'view_quilt'
 },
 {
     label: 'Media',
