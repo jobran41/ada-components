@@ -1,0 +1,30 @@
+@import "../../Themes/first";
+
+.PanelProfile-header {
+  padding: 20px;
+  background: $blue;
+  .PanelProfile-header-info {
+    display: flex;
+    justify-content: space-between;
+    max-width: 250px;
+    margin: auto;
+    color: white;
+    h5,
+    p {
+      margin: 0;
+    }
+    h5 {
+      font-weight: bold;
+    }
+    .PanelProfile-header-avatar {
+      text-align: left;
+      .PanelProfile-avatar {
+        height: 80px;
+        width: 80px;
+      }
+    }
+    .PanelProfile-header-description {
+      text-align: left;
+    }
+  }
+}

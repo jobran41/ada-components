@@ -2,6 +2,8 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { LinearProgress, Avatar, Button } from "react-md"
 
+import PanelProfile from 'components/panel-profile'
+
 import "./SideBar.scss"
 
 class SideBar extends Component {
@@ -53,26 +55,23 @@ class SideBar extends Component {
       responsive,
       renderButton,
       colorHeader,
-      colorBody
+      colorBody,
+      urlImg
     } = this.props
     return (
       <div className={`SideBar ${className}`}>
         <div className={`SideBar-header ${colorHeader ? colorHeader : ''}`}>
-          <div className="SideBar-header-info">
-            <div className="SideBar-header-avatar">
-              <Avatar
-                className="SideBar-avatar"
-                src="http://i.pravatar.cc/150?img=11"
-              />
-            </div>
-            <div className="SideBar-header-description">
-              <h5>{profileName}</h5>
-              <span>{address}</span>
-              <p className="tel">{tel}</p>
-              <p className="Email">{Email}</p>
-            </div>
+          <PanelProfile
+            urlImg={urlImg}
+            profileName={profileName}
+            address={address}
+            tel={tel}
+            Email={Email}
+            className={className}
+            responsive={responsive}
+            colorHeader={colorHeader}
+          />
 
-          </div>
           {!this.isEmptyObject(this.props.ProgressBar) &&
             typeof this.props.ProgressBar === "object" && (
               !(responsive === "md") && <div className="skillProgress">
@@ -141,6 +140,7 @@ SideBar.propTypes = {
   responsive: PropTypes.string,
   colorHeader: PropTypes.string,
   colorBody: PropTypes.string,
+  urlImg: PropTypes.string
 }
 
 export default SideBar

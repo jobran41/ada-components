@@ -36,6 +36,7 @@ class Navigation extends Component {
           skillsName="Game Instructor"
           address="Tunis, Tunisia"
           tel="00218867234"
+          urlImg="http://i.pravatar.cc/150?img=11"
           Email="jobran@gmail.com"
           ProgressBar={{ 'level': 80, 'indicatorMax': 320, 'indicatorMin': 120 }}
           social={["GITHUB", "TWITTER", "TECHNOLOGIE CSS"]}
@@ -67,6 +68,7 @@ class Navigation extends Component {
           responsive="md"
           colorHeader="white"
           colorBody="black"
+          urlImg="http://i.pravatar.cc/150?img=11"
           profileName="Instructor Name"
           skillsName="Game Instructor"
           address="Tunis, Tunisia"
