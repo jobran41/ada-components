@@ -1,15 +1,16 @@
 import React from 'react'
 import PropTypes from "prop-types"
-import { Paper, Avatar } from "react-md"
+import { Paper, Checkbox, FontIcon } from "react-md"
+import { cls } from "reactutils"
 
-import AdaIcon from 'components/adaIcon'
+// import AdaIcon from 'components/adaIcon'
 import { Field, HocForm } from 'components/form'
 
 import './custom-form.scss'
 
 const validateName = (value = '') => {
   if (value.trim() === '') {
-    return Promise.reject('Please enter an username')
+    return Promise.reject('Please enter a username')
   } else {
     return Promise.resolve()
   }
@@ -18,7 +19,7 @@ const validateName = (value = '') => {
 
 const validateUserName = (value = '') => {
   if (value.trim() === '') {
-    return Promise.reject('Please enter an username')
+    return Promise.reject('Please enter a username')
   } else {
     return Promise.resolve()
   }
@@ -26,13 +27,13 @@ const validateUserName = (value = '') => {
 
 const validateEmail = (value = '') => {
   if (value.trim() === '') {
-    return Promise.reject('Please enter an username')
+    return Promise.reject('Please enter an email')
   }
 
   if (value.trim() !== '') {
     let filter = (/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
     if (!filter.test(value)) {
-      return Promise.reject('Please enter an email wrong')
+      return Promise.reject('Please enter a valid email')
     } else {
       return Promise.resolve()
     }
@@ -43,7 +44,7 @@ function validateNumber(value = '') {
   if (value.trim() === '') {
     return Promise.reject('Please enter a mobile number')
   } else if (value.trim().length < 6) {
-    return Promise.reject('mobile number must contain 6 characters or more')
+    return Promise.reject('mobile number must contain at least 6 digits')
   } else {
     return Promise.resolve()
   }
@@ -58,14 +59,14 @@ export function Form({
   return (
     < Paper
       zDepth={1}
-      className="authForm forgetpassword"
+      className="authForm custum-form"
     >
       <div className="header-form">
         <h3>{title}</h3>
-        <Avatar icon={<AdaIcon icon={avatar} />} />
+        <div className="formAvatar">{avatar}</div>
       </div>
 
-      <form onSubmit={onSubmit} noValidate className="form">
+      <form onSubmit={onSubmit} noValidate className="custumForm">
         <Field
           name="name"
           props={{
@@ -100,13 +101,18 @@ export function Form({
             type: 'number',
           }}
         />
-        <button className="submitButton" type="submit">
-          Sign up
-      </button>
+        <div className="notificationWrapper">
+        {notification.map((item, j) => {
+          return <Checkbox key={j} id={cls("checkbox-" + j)} className="notificationItem" label={item} value={item} checkedIcon={<FontIcon>fiber_manual_record</FontIcon>} uncheckedIcon={<FontIcon>fiber_manual_record</FontIcon>} />
+        })}
+        </div>
+        <div className="buttonWrapper">
+          <button className="submitButton" type="submit">
+            Sign up
+          </button>
+        </div>
       </form>
-      <ul>{notification.map((item, j) => {
-        return <li key={j}>{item}</li>
-      })}</ul>
+      
     </Paper >
   )
 }

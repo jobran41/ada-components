@@ -1,3 +1,17 @@
 .forms {
-  margin: 60px auto 8px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  .formContainer {
+    padding: 40px 0;
+    &.md-grid {
+      margin: 0 -16px;
+      align-items: flex-start;
+    }
+    .formCell {
+      .authForm {
+        margin-bottom: 40px;
+      }
+    }
+  }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Checkbox, Button, Paper } from "react-md"
+import { FontIcon, Button, Paper } from "react-md"
 import PropTypes from "prop-types"
 
 import '../Style.scss'
@@ -16,16 +16,10 @@ class Confirmation extends Component {
     return (
       < Paper
         zDepth={1}
-        className="authForm forgetpassword"
+        className="authForm confirmation"
       >
-        <Checkbox
-          id="checkbox-read"
-          name="checkbox-confirmation"
-          aria-label=""
-          checked={checked}
-          onChange={this.checkedItem}
-        />
-        <h3>Success</h3>
+        {checked ? <FontIcon iconClassName="mdi mdi-checkbox-marked-outline"/> : <FontIcon iconClassName="mdi mdi-checkbox-blank-outline"/>}
+        <h2><strong>Success</strong></h2>
         <h5>See Confirmation Link</h5>
         <div className="info">
           <Button flat className="form-button">Send Confirmation</Button>

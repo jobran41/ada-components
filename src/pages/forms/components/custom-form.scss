@@ -1,15 +1,64 @@
-.form {
-  margin: auto;
-  width: 18em;
-  .submitButton {
-    background: mediumseagreen;
-    color: white;
-    border: 0;
-    border-radius: 0.3em;
-    cursor: pointer;
-    font-size: 0.9em;
-    font-weight: 300;
-    height: 3.5em;
-    width: 100%;
+.custum-form {
+  .header-form {
+    text-align: center;
+    .formAvatar {
+      width: 80px;
+      height: 80px;
+      background: #ddd;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      margin: 10px auto;
+      .md-icon {
+        font-size: 32px;
+        color: #a5a5a5;
+      }
+    }
+  }
+  .notificationItem {
+    height: 20px;
+    .md-btn--icon {
+      padding: 0;
+      width: 16px;
+      height: 16px;
+      .md-icon {
+        font-size: 10px;
+      }
+    }
+  }
+  .custumForm {
+    .form-inputText {
+      .form-input {
+        margin-bottom: 10px;
+        border-radius: 0;
+        padding: 8px;
+        height: auto;
+        background: #fbfbfb;
+        border: 1px solid #eee;
+        font-size: 13px;
+      }
+      .form-error {
+        bottom: -5px;
+      }
+    }
+    .notificationWrapper {
+      margin: 15px 0;
+    }
+
+    .buttonWrapper {
+      text-align: right;
+      .submitButton {
+        height: 32px;
+        font-size: 13px;
+        background: #2a7bdb;
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 2px;
+        text-transform: uppercase;
+        border: none;
+      }
+    }
   }
 }

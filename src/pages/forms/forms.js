@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { FontIcon } from "react-md"
+import ContentHeader from 'components/content-header'
 
 import { ForgetPassword, SignIn, SignUp, Confirmation } from 'components/auth'
 import SimpleForm from './components/custom-form'
@@ -11,19 +13,29 @@ export default class Forms extends Component {
   render() {
     return (
       <div className="forms">
-        <ForgetPassword />
-        <SignIn />
-        <SimpleForm
-          avatar={"add"}
-          title="Profile Setting"
-          onSubmit={this.onSubmit}
-          notification={[
-            "receive a weekly notification",
-            "receive a daily notification",
-          ]}
-        />
-        <SignUp />
-        <Confirmation checked={false} checkedItem={() => null} />
+        <ContentHeader title="ADA INTERFACES / BRAND BOOK" date="2018" subclass="gray-text" />
+        <div className="formContainer md-grid">
+          <div className="formCell md-cell md-cell--4">
+            <SignUp />
+            <SignIn />
+          </div>
+          <div className="formCell md-cell md-cell--4">
+            <ForgetPassword />
+            <Confirmation checked={true} checkedItem={() => null} />
+          </div>
+          
+          <div className="formCell md-cell md-cell--4">
+            <SimpleForm
+              avatar={<FontIcon>add</FontIcon>}
+              title="Profile Setting"
+              onSubmit={this.onSubmit}
+              notification={[
+                "receive a weekly notification",
+                "receive a daily notification",
+              ]}
+            />
+          </div>
+        </div>
       </div>
     )
   }

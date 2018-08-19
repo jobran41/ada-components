@@ -38,4 +38,25 @@
     left: 0;
     top: 0;
   }
+  &.confirmation {
+    border-top: none;
+    background-image: linear-gradient(0deg, #2662d7 0, #358fe5 100%);
+    color: #fff;
+    text-align: center;
+    > h2 {
+      font-size: 33px;
+      margin-bottom: 0;
+    }
+    .md-icon {
+      font-size: 60px;
+      color: #fff;
+    }
+    .info {
+      text-align: center;
+      .form-button {
+        background: none;
+        border: 2px solid #ffffff;
+      }
+    }
+  }
 }
