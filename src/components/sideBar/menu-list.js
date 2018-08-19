@@ -39,8 +39,8 @@ export default class MenuList extends Component {
         <ul className="SideBar-block socialLink">{this.renderPeople()}</ul>
         <div className="SideBar-footer">
           {renderButton && renderButton()}
-          <div className="addMore" onClick={this.addMore}>
-            <Button flat onClick={this.addMore} iconBefore={false} iconClassName="mdi mdi-plus">
+          <div className="addMore">
+            <Button flat iconBefore={false} iconClassName="mdi mdi-plus">
               Add more
           </Button>
           </div>
@@ -54,6 +54,6 @@ MenuList.propTypes = {
   listPeople: PropTypes.array,
   listRoom: PropTypes.array,
   colorBody: PropTypes.string,
-  renderButton: PropTypes.renderButton,
-  icon: PropTypes.string
+  icon: PropTypes.string,
+  renderButton: PropTypes.func
 }
