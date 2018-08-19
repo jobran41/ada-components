@@ -22,6 +22,11 @@ const navItems = [{
     icon: 'color_lens'
 },
 {
+    label: 'Topography',
+    to: `${routes.Topography}`,
+    icon: 'dashboard'
+},
+{
     label: 'Icons',
     to: `${routes.Icons}`,
     icon: 'mood'
@@ -66,7 +71,9 @@ const navItems = [{
     to: `${routes.Avatars}`,
     icon: 'dashboard'
 },
+
 ]
+
 @connect(({ app }) => ({
     sideBarIsTrue: app.topbarCollapsed
 }), { toggleTopbar })
