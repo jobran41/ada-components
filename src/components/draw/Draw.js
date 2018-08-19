@@ -24,7 +24,7 @@ const navItems = [{
 {
     label: 'Topography',
     to: `${routes.Topography}`,
-    icon: 'dashboard'
+    icon: 'text_fields'
 },
 {
     label: 'Icons',
