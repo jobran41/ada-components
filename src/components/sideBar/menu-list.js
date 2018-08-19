@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from "prop-types"
-import { Button } from "react-md"
+import { Button, Avatar } from "react-md"
 
 import "./SideBar.scss"
 
@@ -9,7 +9,12 @@ export default class MenuList extends Component {
     const { listPeople } = this.props
     if (Array.isArray(listPeople)) {
       let listPeopleLocal = listPeople.map((item, i) => {
-        return <li key={i}>{item.name}</li>
+        return <li key={i}>
+          <Avatar
+            src={item.urlImg}
+          />
+          {item.name}
+        </li>
       })
       return listPeopleLocal
     } else {
@@ -21,7 +26,12 @@ export default class MenuList extends Component {
     const { listRoom } = this.props
     if (Array.isArray(listRoom)) {
       let listRoomLocal = listRoom.map((item, i) => {
-        return <li key={i}>{item.name}</li>
+        return <li key={i}>
+          <Avatar
+            src={item.urlImg}
+          />
+          {item.name}
+        </li>
       })
       return listRoomLocal
     } else {
@@ -32,13 +42,15 @@ export default class MenuList extends Component {
   render() {
     const { colorBody, renderButton, icon } = this.props
     return (
-      <div className={`SideBar-body ${colorBody ? colorBody : ''}`}>
-        <Button flat iconBefore={false} iconClassName={` mdi ${icon}`} />
+      <div className={`SideBar-body ${colorBody || null}`}>
+        <Button flat iconBefore={false} iconClassName={` mdi ${icon || null}`} />
+        <h4>Rooms</h4>
         <ul className="SideBar-block socialLink">{this.renderPeople()}</ul>
         <hr />
+        <h4>People</h4>
         <ul className="SideBar-block socialLink">{this.renderPeople()}</ul>
         <div className="SideBar-footer">
-          {renderButton && renderButton()}
+          {renderButton ? renderButton() : null}
           <div className="addMore">
             <Button flat iconBefore={false} iconClassName="mdi mdi-plus">
               Add more
