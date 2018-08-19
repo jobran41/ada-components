@@ -72,9 +72,14 @@ const navItems = [{
 }), { toggleTopbar })
 @withRouter
 class Draw extends Component {
+
     constructor(props) {
         super(props)
-        this.state = { visible: true, position: 'left', active: 0 }
+        const Items = navItems.map(elem => {
+            return elem.to.substr(1)
+        })
+        const activeItem = Items.indexOf(props.history.location.pathname.substr(1))
+        this.state = { visible: true, position: 'left', active: activeItem || 0 }
     }
 
 
@@ -112,5 +117,6 @@ class Draw extends Component {
 }
 Draw.propTypes = {
     closeDrawer: PropTypes.func,
+    history: PropTypes.func
 }
 export default Draw
