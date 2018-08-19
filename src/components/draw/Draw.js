@@ -1,9 +1,9 @@
 
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import PropTypes from "prop-types"
 import { Drawer, Button } from 'react-md'
 import { connect } from 'react-redux'
-
+import { withRouter } from "react-router"
 
 import { toggleTopbar } from "modules/app/actions"
 import NavItemLink from './NavItemLink'
@@ -55,8 +55,14 @@ const navItems = [{
 @connect(({ app }) => ({
     sideBarIsTrue: app.topbarCollapsed
 }), { toggleTopbar })
-class Draw extends PureComponent {
-    state = { visible: true, position: 'left' };
+@withRouter
+class Draw extends Component {
+    constructor(props) {
+        super(props)
+        this.state = { visible: true, position: 'left', active: 0 }
+    }
+
+
     openDrawerRight = () => {
         this.setState({ visible: true, position: 'right' })
     };
@@ -64,16 +70,16 @@ class Draw extends PureComponent {
     closeDrawer = () => {
         const { closeDrawer } = this.props
         closeDrawer(false)
-        /*this.setState({ visible: false })*/
     };
 
     handleVisibility = (visible) => {
         this.setState({ visible: true })
     };
-
+    handleRoute = (i) => {
+        this.setState({ active: i })
+    }
     render() {
-        const { visible, position } = this.state
-
+        const { visible, position, active, activePath } = this.state
         return (
             <Drawer
                 id="simple-drawer-example"
@@ -82,7 +88,7 @@ class Draw extends PureComponent {
                 visible={visible}
                 position={position}
                 onVisibilityChange={this.handleVisibility}
-                navItems={navItems.map(props => <NavItemLink {...props} key={props.to} />)}
+                navItems={navItems.map((props, i) => <NavItemLink handleRoute={this.handleRoute} active={i === active || undefined} {...props} i={i} key={i} />)}
                 header={<Button onClick={this.closeDrawer} icon className="closeMenuButton">clear</Button>}
                 className="sideBarContainer"
             />
