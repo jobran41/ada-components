@@ -20,16 +20,16 @@ class Forgetpassword extends Component {
         zDepth={1}
         className="authForm forgetpassword"
       >
-      <h3>Forget password ?</h3>
+        <h3>Forget password ?</h3>
         <TextField
           placeholder="Email"
-          id="email"
+          id="email-forget"
           block
           onChange={v => this.setState({ email: v })}
         />
         <TextField
           placeholder="Passwoprd"
-          id="Passwoprd"
+          id="Passwoprd-forget"
           type="password"
           block
           onChange={v => this.setState({ password: v })}

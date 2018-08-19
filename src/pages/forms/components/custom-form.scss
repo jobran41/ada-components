@@ -1,0 +1,15 @@
+.form {
+  margin: auto;
+  width: 18em;
+  .submitButton {
+    background: mediumseagreen;
+    color: white;
+    border: 0;
+    border-radius: 0.3em;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 300;
+    height: 3.5em;
+    width: 100%;
+  }
+}
