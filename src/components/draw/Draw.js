@@ -54,17 +54,17 @@ const navItems = [{
 {
     label: 'Media',
     to: `${routes.Media}`,
-    icon: 'dashboard'
+    icon: 'perm_media'
 },
 {
     label: 'Elements',
     to: `${routes.Elements}`,
-    icon: 'dashboard'
+    icon: 'widgets'
 },
 {
     label: 'Avatars',
     to: `${routes.Avatars}`,
-    icon: 'dashboard'
+    icon: 'person'
 },
 ]
 @connect(({ app }) => ({
