@@ -13,8 +13,8 @@ class Navigation extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      listPeople: [{ name: "jobran", url: "http://i.pravatar.cc/150?img=11" }, { name: "hamdi", url: "http://i.pravatar.cc/150?img=11" }],
-      listRoom: [{ name: "Romm1", url: "http://i.pravatar.cc/150?img=11" }, { name: "Room2", url: "http://i.pravatar.cc/150?img=11" }]
+      listPeople: [{ name: "jobran", urlImg: "http://i.pravatar.cc/150?img=11" }, { name: "hamdi", url: "http://i.pravatar.cc/150?img=11" }],
+      listRoom: [{ name: "Romm1", urlImg: "http://i.pravatar.cc/150?img=11" }, { name: "Room2", url: "http://i.pravatar.cc/150?img=11" }]
     }
   }
 
