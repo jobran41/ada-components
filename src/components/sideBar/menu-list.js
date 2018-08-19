@@ -41,7 +41,6 @@ export default class MenuList extends Component {
 
   render() {
     const { colorBody, renderButton, icon } = this.props
-    console.log(colorBody, renderButton, icon)
     return (
       <div className={`SideBar-body ${colorBody || null}`}>
         <Button flat iconBefore={false} iconClassName={` mdi ${icon || null}`} />
