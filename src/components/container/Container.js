@@ -16,6 +16,9 @@ import Navigation from "pages/navigation"
 import Graphs from "pages/graphs"
 import BlockList from "pages/blocks-list"
 import Colors from "pages/colors"
+import Media from "pages/media"
+import Elements from "pages/elements"
+import Avatars from "pages/avatars"
 
 import "./Container.scss"
 
@@ -89,6 +92,37 @@ export default class Container extends Component {
               exact
               path={`${routes.BlockList}`}
               component={BlockList}
+            />
+            <Route
+              exact
+              path={`${routes.Navigation_Horizontal}`}
+              component={Navigation}
+            />
+            <Route
+              exact
+              path={`${routes.Graphs}`}
+              component={Graphs}
+            />
+            <Route
+              exact
+              path={`${routes.BlockList}`}
+              component={BlockList}
+            />
+
+            <Route
+              exact
+              path={`${routes.Media}`}
+              component={Media}
+            />
+            <Route
+              exact
+              path={`${routes.Elements}`}
+              component={Elements}
+            />
+            <Route
+              exact
+              path={`${routes.Avatars}`}
+              component={Avatars}
             />
           </Switch>
         </div>

@@ -24,3 +24,7 @@ export const Forms = "/forms"
 export const Graphs = "/graphs"
 export const BlockList = "/blockList"
 export const colors = "/colors"
+export const Media = "/media"
+export const Elements = "/elements"
+export const Avatars = "/avatars"
+

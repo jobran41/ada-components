@@ -41,6 +41,8 @@ NavItemLink.propTypes = {
   to: PropTypes.string,
   exact: PropTypes.bool,
   icon: PropTypes.node,
+  handleRoute: PropTypes.func,
+  i: PropTypes.number,
   active: PropTypes.bool
 }
 export default NavItemLink

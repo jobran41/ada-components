@@ -51,6 +51,21 @@ const navItems = [{
     to: `${routes.BlockList}`,
     icon: 'dashboard'
 },
+{
+    label: 'Media',
+    to: `${routes.Media}`,
+    icon: 'dashboard'
+},
+{
+    label: 'Elements',
+    to: `${routes.Elements}`,
+    icon: 'dashboard'
+},
+{
+    label: 'Avatars',
+    to: `${routes.Avatars}`,
+    icon: 'dashboard'
+},
 ]
 @connect(({ app }) => ({
     sideBarIsTrue: app.topbarCollapsed
@@ -79,7 +94,7 @@ class Draw extends Component {
         this.setState({ active: i })
     }
     render() {
-        const { visible, position, active, activePath } = this.state
+        const { visible, position, active } = this.state
         return (
             <Drawer
                 id="simple-drawer-example"
