@@ -1,6 +1,20 @@
 @import "../../Themes/first";
 
 .SideBar {
+  &.white {
+    background-color: #fff;
+    .PanelProfile-header-info {
+      display: block;
+      color: black;
+    }
+    .SideBar-footer {
+      button {
+        &.active {
+          border-bottom: 1px solid #eee;
+        }
+      }
+    }
+  }
   &.ada-xs {
     width: 10%;
     .SideBar-footer {
@@ -36,6 +50,28 @@
   .SideBar-header {
     padding: 20px;
     background: $blue;
+    &.white {
+      .PanelProfile-header {
+        &.white-header {
+          background-color: #fff;
+          .PanelProfile-header-info {
+            display: block;
+            color: black;
+          }
+        }
+        &.blue-header {
+          background-color: #fff;
+          .PanelProfile-header-info {
+            display: block;
+            color: black;
+          }
+        }
+      }
+      background-color: #fff;
+      .SideBar-header-info {
+        color: grey;
+      }
+    }
     .SideBar-header-info {
       display: flex;
       justify-content: space-between;

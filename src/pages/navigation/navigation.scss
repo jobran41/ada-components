@@ -7,22 +7,5 @@
   }
   .SideBar {
     margin: 10px;
-    .SideBar-header {
-      &.white {
-        .PanelProfile-header {
-          &.white-header {
-            background-color: #fff;
-            .PanelProfile-header-info {
-              display: block;
-              color: black;
-            }
-          }
-        }
-        background-color: #fff;
-        .SideBar-header-info {
-          color: grey;
-        }
-      }
-    }
   }
 }

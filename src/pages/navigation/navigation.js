@@ -31,6 +31,64 @@ class Navigation extends Component {
     return (
       <div className="navigation">
         <SideBar
+          className="ada-md"
+          responsive="md"
+          colorHeader="white"
+          colorBody="white"
+          ProgressBar=""
+          urlImg="http://i.pravatar.cc/150?img=11"
+          profileName="Instructor Name"
+          renderButton={() => {
+            return (
+              <Fragment>
+
+                <Button
+                  flat
+                >
+                  Lorem
+              </Button>
+                <Button
+                  flat
+                >
+                  Lorem
+              </Button>
+              </Fragment>
+            )
+          }}
+        />
+        <SideBar
+          className="ada-md"
+          responsive="md"
+          colorHeader="blue"
+          colorBody="white"
+          ProgressBar=""
+          urlImg="http://i.pravatar.cc/150?img=11"
+          profileName="Instructor Name"
+          renderButton={() => {
+            return (
+              <Fragment>
+                <Button
+                  flat
+                  className="active"
+                >
+                  Lorem
+                </Button>
+                <Button
+                  flat
+                >
+                  Lorem
+                </Button>
+                <Button
+                  flat
+                >
+                  Lorem
+                </Button>
+              </Fragment>
+            )
+          }}
+        />
+
+        <SideBar
           className="ada-lg"
           profileName="Instructor Name"
           skillsName="Game Instructor"
@@ -63,36 +121,7 @@ class Navigation extends Component {
             )
           }}
         />
-        <SideBar
-          className="ada-md"
-          responsive="md"
-          colorHeader="white"
-          colorBody="black"
-          urlImg="http://i.pravatar.cc/150?img=11"
-          profileName="Instructor Name"
-          skillsName="Game Instructor"
-          address="Tunis, Tunisia"
-          tel="00218867234"
-          Email="jobran@gmail.com"
-          ProgressBar={{ 'level': 80, 'indicatorMax': 320, 'indicatorMin': 120 }}
-          social={["GITHUB", "TWITTER", "TECHNOLOGIE CSS"]}
-          badges={["a", "b", "c", "d"]}
-          grade="senior"
-          renderButton={() => {
-            return (
-              <Fragment>
-                <Button
-                  onClick={this.logout}
-                  flat
-                  iconBefore={false}
-                  iconClassName="mdi mdi-home"
-                >
-                  Logout
-                </Button>
-              </Fragment>
-            )
-          }}
-        />
+
         <MenuList icon="mdi-plus" listPeople={listPeople} listRoom={listRoom} />
         <MenuIcon
           renderButton={() => {
