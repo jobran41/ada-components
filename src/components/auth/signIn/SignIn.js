@@ -1,13 +1,9 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { TextField, Button, Paper, Snackbar } from "react-md"
-import { withRouter } from "react-router-dom"
-
-import * as routes from "libs/constants/routes"
 
 import "../Style.scss"
 
-@withRouter
 class SignIn extends Component {
   constructor(props) {
     super(props)
@@ -61,7 +57,6 @@ class SignIn extends Component {
   }
   render() {
     const { email, password, toasts, autohide } = this.state
-    const { history } = this.props
     return (
       < Paper
         zDepth={1}
@@ -101,7 +96,6 @@ class SignIn extends Component {
 }
 
 SignIn.propTypes = {
-  history: PropTypes.func,
   onSubmit: PropTypes.func,
   redirectToForgetPassword: PropTypes.func,
   redirectToSignUp: PropTypes.func
