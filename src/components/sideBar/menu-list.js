@@ -21,7 +21,18 @@ export default class MenuList extends Component {
       return []
     }
   };
-
+  addMore = () => {
+    const { addMore } = this.props
+    if (typeof addMore === 'function') {
+      addMore()
+    }
+  }
+  plus = () => {
+    const { plus } = this.props
+    if (typeof plus === 'function') {
+      plus()
+    }
+  }
   renderRooms = () => {
     const { listRoom } = this.props
     if (Array.isArray(listRoom)) {
@@ -43,7 +54,7 @@ export default class MenuList extends Component {
     const { colorBody, renderButton, icon } = this.props
     return (
       <div className={`SideBar-body ${colorBody || null}`}>
-        <Button flat iconBefore={false} iconClassName={` mdi ${icon || null}`} />
+        <Button onClick={this.plus} flat iconBefore={false} iconClassName={` mdi ${icon || null}`} />
         <h4>Rooms</h4>
         <ul className="SideBar-block socialLink">{this.renderPeople()}</ul>
         <hr />
@@ -52,7 +63,7 @@ export default class MenuList extends Component {
         <div className="SideBar-footer">
           {renderButton ? renderButton() : null}
           <div className="addMore">
-            <Button flat iconBefore={false} iconClassName="mdi mdi-plus">
+            <Button flat iconBefore={false} onClick={this.addMore} iconClassName="mdi mdi-plus">
               Add more
           </Button>
           </div>
@@ -67,5 +78,7 @@ MenuList.propTypes = {
   listRoom: PropTypes.array,
   colorBody: PropTypes.string,
   icon: PropTypes.string,
-  renderButton: PropTypes.func
+  renderButton: PropTypes.func,
+  addMore: PropTypes.func,
+  plus: PropTypes.func
 }

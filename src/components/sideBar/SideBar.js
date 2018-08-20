@@ -8,6 +8,13 @@ import "./SideBar.scss"
 
 class SideBar extends Component {
 
+  addMore = () => {
+    const { addMore } = this.props
+    if (typeof addMore === 'function') {
+      addMore()
+    }
+  }
+
   renderBadges = () => {
     const { badges } = this.props
     if (Array.isArray(badges)) {
@@ -139,7 +146,8 @@ SideBar.propTypes = {
   responsive: PropTypes.string,
   colorHeader: PropTypes.string,
   colorBody: PropTypes.string,
-  urlImg: PropTypes.string
+  urlImg: PropTypes.string,
+  addMore: PropTypes.func
 }
 
 export default SideBar
