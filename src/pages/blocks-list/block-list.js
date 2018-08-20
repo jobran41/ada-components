@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import ContentHeader from 'components/content-header'
+import ContentHeader from "components/content-header"
 
 import {
   ToDoList,
@@ -10,8 +10,17 @@ import {
   EventList,
   TrackInfo
 } from "components/block-list"
+import {
+  Comment,
+  Timer,
+  Rating,
+  Reviews,
+  Download,
+  Upload,
+  Filters
+} from "components/text-block"
 
-import './style.scss'
+import "./style.scss"
 
 export default class BlockList extends Component {
   onAddProject() {
@@ -233,9 +242,7 @@ export default class BlockList extends Component {
         title: "Workshop 1",
         createdAt: "21 Oct",
         time: "12:37",
-        avatars: [
-          "http://i.pravatar.cc/150?img=33"
-        ],
+        avatars: ["http://i.pravatar.cc/150?img=33"],
         status: "3 Places left"
       },
       {
@@ -285,12 +292,98 @@ export default class BlockList extends Component {
         status: "1 Places left"
       }
     ]
+    const commentItems = [
+      {
+        path: "",
+        name: "Student Name",
+        createdDate: "2 Month ago",
+        description: "lorem ipsum dolerm tsoun dfrizer uplod ishler conita"
+      },
+      {
+        path: "",
+        name: "Student Name",
+        createdDate: "2 Month ago",
+        description: "lorem ipsum dolerm tsoun dfrizer uplod ishler conita"
+      },
+      {
+        path: "",
+        name: "Student Name",
+        createdDate: "2 Month ago",
+        description: "lorem ipsum dolerm tsoun dfrizer uplod ishler conita"
+      },
+      {
+        path: "",
+        name: "Student Name",
+        createdDate: "2 Month ago",
+        description: "lorem ipsum dolerm tsoun dfrizer uplod ishler conita"
+      }
+    ]
+    const ratingItems = [
+      {
+        star: 5,
+        number: 123,
+        value: 40
+      },
+      {
+        star: 5,
+        number: 123,
+        value: 40
+      },
+      {
+        star: 5,
+        number: 123,
+        value: 40
+      },
+      {
+        star: 5,
+        number: 123,
+        value: 40
+      },
+      {
+        star: 5,
+        number: 123,
+        value: 40
+      }
+    ]
+    const FiltersItems = [
+      {
+        min: -100,
+        max: 100,
+        value: 50
+      },
+      {
+        min: -100,
+        max: 100,
+        value: 50
+      },
+      {
+        min: -100,
+        max: 100,
+        value: 50
+      },
+      {
+        min: -100,
+        max: 100,
+        value: 50
+      },
+      {
+        min: -100,
+        max: 100,
+        value: 50
+      }
+    ]
     return (
       <div className="blocklist">
-        <ContentHeader title="ADA INTERFACES / BRAND BOOK" date="2018" subclass="gray-text" />
+        <ContentHeader
+          title="ADA INTERFACES / BRAND BOOK"
+          date="2018"
+          subclass="gray-text"
+        />
         <div className="blocklistContainer md-grid">
           <div className="blocklist-cell md-cell md-cell--3">
-            <h3><strong>Text blocks & lists</strong></h3>
+            <h3>
+              <strong>Text blocks & lists</strong>
+            </h3>
             <ToDoList
               title="To do list"
               description="Mon 20 January"
@@ -308,43 +401,43 @@ export default class BlockList extends Component {
           </div>
 
           <div className="blocklist-cell md-cell md-cell--3">
-          <UserList
-            title="User list"
-            description="These students can help you"
-            items={itemsUserList}
-            className="blocklist-item"
-            menuButton={menuButtonExpertise}
-          />
-          <EventList
-            title="Agenda"
-            description="Weekly events"
-            items={itemsEventList}
-            className="blocklist-item"
-            onAddEvent
-          />
+            <UserList
+              title="User list"
+              description="These students can help you"
+              items={itemsUserList}
+              className="blocklist-item"
+              menuButton={menuButtonExpertise}
+            />
+            <EventList
+              title="Agenda"
+              description="Weekly events"
+              items={itemsEventList}
+              className="blocklist-item"
+              onAddEvent
+            />
           </div>
-          
+
           <div className="blocklist-cell md-cell md-cell--6">
             <h3 className="rightText">Text Blocks & Content list</h3>
             <div className="blocklist-grid md-grid">
-             <div className="blocklist-cell md-cell md-cell--6">
-              <TrackList
-                title="Recent Updates"
-                description="Student’s recents achievements"
-                menuButton={menuButtonExpertise}
-                items={itemsTrackList}
-                className="blocklist-item"
-              />
-             </div>
-             <div className="blocklist-cell md-cell md-cell--6">
-             <ProjectList
-                title="Projects"
-                description="All projects in progress"
-                items={itemsProjectList}
-                className="blocklist-item"
-                onAddProject
-              />
-             </div>
+              <div className="blocklist-cell md-cell md-cell--6">
+                <TrackList
+                  title="Recent Updates"
+                  description="Student’s recents achievements"
+                  menuButton={menuButtonExpertise}
+                  items={itemsTrackList}
+                  className="blocklist-item"
+                />
+              </div>
+              <div className="blocklist-cell md-cell md-cell--6">
+                <ProjectList
+                  title="Projects"
+                  description="All projects in progress"
+                  items={itemsProjectList}
+                  className="blocklist-item"
+                  onAddProject
+                />
+              </div>
             </div>
             <div className="blocklist-cell md-cell md-cell--12">
               <TrackInfo
@@ -359,6 +452,23 @@ export default class BlockList extends Component {
             </div>
           </div>
         </div>
+        <Comment
+          title="Comments"
+          description="4 Comments"
+          items={commentItems}
+          currentUser={{ path: "" }}
+        />
+        <Reviews title="Reviews" />
+        <Rating
+          title="Rating"
+          items={ratingItems}
+          average={4.7}
+          cumulates={0.4}
+        />
+        <Filters title="Rating" items={FiltersItems} />
+        <Download fileSize={700} typeFile={"ZIP"} filePath={""} />
+        <Upload fileSize={700} />
+        <Timer />
       </div>
     )
   }
