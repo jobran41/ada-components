@@ -42,7 +42,8 @@ class SideBar extends Component {
       if (obj.hasOwnProperty(key)) return false
     }
     return true
-  };
+  }
+
   render() {
     const {
       profileName,
@@ -59,7 +60,7 @@ class SideBar extends Component {
       urlImg
     } = this.props
     return (
-      <div className={`SideBar ${className}`}>
+      <div className={`SideBar ${className + ' ' + colorBody}`}>
         <div className={`SideBar-header ${colorHeader ? colorHeader : ''}`}>
           <PanelProfile
             urlImg={urlImg}
@@ -71,8 +72,7 @@ class SideBar extends Component {
             responsive={responsive}
             colorHeader={colorHeader}
           />
-
-          {!this.isEmptyObject(this.props.ProgressBar) &&
+          {!(responsive === "md") && !this.isEmptyObject(this.props.ProgressBar) &&
             typeof this.props.ProgressBar === "object" && (
               !(responsive === "md") && <div className="skillProgress">
                 <LinearProgress
@@ -90,8 +90,7 @@ class SideBar extends Component {
             )}
         </div>
         <div className={`SideBar-body ${colorBody ? colorBody : ''}`}>
-          <ul className="SideBar-block socialLink">{this.renderSocial()}</ul>
-          <hr />
+          {!(responsive === "md") && <div><ul className="SideBar-block socialLink">{this.renderSocial()}</ul> <hr /></div>}
           {!(responsive === "md") && <div className="SideBar-block-budges-grade">
             <div className="SideBar-block budges">
               <div className="budges-header">Badges</div>

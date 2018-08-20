@@ -7,10 +7,31 @@
   }
   .SideBar {
     margin: 10px;
+    &.white {
+      background-color: #fff;
+      .PanelProfile-header-info {
+        display: block;
+        color: black;
+      }
+      .SideBar-footer {
+        button {
+          &.active {
+            border-bottom: 1px solid #eee;
+          }
+        }
+      }
+    }
     .SideBar-header {
       &.white {
         .PanelProfile-header {
           &.white-header {
+            background-color: #fff;
+            .PanelProfile-header-info {
+              display: block;
+              color: black;
+            }
+          }
+          &.blue-header {
             background-color: #fff;
             .PanelProfile-header-info {
               display: block;
