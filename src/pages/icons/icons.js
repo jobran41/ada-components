@@ -16,7 +16,10 @@ class Icons extends Component {
     addToast(name, 'ok')
   }
   renderIcon = () => {
-    const listIcons = ["addBlock", "add", "minimize", "bookmark", "favorite"]
+    const listIcons =
+      [
+        "addBlock", "add", "minimize", "bookmark", "favorite", "close", 'brokenLink', 'browser', 'browser1', 'browser2', 'bug', 'coding', 'computer', 'copy', "cursor", 'cut', 'denied', 'display', 'download', 'fullScreen', 'help', 'history', 'hold', 'house', 'unRecognize', 'image', 'link', 'list', 'list1', 'login', 'logout', 'paste', 'save', 'setting1', 'share1', 'scroll', 'powerOf', 'mail', 'menu', 'previous', 'scroll1', 'shield1', 'textField', 'scroll2', 'print', 'microphone', 'pushPin', 'scroll3', 'upload', 'waiting', 'scroll4', 'puzzle', 'more', 'next', 'next1', 'originalSize', 'padLock', 'refresh', 'register', 'reload', 'restore', 'setting', 'search1', 'search', 'scroll5', 'worldWideWeb', 'wrench', 'zoomIn', 'zoomOut'
+      ]
     const allIcons = listIcons.map((item, i) => {
       return <AdaIcon renderName={() => this.renderName(item)} key={i} icon={item} />
     })
@@ -28,7 +31,7 @@ class Icons extends Component {
   };
   render() {
     return (
-      <div className="icons" style={{ display: 'flex', justifyContent: 'center' }}>
+      <div className="icons" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
         {this.renderIcon()}
       </div >
     )
