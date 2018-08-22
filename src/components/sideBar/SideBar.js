@@ -75,13 +75,13 @@ class SideBar extends Component {
             address={address}
             tel={tel}
             Email={Email}
-            className={className}
+            className={responsive ? "small-header" + className : className }
             responsive={responsive}
             colorHeader={colorHeader}
           />
-          {!(responsive === "md") && !this.isEmptyObject(this.props.ProgressBar) &&
+          {!responsive && !this.isEmptyObject(this.props.ProgressBar) &&
             typeof this.props.ProgressBar === "object" && (
-              !(responsive === "md") && <div className="skillProgress">
+              !responsive && <div className="skillProgress">
                 <LinearProgress
                   value={level || 0}
                   id="SideBar-LinearProgress"
@@ -97,8 +97,8 @@ class SideBar extends Component {
             )}
         </div>
         <div className={`SideBar-body ${colorBody ? colorBody : ''}`}>
-          {!(responsive === "md") && <div><ul className="SideBar-block socialLink">{this.renderSocial()}</ul> <hr /></div>}
-          {!(responsive === "md") && <div className="SideBar-block-budges-grade">
+          {!responsive && <div><ul className="SideBar-block socialLink">{this.renderSocial()}</ul> <hr /></div>}
+          {!responsive && <div className="SideBar-block-budges-grade">
             <div className="SideBar-block budges">
               <div className="budges-header">Badges</div>
               <div className="budges-container">{this.renderBadges()}</div>
@@ -111,9 +111,9 @@ class SideBar extends Component {
             <hr />
           </div>
           }
-          <div className="SideBar-footer">
+          <div className={responsive ? "" : "SideBar-footer" }>
             {renderButton && renderButton()}
-            {!(responsive === "md") && <div className="addMore" onClick={this.addMore}>
+            {!responsive && <div className="addMore" onClick={this.addMore}>
               <Button flat onClick={this.addMore} iconBefore={false} iconClassName="mdi mdi-plus">
                 Add more
               </Button>
