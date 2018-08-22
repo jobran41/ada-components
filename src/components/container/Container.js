@@ -18,7 +18,7 @@ import BlockList from "pages/blocks-list"
 import Colors from "pages/colors"
 import Media from "pages/media"
 import Elements from "pages/elements"
-import Avatars from "pages/avatars"
+import AvatarsPage from "pages/avatars-page"
 import Topography from "pages/topography"
 
 import "./Container.scss"
@@ -123,7 +123,7 @@ export default class Container extends Component {
             <Route
               exact
               path={`${routes.Avatars}`}
-              component={Avatars}
+              component={AvatarsPage}
             />
             <Route
               exact

@@ -1,27 +1,35 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { TextField, Button, Paper, Snackbar } from "react-md"
-import { withRouter } from "react-router-dom"
-import * as cookies from "tiny-cookie"
-
-import * as routes from "libs/constants/routes"
 
 import "../Style.scss"
 
-@withRouter
 class SignIn extends Component {
   constructor(props) {
     super(props)
     this.state = { email: "", password: "", toasts: [], autohide: true }
   }
-  signIn = () => {
+
+  validateEmail = (value) => {
+    if (value.trim() !== '') {
+      let filter = (/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
+      if (!filter.test(value)) {
+        return true
+      } else {
+        return false
+      }
+    }
+  }
+
+  onSubmit = () => {
     const { email, password } = this.state
-    const { history } = this.props
-    if (email === "admin" && password === "admin") {
-      cookies.set("login", email)
-      history.push(`${routes.Container}${routes.Dashboard}`)
+    const { onSubmit } = this.props
+    if (email === '' || password === '') {
+      this.addToast('sorry you entered an empty email address or password')
+    } else if (this.validateEmail(email)) {
+      this.addToast('Please enter a valid email')
     } else {
-      this.addToast("Login error")
+      onSubmit({ email, password })
     }
   };
   addToast = (text, action, autohide = true) => {
@@ -35,10 +43,20 @@ class SignIn extends Component {
     const [, ...toasts] = this.state.toasts
     this.setState({ toasts })
   };
-
+  redirectToForgetPassword = () => {
+    const { redirectToForgetPassword } = this.props
+    if (typeof redirectToForgetPassword === 'function') {
+      redirectToForgetPassword()
+    }
+  }
+  redirectToSignUp = () => {
+    const { redirectToSignUp } = this.props
+    if (typeof redirectToSignUp === 'function') {
+      redirectToSignUp()
+    }
+  }
   render() {
     const { email, password, toasts, autohide } = this.state
-    const { history } = this.props
     return (
       < Paper
         zDepth={1}
@@ -54,7 +72,7 @@ class SignIn extends Component {
           value={email}
         />
         <TextField
-          placeholder="Passwoprd"
+          placeholder="password"
           type="password"
           id="password-signIn"
           block
@@ -62,9 +80,9 @@ class SignIn extends Component {
           value={password}
         />
         <div className="info">
-          <Button flat className="form-button" onClick={this.signIn}>Login</Button>
-          <p>forgot you <b><span className="FormLink" onClick={() => history.push(routes.FORGET)}>password ?</span></b></p>
-          <p>dont have an Account ? <b onClick={() => history.push(routes.SIGN_UP)}>SignUp</b></p>
+          <Button flat className="form-button" onClick={this.onSubmit}>Login</Button>
+          <p>forgot you <b><span className="FormLink" onClick={this.redirectToForgetPassword}>password ?</span></b></p>
+          <p>dont have an Account ? <b onClick={this.redirectToSignUp}>SignUp</b></p>
         </div>
         <Snackbar
           id="example-snackbar"
@@ -78,7 +96,9 @@ class SignIn extends Component {
 }
 
 SignIn.propTypes = {
-  history: PropTypes.func,
+  onSubmit: PropTypes.func,
+  redirectToForgetPassword: PropTypes.func,
+  redirectToSignUp: PropTypes.func
 }
 
 export default SignIn

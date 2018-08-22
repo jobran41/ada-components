@@ -102,9 +102,9 @@ export function Form({
           }}
         />
         <div className="notificationWrapper">
-        {notification.map((item, j) => {
-          return <Checkbox key={j} id={cls("checkbox-" + j)} className="notificationItem" label={item} value={item} checkedIcon={<FontIcon>fiber_manual_record</FontIcon>} uncheckedIcon={<FontIcon>fiber_manual_record</FontIcon>} />
-        })}
+          {notification.map((item, j) => {
+            return <Checkbox key={j} name={cls("checkbox-" + j)} id={cls("checkbox-" + j)} className="notificationItem" label={item} value={item} checkedIcon={<FontIcon>fiber_manual_record</FontIcon>} uncheckedIcon={<FontIcon>fiber_manual_record</FontIcon>} />
+          })}
         </div>
         <div className="buttonWrapper">
           <button className="submitButton" type="submit">
@@ -112,7 +112,7 @@ export function Form({
           </button>
         </div>
       </form>
-      
+
     </Paper >
   )
 }
