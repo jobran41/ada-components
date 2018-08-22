@@ -5,11 +5,11 @@ import { cls } from "reactutils"
 import MyCalendar from "rc-calendar"
 
 import "rc-calendar/assets/index.css"
-import './calendar.scss'
+import "./calendar.scss"
 
 export default class Calendar extends Component {
   render() {
-    const { className, title, year, dateCellRender } = this.props
+    const { className, dateCellRender } = this.props
     return (
       <Paper zDepth={1} className={cls("calendar", className)}>
         <div className="calendar-content">
@@ -26,7 +26,5 @@ export default class Calendar extends Component {
 
 Calendar.propTypes = {
   className: PropTypes.string,
-  title: PropTypes.string.isRequired,
-  year: PropTypes.string,
   dateCellRender: PropTypes.func
 }

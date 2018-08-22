@@ -8,7 +8,7 @@ import AdaAvatar from 'components/ada-avatar'
 @connect(null, {
   addToast
 })
-class Avatar extends Component {
+class AvatarPage extends Component {
 
 
   renderName = (name) => {
@@ -44,7 +44,7 @@ class Avatar extends Component {
   }
 }
 
-Avatar.propTypes = {
+AvatarPage.propTypes = {
   addToast: PropTypes.func,
 }
-export default Avatar
+export default AvatarPage
