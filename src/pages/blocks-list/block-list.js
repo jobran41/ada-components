@@ -17,7 +17,8 @@ import {
   Reviews,
   Download,
   Upload,
-  Filters
+  Filters,
+  PersonalInfo
 } from "components/text-block"
 
 import "./style.scss"
@@ -372,6 +373,12 @@ export default class BlockList extends Component {
         value: 50
       }
     ]
+    const userObject = {
+      name: "Student Name",
+      points: 741,
+      maxPoints: 1000,
+      path: ""
+    }
     return (
       <div className="blocklist">
         <ContentHeader
@@ -469,6 +476,7 @@ export default class BlockList extends Component {
         <Download fileSize={700} typeFile={"ZIP"} filePath={""} />
         <Upload fileSize={700} />
         <Timer />
+        <PersonalInfo userObject={userObject} menuItems={menuButtonExpertise} />
       </div>
     )
   }

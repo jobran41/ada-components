@@ -1,0 +1,27 @@
+@import '../../Themes/first';
+
+.mediaPage {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  .mediaheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 35px;
+  }
+  .mediaConatiner {
+    width: 100%;
+    &.md-grid {
+      margin: 0 -16px;
+    }
+    .media {
+      margin-top: 16px;
+    }
+  }
+}
+
+.costumColor {
+  background: $green;
+  color: white;
+}

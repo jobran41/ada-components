@@ -11,21 +11,35 @@ export default class PanelProfile extends Component {
       handleDetails()
     }
   }
+  handleclassName = () => {
+    const {
+      className,
+      responsive
+    } = this.props
+    if (responsive){
+      return(
+        'small-header ' + className
+      )
+    }else{
+      return className
+    }
+  }
   render() {
     const {
       profileName,
       address,
       tel,
       Email,
-      className,
       responsive,
       colorHeader,
       urlImg,
       details,
       description
     } = this.props
+
+
     return (
-      <div className={`${colorHeader ? colorHeader + '-header PanelProfile-header ' + className : 'PanelProfile-header ' + className}`}>
+      <div className={`${colorHeader ? colorHeader + '-header PanelProfile-header ' + this.handleclassName() : 'PanelProfile-header ' + this.handleclassName()}`}>
         <div className={`PanelProfile-header-info`}>
           <div className="PanelProfile-header-avatar">
             <Avatar
@@ -35,7 +49,7 @@ export default class PanelProfile extends Component {
           </div>
           <div className="PanelProfile-header-description">
             <h5>{profileName}</h5>
-            {!(responsive === "md") &&
+            {!responsive &&
               <Fragment>
                 <span>{address}</span>
                 <p className="tel">{tel}</p>
@@ -56,7 +70,7 @@ PanelProfile.propTypes = {
   address: PropTypes.string,
   tel: PropTypes.string,
   Email: PropTypes.string,
-  responsive: PropTypes.string,
+  responsive: PropTypes.bool,
   colorHeader: PropTypes.string,
   urlImg: PropTypes.string,
   handleDetails: PropTypes.func,
