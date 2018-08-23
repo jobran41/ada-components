@@ -18,7 +18,9 @@ import {
   Download,
   Upload,
   Filters,
-  PersonalInfo
+  PersonalInfo,
+  Gift,
+  ChatList
 } from "components/text-block"
 
 import "./style.scss"
@@ -379,6 +381,43 @@ export default class BlockList extends Component {
       maxPoints: 1000,
       path: ""
     }
+    const itemsChatList = [
+      {
+        name: "Student Name",
+        path: "",
+        status: "onLine"
+      },
+      {
+        name: "Student Name",
+        path: "",
+        status: "offLine"
+      },
+      {
+        name: "Student Name",
+        path: "",
+        status: "onLine"
+      },
+      {
+        name: "Student Name",
+        path: "",
+        status: "offLine"
+      },
+      {
+        name: "Student Name",
+        path: "",
+        status: "onLine"
+      },
+      {
+        name: "Student Name",
+        path: "",
+        status: "offLine"
+      },
+      {
+        name: "Student Name",
+        path: "",
+        status: "onLine"
+      },
+    ]
     return (
       <div className="blocklist">
         <ContentHeader
@@ -459,6 +498,7 @@ export default class BlockList extends Component {
             </div>
           </div>
         </div>
+        ---------------------------------------------------------------------------------------------------------
         <Comment
           title="Comments"
           description="4 Comments"
@@ -477,6 +517,9 @@ export default class BlockList extends Component {
         <Upload fileSize={700} />
         <Timer />
         <PersonalInfo userObject={userObject} menuItems={menuButtonExpertise} />
+        <Gift title='Awesome!' message="You've reached the first level." icon="gift" linkObject={{ title: "See Gifts", position: 'center' }} />
+        ---------------------------------------------------------------------------------------------------------
+      <ChatList title="Chat List" description="Chat with other students" items={itemsChatList} />
       </div>
     )
   }
