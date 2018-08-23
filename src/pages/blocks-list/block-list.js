@@ -459,7 +459,7 @@ export default class BlockList extends Component {
             </div>
           </div>
         </div>
-        <Comment
+        {/*<Comment
           title="Comments"
           description="4 Comments"
           items={commentItems}
@@ -477,6 +477,7 @@ export default class BlockList extends Component {
         <Upload fileSize={700} />
         <Timer />
         <PersonalInfo userObject={userObject} menuItems={menuButtonExpertise} />
+        */}
       </div>
     )
   }

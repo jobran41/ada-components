@@ -3,7 +3,10 @@ import PropTypes from "prop-types"
 import { connect } from "react-redux"
 
 import { addToast } from "modules/app/actions"
+import ContentHeader from "components/content-header"
 import AdaAvatar from 'components/ada-avatar'
+
+import './style.scss'
 
 @connect(null, {
   addToast
@@ -37,8 +40,16 @@ class AvatarPage extends Component {
   };
   render() {
     return (
-      <div className="ada-avatar" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
-        {this.renderIcon()}
+      <div className="ada-avatar">
+        <ContentHeader
+          title="ADA INTERFACES / BRAND BOOK"
+          date="2018"
+          subclass="gray-text"
+        />
+        <div className="avatarTitle">
+          <h3><strong>Users Avatar</strong></h3>
+        </div>
+        <div className="avatarContainer">{this.renderIcon()}</div>
       </div >
     )
   }
