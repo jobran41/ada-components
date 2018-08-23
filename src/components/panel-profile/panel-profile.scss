@@ -33,4 +33,13 @@
       flex-direction: column;
     }
   }
+  &.bleuGardian-header {
+    background: linear-gradient(90deg, $blue 0, $lightBlue 100%);
+  }
+  &.light-header {
+    background: #fff;
+    .PanelProfile-header-info {
+      color: $grey;
+    }
+  }
 }

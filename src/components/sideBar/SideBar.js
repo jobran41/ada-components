@@ -143,7 +143,7 @@ SideBar.propTypes = {
   social: PropTypes.array,
   badges: PropTypes.array,
   renderButton: PropTypes.func,
-  responsive: PropTypes.string,
+  responsive: PropTypes.bool,
   colorHeader: PropTypes.string,
   colorBody: PropTypes.string,
   urlImg: PropTypes.string,
