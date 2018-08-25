@@ -4,6 +4,9 @@ import { connect } from "react-redux"
 
 import { addToast } from "modules/app/actions"
 import AdaIcon from 'components/adaIcon'
+import ContentHeader from "components/content-header"
+
+import './style.scss'
 
 @connect(null, {
   addToast
@@ -31,8 +34,17 @@ class Icons extends Component {
   };
   render() {
     return (
-      <div className="icons" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
-        {this.renderIcon()}
+      <div className="iconsPage">
+        <ContentHeader
+          title="ADA INTERFACES / BRAND BOOK"
+          date="2018"
+          subclass="gray-text"
+        />
+        <div className="iconsHeader">
+          <h3><strong>ICONS SET</strong></h3>
+          <h3>Basic icons used across the dashboard</h3>
+        </div>
+        <div className="iconsContainer">{this.renderIcon()}</div>
       </div >
     )
   }

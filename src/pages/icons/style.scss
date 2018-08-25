@@ -1,0 +1,19 @@
+@import '../../Themes/first';
+
+.iconsPage {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  color: $grey;
+  .iconsHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+  .iconsContainer {
+    max-width: 600px;
+    margin: 30px auto;
+    flex-wrap: wrap;
+    display: flex;
+  }
+}
