@@ -499,7 +499,8 @@ export default class BlockList extends Component {
           </div>
         </div>
         ---------------------------------------------------------------------------------------------------------
-        <Comment
+
+        {/*<Comment
           title="Comments"
           description="4 Comments"
           items={commentItems}
@@ -520,6 +521,7 @@ export default class BlockList extends Component {
         <Gift title='Awesome!' message="You've reached the first level." icon="gift" linkObject={{ title: "See Gifts", position: 'center' }} />
         ---------------------------------------------------------------------------------------------------------
       <ChatList title="Chat List" description="Chat with other students" items={itemsChatList} />
+        */}
       </div>
     )
   }

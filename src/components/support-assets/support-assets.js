@@ -1,48 +1,64 @@
 import React, { Component } from 'react'
 import PropTypes from "prop-types"
-import { Button } from "react-md"
+
+
+import './support-assets.scss'
 
 export default class SupportAssets extends Component {
-  plus = () => {
-    const { plus } = this.props
-    if (typeof plus === 'function') {
-      plus()
+  handleclassName = () => {
+    const {
+      className,
+      responsive
+    } = this.props
+    if (responsive && className){
+      return(
+        "support-asset smallWapper " + className
+      )
+    }else if(responsive && !className){
+      return "support-asset smallWapper"
+    }
+    else if(!responsive && className){
+      return "support-asset " + className
+    }
+    else {
+      return "support-asset"
     }
   }
   render() {
-    const { type, url, title, description, autoplay, responsive, playListKey } = this.props
+    const { type, url, title, description, autoplay, playListKey, poster, actionButton } = this.props
     const autoplayVideo = autoplay ? "?autoplay=1" : null
     const playlist = playListKey ? `?playlist=${playListKey}&loop=1` : null
     return (
-      <div className="support-asset">
-        {type === "video" && url.includes(".mp4") && < div >
+      <div className={this.handleclassName()}>
+        {type === "video" && url.includes(".mp4") &&
           <video controls
             src={url}
-            poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
-            width="620">
-            you can <a href="https://archive.org/details/BigBuckBunny_124">download it</a>
-
+            poster={poster}
+          >
           </video>
-        </div>}
-        {type === "video" && url.includes("youtube.com") && !playlist && < div >
-          <iframe title="myFrame" width="420" height="315"
+        }
+        {type === "video" && url.includes("youtube.com") && !playlist &&
+          <iframe title="myFrame"
             src={url + autoplayVideo}>
           </iframe>
-        </div>}
-        {type === "video" && url.includes("youtube.com") && playlist && < div >
-          <iframe title="myFrame" width="420" height="315"
+        }
+        {type === "video" && url.includes("youtube.com") && playlist &&
+          <iframe title="myFrame" 
             src={url + playlist}>
           </iframe>
-        </div>}
+        }
         {type === "img" &&
-          <div>
-            <img src={url} alt="title" />
-            <div className="info">
-              <div>{title}</div>
-              <div>{description}</div>
+          <React.Fragment>
+            <div className="imageWapper">
+              <img src={url} alt="title" />
             </div>
-            {!responsive && <Button flat onClick={this.plus} iconBefore={false} iconClassName="mdi mdi-plus" />}
-          </div>}
+            <div className="info">
+              <div className="name">{title}</div>
+              <div>{description}</div>
+              <div className="plusButton">{actionButton && actionButton()}</div>
+            </div>
+            
+          </React.Fragment>}
       </div>
     )
   }
@@ -54,7 +70,10 @@ SupportAssets.propTypes = {
   description: PropTypes.string,
   autoplay: PropTypes.bool,
   plus: PropTypes.fun,
-  responsive: PropTypes.string,
+  className:PropTypes.string,
+  actionButton:PropTypes.node,
+  poster: PropTypes.string,
+  responsive: PropTypes.bool,
   playListKey: PropTypes.string
 }
 /** playListKey=tgbNymZ7vqY */

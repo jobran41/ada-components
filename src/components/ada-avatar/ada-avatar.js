@@ -17,7 +17,7 @@ class AdaAvatar extends Component {
     return (
       <div
         onClick={this.renderName}
-        className="">
+        className="avatarItem">
         <img
           width={inlineWidth}
           height={inlineHeight}

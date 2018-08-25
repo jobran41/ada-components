@@ -3,40 +3,7 @@
 .SideBar {
   &.white {
     background-color: #fff;
-    .PanelProfile-header-info {
-      display: block;
-      color: black;
-    }
-    .SideBar-footer {
-      button {
-        &.active {
-          border-bottom: 1px solid #eee;
-        }
-      }
-    }
-  }
-  &.ada-xs {
-    width: 10%;
-    .SideBar-footer {
-      padding: 0;
-    }
-  }
-  &.ada-md {
-    width: 15%;
-    .SideBar-header {
-      .SideBar-header-info {
-        display: block;
-        .SideBar-header-avatar {
-          text-align: center;
-        }
-      }
-    }
-    .SideBar-footer {
-      padding: 0;
-    }
-  }
-  &.ada-lg {
-    width: 30%;
+    color: $darkGrey;
   }
   hr {
     border-left: 0;
@@ -48,22 +15,22 @@
   background: $darker;
   min-height: 100%;
   .SideBar-header {
-    padding: 20px;
     background: $blue;
+    display: table;
+    width: 100%;
     &.white {
       .PanelProfile-header {
         &.white-header {
           background-color: #fff;
+          border-bottom: 1px solid #ddd;
           .PanelProfile-header-info {
-            display: block;
-            color: black;
+            color: $darkGrey;
           }
         }
         &.blue-header {
           background-color: #fff;
           .PanelProfile-header-info {
-            display: block;
-            color: black;
+            color: white;
           }
         }
       }
@@ -103,7 +70,7 @@
     }
     .skillProgress {
       max-width: 250px;
-      margin: auto;
+      margin: 0 auto 20px;
       .md-progress {
         background: #82b9f5;
         .md-progress--linear-active {

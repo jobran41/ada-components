@@ -1,0 +1,62 @@
+@import "../../Themes/first";
+
+.support-asset {
+  background: #ffffff;
+  color: $grey;
+  max-width: 100%;
+  overflow: hidden;
+  > video {
+    object-fit: cover;
+    max-width: 100%;
+  }
+  .imageWapper {
+    width: 100%;
+    > img {
+      object-fit: cover;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .info {
+    position: relative;
+    padding: 20px 16px;
+    .plusButton {
+      position: absolute;
+      top: -24px;
+      right: 14px;
+      .md-btn {
+        background: $yellow;
+        color: #ffffff;
+        padding: 6px;
+      }
+    }
+    .name {
+      font-size: 18px;
+    }
+  }
+  &.smallWapper {
+    display: flex;
+    padding: 20px;
+    .imageWapper {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      overflow: hidden;
+      > img {
+        height: 100%;
+      }
+    }
+    .info {
+      .plusButton {
+        top: -11px;
+        right: -11px;
+        .md-btn {
+          width: 30px;
+          height: 30px;
+          padding: 1px;
+        }
+      }
+    }
+  }
+}

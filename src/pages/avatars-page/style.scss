@@ -1,0 +1,22 @@
+@import "../../Themes/first";
+.ada-avatar {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  color: $grey;
+  .avatarTitle {
+    margin-top: 40px;
+  }
+
+  .avatarContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    .avatarItem {
+      flex: 0 1 110px;
+      margin: 10px;
+      text-align: center;
+    }
+  }
+}

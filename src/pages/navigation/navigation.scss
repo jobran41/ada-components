@@ -1,11 +1,45 @@
+@import "../../Themes/first";
+
 .navigation {
   display: flex;
-  justify-content: center;
-  padding: 20px;
-  .menuIcon {
-    margin: 10px;
+  flex-direction: column;
+  padding: 40px;
+  .navigationContainer {
+    width: 100%;
+    padding: 40px 0;
   }
-  .SideBar {
-    margin: 10px;
+}
+
+.simpleMenu {
+  display: flex;
+  flex-direction: column;
+  .md-btn {
+    &.md-text {
+      color: #a7a7a7;
+    }
+    &.active {
+      background: rgba(0, 0, 0, 0.1);
+      &.md-text {
+        color: #707070;
+      }
+    }
+  }
+}
+
+.underlineMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .md-btn {
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+    &.md-text {
+      color: #a7a7a7;
+    }
+    &.active {
+      border-bottom: 1px solid $blue;
+      &.md-text {
+        color: $blue;
+      }
+    }
   }
 }

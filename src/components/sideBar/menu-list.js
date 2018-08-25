@@ -2,19 +2,20 @@ import React, { Component } from 'react'
 import PropTypes from "prop-types"
 import { Button, Avatar } from "react-md"
 
-import "./SideBar.scss"
+import "./menu-list.scss"
 
 export default class MenuList extends Component {
   renderPeople = () => {
     const { listPeople } = this.props
     if (Array.isArray(listPeople)) {
       let listPeopleLocal = listPeople.map((item, i) => {
-        return <li key={i}>
+        return <div className="listItem" key={i}>
           <Avatar
             src={item.urlImg}
           />
-          {item.name}
-        </li>
+          <div className="name">{item.name}</div>
+          <Button icon primary className="listItem-button">visibility</Button>
+        </div>
       })
       return listPeopleLocal
     } else {
@@ -37,12 +38,12 @@ export default class MenuList extends Component {
     const { listRoom } = this.props
     if (Array.isArray(listRoom)) {
       let listRoomLocal = listRoom.map((item, i) => {
-        return <li key={i}>
+        return <div className="listItem" key={i}>
           <Avatar
             src={item.urlImg}
           />
-          {item.name}
-        </li>
+          <div className="name">{item.name}</div>
+        </div>
       })
       return listRoomLocal
     } else {
@@ -51,16 +52,30 @@ export default class MenuList extends Component {
   };
 
   render() {
-    const { colorBody, renderButton, icon } = this.props
+    const { colorBody, renderButton, icon } = this.props 
     return (
-      <div className={`SideBar-body ${colorBody || null}`}>
-        <Button onClick={this.plus} flat iconBefore={false} iconClassName={` mdi ${icon || null}`} />
-        <h4>Rooms</h4>
-        <ul className="SideBar-block socialLink">{this.renderPeople()}</ul>
-        <hr />
-        <h4>People</h4>
-        <ul className="SideBar-block socialLink">{this.renderPeople()}</ul>
-        <div className="SideBar-footer">
+      <div className={`SideMenuList ${colorBody || ''}`}>
+        {icon ? 
+          <Button onClick={this.plus} primary className="headerButton" icon iconClassName={` mdi ${icon}`} />
+          : ""
+        }
+        <div className="menuListBlock">
+          <div className="menuListBlock-header">
+            <h4>Rooms</h4>
+            <Button icon>add_circle_outline</Button>
+          </div>
+          {this.renderRooms()}
+        </div>
+
+        <div className="menuListBlock">
+          <div className="menuListBlock-header">
+            <h4>People</h4>
+            <Button icon>add_circle_outline</Button>
+          </div>
+          {this.renderPeople()}
+        </div>
+
+        <div className="menuListFooter">
           {renderButton ? renderButton() : null}
           <div className="addMore">
             <Button flat iconBefore={false} onClick={this.addMore} iconClassName="mdi mdi-plus">
