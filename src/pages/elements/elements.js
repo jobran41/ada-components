@@ -56,7 +56,14 @@ export default class Elements extends Component {
           </div>
           <div className="elementsCell md-cell md-cell--5">
             <Badges title="Badges" badgesOfAvatars={["Man01", "Man02", "Man03"]} />
-            <AdaAlerts color="white" iconLeft='mdi-plus' iconRight='mdi-close' text="Success" />
+            <AdaAlerts theme="green" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
+            <br/>
+            <AdaAlerts iconLeft='mdi-information-outline' iconRight='mdi-close' text="Information" />
+            <br/>
+            <AdaAlerts theme="orange" iconLeft='mdi-alert-circle-outline' iconRight='mdi-close' text="Worning" />
+            <br/>
+            <AdaAlerts theme="red" iconLeft='mdi-alert-outline' iconRight='mdi-close' text="Alert message" />
+            <br/>
             <SocialPanel renderButton={() => {
               return (
                 <Fragment>

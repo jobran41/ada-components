@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
 import PropTypes from "prop-types"
-import { FontIcon, Paper, Button } from "react-md"
+import { FontIcon, Button } from "react-md"
 
 import './ada-alerts.scss'
 
 class AdaAlerts extends Component {
   render() {
-    const { iconLeft, iconRight, text, className, color } = this.props
+    const { iconLeft, iconRight, text, className, theme } = this.props
     return (
-      < Paper
-        zDepth={1} className={`adaAlerts ${className ? className : ''} ${color ? color : ''}`}>
+      <div className={`adaAlerts ${className ? className : ''} ${theme ? theme : ''}`}>
         <div className="adaAlerts-left">
-          <div className="adaAlerts-left-text"><FontIcon iconClassName={`mdi ${iconLeft ? iconLeft : ''}`} />{text}</div>
+          <div className="iconRight"><FontIcon iconClassName={`mdi ${iconLeft ? iconLeft : ''}`} /></div>
+          <div className="adaAlerts-left-text">{text}</div>
         </div>
-        <Button className="button-adaAlerts" icon iconClassName={`mdi ${iconRight ? iconRight + ' button-adaAlerts' : ' button-adaAlerts'}`} />
-      </Paper>
+        <Button className="button-adaAlerts" icon iconClassName={`mdi ${iconRight ? iconRight : ''}`} />
+      </div>
     )
   }
 }
@@ -23,6 +23,6 @@ AdaAlerts.propTypes = {
   iconRight: PropTypes.string,
   text: PropTypes.string,
   className: PropTypes.string,
-  color: PropTypes.string
+  theme: PropTypes.string
 }
 export default AdaAlerts
