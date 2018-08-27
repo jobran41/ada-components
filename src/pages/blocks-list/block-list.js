@@ -19,13 +19,13 @@ import {
   Upload,
   Filters,
   PersonalInfo,
-  Gift,
-  ChatList,
+  Gift
+  /*ChatList,
   ChatBox,
   Interests,
   Discover,
   ContainerTab,
-  Tab
+  Tab*/
 } from "components/text-block"
 
 import "./style.scss"
@@ -510,6 +510,20 @@ export default class BlockList extends Component {
               className="blocklist-item"
             />
             <PersonalInfo userObject={userObject} menuButton={menuButtonExpertise} className="blocklist-item" />
+            <Gift
+              title="New Arrivals !"
+              message="See how they are"
+              icon="mdi-bike"
+              theme="blue"
+              className="blocklist-item"
+              linkObject={{ title: "Say Hello", position: "center" }}
+            />
+            <Gift
+              title="Product 2"
+              message="species matrimonii, dotis"
+              avatar={{ path: "https://imgplaceholder.com/100x100/1876d1/ffffff/fa-image" }}
+              linkObject={{ title: "Details", position: "right" }}
+            />
           </div>
 
           <div className="blocklist-cell md-cell md-cell--3">
@@ -527,10 +541,30 @@ export default class BlockList extends Component {
               className="blocklist-item"
               onAddEvent={() => {}}
             />
-
             <Reviews title="Reviews" className="blocklist-item" negativePorcentage={15}  positivePorcentage={75}/>
-
             <Filters className="blocklist-item" title="Filters" items={FiltersItems} menuButton={menuButtonExpertise} />
+            <Gift
+              title="Awesome!"
+              message="You've reached the first level."
+              icon="mdi-gift"
+              theme="light"
+              className="blocklist-item" 
+              linkObject={{ title: "See Gifts", position: "center" }}
+            />
+            <Gift
+              title="Product 1"
+              message="species matrimonii, dotis"
+              className="blocklist-item"
+              avatar={{ path: "http://placehold.jp/1876d1/ffffff/150x150.png" }}
+              linkObject={{ title: "Details", position: "right" }}
+            />
+            <Gift
+              title="1 New update"
+              icon="mdi-puzzle"
+              theme="blue"
+              className="blocklist-item"
+              linkObject={{ title: "Continue", position: "center" }}
+            />
           </div>
 
           <div className="blocklist-cell md-cell md-cell--6">
@@ -577,21 +611,36 @@ export default class BlockList extends Component {
             <div className="blocklist-grid md-grid">
               <div className="blocklist-cell md-cell md-cell--6">
                 <Download fileSize={700} typeFile={"ZIP"} filePath={""} className="blocklist-item" />
+                <Gift
+                  title="Any Idea ?"
+                  message="Note all your great ideas"
+                  icon="mdi-lightbulb-on-outline"
+                  theme="dark"
+                  className="blocklist-item" 
+                  linkObject={{ title: "Make a note", position: "center" }}
+                />
+                <Gift
+                  title="Product 3"
+                  message="species matrimonii, dotis"
+                  avatar={{ path: "https://imgplaceholder.com/100x100/1de9b6/ffffff/fa-image" }}
+                  linkObject={{ title: "Details", position: "right" }}
+                />
               </div>
               <div className="blocklist-cell md-cell md-cell--6">
                 <Upload fileSize={700} className="blocklist-item" />
+                <Gift title="Great work !" className="blocklist-item"  message="Project finished" theme="light" icon="mdi-trophy-outline" />
+                <Gift
+                  title="Save your data"
+                  message="Don't forget to save your data"
+                  icon="mdi-content-save"
+                  theme="green"
+                  linkObject={{ title: "Save now", position: "center" }}
+                />
               </div>
             </div>
           </div>
         </div>
         {/*
-        <Gift
-          title="Awesome!"
-          message="You've reached the first level."
-          icon="gift"
-          linkObject={{ title: "See Gifts", position: "center" }}
-        />
-        
         <ChatList
           title="Chat List"
           description="Chat with other students"
@@ -599,54 +648,13 @@ export default class BlockList extends Component {
         />
         <ChatBox title="Chat box 1" items={itemsChatBox} />
         <Interests items={interestsItems} title="Choose your interest" />
-        <Gift
-          title="Product 1"
-          message="species matrimonii, dotis"
-          icon="gift"
-          linkObject={{ title: "Details", position: "right" }}
-        />
-        <Gift
-          title="Product 2"
-          message="species matrimonii, dotis"
-          icon="gift"
-          linkObject={{ title: "Details", position: "right" }}
-        />
-        <Gift
-          title="Product 3"
-          message="species matrimonii, dotis"
-          icon="gift"
-          linkObject={{ title: "Details", position: "right" }}
-        />
         <Discover
           title="Discover"
           description="Find someone to follow"
           items={itemsUserList}
           menuButton={menuButtonExpertise}
         />
-        <Gift
-          title="New Arrivals !"
-          message="See how they are"
-          icon="gift"
-          linkObject={{ title: "Say Hello", position: "center" }}
-        />
-        <Gift title="Great work !" message="Project finished" icon="gift" />
-        <Gift
-          title="Any Idea ?"
-          message="Note all your great ideas"
-          icon="gift"
-          linkObject={{ title: "Make a note", position: "center" }}
-        />
-        <Gift
-          title="Save your data"
-          message="Don't forget to save your data"
-          icon="gift"
-          linkObject={{ title: "Save now", position: "center" }}
-        />
-        <Gift
-          title="1 New update"
-          icon="gift"
-          linkObject={{ title: "Continue", position: "center" }}
-        />
+        
         <ContainerTab>
           <Tab label="Tab 1">{lorem}</Tab>
           <Tab label="Tab 2">{lorem}</Tab>
