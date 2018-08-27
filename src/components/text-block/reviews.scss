@@ -1,0 +1,138 @@
+.reviews {
+  background: #fff;
+  padding: 16px;
+  .reviews-header {
+    border-bottom: 1px solid #e8e8e8;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    color: #adadad;
+    .reviews-title {
+      font-size: 20px;
+    }
+  }
+  .reviews-content {
+    display: flex;
+    justify-content: space-between;
+    color: #adadad;
+    .porcentageContainer {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #e8e8e8;
+      position: relative;
+      overflow: hidden;
+      margin: 10px auto;
+      &:after {
+        width: 150px;
+        height: 150px;
+        top: 0;
+        left: -25px;
+        content: '';
+        background: black;
+        position: absolute;
+        z-index: 0;
+      }
+      .fill {
+        position: absolute;
+        background: #fff;
+        left: 5px;
+        right: 5px;
+        top: 5px;
+        bottom: 5px;
+        border-radius: 50%;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .md-icon {
+          font-size: 75px;
+        }
+      }
+      &.size1 {
+        &:after {
+          top: 90px;
+        }
+      }
+      &.size2 {
+        &:after {
+          top: 72px;
+        }
+      }
+      &.size3 {
+        &:after {
+          top: 50px;
+        }
+      }
+      &.size4 {
+        &:after {
+          top: 28px;
+        }
+      }
+      &.size5 {
+        &:after {
+          top: 9px;
+        }
+      }
+      &.size6 {
+        &:after {
+          top: 0px;
+        }
+      }
+    }
+    .positivePorcentage {
+      text-align: center;
+      h3 {
+        color: #1de9b6;
+        font-weight: bold;
+      }
+      .porcentageContainer {
+        &:after {
+          background: #1de9b6;
+        }
+        .fill {
+          .md-icon {
+            color: #1de9b6;
+          }
+        }
+      }
+    }
+    .negativePorcentage {
+      text-align: center;
+      h3 {
+        color: #f44236;
+        font-weight: bold;
+      }
+      .porcentageContainer {
+        &:after {
+          background: #f44236;
+        }
+        .fill {
+          .md-icon {
+            color: #f44236;
+          }
+        }
+      }
+    }
+  }
+  .reviews-footer {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .buttonSee {
+      color: #ffffff;
+      background: #1876d1;
+      height: auto;
+      padding: 5px 10px;
+      border-radius: 0;
+    }
+    .buttonAdd {
+      background: #ffffff;
+      border: 1px solid #1876d1;
+      color: #1876d1;
+      height: auto;
+      padding: 5px 10px;
+      border-radius: 0;
+    }
+  }
+}

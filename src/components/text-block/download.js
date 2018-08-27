@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import { Paper, Badge, Button } from "react-md"
 import { cls } from "reactutils"
 
+import './download.scss'
+
 export default class Download extends Component {
   initClass = "download";
   downloadFile = () => {
@@ -19,16 +21,17 @@ export default class Download extends Component {
     const { className, fileSize, typeFile } = this.props
     return (
       <Paper zDepth={1} className={cls(this.initClass, className)}>
-        <div className={cls(this.initClass + "-icon")}>
+        <div className={cls(this.initClass + "-area")}>
           <Badge badgeContent={fileSize} primary badgeId="notifications-1">
-            <Button icon>notifications</Button>
+            <Button icon iconClassName="mdi mdi-download" className="downloadIcon" />
           </Badge>
+          <div className={cls(this.initClass + "-type")}>{typeFile} File</div>
+          <div className={cls(this.initClass + "-action")}>
+            Download this file
+          </div>
         </div>
-        <div className={cls(this.initClass + "-type")}>{typeFile} File</div>
-        <div className={cls(this.initClass + "-action")}>
-          Download this file
-        </div>
-        <Button flat onClick={() => this.downloadFile()}>
+        
+        <Button flat className="downloadButton" onClick={() => this.downloadFile()}>
           DOWNLOAD
         </Button>
       </Paper>

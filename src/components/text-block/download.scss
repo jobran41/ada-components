@@ -1,0 +1,36 @@
+.download {
+  background: #1de9b6;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .download-area {
+    text-align: center;
+    padding: 40px 0;
+    .downloadIcon {
+      width: auto;
+      height: auto;
+      padding: 0;
+      .md-icon {
+        font-size: 70px;
+        color: #fff;
+      }
+    }
+    .md-badge {
+      right: -1px;
+      top: 7px;
+      background: #fff;
+      color: #484848;
+    }
+    .download-type {
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+  .downloadButton {
+    border: 1px solid #fff;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+}

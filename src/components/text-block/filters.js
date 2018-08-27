@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import { Paper, MenuButton, Slider, Button } from "react-md"
 import { cls } from "reactutils"
 
+import './filters.scss'
+
 export default class Filters extends Component {
   initClass = "filters";
   renderFilters = () => {
@@ -14,12 +16,12 @@ export default class Filters extends Component {
           <div className={cls(this.initClass + "-filter")}>
             <Slider
               id="continuous-default-value-slider"
-              label="Default value slider"
+              label=""
               defaultValue={it.value}
               {...it.filterProps}
             />
           </div>
-          <div className={cls(this.initClass + "-max")}>{it.max}</div>
+          <div className={cls(this.initClass + "-max")}>+ {it.max}</div>
         </div>
       )
     })
@@ -48,8 +50,8 @@ export default class Filters extends Component {
           {this.renderFilters()}
         </div>
         <div className={cls(this.initClass + "-footer")}>
-          <Button flat>Apply</Button>
-          <Button flat>Reset</Button>
+          <Button flat className="buttonApply">Apply</Button>
+          <Button flat className="buttonReset">Reset</Button>
         </div>
       </Paper>
     )

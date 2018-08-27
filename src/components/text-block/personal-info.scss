@@ -1,0 +1,87 @@
+.personal-info {
+  position: relative;
+  background: #fff;
+  .personal-info-header {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 9;
+    .md-btn {
+      color: #fff;
+    }
+  }
+  .personal-info-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 210px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    &:before {
+      position: absolute;
+      width: 103%;
+      height: 150%;
+      content: '';
+      background: linear-gradient(90deg, #2a7bdb 0, #149fed 100%);
+      border-radius: 50%;
+      top: -90%;
+      z-index: -1;
+    }
+    .md-avatar {
+      width: 100px;
+      height: 100px;
+    }
+    .personal-info-name {
+      font-size: 20px;
+      font-weight: bold;
+      color: #565656;
+    }
+    .requestButton {
+      color: #777777;
+      height: auto;
+      padding: 2px 5px;
+      font-size: 12px;
+    }
+  }
+  .personal-info-footer {
+    padding: 16px;
+    .personal-info-top-value {
+      display: flex;
+      justify-content: space-between;
+      color: #adadad;
+      font-size: 12px;
+    }
+    .md-progress {
+      margin-top: 5px;
+      &.md-progress--linear {
+        background: #e4e4e4;
+      }
+      .md-progress--linear-active {
+        background: #f5c228;
+      }
+    }
+    .buttonsWrapper {
+      display: flex;
+      justify-content: space-between;
+      .buttonAdd {
+        color: #ffffff;
+        background: #1876d1;
+        height: auto;
+        padding: 5px 10px;
+        border-radius: 0;
+        font-size: 12px;
+      }
+      .buttonComment {
+        background: #ffffff;
+        border: 1px solid #1876d1;
+        color: #1876d1;
+        height: auto;
+        padding: 5px 10px;
+        border-radius: 0;
+        font-size: 12px;
+      }
+    }
+  }
+}

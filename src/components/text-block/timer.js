@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import { Paper, Button } from "react-md"
 import { cls } from "reactutils"
 
+import './timer.scss'
+
 export default class Download extends Component {
   initClass = "timer";
   myTimer = null;
@@ -63,8 +65,8 @@ export default class Download extends Component {
             ? "0" + second
             : second}
         </div>
-        <Button flat icon onClick={() => this.startPauseTimer()}>
-          start
+        <Button className="playButton" icon onClick={() => this.startPauseTimer()}>
+        play_arrow
         </Button>
       </Paper>
     )

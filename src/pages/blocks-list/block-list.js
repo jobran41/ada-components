@@ -295,25 +295,25 @@ export default class BlockList extends Component {
     ]
     const commentItems = [
       {
-        path: "",
+        path: "http://i.pravatar.cc/150?img=33",
         name: "Student Name",
         createdDate: "2 Month ago",
         description: "lorem ipsum dolerm tsoun dfrizer uplod ishler conita"
       },
       {
-        path: "",
+        path: "http://i.pravatar.cc/150?img=11",
         name: "Student Name",
         createdDate: "2 Month ago",
         description: "lorem ipsum dolerm tsoun dfrizer uplod ishler conita"
       },
       {
-        path: "",
+        path: "http://i.pravatar.cc/150?img=65",
         name: "Student Name",
         createdDate: "2 Month ago",
         description: "lorem ipsum dolerm tsoun dfrizer uplod ishler conita"
       },
       {
-        path: "",
+        path: "http://i.pravatar.cc/150?img=12",
         name: "Student Name",
         createdDate: "2 Month ago",
         description: "lorem ipsum dolerm tsoun dfrizer uplod ishler conita"
@@ -377,7 +377,7 @@ export default class BlockList extends Component {
       name: "Student Name",
       points: 741,
       maxPoints: 1000,
-      path: ""
+      path: "http://i.pravatar.cc/150?img=49"
     }
     return (
       <div className="blocklist">
@@ -405,6 +405,14 @@ export default class BlockList extends Component {
               items={itemsNotificationList}
               className="blocklist-item"
             />
+            <Comment
+              title="Comments"
+              description="4 Comments"
+              items={commentItems}
+              currentUser={{ path: "http://i.pravatar.cc/150?img=3" }}
+              className="blocklist-item"
+            />
+            <PersonalInfo userObject={userObject} menuButton={menuButtonExpertise} className="blocklist-item" />
           </div>
 
           <div className="blocklist-cell md-cell md-cell--3">
@@ -422,6 +430,10 @@ export default class BlockList extends Component {
               className="blocklist-item"
               onAddEvent
             />
+
+            <Reviews title="Reviews" className="blocklist-item" negativePorcentage={15}  positivePorcentage={75}/>
+
+            <Filters className="blocklist-item" title="Filters" items={FiltersItems} menuButton={menuButtonExpertise} />
           </div>
 
           <div className="blocklist-cell md-cell md-cell--6">
@@ -435,6 +447,13 @@ export default class BlockList extends Component {
                   items={itemsTrackList}
                   className="blocklist-item"
                 />
+                <Rating
+                  title="Rating"
+                  items={ratingItems}
+                  average={4.7}
+                  cumulates={0.4}
+                  className="blocklist-item"
+                />
               </div>
               <div className="blocklist-cell md-cell md-cell--6">
                 <ProjectList
@@ -444,6 +463,7 @@ export default class BlockList extends Component {
                   className="blocklist-item"
                   onAddProject
                 />
+                <Timer className="blocklist-item" />
               </div>
             </div>
             <div className="blocklist-cell md-cell md-cell--12">
@@ -457,27 +477,16 @@ export default class BlockList extends Component {
                 menuButton={menuButtonExpertise}
               />
             </div>
+            <div className="blocklist-grid md-grid">
+              <div className="blocklist-cell md-cell md-cell--6">
+                <Download fileSize={700} typeFile={"ZIP"} filePath={""} className="blocklist-item" />
+              </div>
+              <div className="blocklist-cell md-cell md-cell--6">
+                <Upload fileSize={700} className="blocklist-item" />
+              </div>
+            </div>
           </div>
         </div>
-        {/*<Comment
-          title="Comments"
-          description="4 Comments"
-          items={commentItems}
-          currentUser={{ path: "" }}
-        />
-        <Reviews title="Reviews" />
-        <Rating
-          title="Rating"
-          items={ratingItems}
-          average={4.7}
-          cumulates={0.4}
-        />
-        <Filters title="Rating" items={FiltersItems} />
-        <Download fileSize={700} typeFile={"ZIP"} filePath={""} />
-        <Upload fileSize={700} />
-        <Timer />
-        <PersonalInfo userObject={userObject} menuItems={menuButtonExpertise} />
-        */}
       </div>
     )
   }

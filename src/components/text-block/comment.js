@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import { Paper, MenuButton, Avatar, TextField, Button } from "react-md"
 import { cls } from "reactutils"
 
+import './comment.scss'
+
 export default class Comment extends Component {
   initClass = "comment";
   constructor(props) {
@@ -80,14 +82,15 @@ export default class Comment extends Component {
             </div>
             <div className={cls(this.initClass + "-comment-body")}>
               <TextField
+                block
                 id="floating-multiline"
-                label="Type your comment"
+                label=""
                 lineDirection="right"
                 rows={3}
-                placeholder="What do you think"
+                placeholder="What do you think ?"
                 onChange={comment => this.setState({ comment })}
               />
-              <Button flat onClick={() => this.onAddComment()}>
+              <Button className="commentButton" flat onClick={() => this.onAddComment()}>
                 Comment
               </Button>
             </div>

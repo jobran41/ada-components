@@ -1,0 +1,36 @@
+.upload {
+  background: #393c40;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .upload-area {
+    text-align: center;
+    padding: 40px 0;
+    .uploadIcon {
+      width: auto;
+      height: auto;
+      padding: 0;
+      .md-icon {
+        font-size: 70px;
+        color: #fff;
+      }
+    }
+    .md-badge {
+      right: -1px;
+      top: 7px;
+      background: #fff;
+      color: #484848;
+    }
+    .upload-type {
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+  .uploadButton {
+    border: 1px solid #fff;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+}

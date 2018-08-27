@@ -1,0 +1,66 @@
+.rating {
+  background: #fff;
+  padding: 16px;
+  .rating-header {
+    border-bottom: 1px solid #e8e8e8;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    color: #adadad;
+    .rating-title {
+      font-size: 20px;
+    }
+  }
+  .rating-content {
+    .rating-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .rating-average {
+        font-size: 23px;
+        color: #1976d2;
+        font-weight: bold;
+        display: flex;
+        align-items: flex-start;
+        .md-icon {
+          font-size: 10px;
+          color: #f5c228;
+          margin-top: 4px;
+        }
+      }
+      .rating-cumulates {
+        display: flex;
+        align-items: center;
+        color: #adadad;
+        .md-icon {
+          font-size: 30px;
+          color: #1de9b6;
+        }
+      }
+      .rating-top-star {
+        display: flex;
+        align-items: flex-start;
+        color: #adadad;
+        .md-icon {
+          font-size: 10px;
+          color: #f5c228;
+          margin-top: 4px;
+        }
+      }
+      .rating-top-number {
+        color: #adadad;
+      }
+    }
+    .rating-list {
+      margin-top: 16px;
+      .md-progress {
+        margin-top: 5px;
+        &.md-progress--linear {
+          background: #e4e4e4;
+        }
+        .md-progress--linear-active {
+          background-image: linear-gradient(90deg, #1de9b6 0, #00fbc8 100%);
+        }
+      }
+    }
+  }
+}

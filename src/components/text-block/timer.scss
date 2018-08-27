@@ -1,0 +1,26 @@
+.timer {
+  background: #1876d1;
+  color: #ffffff;
+  padding: 16px;
+  .timer-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    align-items: center;
+    .timer-title {
+      font-size: 20px;
+    }
+  }
+  .md-btn {
+    color: #ffffff;
+  }
+  .timer-time {
+    text-align: center;
+    font-size: 34px;
+  }
+  .playButton {
+    margin: 16px auto 0;
+    display: block;
+  }
+}

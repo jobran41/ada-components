@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import { Paper, MenuButton, LinearProgress, FontIcon } from "react-md"
 import { cls } from "reactutils"
 
+import './rating.scss'
+
 export default class Rating extends Component {
   initClass = "rating";
   renderRating = () => {
@@ -12,8 +14,8 @@ export default class Rating extends Component {
         <div className={cls(this.initClass + "-list")}>
           <div className={cls(this.initClass + "-top")}>
             <div className={cls(this.initClass + "-top-star")}>
-              <FontIcon iconClassName="fa fa-star-o" />
               {it.star}
+              <FontIcon>star</FontIcon>
             </div>
             <div className={cls(this.initClass + "-top-number")}>
               {it.number}
@@ -58,11 +60,11 @@ export default class Rating extends Component {
           <div className={cls(this.initClass + "-top")}>
             <div className={cls(this.initClass + "-average")}>
               {average}
-              <FontIcon iconClassName="fa fa-star-o" />
+              <FontIcon>star</FontIcon>
             </div>
             <div className={cls(this.initClass + "-cumulates")}>
               {cumulates}
-              <FontIcon iconClassName="fa fa-star-o" />
+              <FontIcon>arrow_drop_up</FontIcon>
             </div>
           </div>
           {this.renderRating()}

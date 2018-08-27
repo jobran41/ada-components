@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import { Paper, Avatar, Button, MenuButton, LinearProgress } from "react-md"
 import { cls } from "reactutils"
 
+import './personal-info.scss'
+
 export default class PersonalInfo extends Component {
   initClass = "personal-info";
 
@@ -13,14 +15,14 @@ export default class PersonalInfo extends Component {
         <div className={cls(this.initClass + "-header")}>
           {menuButton && (
             <MenuButton id={`${this.initClass}_id`} icon menuItems={menuButton}>
-              more_vert
+              more_horiz
             </MenuButton>
           )}
         </div>
         <div className={cls(this.initClass + "-content")}>
           <Avatar src={userObject.path} role="presentation" />
           <div className={cls(this.initClass + "-name")}>{userObject.name}</div>
-          <Button flat>Add as a friend</Button>
+          <Button flat className="requestButton">Add as a friend</Button>
         </div>
         <div className={cls(this.initClass + "-footer")}>
           <div className={cls(this.initClass + "-points")}>
@@ -30,11 +32,13 @@ export default class PersonalInfo extends Component {
             </div>
             <LinearProgress
               id={`item-LinearProgress-point`}
-              value={userObject.points}
+              value={userObject.points/10}
             />
           </div>
-          <Button flat>Add</Button>
-          <Button flat>Message</Button>
+          <div className="buttonsWrapper">
+            <Button flat className="buttonAdd">Add</Button>
+            <Button flat className="buttonComment">Message</Button>
+          </div>
         </div>
       </Paper>
     )
