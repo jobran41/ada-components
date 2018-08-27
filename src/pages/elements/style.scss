@@ -2,6 +2,15 @@
   padding: 40px;
   .elementsContainer {
     margin-top: 30px;
+    .middleComponent {
+      display: flex;
+      .ada-notification {
+        margin: 10px;
+      }
+      .avatarContainer {
+        margin: 10px;
+      }
+    }
   }
 }
 

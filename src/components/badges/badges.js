@@ -18,8 +18,8 @@ class Badges extends Component {
         <div className="Badges-content">
           <h4> {title} </h4>
           <div className="Badges-avatar">
-            {badgesOfAvatars.map(elem => {
-              return <AdaAvatar name={elem} />
+            {badgesOfAvatars.map((elem, i) => {
+              return <AdaAvatar key={i} name={elem} />
             })}
           </div>
         </div>

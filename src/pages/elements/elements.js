@@ -10,6 +10,7 @@ import Ticket from 'components/ticket'
 import Badges from 'components/badges'
 import SocialPanel from 'components/social-panel'
 import AdaAlerts from 'components/ada-alerts'
+import ProfileAvatar from 'components/profile-avatar'
 
 import './style.scss'
 
@@ -40,21 +41,34 @@ export default class Elements extends Component {
             <br />
             <AdaStepper active={2} widthBorder stepperData={["Standard", "Medium", "High"]} />
             <br />
+
+          </div>
+          <div className="elementsCell md-cell md-cell--3">
+            <div className="middleComponent">
+              <AdaNotifications
+                iconName="notifications"
+                alertItem="2"
+              />
+              <AdaNotifications
+                iconName="message"
+                alertItem="1"
+              />
+            </div>
+            <div className="middleComponent">
+              <ProfileAvatar active path="http://i.pravatar.cc/150?img=3" />
+
+              <ProfileAvatar path="http://i.pravatar.cc/150?img=3" />
+            </div>
+
+          </div>
+          <div className="elementsCell md-cell md-cell--5">
             <div className="ticketWrapper">
-              <Ticket titleLeft={<h2>1</h2>} className="ticketItem" titleTop="Step 1" description="Lorem ipsum"/>
-              <Ticket titleLeft={<h2>2</h2>} className="ticketItem" theme="green" titleTop="Step 1" description="Lorem ipsum"/>
-              <Ticket titleLeft={<h2>3</h2>} className="ticketItem" theme="purple" titleTop="Step 1" description="Lorem ipsum"/>
+              <Ticket titleLeft={<h2>1</h2>} className="ticketItem" titleTop="Step 1" description="Lorem ipsum" />
+              <Ticket titleLeft={<h2>2</h2>} className="ticketItem" theme="green" titleTop="Step 1" description="Lorem ipsum" />
+              <Ticket titleLeft={<h2>3</h2>} className="ticketItem" theme="purple" titleTop="Step 1" description="Lorem ipsum" />
             </div>
             <br />
             <Ticket titleLeft="Title" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
-          </div>
-          <div className="elementsCell md-cell md-cell--3">
-            <AdaNotifications
-              iconName="notifications"
-              alertItem="2"
-            />
-          </div>
-          <div className="elementsCell md-cell md-cell--5">
             <Badges title="Badges" badgesOfAvatars={["Man01", "Man02", "Man03"]} />
             <AdaAlerts color="white" iconLeft='mdi-plus' iconRight='mdi-close' text="Success" />
             <SocialPanel renderButton={() => {
