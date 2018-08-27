@@ -11,8 +11,7 @@ class AdaAlerts extends Component {
       < Paper
         zDepth={1} className={`adaAlerts ${className ? className : ''} ${color ? color : ''}`}>
         <div className="adaAlerts-left">
-          <FontIcon iconClassName={`mdi ${iconLeft ? iconLeft : ''}`} />
-          <p>{text}</p>
+          <div className="adaAlerts-left-text"><FontIcon iconClassName={`mdi ${iconLeft ? iconLeft : ''}`} />{text}</div>
         </div>
         <Button className="button-adaAlerts" icon iconClassName={`mdi ${iconRight ? iconRight + ' button-adaAlerts' : ' button-adaAlerts'}`} />
       </Paper>

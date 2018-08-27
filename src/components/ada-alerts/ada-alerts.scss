@@ -5,7 +5,16 @@
   .adaAlerts-left {
     display: flex;
     width: 90%;
-    align-content: center;
+    align-items: center;
+    position: relative;
+    padding-left: 40px;
+    .adaAlerts-left-text {
+      i {
+        position: absolute;
+        left: 4px;
+        top: 4px;
+      }
+    }
   }
   .button-adaAlerts {
   }
