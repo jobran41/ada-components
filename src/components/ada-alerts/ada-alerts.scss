@@ -1,21 +1,39 @@
 .adaAlerts {
   display: flex;
-  justify-content: space-between;
-  background-color: red;
+  justify-content: stretch;
+  align-items: center;
+  background-color: #2a7bdb;
+  color: #fff;
+  padding-right: 8px;
   .adaAlerts-left {
     display: flex;
-    width: 90%;
+    flex-grow: 1;
     align-items: center;
-    position: relative;
-    padding-left: 40px;
-    .adaAlerts-left-text {
-      i {
-        position: absolute;
-        left: 4px;
-        top: 4px;
+    .iconRight {
+      padding: 2px 8px;
+      .md-icon {
+        color: #fff;
+        font-size: 32px;
       }
+    }
+    .adaAlerts-left-text {
+      font-size: 20px;
+      font-weight: bold;
     }
   }
   .button-adaAlerts {
+    padding: 6px;
+    color: #fff;
+    border-left: 1px solid;
+    border-radius: 0;
+  }
+  &.green {
+    background-color: #1de9b6;
+  }
+  &.orange {
+    background-color: #f5c228;
+  }
+  &.red {
+    background-color: #f44236;
   }
 }

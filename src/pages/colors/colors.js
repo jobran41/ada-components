@@ -58,7 +58,7 @@ export default class Colors extends Component {
             </div>
             <div className="item">
               <div className="itemBox redBg"/>
-              <div className="redColor">#2a7bdb</div>
+              <div className="redColor">#f44236</div>
             </div>
             <div className="item">
               <div className="itemBox purpleBg"/>
