@@ -1,0 +1,13 @@
+.socialPanel {
+  background-color: #393c40;
+  button {
+    color: #6f7379;
+    border-radius: 0;
+    border-left: 1px solid #6f7379;
+    padding-bottom: 40px;
+    &:hover {
+      background-color: red;
+      color: white;
+    }
+  }
+}

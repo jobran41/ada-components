@@ -7,17 +7,15 @@ import './badges.scss'
 
 class Badges extends Component {
   render() {
-    const { className, title, width, badgesOfAvatars, widthAvatar, heightAvatar } = this.props
+    const { className, title, width, badgesOfAvatars } = this.props
     const widthLocal = '200px'
-    const widthAvatarLocal = widthAvatar ? widthAvatar : '70px'
-    const heightAvatarLocal = heightAvatar ? heightAvatar : '70px'
     return (
       <Paper
         zDepth={1}
         className={`Badges ${className ? className : ''}`}
         style={{ width: width ? widthLocal : 'auto' }}
       >
-        <div height={heightAvatarLocal} width={widthAvatarLocal} className="Badges-content">
+        <div className="Badges-content">
           <h4> {title} </h4>
           <div className="Badges-avatar">
             {badgesOfAvatars.map(elem => {

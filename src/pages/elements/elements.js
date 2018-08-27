@@ -9,6 +9,7 @@ import AdaStepper from 'components/ada-stepper'
 import Ticket from 'components/ticket'
 import Badges from 'components/badges'
 import SocialPanel from 'components/social-panel'
+import AdaAlerts from 'components/ada-alerts'
 
 export default class Elements extends Component {
 
@@ -36,7 +37,6 @@ export default class Elements extends Component {
             //progressStyle={value => ({ top: `${100 - value}%`, width: "100%" })}
             />
             <AdaStepper active={0} stepperData={["1", "2", "3"]} />
-
             <Ticket titleLeft="Title" titleTop="Step 1" description="lorem lorem lorem" />
           </div>
           <div className="elementsCell md-cell md-cell--3">
@@ -47,12 +47,13 @@ export default class Elements extends Component {
           </div>
           <div className="elementsCell md-cell md-cell--5">
             <Badges title="Badges" badgesOfAvatars={["Man01", "Man02", "Man03"]} />
+            <AdaAlerts color="white" iconLeft='mdi-plus' iconRight='mdi-google' text="Success" />
             <SocialPanel renderButton={() => {
               return (
                 <Fragment>
-                  <Button onClick={this.logout} icon iconClassName="mdi mdi-home-outline" />
-                  <Button onClick={this.logout} icon iconClassName="mdi mdi-wrench" />
-                  <Button onClick={this.logout} icon iconClassName="mdi mdi-help" />
+                  <Button icon iconClassName="mdi mdi-google" />
+                  <Button icon iconClassName="mdi mdi-facebook" />
+                  <Button icon iconClassName="mdi mdi-twitter" />
                 </Fragment>
               )
             }} />

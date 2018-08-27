@@ -1,0 +1,12 @@
+.adaAlerts {
+  display: flex;
+  justify-content: space-between;
+  background-color: red;
+  .adaAlerts-left {
+    display: flex;
+    width: 90%;
+    align-content: center;
+  }
+  .button-adaAlerts {
+  }
+}

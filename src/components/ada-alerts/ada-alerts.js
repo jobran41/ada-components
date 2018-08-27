@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from "prop-types"
-import { FontIcon, Paper } from "react-md"
+import { FontIcon, Paper, Button } from "react-md"
+
+import './ada-alerts.scss'
 
 class AdaAlerts extends Component {
   render() {
@@ -8,9 +10,11 @@ class AdaAlerts extends Component {
     return (
       < Paper
         zDepth={1} className={`adaAlerts ${className ? className : ''} ${color ? color : ''}`}>
-        <FontIcon iconClassName={`mdi ${iconLeft ? iconLeft : ''}`} />
-        <p>{text}</p>
-        <FontIcon iconClassName={`mdi ${iconRight ? iconRight : ''}`} />
+        <div className="adaAlerts-left">
+          <FontIcon iconClassName={`mdi ${iconLeft ? iconLeft : ''}`} />
+          <p>{text}</p>
+        </div>
+        <Button className="button-adaAlerts" icon iconClassName={`mdi ${iconRight ? iconRight + ' button-adaAlerts' : ' button-adaAlerts'}`} />
       </Paper>
     )
   }
