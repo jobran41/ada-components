@@ -1,0 +1,43 @@
+.adaStepper {
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  background: #fff;
+  .adaStepper-Item {
+    flex: 1 1 0;
+    text-align: center;
+    padding: 10px 5px;
+    color: #8e8e8e;
+    &.active {
+      background: #f5c228;
+      color: #fff;
+    }
+  }
+  &.widthBorder {
+    .adaStepper-Item {
+      color: #1976d2;
+      border-left: 1px solid #1976d2;
+      &.active {
+        color: #fff;
+        border: none;
+      }
+      &:first-child {
+        border: none;
+      }
+    }
+  }
+  &.blue {
+    .adaStepper-Item {
+      &.active {
+        background: #1976d2;
+      }
+    }
+  }
+  &.green {
+    .adaStepper-Item {
+      &.active {
+        background: #1de9b6;
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.adaSearch {
+  background: #fff;
+  &.md-text-field-container--input-block {
+    padding: 0 0 0 16px;
+  }
+
+  .md-text-field {
+    &:focus {
+      &::placeholder {
+        color: #1976d2;
+      }
+    }
+  }
+
+  .md-icon {
+    background: #1976d2;
+    color: #fff;
+    padding: 8px;
+  }
+}
