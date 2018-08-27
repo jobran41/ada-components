@@ -387,6 +387,7 @@ export default class BlockList extends Component {
       path: "http://i.pravatar.cc/150?img=49",
       percent: 70,
     }
+    /*
     const itemsChatList = [
       {
         name: "Student Name",
@@ -476,6 +477,7 @@ export default class BlockList extends Component {
       chats: []
     }
     const lorem = `Elit cupidatat excepteur ullamco labore exercitation amet consectetur. Sunt duis ipsum voluptate commodo ipsum mollit quis elit tempor anim eiusmod aliqua. Elit sint minim eiusmod consectetur cillum aliqua est exercitation. Amet anim occaecat excepteur velit. Fugiat id consequat cillum non quis nisi anim non magna proident fugiat magna duis.`
+    */
     return (
       <div className="blocklist">
         <ContentHeader
@@ -539,16 +541,16 @@ export default class BlockList extends Component {
               description="Weekly events"
               items={itemsEventList}
               className="blocklist-item"
-              onAddEvent={() => {}}
+              onAddEvent={() => { }}
             />
-            <Reviews title="Reviews" className="blocklist-item" negativePorcentage={15}  positivePorcentage={75}/>
+            <Reviews title="Reviews" className="blocklist-item" negativePorcentage={15} positivePorcentage={75} />
             <Filters className="blocklist-item" title="Filters" items={FiltersItems} menuButton={menuButtonExpertise} />
             <Gift
               title="Awesome!"
               message="You've reached the first level."
               icon="mdi-gift"
               theme="light"
-              className="blocklist-item" 
+              className="blocklist-item"
               linkObject={{ title: "See Gifts", position: "center" }}
             />
             <Gift
@@ -592,7 +594,7 @@ export default class BlockList extends Component {
                   description="All projects in progress"
                   items={itemsProjectList}
                   className="blocklist-item"
-                  onAddProject={() => {}}
+                  onAddProject={() => { }}
                 />
                 <Timer className="blocklist-item" />
               </div>
@@ -616,7 +618,7 @@ export default class BlockList extends Component {
                   message="Note all your great ideas"
                   icon="mdi-lightbulb-on-outline"
                   theme="dark"
-                  className="blocklist-item" 
+                  className="blocklist-item"
                   linkObject={{ title: "Make a note", position: "center" }}
                 />
                 <Gift
@@ -628,7 +630,7 @@ export default class BlockList extends Component {
               </div>
               <div className="blocklist-cell md-cell md-cell--6">
                 <Upload fileSize={700} className="blocklist-item" />
-                <Gift title="Great work !" className="blocklist-item"  message="Project finished" theme="light" icon="mdi-trophy-outline" />
+                <Gift title="Great work !" className="blocklist-item" message="Project finished" theme="light" icon="mdi-trophy-outline" />
                 <Gift
                   title="Save your data"
                   message="Don't forget to save your data"
