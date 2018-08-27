@@ -1,0 +1,43 @@
+@import "../../Themes/first";
+
+.notification-list {
+  background: $darkGrey;
+  padding: 16px;
+  .notification-list-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $lightGrey;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    color: $lightGrey;
+    .notification-list-title {
+      font-size: 20px;
+    }
+    .md-icon {
+      color: $lightGrey;
+    }
+  }
+  .notification-list-content {
+    .notification-list-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+      padding: 16px;
+      color: $lightGrey;
+      .notifications-badge {
+        .md-btn {
+          color: $lightGrey;
+          padding: 0;
+          .md-icon {
+            font-size: 30px;
+          }
+        }
+        .md-badge {
+          background: #e41818;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
