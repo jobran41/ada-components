@@ -6,8 +6,9 @@ import Download from "./download"
 import Upload from "./upload"
 import Filters from "./filters"
 import PersonalInfo from "./personal-info"
-import Gift from './gift'
-import ChatList from './chat-list'
+import Gift from "./gift"
+import ChatList from "./chat-list"
+import Interests from "./interests"
 
 export {
   Comment,
@@ -19,5 +20,6 @@ export {
   Filters,
   PersonalInfo,
   Gift,
-  ChatList
+  ChatList,
+  Interests
 }
