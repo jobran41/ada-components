@@ -63,7 +63,7 @@ export default class Download extends Component {
             ? "0" + second
             : second}
         </div>
-        <Button flat icon onClick={() => this.startPauseTimer()}>
+        <Button icon onClick={() => this.startPauseTimer()}>
           start
         </Button>
       </Paper>

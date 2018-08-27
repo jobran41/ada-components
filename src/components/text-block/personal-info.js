@@ -30,7 +30,7 @@ export default class PersonalInfo extends Component {
             </div>
             <LinearProgress
               id={`item-LinearProgress-point`}
-              value={userObject.points}
+              value={userObject.percent}
             />
           </div>
           <Button flat>Add</Button>

@@ -15,7 +15,7 @@ export default class Comment extends Component {
     const { items } = this.props
     return items.map((it, index) => {
       return (
-        <div className={cls(this.initClass + "-list")}>
+        <div className={cls(this.initClass + "-list")} key={index}>
           <div className={cls(this.initClass + "-avatar")}>
             <Avatar src={it.path} role="presentation" />
           </div>

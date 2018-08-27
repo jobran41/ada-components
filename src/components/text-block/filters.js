@@ -9,7 +9,7 @@ export default class Filters extends Component {
     const { items } = this.props
     return items.map((it, index) => {
       return (
-        <div className={cls(this.initClass + "-list")}>
+        <div className={cls(this.initClass + "-list")} key={index}>
           <div className={cls(this.initClass + "-min")}>{it.min}</div>
           <div className={cls(this.initClass + "-filter")}>
             <Slider

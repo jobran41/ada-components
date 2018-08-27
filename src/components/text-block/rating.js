@@ -9,7 +9,7 @@ export default class Rating extends Component {
     const { items } = this.props
     return items.map((it, index) => {
       return (
-        <div className={cls(this.initClass + "-list")}>
+        <div className={cls(this.initClass + "-list")} key={index}>
           <div className={cls(this.initClass + "-top")}>
             <div className={cls(this.initClass + "-top-star")}>
               <FontIcon iconClassName="fa fa-star-o" />

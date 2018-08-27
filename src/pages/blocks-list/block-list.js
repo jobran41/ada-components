@@ -20,7 +20,12 @@ import {
   Filters,
   PersonalInfo,
   Gift,
-  ChatList
+  ChatList,
+  ChatBox,
+  Interests,
+  Discover,
+  ContainerTab,
+  Tab
 } from "components/text-block"
 
 import "./style.scss"
@@ -379,6 +384,7 @@ export default class BlockList extends Component {
       name: "Student Name",
       points: 741,
       maxPoints: 1000,
+      percent: 70,
       path: ""
     }
     const itemsChatList = [
@@ -418,6 +424,58 @@ export default class BlockList extends Component {
         status: "onLine"
       }
     ]
+    const interestsItems = [
+      {
+        label: "Gaming",
+        className: "grey",
+        classNameActive: "orange"
+      },
+      {
+        label: "Gaming",
+        className: "grey",
+        classNameActive: "orange"
+      },
+      {
+        label: "Gaming",
+        className: "grey",
+        classNameActive: "orange"
+      },
+      {
+        label: "Gaming",
+        className: "grey",
+        classNameActive: "orange"
+      },
+      {
+        label: "Gaming",
+        className: "grey",
+        classNameActive: "orange"
+      },
+      {
+        label: "Gaming",
+        className: "grey",
+        classNameActive: "orange"
+      },
+      {
+        label: "Gaming",
+        className: "grey",
+        classNameActive: "orange"
+      },
+      {
+        label: "Gaming",
+        className: "grey",
+        classNameActive: "orange"
+      },
+      {
+        label: "Gaming",
+        className: "grey",
+        classNameActive: "orange"
+      }
+    ]
+    const itemsChatBox = {
+      members: [],
+      chats: []
+    }
+    const lorem = `Elit cupidatat excepteur ullamco labore exercitation amet consectetur. Sunt duis ipsum voluptate commodo ipsum mollit quis elit tempor anim eiusmod aliqua. Elit sint minim eiusmod consectetur cillum aliqua est exercitation. Amet anim occaecat excepteur velit. Fugiat id consequat cillum non quis nisi anim non magna proident fugiat magna duis.`
     return (
       <div className="blocklist">
         <ContentHeader
@@ -459,7 +517,7 @@ export default class BlockList extends Component {
               description="Weekly events"
               items={itemsEventList}
               className="blocklist-item"
-              onAddEvent
+              onAddEvent={() => {}}
             />
           </div>
 
@@ -481,7 +539,7 @@ export default class BlockList extends Component {
                   description="All projects in progress"
                   items={itemsProjectList}
                   className="blocklist-item"
-                  onAddProject
+                  onAddProject={() => {}}
                 />
               </div>
             </div>
@@ -499,7 +557,7 @@ export default class BlockList extends Component {
           </div>
         </div>
 
-        {/*<Comment
+        <Comment
           title="Comments"
           description="4 Comments"
           items={commentItems}
@@ -509,19 +567,81 @@ export default class BlockList extends Component {
         <Rating
           title="Rating"
           items={ratingItems}
-          average={4.7}
-          cumulates={0.4}
+          average={"4.7"}
+          cumulates={"0.4"}
         />
         <Filters title="Rating" items={FiltersItems} />
-        <Download fileSize={700} typeFile={"ZIP"} filePath={""} />
-        <Upload fileSize={700} />
+        <Download fileSize={"700"} typeFile={"ZIP"} filePath={""} />
+        <Upload fileSize={"700"} />
         <Timer />
         <PersonalInfo userObject={userObject} menuItems={menuButtonExpertise} />
-        <Gift title='Awesome!' message="You've reached the first level." icon="gift" linkObject={{ title: "See Gifts", position: 'center' }} />
+        <Gift
+          title="Awesome!"
+          message="You've reached the first level."
+          icon="gift"
+          linkObject={{ title: "See Gifts", position: "center" }}
+        />
 
-      <ChatList title="Chat List" description="Chat with other students" items={itemsChatList} />
-      <Interests items={interestsItems}/>
-        */}
+        <ChatList
+          title="Chat List"
+          description="Chat with other students"
+          items={itemsChatList}
+        />
+        <ChatBox title="Chat box 1" items={itemsChatBox} />
+        <Interests items={interestsItems} title="Choose your interest" />
+        <Gift
+          title="Product 1"
+          message="species matrimonii, dotis"
+          icon="gift"
+          linkObject={{ title: "Details", position: "right" }}
+        />
+        <Gift
+          title="Product 2"
+          message="species matrimonii, dotis"
+          icon="gift"
+          linkObject={{ title: "Details", position: "right" }}
+        />
+        <Gift
+          title="Product 3"
+          message="species matrimonii, dotis"
+          icon="gift"
+          linkObject={{ title: "Details", position: "right" }}
+        />
+        <Discover
+          title="Discover"
+          description="Find someone to follow"
+          items={itemsUserList}
+          menuButton={menuButtonExpertise}
+        />
+        <Gift
+          title="New Arrivals !"
+          message="See how they are"
+          icon="gift"
+          linkObject={{ title: "Say Hello", position: "center" }}
+        />
+        <Gift title="Great work !" message="Project finished" icon="gift" />
+        <Gift
+          title="Any Idea ?"
+          message="Note all your great ideas"
+          icon="gift"
+          linkObject={{ title: "Make a note", position: "center" }}
+        />
+        <Gift
+          title="Save your data"
+          message="Don't forget to save your data"
+          icon="gift"
+          linkObject={{ title: "Save now", position: "center" }}
+        />
+        <Gift
+          title="1 New update"
+          icon="gift"
+          linkObject={{ title: "Continue", position: "center" }}
+        />
+        <ContainerTab>
+          <Tab label="Tab 1">{lorem}</Tab>
+          <Tab label="Tab 2">{lorem}</Tab>
+          <Tab label="Tab 3">{lorem}</Tab>
+        </ContainerTab>
       </div>
     )
   }

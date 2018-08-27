@@ -1,30 +1,26 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import { Paper, MenuButton, Checkbox } from "react-md"
+import { Paper, MenuButton, Button, Avatar } from "react-md"
 import { cls } from "reactutils"
 
-import "./to-do-list.scss"
-
-export default class ToDoList extends Component {
-  initClass = "to-do-list";
-  renderToDoList = () => {
+export default class Discover extends Component {
+  initClass = "discover";
+  renderDiscover = () => {
     const { items } = this.props
     return items.map((it, index) => {
       return (
-        <div className={cls(this.initClass + "-list")} key={index}>
-          <div className={cls(this.initClass + "-info")}>
-            <div className={this.initClass + "-info-title"}>{it.title}</div>
-            <div className={this.initClass + "-info-description"}>
-              {it.description}
-            </div>
+        <div
+          className={cls(
+            this.initClass + "-list",
+            it.notification ? "notification-active" : ""
+          )}
+          key={index}
+        >
+          <div className="avatarContainer">
+            <Avatar src={it.path} role="presentation" />
           </div>
-          <Checkbox
-            aria-labelledby=""
-            id={cls(this.initClass + "-checkbox-" + index)}
-            name={cls(this.initClass + "-checkbox-" + index)}
-            onChange={v => this.handelOnchangeCheckbox(v, index)}
-            checked={it.checked}
-          />
+          <div className={this.initClass + "-name"}>{it.name}</div>
+          <Button flat>Follow</Button>
         </div>
       )
     })
@@ -55,14 +51,14 @@ export default class ToDoList extends Component {
           )}
         </div>
         <div className={cls(this.initClass + "-content")}>
-          {this.renderToDoList()}
+          {this.renderDiscover()}
         </div>
       </Paper>
     )
   }
 }
 
-ToDoList.propTypes = {
+Discover.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string.isRequired,
   description: PropTypes.string,

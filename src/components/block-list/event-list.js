@@ -3,14 +3,14 @@ import PropTypes from "prop-types"
 import { Paper, Button, Checkbox } from "react-md"
 import { cls } from "reactutils"
 
-import './event-list.scss'
+import "./event-list.scss"
 export default class EventList extends Component {
   initClass = "event-list";
   renderEventList = () => {
     const { items } = this.props
     return items.map((it, index) => {
       return (
-        <div className={cls(this.initClass + "-item")}>
+        <div className={cls(this.initClass + "-item")} key={index}>
           <div className="item-created-date">
             <div className="item-day">{it.createdDate.day}</div>
             <div className="item-month">{it.createdDate.month}</div>
@@ -23,6 +23,7 @@ export default class EventList extends Component {
           </div>
           <div className="item-time">{it.createdDate.time}</div>
           <Checkbox
+            aria-labelledby=""
             id={cls(this.initClass + "-checkbox-" + index)}
             name={cls(this.initClass + "-checkbox-" + index)}
             onChange={v => this.handelOnchangeCheckbox(v, index)}
