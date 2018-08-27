@@ -8,7 +8,9 @@ import './ada-avatar.scss'
 class AdaAvatar extends Component {
   renderName = () => {
     const { renderName } = this.props
-    renderName()
+    if (typeof renderName === 'function') {
+      renderName()
+    }
   }
   render() {
     const { width, height, name } = this.props

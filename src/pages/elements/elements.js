@@ -1,10 +1,14 @@
-import React, { Component } from 'react'
-import { FontIcon, LinearProgress } from 'react-md'
+import React, { Component, Fragment } from 'react'
+import { FontIcon, LinearProgress, Button } from 'react-md'
 
+import ContentHeader from 'components/content-header'
 import AdaSearch from 'components/ada-search'
 import AdaCategory from 'components/ada-category'
 import AdaNotifications from 'components/ada-notifications'
 import AdaStepper from 'components/ada-stepper'
+import Ticket from 'components/ticket'
+import Badges from 'components/badges'
+import SocialPanel from 'components/social-panel'
 
 export default class Elements extends Component {
 
@@ -13,6 +17,7 @@ export default class Elements extends Component {
     const STRING_ITEMS = ['Zero', 'One', 'Two', 'Three']
     return (
       <div className="Elements">
+        <ContentHeader title="Basic Elements Used Across the Dashboard" date="2018" subclass="gray-text" />
         <div className="elementsContainer md-grid">
           <div className="elementsCell md-cell md-cell--4">
             <AdaSearch onChange={this.handleSearch} />
@@ -20,7 +25,7 @@ export default class Elements extends Component {
               id="ada-category"
               menuItems={STRING_ITEMS}
               label="Select Category"
-              className="md-cell"
+              className="md-cell md-cell--12"
               dropdownIcon={<FontIcon>add</FontIcon>}
             />
             <LinearProgress
@@ -30,11 +35,27 @@ export default class Elements extends Component {
             //progressClassName="horizontale-progress"
             //progressStyle={value => ({ top: `${100 - value}%`, width: "100%" })}
             />
+            <AdaStepper active={0} stepperData={["1", "2", "3"]} />
+
+            <Ticket titleLeft="Title" titleTop="Step 1" description="lorem lorem lorem" />
+          </div>
+          <div className="elementsCell md-cell md-cell--3">
             <AdaNotifications
               iconName="notifications"
               alertItem="2"
             />
-            <AdaStepper active="0" stepperData={["1", "2", "3"]} />
+          </div>
+          <div className="elementsCell md-cell md-cell--5">
+            <Badges title="Badges" badgesOfAvatars={["Man01", "Man02", "Man03"]} />
+            <SocialPanel renderButton={() => {
+              return (
+                <Fragment>
+                  <Button onClick={this.logout} icon iconClassName="mdi mdi-home-outline" />
+                  <Button onClick={this.logout} icon iconClassName="mdi mdi-wrench" />
+                  <Button onClick={this.logout} icon iconClassName="mdi mdi-help" />
+                </Fragment>
+              )
+            }} />
           </div>
         </div>
       </div>

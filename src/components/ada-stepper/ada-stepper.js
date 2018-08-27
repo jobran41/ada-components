@@ -16,6 +16,6 @@ class AdaStepper extends Component {
 
 AdaStepper.propTypes = {
   stepperData: PropTypes.array,
-  active: PropTypes.string,
+  active: PropTypes.number,
 }
 export default AdaStepper
