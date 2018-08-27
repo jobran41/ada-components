@@ -33,11 +33,11 @@ export default class Elements extends Component {
               dropdownIcon={<FontIcon>add</FontIcon>}
             />
             <br />
-            <AdaStepper active={2} stepperData={["1", "2", "3", "4", "5", "6", "7", "8", "9"]} />
+            <AdaStepper updateField={this.updateField} stepperData={["1", "2", "3", "4", "5", "6", "7", "8", "9"]} />
             <br />
             <AdaStepper active={1} widthBorder theme="blue" stepperData={["Standard", "Medium", "High"]} />
             <br />
-            <AdaStepper active={0} widthBorder theme="green" stepperData={["Standard", "Medium", "High"]} />
+            <AdaStepper widthBorder theme="green" stepperData={["Standard", "Medium", "High"]} />
             <br />
             <AdaStepper active={2} widthBorder stepperData={["Standard", "Medium", "High"]} />
             <br />
