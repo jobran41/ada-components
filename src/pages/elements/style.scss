@@ -4,3 +4,12 @@
     margin-top: 30px;
   }
 }
+
+.ticketWrapper {
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  .ticketItem {
+    flex: 1 1 0;
+  }
+}

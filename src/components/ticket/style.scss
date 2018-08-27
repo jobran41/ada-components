@@ -1,0 +1,38 @@
+.ticket {
+  background: #fff;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  .ticket-left {
+    padding: 8px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1976d2;
+    color: #fff;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+    }
+  }
+  .ticket-right {
+    padding: 8px 16px;
+    > h5 {
+      margin-bottom: 0;
+    }
+  }
+  &.green {
+    .ticket-left {
+      background: #1de9b6;
+    }
+  }
+  &.purple {
+    .ticket-left {
+      background: #a389da;
+    }
+  }
+}

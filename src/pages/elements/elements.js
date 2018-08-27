@@ -39,8 +39,14 @@ export default class Elements extends Component {
             <AdaStepper active={0} widthBorder theme="green" stepperData={["Standard", "Medium", "High"]} />
             <br />
             <AdaStepper active={2} widthBorder stepperData={["Standard", "Medium", "High"]} />
-
-            <Ticket titleLeft="Title" titleTop="Step 1" description="lorem lorem lorem" />
+            <br />
+            <div className="ticketWrapper">
+              <Ticket titleLeft={<h2>1</h2>} className="ticketItem" titleTop="Step 1" description="Lorem ipsum"/>
+              <Ticket titleLeft={<h2>2</h2>} className="ticketItem" theme="green" titleTop="Step 1" description="Lorem ipsum"/>
+              <Ticket titleLeft={<h2>3</h2>} className="ticketItem" theme="purple" titleTop="Step 1" description="Lorem ipsum"/>
+            </div>
+            <br />
+            <Ticket titleLeft="Title" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
           </div>
           <div className="elementsCell md-cell md-cell--3">
             <AdaNotifications
