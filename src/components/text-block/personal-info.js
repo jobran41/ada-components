@@ -32,7 +32,7 @@ export default class PersonalInfo extends Component {
             </div>
             <LinearProgress
               id={`item-LinearProgress-point`}
-              value={userObject.points/10}
+              value={userObject.percent}
             />
           </div>
           <div className="buttonsWrapper">

@@ -1,27 +1,23 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
-import { Paper, MenuButton, Slider, Button } from "react-md"
+import { Paper, MenuButton, Avatar, Button } from "react-md"
 import { cls } from "reactutils"
 
-import './filters.scss'
+export default class ChatList extends Component {
+  initClass = "chat-list";
 
-export default class Filters extends Component {
-  initClass = "filters";
-  renderFilters = () => {
+  renderChatList = () => {
     const { items } = this.props
     return items.map((it, index) => {
       return (
         <div className={cls(this.initClass + "-list")} key={index}>
-          <div className={cls(this.initClass + "-min")}>{it.min}</div>
-          <div className={cls(this.initClass + "-filter")}>
-            <Slider
-              id="continuous-default-value-slider"
-              label=""
-              defaultValue={it.value}
-              {...it.filterProps}
-            />
+          <div className={cls(this.initClass + "-avatar")}>
+            <Avatar src={it.path} role="presentation" />
           </div>
-          <div className={cls(this.initClass + "-max")}>+ {it.max}</div>
+          <div className={cls(this.initClass + "-list-name")}>{it.name}</div>
+          <div className={cls(this.initClass + "-list-status", it.status)}>
+            {it.status}
+          </div>
         </div>
       )
     })
@@ -47,24 +43,19 @@ export default class Filters extends Component {
           )}
         </div>
         <div className={cls(this.initClass + "-content")}>
-          {this.renderFilters()}
+          {this.renderChatList()}
         </div>
         <div className={cls(this.initClass + "-footer")}>
-          <Button flat className="buttonApply">Apply</Button>
-          <Button flat className="buttonReset">Reset</Button>
+          <Button flat>Refresh</Button>
         </div>
       </Paper>
     )
   }
 }
-Filters.propTypes = {
+ChatList.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
-  onAddEvent: PropTypes.func,
   items: PropTypes.array,
-  onChecklist: PropTypes.func,
-  menuButton: PropTypes.array,
-  currentUser: PropTypes.object,
-  onAddComment: PropTypes.func
+  menuButton: PropTypes.array
 }

@@ -18,7 +18,14 @@ import {
   Download,
   Upload,
   Filters,
-  PersonalInfo
+  PersonalInfo,
+  Gift,
+  ChatList,
+  ChatBox,
+  Interests,
+  Discover,
+  ContainerTab,
+  Tab
 } from "components/text-block"
 
 import "./style.scss"
@@ -377,8 +384,98 @@ export default class BlockList extends Component {
       name: "Student Name",
       points: 741,
       maxPoints: 1000,
-      path: "http://i.pravatar.cc/150?img=49"
+      path: "http://i.pravatar.cc/150?img=49",
+      percent: 70,
     }
+    const itemsChatList = [
+      {
+        name: "Student Name",
+        path: "",
+        status: "onLine"
+      },
+      {
+        name: "Student Name",
+        path: "",
+        status: "offLine"
+      },
+      {
+        name: "Student Name",
+        path: "",
+        status: "onLine"
+      },
+      {
+        name: "Student Name",
+        path: "",
+        status: "offLine"
+      },
+      {
+        name: "Student Name",
+        path: "",
+        status: "onLine"
+      },
+      {
+        name: "Student Name",
+        path: "",
+        status: "offLine"
+      },
+      {
+        name: "Student Name",
+        path: "",
+        status: "onLine"
+      }
+    ]
+    const interestsItems = [
+      {
+        label: "Gaming",
+        className: "grey",
+        classNameActive: "orange"
+      },
+      {
+        label: "Gaming",
+        className: "grey",
+        classNameActive: "orange"
+      },
+      {
+        label: "Gaming",
+        className: "grey",
+        classNameActive: "orange"
+      },
+      {
+        label: "Gaming",
+        className: "grey",
+        classNameActive: "orange"
+      },
+      {
+        label: "Gaming",
+        className: "grey",
+        classNameActive: "orange"
+      },
+      {
+        label: "Gaming",
+        className: "grey",
+        classNameActive: "orange"
+      },
+      {
+        label: "Gaming",
+        className: "grey",
+        classNameActive: "orange"
+      },
+      {
+        label: "Gaming",
+        className: "grey",
+        classNameActive: "orange"
+      },
+      {
+        label: "Gaming",
+        className: "grey",
+        classNameActive: "orange"
+      }
+    ]
+    const itemsChatBox = {
+      members: [],
+      chats: []
+    }
+    const lorem = `Elit cupidatat excepteur ullamco labore exercitation amet consectetur. Sunt duis ipsum voluptate commodo ipsum mollit quis elit tempor anim eiusmod aliqua. Elit sint minim eiusmod consectetur cillum aliqua est exercitation. Amet anim occaecat excepteur velit. Fugiat id consequat cillum non quis nisi anim non magna proident fugiat magna duis.`
     return (
       <div className="blocklist">
         <ContentHeader
@@ -428,7 +525,7 @@ export default class BlockList extends Component {
               description="Weekly events"
               items={itemsEventList}
               className="blocklist-item"
-              onAddEvent
+              onAddEvent={() => {}}
             />
 
             <Reviews title="Reviews" className="blocklist-item" negativePorcentage={15}  positivePorcentage={75}/>
@@ -461,7 +558,7 @@ export default class BlockList extends Component {
                   description="All projects in progress"
                   items={itemsProjectList}
                   className="blocklist-item"
-                  onAddProject
+                  onAddProject={() => {}}
                 />
                 <Timer className="blocklist-item" />
               </div>
@@ -487,6 +584,75 @@ export default class BlockList extends Component {
             </div>
           </div>
         </div>
+        {/*
+        <Gift
+          title="Awesome!"
+          message="You've reached the first level."
+          icon="gift"
+          linkObject={{ title: "See Gifts", position: "center" }}
+        />
+        
+        <ChatList
+          title="Chat List"
+          description="Chat with other students"
+          items={itemsChatList}
+        />
+        <ChatBox title="Chat box 1" items={itemsChatBox} />
+        <Interests items={interestsItems} title="Choose your interest" />
+        <Gift
+          title="Product 1"
+          message="species matrimonii, dotis"
+          icon="gift"
+          linkObject={{ title: "Details", position: "right" }}
+        />
+        <Gift
+          title="Product 2"
+          message="species matrimonii, dotis"
+          icon="gift"
+          linkObject={{ title: "Details", position: "right" }}
+        />
+        <Gift
+          title="Product 3"
+          message="species matrimonii, dotis"
+          icon="gift"
+          linkObject={{ title: "Details", position: "right" }}
+        />
+        <Discover
+          title="Discover"
+          description="Find someone to follow"
+          items={itemsUserList}
+          menuButton={menuButtonExpertise}
+        />
+        <Gift
+          title="New Arrivals !"
+          message="See how they are"
+          icon="gift"
+          linkObject={{ title: "Say Hello", position: "center" }}
+        />
+        <Gift title="Great work !" message="Project finished" icon="gift" />
+        <Gift
+          title="Any Idea ?"
+          message="Note all your great ideas"
+          icon="gift"
+          linkObject={{ title: "Make a note", position: "center" }}
+        />
+        <Gift
+          title="Save your data"
+          message="Don't forget to save your data"
+          icon="gift"
+          linkObject={{ title: "Save now", position: "center" }}
+        />
+        <Gift
+          title="1 New update"
+          icon="gift"
+          linkObject={{ title: "Continue", position: "center" }}
+        />
+        <ContainerTab>
+          <Tab label="Tab 1">{lorem}</Tab>
+          <Tab label="Tab 2">{lorem}</Tab>
+          <Tab label="Tab 3">{lorem}</Tab>
+        </ContainerTab>
+        */}
       </div>
     )
   }

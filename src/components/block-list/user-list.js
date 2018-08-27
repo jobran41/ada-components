@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Paper, MenuButton, Button, Avatar } from "react-md"
 import { cls } from "reactutils"
 
-import './user-list.scss'
+import "./user-list.scss"
 
 export default class UserList extends Component {
   initClass = "user-list";
@@ -11,14 +11,19 @@ export default class UserList extends Component {
     const { items } = this.props
     return items.map((it, index) => {
       return (
-        <div className={cls(this.initClass + "-list", it.notification ? "notification-active" : "")}>
-          <div className="avatarContainer"><Avatar src={it.path} role="presentation" /></div>
+        <div
+          className={cls(
+            this.initClass + "-list",
+            it.notification ? "notification-active" : ""
+          )}
+          key={index}
+        >
+          <div className="avatarContainer">
+            <Avatar src={it.path} role="presentation" />
+          </div>
           <div className={this.initClass + "-name"}>{it.name}</div>
           <div className={this.initClass + "-job"}>{it.job}</div>
-          <Button
-            icon
-            className="notifications"
-          >
+          <Button icon className="notifications">
             notifications
           </Button>
         </div>
@@ -54,7 +59,9 @@ export default class UserList extends Component {
           {this.renderUserList()}
         </div>
         <div className={cls(this.initClass + "-footer")}>
-          <Button flat primary className="addUser">Add <strong>new +</strong></Button>
+          <Button flat primary className="addUser">
+            Add <strong>new +</strong>
+          </Button>
         </div>
       </Paper>
     )

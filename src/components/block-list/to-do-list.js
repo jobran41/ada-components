@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Paper, MenuButton, Checkbox } from "react-md"
 import { cls } from "reactutils"
 
-import './to-do-list.scss'
+import "./to-do-list.scss"
 
 export default class ToDoList extends Component {
   initClass = "to-do-list";
@@ -11,7 +11,7 @@ export default class ToDoList extends Component {
     const { items } = this.props
     return items.map((it, index) => {
       return (
-        <div className={cls(this.initClass + "-list")}>
+        <div className={cls(this.initClass + "-list")} key={index}>
           <div className={cls(this.initClass + "-info")}>
             <div className={this.initClass + "-info-title"}>{it.title}</div>
             <div className={this.initClass + "-info-description"}>
@@ -19,6 +19,7 @@ export default class ToDoList extends Component {
             </div>
           </div>
           <Checkbox
+            aria-labelledby=""
             id={cls(this.initClass + "-checkbox-" + index)}
             name={cls(this.initClass + "-checkbox-" + index)}
             onChange={v => this.handelOnchangeCheckbox(v, index)}

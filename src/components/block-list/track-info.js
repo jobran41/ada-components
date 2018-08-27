@@ -14,16 +14,16 @@ export default class TrackInfo extends Component {
       for (let i = 0; i < 4; i++) {
         if (it.avatars[i]) {
           avatars.push(
-            <div className="avatar-item-child">
+            <div className="avatar-item-child" key={i}>
               <Avatar src={it.avatars[i]} role="presentation" />
             </div>
           )
         } else {
-          avatars.push(<div className="avatar-item-child" />)
+          avatars.push(<div className="avatar-item-child" key={i} />)
         }
       }
       return (
-        <div className={cls(this.initClass + `-item`)}>
+        <div className={cls(this.initClass + `-item`)} key={index}>
           <div className={cls("item-color-" + it.color)} />
           <div className="title-item">{it.title}</div>
           <div className="created-item">{it.createdAt}</div>
@@ -66,7 +66,9 @@ export default class TrackInfo extends Component {
               />
             </div>
             <div className="track-button">
-              <Button icon primary>near_me</Button>
+              <Button icon primary>
+                near_me
+              </Button>
             </div>
           </div>
         </div>
