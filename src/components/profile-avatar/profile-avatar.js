@@ -8,7 +8,7 @@ class ProfileAvatar extends Component {
   render() {
     const { active, path } = this.props
     return (
-      <div className={`avatarContainer ${active ? 'active' : ''}`}>
+      <div className={`profileAvatar ${active ? 'active' : ''}`}>
         <Avatar src={path} role="presentation" />
       </div>
     )

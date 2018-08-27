@@ -4,7 +4,7 @@ import { Paper, Checkbox, FontIcon } from "react-md"
 import { cls } from "reactutils"
 
 // import AdaIcon from 'components/adaIcon'
-import { Field, HocForm } from 'components/form'
+import { Field, AdaForm } from 'components/ada-form'
 
 import './custom-form.scss'
 
@@ -117,7 +117,7 @@ export function Form({
   )
 }
 
-export default HocForm({
+export default AdaForm({
   validate(values, props) {
     const errorCatcher = (key, callback, ...args) => (
       callback(values[key], args)
