@@ -1,0 +1,17 @@
+.adaCategory {
+  background: #fff;
+  .md-select-field--btn {
+    &.md-select-field--btn {
+      padding: 2px 0 2px 16px;
+      height: auto;
+    }
+  }
+  .md-icon {
+    padding: 8px;
+    color: #1976d2;
+    border-left: 1px solid #1976d2;
+  }
+  .md-icon-text {
+    color: #1976d2;
+  }
+}

@@ -5,20 +5,20 @@ import {
   TextField,
 } from 'react-md'
 
+import './style.scss'
 
 export default class AdaSearch extends Component {
   render() {
     return (
-      <div className="adaSearch">
         <TextField
           {...this.props}
           id="ada-search"
-          label="Search"
+          placeholder="Search"
           type="text"
+          block
           rightIcon={<FontIcon>search</FontIcon>}
-          size={10}
+          className="adaSearch"
         />
-      </div>
     )
   }
 }
