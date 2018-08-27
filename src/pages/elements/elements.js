@@ -7,7 +7,7 @@ import AdaCategory from 'components/ada-category'
 import AdaNotifications from 'components/ada-notifications'
 import AdaStepper from 'components/ada-stepper'
 import Ticket from 'components/ticket'
-import Badges from 'components/badges'
+// import Badges from 'components/badges'
 import SocialPanel from 'components/social-panel'
 import AdaAlerts from 'components/ada-alerts'
 import ProfileAvatar from 'components/profile-avatar'
@@ -56,7 +56,6 @@ export default class Elements extends Component {
             </div>
             <div className="middleComponent">
               <ProfileAvatar active path="http://i.pravatar.cc/150?img=3" />
-
               <ProfileAvatar path="http://i.pravatar.cc/150?img=3" />
             </div>
 
@@ -69,15 +68,16 @@ export default class Elements extends Component {
             </div>
             <br />
             <Ticket titleLeft="Title" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
-            <Badges title="Badges" badgesOfAvatars={["Man01", "Man02", "Man03"]} />
+            <br />
+            {/*<Badges title="Badges" badgesOfAvatars={["Man01", "Man02", "Man03"]} />*/}
             <AdaAlerts theme="green" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
-            <br/>
+            <br />
             <AdaAlerts iconLeft='mdi-information-outline' iconRight='mdi-close' text="Information" />
-            <br/>
+            <br />
             <AdaAlerts theme="orange" iconLeft='mdi-alert-circle-outline' iconRight='mdi-close' text="Worning" />
-            <br/>
+            <br />
             <AdaAlerts theme="red" iconLeft='mdi-alert-outline' iconRight='mdi-close' text="Alert message" />
-            <br/>
+            <br />
             <SocialPanel renderButton={() => {
               return (
                 <Fragment>

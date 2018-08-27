@@ -22,11 +22,6 @@ const navItems = [{
     icon: 'color_lens'
 },
 {
-    label: 'Topography',
-    to: `${routes.Topography}`,
-    icon: 'text_fields'
-},
-{
     label: 'Icons',
     to: `${routes.Icons}`,
     icon: 'mood'
