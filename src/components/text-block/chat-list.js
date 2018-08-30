@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import { Paper, MenuButton, Avatar, Button } from "react-md"
 import { cls } from "reactutils"
 
+import './chat-list.scss'
+
 export default class ChatList extends Component {
   initClass = "chat-list";
 
@@ -15,9 +17,7 @@ export default class ChatList extends Component {
             <Avatar src={it.path} role="presentation" />
           </div>
           <div className={cls(this.initClass + "-list-name")}>{it.name}</div>
-          <div className={cls(this.initClass + "-list-status", it.status)}>
-            {it.status}
-          </div>
+          <div className={cls(this.initClass + "-list-status", it.status)} />
         </div>
       )
     })
@@ -46,7 +46,7 @@ export default class ChatList extends Component {
           {this.renderChatList()}
         </div>
         <div className={cls(this.initClass + "-footer")}>
-          <Button flat>Refresh</Button>
+          <Button flat className={cls(this.initClass + "-button")}>Refresh</Button>
         </div>
       </Paper>
     )

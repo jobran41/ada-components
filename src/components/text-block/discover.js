@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import { Paper, MenuButton, Button, Avatar } from "react-md"
 import { cls } from "reactutils"
 
+import './discover.scss'
+
 export default class Discover extends Component {
   initClass = "discover";
   renderDiscover = () => {
@@ -20,7 +22,7 @@ export default class Discover extends Component {
             <Avatar src={it.path} role="presentation" />
           </div>
           <div className={this.initClass + "-name"}>{it.name}</div>
-          <Button flat>Follow</Button>
+          <Button flat className={this.initClass + "-button"}>Follow</Button>
         </div>
       )
     })

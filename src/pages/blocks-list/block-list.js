@@ -19,13 +19,13 @@ import {
   Upload,
   Filters,
   PersonalInfo,
-  Gift
-  /*ChatList,
+  Gift,
+  ChatList,
   ChatBox,
   Interests,
   Discover,
   ContainerTab,
-  Tab*/
+  Tab
 } from "components/text-block"
 
 import "./style.scss"
@@ -387,89 +387,82 @@ export default class BlockList extends Component {
       path: "http://i.pravatar.cc/150?img=49",
       percent: 70,
     }
-    /*
+
     const itemsChatList = [
       {
         name: "Student Name",
-        path: "",
+        path: "http://i.pravatar.cc/150?img=49",
         status: "onLine"
       },
       {
         name: "Student Name",
-        path: "",
+        path: "http://i.pravatar.cc/150?img=33",
         status: "offLine"
       },
       {
         name: "Student Name",
-        path: "",
+        path: "http://i.pravatar.cc/150?img=25",
         status: "onLine"
       },
       {
         name: "Student Name",
-        path: "",
+        path: "http://i.pravatar.cc/150?img=12",
         status: "offLine"
       },
       {
         name: "Student Name",
-        path: "",
+        path: "http://i.pravatar.cc/150?img=3",
         status: "onLine"
       },
       {
         name: "Student Name",
-        path: "",
+        path: "http://i.pravatar.cc/150?img=11",
         status: "offLine"
       },
       {
         name: "Student Name",
-        path: "",
+        path: "http://i.pravatar.cc/150?img=69",
         status: "onLine"
       }
     ]
     const interestsItems = [
       {
         label: "Gaming",
-        className: "grey",
+        className: "customClassName",
+        classNameActive: "orange"
+      },
+      {
+        label: "Techno",
+        className: "customClassName",
+        classNameActive: "blue"
+      },
+      {
+        label: "Web",
+        classNameActive: "green"
+      },
+      {
+        label: "Web design",
+        classNameActive: "purple"
+      },
+      {
+        label: "3D",
+        classNameActive: "grey"
+      },
+      {
+        label: "Html",
+        classNameActive: "red"
+      },
+      {
+        label: "Javascript",
         classNameActive: "orange"
       },
       {
         label: "Gaming",
-        className: "grey",
-        classNameActive: "orange"
+        classNameActive: "grey"
       },
       {
-        label: "Gaming",
-        className: "grey",
-        classNameActive: "orange"
-      },
-      {
-        label: "Gaming",
-        className: "grey",
-        classNameActive: "orange"
-      },
-      {
-        label: "Gaming",
-        className: "grey",
-        classNameActive: "orange"
-      },
-      {
-        label: "Gaming",
-        className: "grey",
-        classNameActive: "orange"
-      },
-      {
-        label: "Gaming",
-        className: "grey",
-        classNameActive: "orange"
-      },
-      {
-        label: "Gaming",
-        className: "grey",
-        classNameActive: "orange"
-      },
-      {
-        label: "Gaming",
-        className: "grey",
-        classNameActive: "orange"
+        label: "web",
+        classNameActive: "blue"
       }
     ]
     const itemsChatBox = {
@@ -477,7 +470,7 @@ export default class BlockList extends Component {
       chats: []
     }
     const lorem = `Elit cupidatat excepteur ullamco labore exercitation amet consectetur. Sunt duis ipsum voluptate commodo ipsum mollit quis elit tempor anim eiusmod aliqua. Elit sint minim eiusmod consectetur cillum aliqua est exercitation. Amet anim occaecat excepteur velit. Fugiat id consequat cillum non quis nisi anim non magna proident fugiat magna duis.`
-    */
+
     return (
       <div className="blocklist">
         <ContentHeader
@@ -523,8 +516,16 @@ export default class BlockList extends Component {
             <Gift
               title="Product 2"
               message="species matrimonii, dotis"
+              className="blocklist-item"
               avatar={{ path: "https://imgplaceholder.com/100x100/1876d1/ffffff/fa-image" }}
               linkObject={{ title: "Details", position: "right" }}
+            />
+            <ChatList
+              title="Chat List"
+              className="blocklist-item"
+              description="Chat with other students"
+              items={itemsChatList}
+              menuButton={menuButtonExpertise}
             />
           </div>
 
@@ -567,6 +568,7 @@ export default class BlockList extends Component {
               className="blocklist-item"
               linkObject={{ title: "Continue", position: "center" }}
             />
+             <ChatBox title="Chat box 1" className="blocklist-item" items={itemsChatBox} />
           </div>
 
           <div className="blocklist-cell md-cell md-cell--6">
@@ -624,8 +626,17 @@ export default class BlockList extends Component {
                 <Gift
                   title="Product 3"
                   message="species matrimonii, dotis"
+                  className="blocklist-item"
                   avatar={{ path: "https://imgplaceholder.com/100x100/1de9b6/ffffff/fa-image" }}
                   linkObject={{ title: "Details", position: "right" }}
+                />
+                
+                <Discover
+                  title="Discover"
+                  description="Find someone to follow"
+                  className="blocklist-item"
+                  items={itemsUserList}
+                  menuButton={menuButtonExpertise}
                 />
               </div>
               <div className="blocklist-cell md-cell md-cell--6">
@@ -636,32 +647,27 @@ export default class BlockList extends Component {
                   message="Don't forget to save your data"
                   icon="mdi-content-save"
                   theme="green"
+                  className="blocklist-item"
                   linkObject={{ title: "Save now", position: "center" }}
                 />
+                <ContainerTab className="blocklist-item">
+                  <Tab label="Tab 1">{lorem}</Tab>
+                  <Tab label="Tab 2">{lorem}</Tab>
+                  <Tab label="Tab 3">{lorem}</Tab>
+                  <Tab label="Tab 4">{lorem}</Tab>
+                </ContainerTab>
+                <Interests items={interestsItems} className="blocklist-item" title="Choose your interest" />
               </div>
             </div>
           </div>
         </div>
         {/*
-        <ChatList
-          title="Chat List"
-          description="Chat with other students"
-          items={itemsChatList}
-        />
-        <ChatBox title="Chat box 1" items={itemsChatBox} />
-        <Interests items={interestsItems} title="Choose your interest" />
-        <Discover
-          title="Discover"
-          description="Find someone to follow"
-          items={itemsUserList}
-          menuButton={menuButtonExpertise}
-        />
         
-        <ContainerTab>
-          <Tab label="Tab 1">{lorem}</Tab>
-          <Tab label="Tab 2">{lorem}</Tab>
-          <Tab label="Tab 3">{lorem}</Tab>
-        </ContainerTab>
+       
+        
+        
+        
+        
         */}
       </div>
     )

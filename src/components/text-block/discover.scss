@@ -1,0 +1,33 @@
+@import '../../Themes/first';
+
+.discover {
+  background: $darkGrey;
+  padding: 16px;
+  .discover-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $lightGrey;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    color: $lightGrey;
+    .discover-title {
+      font-size: 20px;
+    }
+    .md-icon {
+      color: $lightGrey;
+    }
+  }
+  .discover-content {
+    .discover-list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+      padding: 16px 0;
+      color: $lightGrey;
+      .discover-button {
+        color: $blue;
+      }
+    }
+  }
+}

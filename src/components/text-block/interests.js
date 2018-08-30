@@ -3,11 +3,13 @@ import PropTypes from "prop-types"
 import { Button, Paper, MenuButton } from "react-md"
 import { cls } from "reactutils"
 
+import "./interests.scss"
+
 export default class Interests extends Component {
   initClass = "interests";
   renderInterests = () => {
     const { items } = this.props
-    return items.map((it, index) => <Interest {...it} key={index} />)
+    return items.map((it, index) => <Interest {...it} key={index} className={`interests-button ${it.className ? it.className : ''}`} />)
   };
   render() {
     const { className, menuButton, title, description } = this.props
@@ -32,8 +34,8 @@ export default class Interests extends Component {
           {this.renderInterests()}
         </div>
         <div className={cls(this.initClass + "-footer")}>
-          <Button flat>Next</Button>
-          <Button flat>Previous</Button>
+          <Button flat className="buttonNext">Next</Button>
+          <Button flat className="buttonPrevious">Previous</Button>
         </div>
       </Paper>
     )
@@ -58,7 +60,10 @@ class Interest extends Component {
     const { active } = this.state
     const { onClickInterest, label } = this.props
     this.setState({ active: !active })
-    onClickInterest(label)
+    if(typeof onClickInterest === 'function') {
+      onClickInterest(label)
+    }
+    
   };
   render() {
     const { label, className, classNameActive } = this.props

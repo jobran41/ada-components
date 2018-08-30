@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import { TabsContainer, Tabs } from "react-md"
 import { cls } from "reactutils"
 
+import './tabs-content.scss'
+
 export default class ContainerTab extends Component {
   initClass = "tabs-content";
 
