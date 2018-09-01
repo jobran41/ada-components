@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import ContentHeader from "components/content-header"
+import { docsToDoList } from "pages/docs-props"
 
 import {
   ToDoList,
@@ -29,6 +30,7 @@ import {
 } from "components/text-block"
 
 import "./style.scss"
+import Docs from "components/docs"
 
 export default class BlockList extends Component {
   onAddProject() {
@@ -385,7 +387,7 @@ export default class BlockList extends Component {
       points: 741,
       maxPoints: 1000,
       path: "http://i.pravatar.cc/150?img=49",
-      percent: 70,
+      percent: 70
     }
 
     const itemsChatList = [
@@ -483,13 +485,20 @@ export default class BlockList extends Component {
             <h3>
               <strong>Text blocks & lists</strong>
             </h3>
-            <ToDoList
-              title="To do list"
-              description="Mon 20 January"
-              items={itemsToDoList}
-              className="blocklist-item"
-              menuButton={menuButtonExpertise}
-            />
+            <Docs
+              title={"ToDoList"}
+              description="Labore sunt ullamco minim aliqua veniam."
+              docsProps={docsToDoList}
+            >
+              <ToDoList
+                title="To do list"
+                description="Mon 20 January"
+                items={itemsToDoList}
+                className="blocklist-item"
+                menuButton={menuButtonExpertise}
+              />
+            </Docs>
+
             <NotificationList
               title="Notifications"
               description="Mon 20 January"
@@ -504,7 +513,11 @@ export default class BlockList extends Component {
               currentUser={{ path: "http://i.pravatar.cc/150?img=3" }}
               className="blocklist-item"
             />
-            <PersonalInfo userObject={userObject} menuButton={menuButtonExpertise} className="blocklist-item" />
+            <PersonalInfo
+              userObject={userObject}
+              menuButton={menuButtonExpertise}
+              className="blocklist-item"
+            />
             <Gift
               title="New Arrivals !"
               message="See how they are"
@@ -517,7 +530,10 @@ export default class BlockList extends Component {
               title="Product 2"
               message="species matrimonii, dotis"
               className="blocklist-item"
-              avatar={{ path: "https://imgplaceholder.com/100x100/1876d1/ffffff/fa-image" }}
+              avatar={{
+                path:
+                  "https://imgplaceholder.com/100x100/1876d1/ffffff/fa-image"
+              }}
               linkObject={{ title: "Details", position: "right" }}
             />
             <ChatList
@@ -542,10 +558,20 @@ export default class BlockList extends Component {
               description="Weekly events"
               items={itemsEventList}
               className="blocklist-item"
-              onAddEvent={() => { }}
+              onAddEvent={() => {}}
             />
-            <Reviews title="Reviews" className="blocklist-item" negativePorcentage={15} positivePorcentage={75} />
-            <Filters className="blocklist-item" title="Filters" items={FiltersItems} menuButton={menuButtonExpertise} />
+            <Reviews
+              title="Reviews"
+              className="blocklist-item"
+              negativePorcentage={15}
+              positivePorcentage={75}
+            />
+            <Filters
+              className="blocklist-item"
+              title="Filters"
+              items={FiltersItems}
+              menuButton={menuButtonExpertise}
+            />
             <Gift
               title="Awesome!"
               message="You've reached the first level."
@@ -568,7 +594,11 @@ export default class BlockList extends Component {
               className="blocklist-item"
               linkObject={{ title: "Continue", position: "center" }}
             />
-             <ChatBox title="Chat box 1" className="blocklist-item" items={itemsChatBox} />
+            <ChatBox
+              title="Chat box 1"
+              className="blocklist-item"
+              items={itemsChatBox}
+            />
           </div>
 
           <div className="blocklist-cell md-cell md-cell--6">
@@ -585,8 +615,8 @@ export default class BlockList extends Component {
                 <Rating
                   title="Rating"
                   items={ratingItems}
-                  average={4.7}
-                  cumulates={0.4}
+                  average={"4.7"}
+                  cumulates={"0.4"}
                   className="blocklist-item"
                 />
               </div>
@@ -596,7 +626,7 @@ export default class BlockList extends Component {
                   description="All projects in progress"
                   items={itemsProjectList}
                   className="blocklist-item"
-                  onAddProject={() => { }}
+                  onAddProject={() => {}}
                 />
                 <Timer className="blocklist-item" />
               </div>
@@ -614,7 +644,12 @@ export default class BlockList extends Component {
             </div>
             <div className="blocklist-grid md-grid">
               <div className="blocklist-cell md-cell md-cell--6">
-                <Download fileSize={700} typeFile={"ZIP"} filePath={""} className="blocklist-item" />
+                <Download
+                  fileSize={"700"}
+                  typeFile={"ZIP"}
+                  filePath={""}
+                  className="blocklist-item"
+                />
                 <Gift
                   title="Any Idea ?"
                   message="Note all your great ideas"
@@ -627,10 +662,13 @@ export default class BlockList extends Component {
                   title="Product 3"
                   message="species matrimonii, dotis"
                   className="blocklist-item"
-                  avatar={{ path: "https://imgplaceholder.com/100x100/1de9b6/ffffff/fa-image" }}
+                  avatar={{
+                    path:
+                      "https://imgplaceholder.com/100x100/1de9b6/ffffff/fa-image"
+                  }}
                   linkObject={{ title: "Details", position: "right" }}
                 />
-                
+
                 <Discover
                   title="Discover"
                   description="Find someone to follow"
@@ -640,8 +678,14 @@ export default class BlockList extends Component {
                 />
               </div>
               <div className="blocklist-cell md-cell md-cell--6">
-                <Upload fileSize={700} className="blocklist-item" />
-                <Gift title="Great work !" className="blocklist-item" message="Project finished" theme="light" icon="mdi-trophy-outline" />
+                <Upload fileSize={"700"} className="blocklist-item" />
+                <Gift
+                  title="Great work !"
+                  className="blocklist-item"
+                  message="Project finished"
+                  theme="light"
+                  icon="mdi-trophy-outline"
+                />
                 <Gift
                   title="Save your data"
                   message="Don't forget to save your data"
@@ -656,7 +700,11 @@ export default class BlockList extends Component {
                   <Tab label="Tab 3">{lorem}</Tab>
                   <Tab label="Tab 4">{lorem}</Tab>
                 </ContainerTab>
-                <Interests items={interestsItems} className="blocklist-item" title="Choose your interest" />
+                <Interests
+                  items={interestsItems}
+                  className="blocklist-item"
+                  title="Choose your interest"
+                />
               </div>
             </div>
           </div>
