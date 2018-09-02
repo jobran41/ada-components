@@ -11,6 +11,7 @@ import Ticket from 'components/ticket'
 import SocialPanel from 'components/social-panel'
 import AdaAlerts from 'components/ada-alerts'
 import ProfileAvatar from 'components/profile-avatar'
+import AdaHeart from 'components/ada-heart'
 
 import './style.scss'
 
@@ -58,7 +59,9 @@ export default class Elements extends Component {
               <ProfileAvatar active path="http://i.pravatar.cc/150?img=3" />
               <ProfileAvatar path="http://i.pravatar.cc/150?img=3" />
             </div>
-
+            <br />
+            <AdaHeart />
+            <br />
           </div>
           <div className="elementsCell md-cell md-cell--5">
             <div className="ticketWrapper">
