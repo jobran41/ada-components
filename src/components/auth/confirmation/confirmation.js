@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { FontIcon, Button, Paper } from "react-md"
 import PropTypes from "prop-types"
 
-import '../Style.scss'
+import './Style.scss'
 
 class Confirmation extends Component {
   checkedItem = () => {

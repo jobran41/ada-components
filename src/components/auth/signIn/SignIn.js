@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { TextField, Button, Paper, Snackbar } from "react-md"
 
-import "../Style.scss"
+import "./Style.scss"
 
 class SignIn extends Component {
   constructor(props) {
