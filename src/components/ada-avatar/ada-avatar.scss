@@ -1,0 +1,7 @@
+.avatarItem {
+  display: inline-block;
+  &.roundAvatar {
+    border-radius: 50%;
+    overflow: hidden;
+  }
+}

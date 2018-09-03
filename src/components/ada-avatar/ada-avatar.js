@@ -18,6 +18,8 @@ class AdaAvatar extends Component {
     let inlineHeight = height ? height : "70px"
     return (
       <div
+        width={inlineWidth}
+        height={inlineHeight}
         onClick={this.renderName}
         className={`${className ? className : ''} ${round ? 'roundAvatar' : ''} avatarItem`}>
         <img
