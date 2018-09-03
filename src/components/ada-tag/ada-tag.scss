@@ -1,0 +1,39 @@
+.adaAlerts {
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  background-color: #2a7bdb;
+  color: #fff;
+  padding-right: 8px;
+  .adaAlerts-left {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    .iconRight {
+      padding: 2px 8px;
+      .md-icon {
+        color: #fff;
+        font-size: 32px;
+      }
+    }
+    .adaAlerts-left-text {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+  .button-adaAlerts {
+    padding: 6px;
+    color: #fff;
+    border-left: 1px solid;
+    border-radius: 0;
+  }
+  &.green {
+    background-color: #1de9b6;
+  }
+  &.orange {
+    background-color: #f5c228;
+  }
+  &.red {
+    background-color: #f44236;
+  }
+}

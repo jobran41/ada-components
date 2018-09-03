@@ -7,13 +7,14 @@ import AdaCategory from 'components/ada-category'
 import AdaNotifications from 'components/ada-notifications'
 import AdaStepper from 'components/ada-stepper'
 import Ticket from 'components/ticket'
-// import Badges from 'components/badges'
+import Badges from 'components/badges'
 import SocialPanel from 'components/social-panel'
 import AdaAlerts from 'components/ada-alerts'
 import ProfileAvatar from 'components/profile-avatar'
 import AdaHeart from 'components/ada-heart'
 import AdaProgress from 'components/ada-progress'
 import AdaPagination from 'components/ada-pagination'
+import AdaAvatar from 'components/ada-avatar'
 
 import './style.scss'
 
@@ -34,8 +35,12 @@ export default class Elements extends Component {
 
   render() {
     const STRING_ITEMS = ['Zero', 'One', 'Two', 'Three']
+    const roundAvatar = ["Man01", "Man02", "Man03"].map((elem, i) => {
+      return <AdaAvatar width={50} height={50} round key={i} name={elem} />
+    })
+
     return (
-      <div className="elements">
+      <div className="elements" >
         <ContentHeader title="Basic Elements Used Across the Dashboard" date="2018" subclass="gray-text" />
         <div className="elementsContainer md-grid">
           <div className="elementsCell md-cell md-cell--4">
@@ -83,22 +88,23 @@ export default class Elements extends Component {
             </div>
             <br />
             <div className="elemButtonWrapper">
-              <AdaHeart label="design" checked={true} id="checkbox1"/>
-              <AdaHeart label="developpement" checked={false} id="checkbox2"/>
+              <AdaHeart label="design" checked={true} id="checkbox1" />
+              <AdaHeart label="developpement" checked={false} id="checkbox2" />
             </div>
             <br />
-            <AdaHeart heart label="Likes" id="checkbox3"/>
+            <AdaHeart heart label="Likes" id="checkbox3" />
             <br />
-            <AdaHeart star label="Rate" id="checkbox4"/>
+            <AdaHeart star label="Rate" id="checkbox4" />
             <br />
             <div className="elemButtonWrapper">
-              <AdaHeart switcher label="on" checked={true} id="checkbox5"/>
-              <AdaHeart switcher label="off" checked={false} id="checkbox5"/>
+              <AdaHeart switcher label="on" checked={true} id="checkbox5" />
+              <AdaHeart switcher label="off" checked={false} id="checkbox5" />
             </div>
             <br />
-            <AdaHeart eye label="Views" id="checkbox6"/>
+            <AdaHeart eye label="Views" id="checkbox6" />
           </div>
           <div className="elementsCell md-cell md-cell--5">
+            {roundAvatar}
             <div className="ticketWrapper">
               <Ticket titleLeft={<h2>1</h2>} className="ticketItem" titleTop="Step 1" description="Lorem ipsum" />
               <Ticket titleLeft={<h2>2</h2>} className="ticketItem" theme="green" titleTop="Step 1" description="Lorem ipsum" />
@@ -107,7 +113,7 @@ export default class Elements extends Component {
             <br />
             <Ticket titleLeft="Title" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
             <br />
-            {/*<Badges title="Badges" badgesOfAvatars={["Man01", "Man02", "Man03"]} />*/}
+            {<Badges title="Badges" badgesOfAvatars={["Man01", "Man02", "Man03"]} />}
             <AdaAlerts theme="green" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
             <br />
             <AdaAlerts iconLeft='mdi-information-outline' iconRight='mdi-close' text="Information" />
