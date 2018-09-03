@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from "prop-types"
 import {
   Checkbox,
-  Switch
+  Switch,
+  FontIcon
 } from 'react-md'
 import './ada-heart.scss'
 import AdaIcon from '../adaIcon'
@@ -10,7 +11,7 @@ import AdaIcon from '../adaIcon'
 export default class AdaHeart extends Component {
 
   render() {
-    const { start, heart, switcher } = this.props
+    const { star, heart, switcher, eye } = this.props
     return (
       <div className="adaHeart">
         {heart &&
@@ -23,24 +24,16 @@ export default class AdaHeart extends Component {
             uncheckedCheckboxIcon={<AdaIcon viewBox="0 0 24 24" icon="favoriteChecked" />}
           />
         }
-        {start &&
+        {star &&
           <Checkbox
             {...this.props}
             aria-label=""
-            id="custom-checkbox-adaStart"
+            id="custom-checkbox-adaStar"
             name="using-adaHeart-icons"
             checkedCheckboxIcon={<AdaIcon viewBox="0 0 24 24" icon="startBorder" />}
             uncheckedCheckboxIcon={<AdaIcon viewBox="0 0 24 24" icon="start" />}
           />
         }
-        {!start && !heart && !switcher &&
-          <Checkbox
-            {...this.props}
-            aria-label=""
-            id="custom-checkbox-adaCheckbox"
-            name="using-adaHeart-icons"
-            type="checkbox"
-          />}
         {switcher &&
           <Switch
             {...this.props}
@@ -48,13 +41,31 @@ export default class AdaHeart extends Component {
             type="switch"
           />
         }
-
+        {eye &&
+          <Checkbox
+            {...this.props}
+            aria-label=""
+            id="custom-checkbox-adaStar"
+            name="using-adaHeart-icons"
+            checkedCheckboxIcon={<FontIcon iconClassName={`mdi mdi-eye`} />}
+            uncheckedCheckboxIcon={<FontIcon iconClassName={`mdi mdi-eye-outline`} />}
+          />
+        }
+        {!star && !heart && !switcher && eye &&
+          <Checkbox
+            {...this.props}
+            aria-label=""
+            id="custom-checkbox-adaCheckbox"
+            name="using-adaHeart-icons"
+            type="checkbox"
+          />}
       </div>
     )
   }
 }
 AdaHeart.propTypes = {
-  start: PropTypes.bool,
+  star: PropTypes.bool,
   heart: PropTypes.bool,
-  switcher: PropTypes.bool
+  switcher: PropTypes.bool,
+  eye: PropTypes.bool
 }
