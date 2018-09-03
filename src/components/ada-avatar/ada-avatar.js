@@ -14,8 +14,8 @@ class AdaAvatar extends Component {
   }
   render() {
     const { width, height, name, round, className } = this.props
-    let inlineWidth = width ? width : "70px"
-    let inlineHeight = height ? height : "70px"
+    let inlineWidth = width ? width + "px" : "70px"
+    let inlineHeight = height ? height + "px" : "70px"
     return (
       <div
         width={inlineWidth}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from "prop-types"
-import { FontIcon, Button } from "react-md"
+import { FontIcon, Button, TextField } from "react-md"
 
 import './ada-tag.scss'
 
@@ -11,9 +11,19 @@ class AdaTag extends Component {
       <div className={`adaTag ${className ? className : ''} ${theme ? theme : ''}`}>
         <div className="adaTag-left">
           <div className="iconRight"><FontIcon iconClassName={`mdi ${iconLeft ? iconLeft : ''}`} /></div>
-          <div className="adaTag-left-text">{text}</div>
+          {read && <div className="adaTag-left-text">{text}</div>}
+          {!read && <div className="adaTag-left-text">
+            <TextField
+              {...this.props}
+              id="ada-search"
+              placeholder="Search"
+              type="text"
+              block
+              rightIcon={<FontIcon>search</FontIcon>}
+              className="adaSearch"
+            /></div>}
         </div>
-        <Button className="button-adaTag" icon iconClassName={`mdi ${iconRight ? iconRight : ''}`} />
+        <Button disabled={read} className="button-adaTag" icon iconClassName={`mdi ${iconRight ? iconRight : ''}`} />
       </div>
     )
   }
