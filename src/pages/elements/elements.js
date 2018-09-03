@@ -113,7 +113,10 @@ export default class Elements extends Component {
             <br />
             <Ticket titleLeft="Title" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
             <br />
-            {<Badges title="Badges" badgesOfAvatars={["Man01", "Man02", "Man03"]} />}
+            <Badges title="Badges" badgesOfAvatars={["Man01", "Man02", "Man03"]} />
+            <br />
+            <Badges title="Badges" badgesOfAvatars={["Man01", "Man02", "Man03"]} theme="dark" />
+            <br />
             <AdaAlerts theme="green" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
             <br />
             <AdaAlerts iconLeft='mdi-information-outline' iconRight='mdi-close' text="Information" />

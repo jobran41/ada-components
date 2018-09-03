@@ -28,8 +28,8 @@ export default class AdaHeart extends Component {
             {...this.props}
             aria-label=""
             name="using-adaHeart-icons"
-            checkedCheckboxIcon={<AdaIcon fill="yellow" width="20" height="20" viewBox="0 0 24 24" icon="startBorder" />}
-            uncheckedCheckboxIcon={<AdaIcon fill="yellow" width="20" height="20" viewBox="0 0 24 24" icon="start" />}
+            checkedCheckboxIcon={<AdaIcon fill="#f5c228" width="20" height="20" viewBox="0 0 24 24" icon="startBorder" />}
+            uncheckedCheckboxIcon={<AdaIcon fill="#f5c228" width="20" height="20" viewBox="0 0 24 24" icon="start" />}
           />
         }
         {switcher &&

@@ -1,10 +1,30 @@
-.Badges {
-  .Badges-content {
-    .Badges-avatar {
-      display: flex;
-      .Badges-avatar-item {
-        border-radius: 50%;
-      }
+.Badges-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  background: #fff;
+  color: #adadad;
+  padding: 5px;
+  > h4 {
+    margin-bottom: 0;
+    border-right: 1px solid;
+    margin-right: 5px;
+    padding-right: 5px;
+    display: flex;
+    align-items: center;
+  }
+  .Badges-avatar {
+    display: flex;
+    align-items: center;
+    .avatarItem {
+      margin: 10px;
     }
+  }
+}
+
+.dark {
+  .Badges-content {
+    background: #393c40;
+    color: #a0a0a0;
   }
 }
