@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { TextField, Button, Paper, Snackbar } from "react-md"
 import PropTypes from "prop-types"
 
-import '../Style.scss'
+import './Style.scss'
 
 class ForgetPassword extends Component {
   constructor(props) {
