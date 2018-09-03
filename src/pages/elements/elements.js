@@ -62,6 +62,11 @@ export default class Elements extends Component {
             <br />
             <AdaHeart />
             <br />
+            <AdaHeart heart />
+            <br />
+            <AdaHeart start />
+            <br />
+            <AdaHeart switcher />
           </div>
           <div className="elementsCell md-cell md-cell--5">
             <div className="ticketWrapper">

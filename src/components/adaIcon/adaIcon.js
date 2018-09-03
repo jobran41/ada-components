@@ -35,7 +35,9 @@ class AddIcon extends Component {
     }
     renderName = () => {
         const { renderName } = this.props
-        renderName()
+        if (typeof renderName === 'function') {
+            renderName()
+        }
     }
     render() {
         return (<div className="dddIcon" onClick={this.renderName} >{this.renderGroupe()}</div>)
