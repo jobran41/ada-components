@@ -33,8 +33,8 @@ class AdaAvatar extends Component {
   }
 }
 AdaAvatar.propTypes = {
-  width: PropTypes.string,
-  height: PropTypes.string,
+  width: PropTypes.number,
+  height: PropTypes.number,
   renderName: PropTypes.func,
   name: PropTypes.string.isRequired,
   round: PropTypes.bool,
