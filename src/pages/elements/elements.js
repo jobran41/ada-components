@@ -64,13 +64,13 @@ export default class Elements extends Component {
             <br />
             <AdaProgress item={{ value: 50, max: 100, min: 0, id: 'ada-progress' }} />
             <br />
-            <div className="text-center">
+            {/*<div className="text-center">
               <h3>Ada - Pagination</h3>
               {this.state.pageOfItems.map(item =>
                 <div key={item.id}>{item.name}</div>
               )}
               <AdaPagination items={this.state.exampleItems} onChangePage={this.onChangePage} />
-            </div>
+            </div>*/}
           </div>
           <div className="elementsCell md-cell md-cell--3">
             <div className="middleComponent">
@@ -139,7 +139,10 @@ export default class Elements extends Component {
                 <Fragment>
                   <Button icon iconClassName="mdi mdi-google" />
                   <Button icon iconClassName="mdi mdi-facebook" />
+                  <Button icon iconClassName="mdi mdi-instagram" />
                   <Button icon iconClassName="mdi mdi-twitter" />
+                  <Button icon iconClassName="mdi mdi-linkedin" />
+                  <Button icon iconClassName="mdi mdi-play-box-outline" />
                 </Fragment>
               )
             }} />
@@ -149,7 +152,10 @@ export default class Elements extends Component {
                 <Fragment>
                   <Button icon iconClassName="mdi mdi-google" />
                   <Button icon iconClassName="mdi mdi-facebook" />
+                  <Button icon iconClassName="mdi mdi-instagram" />
                   <Button icon iconClassName="mdi mdi-twitter" />
+                  <Button icon iconClassName="mdi mdi-linkedin" />
+                  <Button icon iconClassName="mdi mdi-play-box-outline" />
                 </Fragment>
               )
             }} />
@@ -159,7 +165,10 @@ export default class Elements extends Component {
                 <Fragment>
                   <Button icon iconClassName="mdi mdi-google" />
                   <Button icon iconClassName="mdi mdi-facebook" />
+                  <Button icon iconClassName="mdi mdi-instagram" />
                   <Button icon iconClassName="mdi mdi-twitter" />
+                  <Button icon iconClassName="mdi mdi-linkedin" />
+                  <Button icon iconClassName="mdi mdi-play-box-outline" />
                 </Fragment>
               )
             }} />
@@ -169,7 +178,10 @@ export default class Elements extends Component {
                 <Fragment>
                   <Button icon iconClassName="mdi mdi-google" />
                   <Button icon iconClassName="mdi mdi-facebook" />
+                  <Button icon iconClassName="mdi mdi-instagram" />
                   <Button icon iconClassName="mdi mdi-twitter" />
+                  <Button icon iconClassName="mdi mdi-linkedin" />
+                  <Button icon iconClassName="mdi mdi-play-box-outline" />
                 </Fragment>
               )
             }} />
