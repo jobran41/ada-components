@@ -12,6 +12,7 @@ import SocialPanel from 'components/social-panel'
 import AdaAlerts from 'components/ada-alerts'
 import ProfileAvatar from 'components/profile-avatar'
 import AdaHeart from 'components/ada-heart'
+import AdaProgress from 'components/ada-progress'
 
 import './style.scss'
 
@@ -42,7 +43,7 @@ export default class Elements extends Component {
             <br />
             <AdaStepper active={2} widthBorder stepperData={["Standard", "Medium", "High"]} />
             <br />
-
+            <AdaProgress item={{ value: 50, max: 100, min: 0, id: 'ada-progress' }} />
           </div>
           <div className="elementsCell md-cell md-cell--3">
             <div className="middleComponent">
