@@ -116,6 +116,36 @@ export default class Elements extends Component {
             <br />
             <AdaAlerts theme="red" iconLeft='mdi-alert-outline' iconRight='mdi-close' text="Alert message" />
             <br />
+            <SocialPanel color="red" renderButton={() => {
+              return (
+                <Fragment>
+                  <Button icon iconClassName="mdi mdi-google" />
+                  <Button icon iconClassName="mdi mdi-facebook" />
+                  <Button icon iconClassName="mdi mdi-twitter" />
+                </Fragment>
+              )
+            }} />
+            <br />
+            <SocialPanel color="blue" renderButton={() => {
+              return (
+                <Fragment>
+                  <Button icon iconClassName="mdi mdi-google" />
+                  <Button icon iconClassName="mdi mdi-facebook" />
+                  <Button icon iconClassName="mdi mdi-twitter" />
+                </Fragment>
+              )
+            }} />
+            <br />
+            <SocialPanel color="purple" renderButton={() => {
+              return (
+                <Fragment>
+                  <Button icon iconClassName="mdi mdi-google" />
+                  <Button icon iconClassName="mdi mdi-facebook" />
+                  <Button icon iconClassName="mdi mdi-twitter" />
+                </Fragment>
+              )
+            }} />
+            <br />
             <SocialPanel renderButton={() => {
               return (
                 <Fragment>
