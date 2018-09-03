@@ -13,12 +13,25 @@ import AdaAlerts from 'components/ada-alerts'
 import ProfileAvatar from 'components/profile-avatar'
 import AdaHeart from 'components/ada-heart'
 import AdaProgress from 'components/ada-progress'
+import AdaPagination from 'components/ada-pagination'
 
 import './style.scss'
 
 export default class Elements extends Component {
-
+  constructor(props) {
+    super(props)
+    let exampleItems = [...Array(150).keys()].map(i => ({ id: (i + 1), name: 'Item ' + (i + 1) }))
+    this.state = {
+      exampleItems: exampleItems,
+      pageOfItems: []
+    }
+  }
   handleSearch = (v) => { }
+  onChangePage = (pageOfItems) => {
+    // update state with new page of items
+    this.setState({ pageOfItems: pageOfItems })
+  }
+
   render() {
     const STRING_ITEMS = ['Zero', 'One', 'Two', 'Three']
     return (
@@ -44,6 +57,14 @@ export default class Elements extends Component {
             <AdaStepper active={2} widthBorder stepperData={["Standard", "Medium", "High"]} />
             <br />
             <AdaProgress item={{ value: 50, max: 100, min: 0, id: 'ada-progress' }} />
+            <br />
+            <div className="text-center">
+              <h3>Ada - Pagination</h3>
+              {this.state.pageOfItems.map(item =>
+                <div key={item.id}>{item.name}</div>
+              )}
+              <AdaPagination items={this.state.exampleItems} onChangePage={this.onChangePage} />
+            </div>
           </div>
           <div className="elementsCell md-cell md-cell--3">
             <div className="middleComponent">

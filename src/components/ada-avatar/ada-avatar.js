@@ -13,13 +13,13 @@ class AdaAvatar extends Component {
     }
   }
   render() {
-    const { width, height, name } = this.props
+    const { width, height, name, round, className } = this.props
     let inlineWidth = width ? width : "70px"
     let inlineHeight = height ? height : "70px"
     return (
       <div
         onClick={this.renderName}
-        className="avatarItem">
+        className={`${className ? className : ''} ${round ? 'roundAvatar' : ''} avatarItem`}>
         <img
           width={inlineWidth}
           height={inlineHeight}
@@ -35,5 +35,7 @@ AdaAvatar.propTypes = {
   height: PropTypes.string,
   renderName: PropTypes.func,
   name: PropTypes.string.isRequired,
+  round: PropTypes.bool,
+  className: PropTypes.string
 }
 export default AdaAvatar 
