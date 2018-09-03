@@ -60,15 +60,21 @@ export default class Elements extends Component {
               <ProfileAvatar path="http://i.pravatar.cc/150?img=3" />
             </div>
             <br />
-            <AdaHeart />
+            <div className="elemButtonWrapper">
+              <AdaHeart label="design" checked={true} id="checkbox1"/>
+              <AdaHeart label="developpement" checked={false} id="checkbox2"/>
+            </div>
             <br />
-            <AdaHeart heart />
+            <AdaHeart heart label="Likes" id="checkbox3"/>
             <br />
-            <AdaHeart start />
+            <AdaHeart star label="Rate" id="checkbox4"/>
             <br />
-            <AdaHeart switcher />
+            <div className="elemButtonWrapper">
+              <AdaHeart switcher label="on" checked={true} id="checkbox5"/>
+              <AdaHeart switcher label="off" checked={false} id="checkbox5"/>
+            </div>
             <br />
-            <AdaHeart eye />
+            <AdaHeart eye label="Views" id="checkbox6"/>
           </div>
           <div className="elementsCell md-cell md-cell--5">
             <div className="ticketWrapper">

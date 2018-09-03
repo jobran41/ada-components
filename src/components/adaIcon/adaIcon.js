@@ -20,7 +20,7 @@ class AddIcon extends Component {
                 viewBox={view}>
                 <g>
                     {currentIcon.map((item, i) => {
-                        return <path key={i} d={item} />
+                        return <path fill={fill} key={i} d={item} />
                     })}
                 </g>
             </svg >
