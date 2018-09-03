@@ -1,0 +1,16 @@
+.item-progress {
+  .item-percent-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    color: #6b6b6b;
+    font-size: 13px;
+  }
+  .md-progress--linear {
+    height: 8px;
+    background: #d4d4d4;
+    .md-progress--linear-active {
+      background-image: linear-gradient(90deg, #2a7bdb 0, #149fed 100%);
+    }
+  }
+}
