@@ -112,9 +112,13 @@ export default class Elements extends Component {
               <Ticket titleLeft={<h2>3</h2>} className="ticketItem" theme="purple" titleTop="Step 1" description="Lorem ipsum" />
             </div>
             <br />
-            <AdaTag theme="green" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
+            <AdaTag  iconLeft='mdi-check-circle-outline' iconRight='mdi-note-plus-outline' text="New Note" />
             <br />
-            <AdaTag read="true" theme="green" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
+            <AdaTag theme="blue" iconLeft='mdi-check-circle-outline' iconRight='mdi-email-outline' text="New Message" />
+            <br />
+            <AdaTag readOnly="true" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
+            <br />
+            <AdaTag theme="blue" readOnly="true" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
             <br />
             <Ticket titleLeft="Title" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
             <br />

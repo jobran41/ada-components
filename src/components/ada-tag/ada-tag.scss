@@ -2,9 +2,9 @@
   display: flex;
   justify-content: stretch;
   align-items: center;
-  background-color: #2a7bdb;
-  color: #fff;
-  padding-right: 8px;
+  background-color: #fff;
+  color: #6f7379;
+  padding: 8px;
   .adaTag-left {
     display: flex;
     flex-grow: 1;
@@ -12,28 +12,99 @@
     .iconRight {
       padding: 2px 8px;
       .md-icon {
-        color: #fff;
+        color: #6f7379;
         font-size: 32px;
       }
     }
     .adaTag-left-text {
-      font-size: 20px;
-      font-weight: bold;
+      width: 100%;
+      padding: 0 8px;
+      background: #efefef;
+      margin-right: 8px;
     }
   }
   .button-adaTag {
     padding: 6px;
-    color: #fff;
+    color: #6f7379;
     border-left: 1px solid;
     border-radius: 0;
   }
+  &.blue {
+    .button-adaTag {
+      color: #2a7bdb;
+    }
+  }
   &.green {
-    background-color: #1de9b6;
+    .button-adaTag {
+      color: #1de9b6;
+    }
   }
   &.orange {
-    background-color: #f5c228;
+    .button-adaTag {
+      color: #f5c228;
+    }
   }
   &.red {
-    background-color: #f44236;
+    .button-adaTag {
+      color: #f44236;
+    }
+  }
+  &.readOnly {
+    background-color: #c6cacf;
+    color: #6f7379;
+    .adaTag-left {
+      .adaTag-left-text {
+        background: none;
+        padding: 0;
+      }
+    }
+    &.blue {
+      background-color: #2a7bdb;
+      color: #fff;
+      .button-adaTag {
+        color: #fff;
+      }
+      .iconRight {
+        .md-icon {
+          color: #fff;
+        }
+      }
+    }
+    &.green {
+      background-color: #1de9b6;
+      color: #fff;
+      .button-adaTag {
+        color: #fff;
+      }
+      .iconRight {
+        .md-icon {
+          color: #fff;
+        }
+      }
+    }
+    &.orange {
+      background-color: #f5c228;
+      color: #fff;
+      .button-adaTag {
+        color: #fff;
+      }
+      .iconRight {
+        .md-icon {
+          color: #fff;
+        }
+      }
+    }
+    &.red {
+      background-color: #f44236;
+      color: #fff;
+      .button-adaTag {
+        color: #fff;
+      }
+      .iconRight {
+        .md-icon {
+          color: #fff;
+        }
+      }
+    }
   }
 }
