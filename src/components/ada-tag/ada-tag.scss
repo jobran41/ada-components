@@ -1,11 +1,11 @@
-.adaAlerts {
+.adaTag {
   display: flex;
   justify-content: stretch;
   align-items: center;
   background-color: #2a7bdb;
   color: #fff;
   padding-right: 8px;
-  .adaAlerts-left {
+  .adaTag-left {
     display: flex;
     flex-grow: 1;
     align-items: center;
@@ -16,12 +16,12 @@
         font-size: 32px;
       }
     }
-    .adaAlerts-left-text {
+    .adaTag-left-text {
       font-size: 20px;
       font-weight: bold;
     }
   }
-  .button-adaAlerts {
+  .button-adaTag {
     padding: 6px;
     color: #fff;
     border-left: 1px solid;

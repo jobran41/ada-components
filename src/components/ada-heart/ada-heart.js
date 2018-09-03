@@ -17,15 +17,17 @@ export default class AdaHeart extends Component {
         {heart &&
           <Checkbox
             {...this.props}
+            onChange={() => null}
             aria-label=""
             name="using-adaHeart-icons"
             checkedCheckboxIcon={<AdaIcon fill="red" width="20" height="20" viewBox="0 0 24 24" icon="favoriteUnChecked" />}
-            uncheckedCheckboxIcon={<AdaIcon fill="red"  width="20" height="20" viewBox="0 0 24 24" icon="favoriteChecked" />}
+            uncheckedCheckboxIcon={<AdaIcon fill="red" width="20" height="20" viewBox="0 0 24 24" icon="favoriteChecked" />}
           />
         }
         {star &&
           <Checkbox
             {...this.props}
+            onChange={() => null}
             aria-label=""
             name="using-adaHeart-icons"
             checkedCheckboxIcon={<AdaIcon fill="yellow" width="20" height="20" viewBox="0 0 24 24" icon="startBorder" />}
@@ -35,6 +37,7 @@ export default class AdaHeart extends Component {
         {switcher &&
           <Switch
             {...this.props}
+            onChange={() => null}
             id="switch-power"
             type="switch"
           />
@@ -42,6 +45,7 @@ export default class AdaHeart extends Component {
         {eye &&
           <Checkbox
             {...this.props}
+            onChange={() => null}
             aria-label=""
             name="using-adaHeart-icons"
             className={`adaHeart-icons-Eye`}
@@ -52,6 +56,7 @@ export default class AdaHeart extends Component {
         {!star && !heart && !switcher && !eye &&
           <Checkbox
             {...this.props}
+            onChange={() => null}
             aria-label=""
             name="using-adaHeart-icons"
             type="checkbox"
@@ -61,8 +66,8 @@ export default class AdaHeart extends Component {
   }
 }
 AdaHeart.propTypes = {
-  star: PropTypes.bool,
-  heart: PropTypes.bool,
-  switcher: PropTypes.bool,
-  eye: PropTypes.bool
+  star: PropTypes.string,
+  heart: PropTypes.string,
+  switcher: PropTypes.string,
+  eye: PropTypes.string
 }

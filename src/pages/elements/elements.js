@@ -15,6 +15,7 @@ import AdaHeart from 'components/ada-heart'
 import AdaProgress from 'components/ada-progress'
 import AdaPagination from 'components/ada-pagination'
 import AdaAvatar from 'components/ada-avatar'
+import AdaTag from 'components/ada-tag'
 
 import './style.scss'
 
@@ -92,16 +93,16 @@ export default class Elements extends Component {
               <AdaHeart label="developpement" checked={false} id="checkbox2" />
             </div>
             <br />
-            <AdaHeart heart label="Likes" id="checkbox3" />
+            <AdaHeart heart="true" label="Likes" id="checkbox3" />
             <br />
-            <AdaHeart star label="Rate" id="checkbox4" />
+            <AdaHeart star="true" label="Rate" id="checkbox4" />
             <br />
             <div className="elemButtonWrapper">
-              <AdaHeart switcher label="on" checked={true} id="checkbox5" />
-              <AdaHeart switcher label="off" checked={false} id="checkbox5" />
+              <AdaHeart name="switcher1" switcher="true" label="on" checked={true} id="checkbox5" />
+              <AdaHeart name="switcher2" switcher="true" label="off" checked={false} id="checkbox5" />
             </div>
             <br />
-            <AdaHeart eye label="Views" id="checkbox6" />
+            <AdaHeart eye="true" label="Views" id="checkbox6" />
           </div>
           <div className="elementsCell md-cell md-cell--5">
             {roundAvatar}
@@ -110,6 +111,10 @@ export default class Elements extends Component {
               <Ticket titleLeft={<h2>2</h2>} className="ticketItem" theme="green" titleTop="Step 1" description="Lorem ipsum" />
               <Ticket titleLeft={<h2>3</h2>} className="ticketItem" theme="purple" titleTop="Step 1" description="Lorem ipsum" />
             </div>
+            <br />
+            <AdaTag theme="green" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
+            <br />
+            <AdaTag read="true" theme="green" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
             <br />
             <Ticket titleLeft="Title" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
             <br />
