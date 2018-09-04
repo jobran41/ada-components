@@ -1,5 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { FontIcon } from 'react-md'
+
+import "./style.scss"
 
 const propTypes = {
   items: PropTypes.array.isRequired,
@@ -113,25 +116,25 @@ class Pagination extends React.Component {
     }
 
     return (
-      <ul className="pagination">
-        <li className={pager.currentPage === 1 ? 'disabled' : ''}>
-          <a onClick={() => this.setPage(1)}>First</a>
-        </li>
-        <li className={pager.currentPage === 1 ? 'disabled' : ''}>
-          <a onClick={() => this.setPage(pager.currentPage - 1)}>Previous</a>
-        </li>
+      <div className="pagination">
+        <div className={pager.currentPage === 1 ? 'paginationIndicator paginationItem disabled' : 'paginationIndicator paginationItem'}>
+          <FontIcon onClick={() => this.setPage(1)}>first_page</FontIcon>
+        </div>
+        <div className={pager.currentPage === 1 ? 'paginationIndicator paginationItem disabled' : 'paginationIndicator paginationItem'}>
+          <FontIcon onClick={() => this.setPage(pager.currentPage - 1)}>chevron_left</FontIcon>
+        </div>
         {pager.pages.map((page, index) =>
-          <li key={index} className={pager.currentPage === page ? 'active' : ''}>
+          <div key={index} className={pager.currentPage === page ? 'paginationItem active' : 'paginationItem'}>
             <a onClick={() => this.setPage(page)}>{page}</a>
-          </li>
+          </div>
         )}
-        <li className={pager.currentPage === pager.totalPages ? 'disabled' : ''}>
-          <a onClick={() => this.setPage(pager.currentPage + 1)}>Next</a>
-        </li>
-        <li className={pager.currentPage === pager.totalPages ? 'disabled' : ''}>
-          <a onClick={() => this.setPage(pager.totalPages)}>Last</a>
-        </li>
-      </ul>
+        <div className={pager.currentPage === pager.totalPages ? 'paginationIndicator paginationItem disabled' : 'paginationIndicator paginationItem'}>
+          <FontIcon onClick={() => this.setPage(pager.currentPage + 1)}>chevron_right</FontIcon>
+        </div>
+        <div className={pager.currentPage === pager.totalPages ? 'paginationIndicator paginationItem disabled' : 'paginationIndicator paginationItem'}>
+          <FontIcon onClick={() => this.setPage(pager.totalPages)}>last_page</FontIcon>
+        </div>
+      </div>
     )
   }
 }

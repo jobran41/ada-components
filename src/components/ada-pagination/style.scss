@@ -1,0 +1,34 @@
+.pagination {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  margin-top: 5px;
+  .paginationItem {
+    padding: 8px 10px;
+    border: 1px solid #b9b9b9;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    margin-left: 4px;
+    width: 50px;
+    justify-content: center;
+    cursor: pointer;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:hover {
+      background: #2a7bdb;
+      color: #fff;
+    }
+  }
+  .paginationIndicator {
+    background: #2a7bdb;
+    color: #fff;
+    .md-icon {
+      color: #fff;
+    }
+    &.disabled {
+      background: #b9b9b9;
+    }
+  }
+}
