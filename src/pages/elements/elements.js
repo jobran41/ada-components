@@ -13,7 +13,7 @@ import AdaAlerts from 'components/ada-alerts'
 import ProfileAvatar from 'components/profile-avatar'
 import AdaHeart from 'components/ada-heart'
 import AdaProgress from 'components/ada-progress'
-//import AdaPagination from 'components/ada-pagination'
+import AdaPagination from 'components/ada-pagination'
 import AdaAvatar from 'components/ada-avatar'
 import AdaTag from 'components/ada-tag'
 
@@ -63,14 +63,6 @@ export default class Elements extends Component {
             <AdaStepper active={2} widthBorder stepperData={["Standard", "Medium", "High"]} />
             <br />
             <AdaProgress item={{ value: 50, max: 100, min: 0, id: 'ada-progress' }} />
-            <br />
-            {/*<div className="text-center">
-              <h3>Ada - Pagination</h3>
-              {this.state.pageOfItems.map(item =>
-                <div key={item.id}>{item.name}</div>
-              )}
-              <AdaPagination items={this.state.exampleItems} onChangePage={this.onChangePage} />
-            </div>*/}
             <br />
             <SocialPanel color="red" renderButton={() => {
               return (
@@ -199,6 +191,14 @@ export default class Elements extends Component {
             <br />
             <AdaAlerts theme="red" iconLeft='mdi-alert-outline' iconRight='mdi-close' text="Alert message" />
             <br />
+            <div className="paginationWapper">
+              <div className="paginationItems">
+                {this.state.pageOfItems.map(item =>
+                  <div className="pagination-item" key={item.id}>{item.name}</div>
+                )}
+              </div>
+              <AdaPagination items={this.state.exampleItems} onChangePage={this.onChangePage} />
+            </div>
           </div>
         </div>
       </div>
