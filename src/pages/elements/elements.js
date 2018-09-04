@@ -65,6 +65,16 @@ export default class Elements extends Component {
             <br />
             <AdaProgress item={{ value: 50, max: 100, min: 0, id: 'ada-progress' }} />
             <br />
+            <AdaSlider
+              id="disctete-ticks-slider"
+              discrete
+              label="Slider"
+              max={0.25}
+              step={0.01}
+              discreteTicks={0.01}
+              valuePrecision={2}
+            />
+            <br />
             <SocialPanel color="red" renderButton={() => {
               return (
                 <Fragment>
