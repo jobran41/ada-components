@@ -67,12 +67,11 @@ export default class Elements extends Component {
             <br />
             <AdaSlider
               id="disctete-ticks-slider"
-              discrete
               label="Slider"
-              max={0.25}
-              step={0.01}
-              discreteTicks={0.01}
-              valuePrecision={2}
+              max={7}
+              step={0.5}
+              discreteTicks={1}
+              valuePrecision={1}
             />
             <br />
             <SocialPanel color="red" renderButton={() => {

@@ -1,0 +1,13 @@
+.adaSlider {
+  .md-slider-track {
+    height: 4px;
+    background: #1976d2;
+    .md-slider-discrete-tick {
+      height: 8px;
+      min-width: 8px;
+      background: #1976d2;
+      top: -2px;
+      border-radius: 50%;
+    }
+  }
+}
