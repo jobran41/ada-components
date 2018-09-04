@@ -22,7 +22,7 @@ import {
   PersonalInfo,
   Gift,
   ChatList,
-  ChatBox,
+  //ChatBox,
   Interests,
   Discover,
   ContainerTab,
@@ -467,10 +467,10 @@ export default class BlockList extends Component {
         classNameActive: "blue"
       }
     ]
-    const itemsChatBox = {
+    /*const itemsChatBox = {
       members: [],
       chats: []
-    }
+    }*/
     const lorem = `Elit cupidatat excepteur ullamco labore exercitation amet consectetur. Sunt duis ipsum voluptate commodo ipsum mollit quis elit tempor anim eiusmod aliqua. Elit sint minim eiusmod consectetur cillum aliqua est exercitation. Amet anim occaecat excepteur velit. Fugiat id consequat cillum non quis nisi anim non magna proident fugiat magna duis.`
 
     return (
@@ -601,11 +601,11 @@ export default class BlockList extends Component {
               className="blocklist-item"
               linkObject={{ title: "Continue", position: "center" }}
             />
-            <ChatBox
+            {/*<ChatBox
               title="Chat box 1"
               className="blocklist-item"
               items={itemsChatBox}
-            />
+            />*/}
           </div>
 
           <div className="blocklist-cell md-cell md-cell--6">
