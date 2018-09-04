@@ -13,7 +13,7 @@ import AdaAlerts from 'components/ada-alerts'
 import ProfileAvatar from 'components/profile-avatar'
 import AdaHeart from 'components/ada-heart'
 import AdaProgress from 'components/ada-progress'
-import AdaPagination from 'components/ada-pagination'
+//import AdaPagination from 'components/ada-pagination'
 import AdaAvatar from 'components/ada-avatar'
 import AdaTag from 'components/ada-tag'
 
@@ -71,68 +71,6 @@ export default class Elements extends Component {
               )}
               <AdaPagination items={this.state.exampleItems} onChangePage={this.onChangePage} />
             </div>*/}
-          </div>
-          <div className="elementsCell md-cell md-cell--3">
-            <div className="middleComponent">
-              <AdaNotifications
-                iconName="notifications"
-                alertItem="2"
-              />
-              <AdaNotifications
-                iconName="message"
-                alertItem="1"
-              />
-            </div>
-            <div className="middleComponent">
-              <ProfileAvatar active path="http://i.pravatar.cc/150?img=3" />
-              <ProfileAvatar path="http://i.pravatar.cc/150?img=3" />
-            </div>
-            <br />
-            <div className="elemButtonWrapper">
-              <AdaHeart label="design" checked={true} id="checkbox1" />
-              <AdaHeart label="developpement" checked={false} id="checkbox2" />
-            </div>
-            <br />
-            <AdaHeart heart="true" label="Likes" id="checkbox3" />
-            <br />
-            <AdaHeart star="true" label="Rate" id="checkbox4" />
-            <br />
-            <div className="elemButtonWrapper">
-              <AdaHeart name="switcher1" switcher="true" label="on" checked={true} id="checkbox5" />
-              <AdaHeart name="switcher2" switcher="true" label="off" checked={false} id="checkbox5" />
-            </div>
-            <br />
-            <AdaHeart eye="true" label="Views" id="checkbox6" />
-          </div>
-          <div className="elementsCell md-cell md-cell--5">
-            {roundAvatar}
-            <div className="ticketWrapper">
-              <Ticket titleLeft={<h2>1</h2>} className="ticketItem" titleTop="Step 1" description="Lorem ipsum" />
-              <Ticket titleLeft={<h2>2</h2>} className="ticketItem" theme="green" titleTop="Step 1" description="Lorem ipsum" />
-              <Ticket titleLeft={<h2>3</h2>} className="ticketItem" theme="purple" titleTop="Step 1" description="Lorem ipsum" />
-            </div>
-            <br />
-            <AdaTag  iconLeft='mdi-check-circle-outline' iconRight='mdi-note-plus-outline' text="New Note" />
-            <br />
-            <AdaTag theme="blue" iconLeft='mdi-check-circle-outline' iconRight='mdi-email-outline' text="New Message" />
-            <br />
-            <AdaTag readOnly="true" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
-            <br />
-            <AdaTag theme="blue" readOnly="true" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
-            <br />
-            <Ticket titleLeft="Title" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
-            <br />
-            <Badges title="Badges" badgesOfAvatars={["Man01", "Man02", "Man03"]} />
-            <br />
-            <Badges title="Badges" badgesOfAvatars={["Man01", "Man02", "Man03"]} theme="dark" />
-            <br />
-            <AdaAlerts theme="green" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
-            <br />
-            <AdaAlerts iconLeft='mdi-information-outline' iconRight='mdi-close' text="Information" />
-            <br />
-            <AdaAlerts theme="orange" iconLeft='mdi-alert-circle-outline' iconRight='mdi-close' text="Worning" />
-            <br />
-            <AdaAlerts theme="red" iconLeft='mdi-alert-outline' iconRight='mdi-close' text="Alert message" />
             <br />
             <SocialPanel color="red" renderButton={() => {
               return (
@@ -185,6 +123,82 @@ export default class Elements extends Component {
                 </Fragment>
               )
             }} />
+          </div>
+          <div className="elementsCell md-cell md-cell--3">
+            <div className="middleComponent">
+              <AdaNotifications
+                iconName="notifications"
+                alertItem="2"
+              />
+              <AdaNotifications
+                iconName="message"
+                alertItem="1"
+              />
+            </div>
+            <div className="middleComponent">
+              <AdaNotifications
+                iconName="add"
+                alertItem="2"
+              />
+              <AdaNotifications
+                iconName="folder"
+                alertItem="1"
+              />
+            </div>
+            <div className="middleComponent">
+              <ProfileAvatar active path="http://i.pravatar.cc/150?img=3" />
+              <ProfileAvatar path="http://i.pravatar.cc/150?img=3" />
+            </div>
+            <br />
+            <div className="elemButtonWrapper">
+              <AdaHeart label="design" checked={true} id="checkbox1" />
+              <AdaHeart label="developpement" checked={false} id="checkbox2" />
+            </div>
+            <br />
+            <AdaHeart heart="true" label="Likes" id="checkbox3" />
+            <br />
+            <AdaHeart star="true" label="Rate" id="checkbox4" />
+            <br />
+            <div className="elemButtonWrapper">
+              <AdaHeart name="switcher1" switcher="true" label="on" checked={true} id="checkbox5" />
+              <AdaHeart name="switcher2" switcher="true" label="off" checked={false} id="checkbox5" />
+            </div>
+            <br />
+            <AdaHeart eye="true" label="Views" id="checkbox6" />
+            <br />
+            {roundAvatar}
+            <br />
+
+          </div>
+          <div className="elementsCell md-cell md-cell--5">
+            <Badges title="Badges" badgesOfAvatars={["Man01", "Man02", "Man03"]} />
+            <br />
+            <Badges title="Badges" badgesOfAvatars={["Man01", "Man02", "Man03"]} theme="dark" />
+            <br />
+            <div className="ticketWrapper">
+              <Ticket titleLeft={<h2>1</h2>} className="ticketItem" titleTop="Step 1" description="Lorem ipsum" />
+              <Ticket titleLeft={<h2>2</h2>} className="ticketItem" theme="green" titleTop="Step 1" description="Lorem ipsum" />
+              <Ticket titleLeft={<h2>3</h2>} className="ticketItem" theme="purple" titleTop="Step 1" description="Lorem ipsum" />
+            </div>
+            <br />
+            <AdaTag iconLeft='mdi-check-circle-outline' iconRight='mdi-note-plus-outline' text="New Note" />
+            <br />
+            <AdaTag theme="blue" iconLeft='mdi-check-circle-outline' iconRight='mdi-email-outline' text="New Message" />
+            <br />
+            <AdaTag readOnly="true" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
+            <br />
+            <AdaTag theme="blue" readOnly="true" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
+            <br />
+            <Ticket titleLeft="Title" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
+            <br />
+            <AdaAlerts theme="green" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
+            <br />
+            <AdaAlerts iconLeft='mdi-information-outline' iconRight='mdi-close' text="Information" />
+            <br />
+            <AdaAlerts theme="orange" iconLeft='mdi-alert-circle-outline' iconRight='mdi-close' text="Worning" />
+            <br />
+            <AdaAlerts theme="red" iconLeft='mdi-alert-outline' iconRight='mdi-close' text="Alert message" />
+            <br />
           </div>
         </div>
       </div>

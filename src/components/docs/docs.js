@@ -40,12 +40,12 @@ export default class Docs extends Component {
     ))
   };
   render() {
-    const { children, title, description } = this.props
+    const { children, title, description, dataCode } = this.props
     const { visible, pageX, pageY } = this.state
     return (
       <div className="docs">
         <Button icon primary onClick={this.show}>
-          favorite
+          code
         </Button>
         {children}
         <DialogContainer
@@ -70,6 +70,7 @@ export default class Docs extends Component {
           />
           <section className="md-toolbar-relative">
             <div className="description">{description}</div>
+            <pre style={{ 'background': '#f5f2f0', 'paddingBottom': '10px' }} className="descriptionCode">{dataCode}</pre>
             <DataTable plain>
               <TableHeader>
                 <TableRow>
@@ -81,7 +82,7 @@ export default class Docs extends Component {
             </DataTable>
           </section>
         </DialogContainer>
-      </div>
+      </div >
     )
   }
 }
@@ -90,5 +91,6 @@ Docs.propTypes = {
   children: PropTypes.node,
   title: PropTypes.string,
   description: PropTypes.string,
+  dataCode: PropTypes.string,
   docsProps: PropTypes.array
 }

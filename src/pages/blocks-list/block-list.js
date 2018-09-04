@@ -487,8 +487,15 @@ export default class BlockList extends Component {
             </h3>
             <Docs
               title={"ToDoList"}
-              description="Labore sunt ullamco minim aliqua veniam."
               docsProps={docsToDoList}
+              dataCode={`
+              <ToDoList
+              title="To do list"
+              description="Mon 20 January"
+              items={itemsToDoList}
+              className="blocklist-item"
+              menuButton={menuButtonExpertise}
+            />`}
             >
               <ToDoList
                 title="To do list"
@@ -558,7 +565,7 @@ export default class BlockList extends Component {
               description="Weekly events"
               items={itemsEventList}
               className="blocklist-item"
-              onAddEvent={() => {}}
+              onAddEvent={() => { }}
             />
             <Reviews
               title="Reviews"
@@ -626,7 +633,7 @@ export default class BlockList extends Component {
                   description="All projects in progress"
                   items={itemsProjectList}
                   className="blocklist-item"
-                  onAddProject={() => {}}
+                  onAddProject={() => { }}
                 />
                 <Timer className="blocklist-item" />
               </div>

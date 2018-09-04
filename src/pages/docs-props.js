@@ -10,17 +10,5 @@ export const docsToDoList = [
   {
     propsName: "description",
     propsDescription: "The description to display below the title."
-  },
-  {
-    propsName: "menuButton",
-    propsDescription: "bla"
-  },
-  {
-    propsName: "items",
-    propsDescription: "bla"
-  },
-  {
-    propsName: "onChecklist",
-    propsDescription: "bla"
   }
 ]
