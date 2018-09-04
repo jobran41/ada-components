@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "react-app"
+  ],
+  "rules": {
+    "no-var": [
+      "error"
+    ],
+    "semi": [
+      "error",
+      "never"
+    ],
+    "no-console": "warn",
+    "no-unexpected-multiline": "error",
+    "react/prop-types": "warn"
+  }
+}
