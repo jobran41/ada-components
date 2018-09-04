@@ -16,6 +16,7 @@ import AdaProgress from 'components/ada-progress'
 //import AdaPagination from 'components/ada-pagination'
 import AdaAvatar from 'components/ada-avatar'
 import AdaTag from 'components/ada-tag'
+import AdaSlider from 'components/ada-slider'
 
 import './style.scss'
 
