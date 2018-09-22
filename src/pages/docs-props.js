@@ -274,3 +274,9 @@ export const docsSimpleForm = []
 
 export const docsPanelProfile = []
 export const docsSupportAssets = []
+
+export const docsTopBar = []
+
+export const docsSideBar = []
+export const docsMenuList = []
+export const docsMenuIcon = []
