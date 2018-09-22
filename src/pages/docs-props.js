@@ -303,11 +303,76 @@ export const docsTrackInfo = [
     propsDescription: "value of progress."
   }
 ]
-export const docsDownload = []
-export const docsDiscover = []
-export const docsUpload = []
-export const docsContainerTab = []
-export const docsInterests = []
+export const docsDownload = [
+  {
+    propsName: "className",
+    propsDescription: "An optional className to apply to the component."
+  },
+  {
+    propsName: "fileSize",
+    propsDescription: "size of the file must be String."
+  },
+  {
+    propsName: "typeFile",
+    propsDescription: "the type of file."
+  },
+  {
+    propsName: "filePath",
+    propsDescription: "the path of file."
+  }
+]
+export const docsDiscover = [
+  ...commonDocs,
+  {
+    propsName: "items",
+    propsDescription: `array of object to pass to the component : {
+      path: "http://i.pravatar.cc/150?img=3",
+      name: "Student Name",
+      job: "web",
+      notification: true
+    }`
+  }
+]
+export const docsUpload = [
+  {
+    propsName: "className",
+    propsDescription: "An optional className to apply to the component."
+  },
+  {
+    propsName: "fileSize",
+    propsDescription: "size of the file must be String."
+  }
+]
+export const docsContainerTab = [
+  {
+    propsName: "className",
+    propsDescription: "An optional className to apply to the component."
+  },
+  {
+    propsName: "Tab",
+    propsDescription: `<TabsContainer>
+    <Tabs tabId="simple-tab">{children}</Tabs>
+  </TabsContainer>`
+  }
+]
+export const docsInterests = [
+  {
+    propsName: "className",
+    propsDescription: "An optional className to apply to the component."
+  },
+  {
+    propsName: "classNameActive",
+    propsDescription: "An optional className to apply to the item is active."
+  },
+  {
+    propsName: "label",
+    propsDescription: "label of item."
+  },
+  {
+    propsName: "onClickInterest",
+    propsDescription: "A Function to call when click on item."
+  }
+]
 
 export const docsSignUp = [
   {
@@ -376,3 +441,13 @@ export const docsTopBar = []
 export const docsSideBar = []
 export const docsMenuList = []
 export const docsMenuIcon = []
+
+export const docsAdaSearch = []
+export const docsAdaCategory = []
+export const docsAdaStepper = []
+export const docsSocialPanel = []
+export const docsBadges = []
+export const docsTicket = []
+export const docsAdaTag = []
+export const docsAdaAlerts = []
+export const docsAdaPagination = []
