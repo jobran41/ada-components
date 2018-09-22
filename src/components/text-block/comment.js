@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Paper, MenuButton, Avatar, TextField, Button } from "react-md"
 import { cls } from "reactutils"
 
-import './comment.scss'
+import "./comment.scss"
 
 export default class Comment extends Component {
   initClass = "comment";
@@ -90,7 +90,11 @@ export default class Comment extends Component {
                 placeholder="What do you think ?"
                 onChange={comment => this.setState({ comment })}
               />
-              <Button className="commentButton" flat onClick={() => this.onAddComment()}>
+              <Button
+                className="commentButton"
+                flat
+                onClick={() => this.onAddComment()}
+              >
                 Comment
               </Button>
             </div>
@@ -104,9 +108,7 @@ Comment.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
-  onAddEvent: PropTypes.func,
   items: PropTypes.array,
-  onChecklist: PropTypes.func,
   menuButton: PropTypes.array,
   currentUser: PropTypes.object,
   onAddComment: PropTypes.func

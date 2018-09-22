@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Paper, MenuButton, Button, Badge } from "react-md"
 import { cls } from "reactutils"
 
-import './notification-list.scss'
+import "./notification-list.scss"
 
 export default class NotificationList extends Component {
   initClass = "notification-list";
@@ -62,7 +62,5 @@ NotificationList.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
   items: PropTypes.array,
-  onChecklist: PropTypes.func,
-  onAddProject: PropTypes.func,
   menuButton: PropTypes.array
 }

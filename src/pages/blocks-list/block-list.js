@@ -1,6 +1,27 @@
 import React, { Component } from "react"
 import ContentHeader from "components/content-header"
-import { docsToDoList } from "pages/docs-props"
+import {
+  docsToDoList,
+  docsNotificationList,
+  docsComments,
+  docsPersonalInfo,
+  docsChatList,
+  docsUserList,
+  docsEventList,
+  docsReviews,
+  docsFilters,
+  docsTrackList,
+  docsRating,
+  docsProjectList,
+  docsTimer,
+  docsTrackInfo,
+  docsDownload,
+  docsGift,
+  docsDiscover,
+  docsUpload,
+  docsContainerTab,
+  docsInterests
+} from "pages/docs-props"
 
 import {
   ToDoList,
@@ -28,9 +49,9 @@ import {
   ContainerTab,
   Tab
 } from "components/text-block"
+import Docs from "components/docs"
 
 import "./style.scss"
-import Docs from "components/docs"
 
 export default class BlockList extends Component {
   onAddProject() {
@@ -389,7 +410,6 @@ export default class BlockList extends Component {
       path: "http://i.pravatar.cc/150?img=49",
       percent: 70
     }
-
     const itemsChatList = [
       {
         name: "Student Name",
@@ -505,102 +525,273 @@ export default class BlockList extends Component {
                 menuButton={menuButtonExpertise}
               />
             </Docs>
-
-            <NotificationList
+            <Docs
+              title={"NotificationList"}
+              docsProps={docsNotificationList}
+              dataCode={`
+              <NotificationList
               title="Notifications"
               description="Mon 20 January"
               menuButton={menuButtonExpertise}
               items={itemsNotificationList}
               className="blocklist-item"
-            />
-            <Comment
+            />`}
+            >
+              <NotificationList
+                title="Notifications"
+                description="Mon 20 January"
+                menuButton={menuButtonExpertise}
+                items={itemsNotificationList}
+                className="blocklist-item"
+              />
+            </Docs>
+            <Docs
+              title={"Comments"}
+              docsProps={docsComments}
+              dataCode={`
+              <Comment
               title="Comments"
               description="4 Comments"
               items={commentItems}
               currentUser={{ path: "http://i.pravatar.cc/150?img=3" }}
               className="blocklist-item"
-            />
-            <PersonalInfo
+            />`}
+            >
+              <Comment
+                title="Comments"
+                description="4 Comments"
+                items={commentItems}
+                currentUser={{ path: "http://i.pravatar.cc/150?img=3" }}
+                className="blocklist-item"
+              />
+            </Docs>
+            <Docs
+              title={"PersonalInfo"}
+              docsProps={docsPersonalInfo}
+              dataCode={`
+              <PersonalInfo
               userObject={userObject}
               menuButton={menuButtonExpertise}
               className="blocklist-item"
-            />
-            <Gift
+            />`}
+            >
+              <PersonalInfo
+                userObject={userObject}
+                menuButton={menuButtonExpertise}
+                className="blocklist-item"
+              />
+            </Docs>
+            <Docs
+              title={"Gift"}
+              docsProps={docsGift}
+              dataCode={`
+              <Gift
               title="New Arrivals !"
               message="See how they are"
               icon="mdi-bike"
               theme="blue"
               className="blocklist-item"
               linkObject={{ title: "Say Hello", position: "center" }}
-            />
-            <Gift
-              title="Product 2"
-              message="species matrimonii, dotis"
+            />`}
+            >
+              <Gift
+                title="New Arrivals !"
+                message="See how they are"
+                icon="mdi-bike"
+                theme="blue"
+                className="blocklist-item"
+                linkObject={{ title: "Say Hello", position: "center" }}
+              />
+            </Docs>
+            <Docs
+              title={"Gift"}
+              docsProps={docsGift}
+              dataCode={`
+              <Gift
+              title="New Arrivals !"
+              message="See how they are"
+              icon="mdi-bike"
+              theme="blue"
               className="blocklist-item"
-              avatar={{
-                path:
-                  "https://imgplaceholder.com/100x100/1876d1/ffffff/fa-image"
-              }}
-              linkObject={{ title: "Details", position: "right" }}
-            />
-            <ChatList
+              linkObject={{ title: "Say Hello", position: "center" }}
+            />`}
+            >
+              <Gift
+                title="Product 2"
+                message="species matrimonii, dotis"
+                className="blocklist-item"
+                avatar={{
+                  path:
+                    "https://imgplaceholder.com/100x100/1876d1/ffffff/fa-image"
+                }}
+                linkObject={{ title: "Details", position: "right" }}
+              />
+            </Docs>
+            <Docs
+              title={"ChatList"}
+              docsProps={docsChatList}
+              dataCode={`
+              <ChatList
               title="Chat List"
               className="blocklist-item"
               description="Chat with other students"
               items={itemsChatList}
               menuButton={menuButtonExpertise}
-            />
+            />`}
+            >
+              <ChatList
+                title="Chat List"
+                className="blocklist-item"
+                description="Chat with other students"
+                items={itemsChatList}
+                menuButton={menuButtonExpertise}
+              />
+            </Docs>
           </div>
 
           <div className="blocklist-cell md-cell md-cell--3">
-            <UserList
+            <Docs
+              title={"UserList"}
+              docsProps={docsUserList}
+              dataCode={`
+              <UserList
               title="User list"
               description="These students can help you"
               items={itemsUserList}
               className="blocklist-item"
               menuButton={menuButtonExpertise}
-            />
-            <EventList
+            />`}
+            >
+              <UserList
+                title="User list"
+                description="These students can help you"
+                items={itemsUserList}
+                className="blocklist-item"
+                menuButton={menuButtonExpertise}
+              />
+            </Docs>
+            <Docs
+              title={"EventList"}
+              docsProps={docsEventList}
+              dataCode={`
+              <EventList
               title="Agenda"
               description="Weekly events"
               items={itemsEventList}
               className="blocklist-item"
-              onAddEvent={() => { }}
-            />
-            <Reviews
+              onAddEvent={() => {}}
+            />`}
+            >
+              <EventList
+                title="Agenda"
+                description="Weekly events"
+                items={itemsEventList}
+                className="blocklist-item"
+                onAddEvent={() => {}}
+              />
+            </Docs>
+            <Docs
+              title={"Reviews"}
+              docsProps={docsReviews}
+              dataCode={`
+              <Reviews
               title="Reviews"
               className="blocklist-item"
               negativePorcentage={15}
               positivePorcentage={75}
-            />
-            <Filters
+            />`}
+            >
+              <Reviews
+                title="Reviews"
+                className="blocklist-item"
+                negativePorcentage={15}
+                positivePorcentage={75}
+              />
+            </Docs>
+            <Docs
+              title={"Filters"}
+              docsProps={docsFilters}
+              dataCode={`
+              <Filters
               className="blocklist-item"
               title="Filters"
               items={FiltersItems}
               menuButton={menuButtonExpertise}
-            />
-            <Gift
-              title="Awesome!"
-              message="You've reached the first level."
-              icon="mdi-gift"
-              theme="light"
-              className="blocklist-item"
-              linkObject={{ title: "See Gifts", position: "center" }}
-            />
-            <Gift
-              title="Product 1"
-              message="species matrimonii, dotis"
-              className="blocklist-item"
-              avatar={{ path: "http://placehold.jp/1876d1/ffffff/150x150.png" }}
-              linkObject={{ title: "Details", position: "right" }}
-            />
-            <Gift
-              title="1 New update"
-              icon="mdi-puzzle"
+            />`}
+            >
+              <Filters
+                className="blocklist-item"
+                title="Filters"
+                items={FiltersItems}
+                menuButton={menuButtonExpertise}
+              />
+            </Docs>
+            <Docs
+              title={"Gift"}
+              docsProps={docsGift}
+              dataCode={`
+              <Gift
+              title="New Arrivals !"
+              message="See how they are"
+              icon="mdi-bike"
               theme="blue"
               className="blocklist-item"
-              linkObject={{ title: "Continue", position: "center" }}
-            />
+              linkObject={{ title: "Say Hello", position: "center" }}
+            />`}
+            >
+              <Gift
+                title="Awesome!"
+                message="You've reached the first level."
+                icon="mdi-gift"
+                theme="light"
+                className="blocklist-item"
+                linkObject={{ title: "See Gifts", position: "center" }}
+              />
+            </Docs>
+            <Docs
+              title={"Gift"}
+              docsProps={docsGift}
+              dataCode={`
+              <Gift
+              title="New Arrivals !"
+              message="See how they are"
+              icon="mdi-bike"
+              theme="blue"
+              className="blocklist-item"
+              linkObject={{ title: "Say Hello", position: "center" }}
+            />`}
+            >
+              <Gift
+                title="Product 1"
+                message="species matrimonii, dotis"
+                className="blocklist-item"
+                avatar={{
+                  path: "http://placehold.jp/1876d1/ffffff/150x150.png"
+                }}
+                linkObject={{ title: "Details", position: "right" }}
+              />
+            </Docs>
+            <Docs
+              title={"Gift"}
+              docsProps={docsGift}
+              dataCode={`
+              <Gift
+              title="New Arrivals !"
+              message="See how they are"
+              icon="mdi-bike"
+              theme="blue"
+              className="blocklist-item"
+              linkObject={{ title: "Say Hello", position: "center" }}
+            />`}
+            >
+              <Gift
+                title="1 New update"
+                icon="mdi-puzzle"
+                theme="blue"
+                className="blocklist-item"
+                linkObject={{ title: "Continue", position: "center" }}
+              />
+            </Docs>
             {/*<ChatBox
               title="Chat box 1"
               className="blocklist-item"
@@ -612,106 +803,271 @@ export default class BlockList extends Component {
             <h3 className="rightText">Text Blocks & Content list</h3>
             <div className="blocklist-grid md-grid">
               <div className="blocklist-cell md-cell md-cell--6">
-                <TrackList
+                <Docs
+                  title={"TrackList"}
+                  docsProps={docsTrackList}
+                  dataCode={`
+              <TrackList
                   title="Recent Updates"
                   description="Student’s recents achievements"
                   menuButton={menuButtonExpertise}
                   items={itemsTrackList}
                   className="blocklist-item"
-                />
-                <Rating
-                  title="Rating"
-                  items={ratingItems}
-                  average={"4.7"}
-                  cumulates={"0.4"}
-                  className="blocklist-item"
-                />
+                />`}
+                >
+                  <TrackList
+                    title="Recent Updates"
+                    description="Student’s recents achievements"
+                    menuButton={menuButtonExpertise}
+                    items={itemsTrackList}
+                    className="blocklist-item"
+                  />
+                </Docs>
+                <Docs
+                  title={"Rating"}
+                  docsProps={docsRating}
+                  dataCode={`<Rating
+              title="Rating"
+              items={ratingItems}
+              average={"4.7"}
+              cumulates={"0.4"}
+              className="blocklist-item"
+            />`}
+                >
+                  <Rating
+                    title="Rating"
+                    items={ratingItems}
+                    average={"4.7"}
+                    cumulates={"0.4"}
+                    className="blocklist-item"
+                  />
+                </Docs>
               </div>
               <div className="blocklist-cell md-cell md-cell--6">
-                <ProjectList
-                  title="Projects"
-                  description="All projects in progress"
-                  items={itemsProjectList}
-                  className="blocklist-item"
-                  onAddProject={() => { }}
-                />
-                <Timer className="blocklist-item" />
+                <Docs
+                  title={"ProjectList"}
+                  docsProps={docsProjectList}
+                  dataCode={`<ProjectList
+              title="Projects"
+              description="All projects in progress"
+              items={itemsProjectList}
+              className="blocklist-item"
+              onAddProject={() => {}}
+            />`}
+                >
+                  <ProjectList
+                    title="Projects"
+                    description="All projects in progress"
+                    items={itemsProjectList}
+                    className="blocklist-item"
+                    onAddProject={() => {}}
+                  />
+                </Docs>
+                <Docs
+                  title={"Timer"}
+                  docsProps={docsTimer}
+                  dataCode={`<Timer className="blocklist-item" />`}
+                >
+                  <Timer className="blocklist-item" />
+                </Docs>
               </div>
             </div>
             <div className="blocklist-cell md-cell md-cell--12">
-              <TrackInfo
-                imagePath="https://picsum.photos/300/200?image=1"
-                title="Track"
-                description="Project details and infomation"
-                items={itemsTrackInfo}
-                progress={50}
-                className="blocklist-item"
-                menuButton={menuButtonExpertise}
-              />
+              <Docs
+                title={"TrackInfo"}
+                docsProps={docsTrackInfo}
+                dataCode={`<TrackInfo
+              imagePath="https://picsum.photos/300/200?image=1"
+              title="Track"
+              description="Project details and infomation"
+              items={itemsTrackInfo}
+              progress={50}
+              className="blocklist-item"
+              menuButton={menuButtonExpertise}
+            />`}
+              >
+                <TrackInfo
+                  imagePath="https://picsum.photos/300/200?image=1"
+                  title="Track"
+                  description="Project details and infomation"
+                  items={itemsTrackInfo}
+                  progress={50}
+                  className="blocklist-item"
+                  menuButton={menuButtonExpertise}
+                />
+              </Docs>
             </div>
             <div className="blocklist-grid md-grid">
               <div className="blocklist-cell md-cell md-cell--6">
-                <Download
-                  fileSize={"700"}
-                  typeFile={"ZIP"}
-                  filePath={""}
-                  className="blocklist-item"
-                />
-                <Gift
-                  title="Any Idea ?"
-                  message="Note all your great ideas"
-                  icon="mdi-lightbulb-on-outline"
-                  theme="dark"
-                  className="blocklist-item"
-                  linkObject={{ title: "Make a note", position: "center" }}
-                />
-                <Gift
-                  title="Product 3"
-                  message="species matrimonii, dotis"
-                  className="blocklist-item"
-                  avatar={{
-                    path:
-                      "https://imgplaceholder.com/100x100/1de9b6/ffffff/fa-image"
-                  }}
-                  linkObject={{ title: "Details", position: "right" }}
-                />
-
-                <Discover
+                <Docs
+                  title={"Download"}
+                  docsProps={docsDownload}
+                  dataCode={`<Download
+              fileSize={"700"}
+              typeFile={"ZIP"}
+              filePath={""}
+              className="blocklist-item"
+            />`}
+                >
+                  <Download
+                    fileSize={"700"}
+                    typeFile={"ZIP"}
+                    filePath={""}
+                    className="blocklist-item"
+                  />
+                </Docs>
+                <Docs
+                  title={"Gift"}
+                  docsProps={docsGift}
+                  dataCode={`
+              <Gift
+              title="New Arrivals !"
+              message="See how they are"
+              icon="mdi-bike"
+              theme="blue"
+              className="blocklist-item"
+              linkObject={{ title: "Say Hello", position: "center" }}
+            />`}
+                >
+                  <Gift
+                    title="Any Idea ?"
+                    message="Note all your great ideas"
+                    icon="mdi-lightbulb-on-outline"
+                    theme="dark"
+                    className="blocklist-item"
+                    linkObject={{ title: "Make a note", position: "center" }}
+                  />
+                </Docs>
+                <Docs
+                  title={"Gift"}
+                  docsProps={docsGift}
+                  dataCode={`
+              <Gift
+              title="New Arrivals !"
+              message="See how they are"
+              icon="mdi-bike"
+              theme="blue"
+              className="blocklist-item"
+              linkObject={{ title: "Say Hello", position: "center" }}
+            />`}
+                >
+                  <Gift
+                    title="Product 3"
+                    message="species matrimonii, dotis"
+                    className="blocklist-item"
+                    avatar={{
+                      path:
+                        "https://imgplaceholder.com/100x100/1de9b6/ffffff/fa-image"
+                    }}
+                    linkObject={{ title: "Details", position: "right" }}
+                  />
+                </Docs>
+                <Docs
+                  title={"Discover"}
+                  docsProps={docsDiscover}
+                  dataCode={`
+              <Discover
                   title="Discover"
                   description="Find someone to follow"
                   className="blocklist-item"
                   items={itemsUserList}
                   menuButton={menuButtonExpertise}
-                />
+                />`}
+                >
+                  <Discover
+                    title="Discover"
+                    description="Find someone to follow"
+                    className="blocklist-item"
+                    items={itemsUserList}
+                    menuButton={menuButtonExpertise}
+                  />
+                </Docs>
               </div>
               <div className="blocklist-cell md-cell md-cell--6">
-                <Upload fileSize={"700"} className="blocklist-item" />
-                <Gift
-                  title="Great work !"
-                  className="blocklist-item"
-                  message="Project finished"
-                  theme="light"
-                  icon="mdi-trophy-outline"
-                />
-                <Gift
-                  title="Save your data"
-                  message="Don't forget to save your data"
-                  icon="mdi-content-save"
-                  theme="green"
-                  className="blocklist-item"
-                  linkObject={{ title: "Save now", position: "center" }}
-                />
-                <ContainerTab className="blocklist-item">
+                <Docs
+                  title={"Upload"}
+                  docsProps={docsUpload}
+                  dataCode={`<Upload fileSize={"700"} className="blocklist-item" />`}
+                >
+                  <Upload fileSize={"700"} className="blocklist-item" />
+                </Docs>
+                <Docs
+                  title={"Gift"}
+                  docsProps={docsGift}
+                  dataCode={`
+              <Gift
+              title="New Arrivals !"
+              message="See how they are"
+              icon="mdi-bike"
+              theme="blue"
+              className="blocklist-item"
+              linkObject={{ title: "Say Hello", position: "center" }}
+            />`}
+                >
+                  <Gift
+                    title="Great work !"
+                    className="blocklist-item"
+                    message="Project finished"
+                    theme="light"
+                    icon="mdi-trophy-outline"
+                  />
+                </Docs>
+                <Docs
+                  title={"Gift"}
+                  docsProps={docsGift}
+                  dataCode={`
+              <Gift
+              title="New Arrivals !"
+              message="See how they are"
+              icon="mdi-bike"
+              theme="blue"
+              className="blocklist-item"
+              linkObject={{ title: "Say Hello", position: "center" }}
+            />`}
+                >
+                  <Gift
+                    title="Save your data"
+                    message="Don't forget to save your data"
+                    icon="mdi-content-save"
+                    theme="green"
+                    className="blocklist-item"
+                    linkObject={{ title: "Save now", position: "center" }}
+                  />
+                </Docs>
+                <Docs
+                  title={"ContainerTab"}
+                  docsProps={docsContainerTab}
+                  dataCode={`
+              <ContainerTab className="blocklist-item">
                   <Tab label="Tab 1">{lorem}</Tab>
                   <Tab label="Tab 2">{lorem}</Tab>
                   <Tab label="Tab 3">{lorem}</Tab>
                   <Tab label="Tab 4">{lorem}</Tab>
-                </ContainerTab>
-                <Interests
+                </ContainerTab>`}
+                >
+                  <ContainerTab className="blocklist-item">
+                    <Tab label="Tab 1">{lorem}</Tab>
+                    <Tab label="Tab 2">{lorem}</Tab>
+                    <Tab label="Tab 3">{lorem}</Tab>
+                    <Tab label="Tab 4">{lorem}</Tab>
+                  </ContainerTab>
+                </Docs>
+                <Docs
+                  title={"Interests"}
+                  docsProps={docsInterests}
+                  dataCode={`
+              <Interests
                   items={interestsItems}
                   className="blocklist-item"
                   title="Choose your interest"
-                />
+                />`}
+                >
+                  <Interests
+                    items={interestsItems}
+                    className="blocklist-item"
+                    title="Choose your interest"
+                  />
+                </Docs>
               </div>
             </div>
           </div>
