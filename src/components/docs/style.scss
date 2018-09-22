@@ -1,0 +1,23 @@
+.docs {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  .docsButton {
+    align-self: flex-end;
+    background: url(./docButtonBg.png) top center no-repeat;
+    width: 100px;
+    height: 29px;
+    border-radius: 0;
+    transition: all 400ms;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    z-index: -1;
+  }
+  &:hover {
+    .docsButton {
+      -webkit-transform: translateY(0%);
+      transform: translateY(0%);
+      z-index: 1;
+    }
+  }
+}

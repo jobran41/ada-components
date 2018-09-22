@@ -11,6 +11,8 @@ import {
   TableBody
 } from "react-md"
 
+import './style.scss'
+
 export default class Docs extends Component {
   constructor(props) {
     super(props)
@@ -44,7 +46,7 @@ export default class Docs extends Component {
     const { visible, pageX, pageY } = this.state
     return (
       <div className="docs">
-        <Button icon primary onClick={this.show}>
+        <Button icon primary className="docsButton" onClick={this.show}>
           code
         </Button>
         {children}
