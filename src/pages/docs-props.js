@@ -276,13 +276,38 @@ export const docsTimer = [
     propsDescription: "An optional className to apply to the component."
   }
 ]
-export const docsTrackInfo = []
+export const docsTrackInfo = [
+  ...commonDocs,
+  {
+    propsName: "items",
+    propsDescription: `array of object to pass to the component : {
+    color: "red",
+    title: "Workshop 1",
+    createdAt: "21 Oct",
+    time: "12:37",
+    avatars: [
+      "http://i.pravatar.cc/150?img=25",
+      "http://i.pravatar.cc/150?img=68",
+      "http://i.pravatar.cc/150?img=3",
+      "http://i.pravatar.cc/150?img=12"
+    ],
+    status: "Closed"
+  }`
+  },
+  {
+    propsName: "imagePath",
+    propsDescription: "image path of component."
+  },
+  {
+    propsName: "progress",
+    propsDescription: "value of progress."
+  }
+]
 export const docsDownload = []
 export const docsDiscover = []
 export const docsUpload = []
 export const docsContainerTab = []
 export const docsInterests = []
-
 
 export const docsSignUp = [
   {
