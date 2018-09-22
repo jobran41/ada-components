@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Paper, Button } from "react-md"
 import { cls } from "reactutils"
 
-import './timer.scss'
+import "./timer.scss"
 
 export default class Download extends Component {
   initClass = "timer";
@@ -65,8 +65,12 @@ export default class Download extends Component {
             ? "0" + second
             : second}
         </div>
-        <Button className="playButton" icon onClick={() => this.startPauseTimer()}>
-        play_arrow
+        <Button
+          className="playButton"
+          icon
+          onClick={() => this.startPauseTimer()}
+        >
+          play_arrow
         </Button>
       </Paper>
     )
@@ -74,8 +78,5 @@ export default class Download extends Component {
 }
 
 Download.propTypes = {
-  className: PropTypes.string,
-  fileSize: PropTypes.string,
-  typeFile: PropTypes.string,
-  filePath: PropTypes.string
+  className: PropTypes.string
 }
