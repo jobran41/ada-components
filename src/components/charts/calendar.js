@@ -14,6 +14,7 @@ export default class Calendar extends Component {
       <Paper zDepth={1} className={cls("calendar", className)}>
         <div className="calendar-content">
           <MyCalendar
+            {...this.props}
             showDateInput={false}
             showToday={false}
             dateCellRender={dateCellRender}
