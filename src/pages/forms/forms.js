@@ -16,7 +16,7 @@ import './forms.scss'
 
 
 export default class Forms extends Component {
-  onSubmit = () => { }
+  onSubmit = (data) => { }
   onSubmitSignIn = () => { }
   onSubmitSignUp = () => { }
   render() {
@@ -26,17 +26,17 @@ export default class Forms extends Component {
         <div className="formContainer md-grid">
           <div className="formCell md-cell md-cell--4">
             <Docs
-                title={"SignUp"}
-                docsProps={docsSignUp}
-                dataCode={`
+              title={"SignUp"}
+              docsProps={docsSignUp}
+              dataCode={`
                 <SignUp onSubmit={this.onSubmitSignUp} />`}
             >
               <SignUp onSubmit={this.onSubmitSignUp} />
             </Docs>
             <Docs
-                title={"SignIn"}
-                docsProps={docsSignIn}
-                dataCode={`
+              title={"SignIn"}
+              docsProps={docsSignIn}
+              dataCode={`
                 <SignIn onSubmit={this.onSubmitSignIn} />`}
             >
               <SignIn onSubmit={this.onSubmitSignIn} />
@@ -44,9 +44,9 @@ export default class Forms extends Component {
           </div>
           <div className="formCell md-cell md-cell--4">
             <Docs
-                title={"ForgetPassword"}
-                docsProps={docsForgetPassword}
-                dataCode={`<ForgetPassword />`}
+              title={"ForgetPassword"}
+              docsProps={docsForgetPassword}
+              dataCode={`<ForgetPassword />`}
             >
               <ForgetPassword />
             </Docs>

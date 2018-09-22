@@ -324,7 +324,24 @@ export const docsConfirmation = [
     propsDescription: `trigger function callback`
   }
 ]
-export const docsSimpleForm = []
+export const docsSimpleForm = [
+  {
+    propsName: "onSubmit",
+    propsDescription: `trigger function callback return an object { email, mobile, name, userName }`
+  },
+  {
+    propsName: "title",
+    propsDescription: `The title to display on the component.`
+  },
+  {
+    propsName: "avatar",
+    propsDescription: `Accept node element`
+  },
+  {
+    propsName: "notification",
+    propsDescription: `Array of String`
+  }
+]
 
 export const docsPanelProfile = []
 export const docsSupportAssets = []
