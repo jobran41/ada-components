@@ -10,14 +10,14 @@ export default class SupportAssets extends Component {
       className,
       responsive
     } = this.props
-    if (responsive && className){
-      return(
+    if (responsive && className) {
+      return (
         "support-asset smallWapper " + className
       )
-    }else if(responsive && !className){
+    } else if (responsive && !className) {
       return "support-asset smallWapper"
     }
-    else if(!responsive && className){
+    else if (!responsive && className) {
       return "support-asset " + className
     }
     else {
@@ -43,7 +43,7 @@ export default class SupportAssets extends Component {
           </iframe>
         }
         {type === "video" && url.includes("youtube.com") && playlist &&
-          <iframe title="myFrame" 
+          <iframe title="myFrame"
             src={url + playlist}>
           </iframe>
         }
@@ -57,7 +57,7 @@ export default class SupportAssets extends Component {
               <div>{description}</div>
               <div className="plusButton">{actionButton && actionButton()}</div>
             </div>
-            
+
           </React.Fragment>}
       </div>
     )
@@ -69,9 +69,8 @@ SupportAssets.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   autoplay: PropTypes.bool,
-  plus: PropTypes.fun,
-  className:PropTypes.string,
-  actionButton:PropTypes.node,
+  className: PropTypes.string,
+  actionButton: PropTypes.node,
   poster: PropTypes.string,
   responsive: PropTypes.bool,
   playListKey: PropTypes.string

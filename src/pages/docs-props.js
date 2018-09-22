@@ -371,7 +371,7 @@ export const docsPanelProfile = [
   },
   {
     propsName: "inlineColorHeader",
-    propsDescription: `The inlineColorHeader to display inline on the component.`
+    propsDescription: `The inlineColorHeader  display inline style on the component.`
   },
   {
     propsName: "urlImg",
@@ -385,9 +385,34 @@ export const docsPanelProfile = [
     propsName: "details",
     propsDescription: `The details displayed on the component if is true (bool).`
   },
-
 ].filter(c => c.propsName !== "title")
-export const docsSupportAssets = []
+export const docsSupportAssets = [
+  ...commonDocs,
+  {
+    propsName: "type",
+    propsDescription: `The type to define the type of asset ( video || img ).`
+  },
+  {
+    propsName: "url",
+    propsDescription: `The url to display on the component.`
+  },
+  {
+    propsName: "autoplay",
+    propsDescription: `The autoplay is required for video type.`
+  },
+  {
+    propsName: "responsive",
+    propsDescription: `The responsive props to display the component from mode large to mode small (bool).`
+  },
+  {
+    propsName: "actionButton",
+    propsDescription: `The actionButton is a function Accept node element.`
+  },
+  {
+    propsName: "playListKey",
+    propsDescription: `The playListKey is required for video type and you have list of video from youtube.`
+  },
+]
 
 export const docsTopBar = []
 export const docsSideBar = []
