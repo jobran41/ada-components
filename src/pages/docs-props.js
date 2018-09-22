@@ -266,10 +266,39 @@ export const docsContainerTab = []
 export const docsInterests = []
 
 
-export const docsSignUp = []
-export const docsSignIn = []
-export const docsForgetPassword = []
-export const docsConfirmation = []
+export const docsSignUp = [
+  {
+    propsName: "onSubmit",
+    propsDescription: `trigger function callback return an object { email, password, lastName, firstName }`
+  },
+  {
+    propsName: "existAccount",
+    propsDescription: `A trigger function callback`
+  }
+]
+export const docsSignIn = [
+  {
+    propsName: "onSubmit",
+    propsDescription: `trigger function callback return an object { email, password }`
+  },
+  {
+    propsName: "redirectToForgetPassword",
+    propsDescription: `A trigger function callback`
+  },
+  {
+    propsName: "redirectToSignUp",
+    propsDescription: `A trigger function callback`
+  }
+]
+export const docsForgetPassword = [
+  {
+    propsName: "onSubmit",
+    propsDescription: `trigger function callback return an object { email }`
+  }
+]
+export const docsConfirmation = [
+
+]
 export const docsSimpleForm = []
 
 export const docsPanelProfile = []

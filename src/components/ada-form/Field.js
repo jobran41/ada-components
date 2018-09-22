@@ -10,7 +10,6 @@ function Field({ name, props }) {
     <FormContext.Consumer>
       {({ state, setError, setValue, unsetError }) => (
         <ContextedField
-          {...props}
           component={Input}
           input={{
             name,
@@ -24,6 +23,7 @@ function Field({ name, props }) {
               }
               : {}),
           }}
+          {...props}
           meta={{ error: state.errors[name] || undefined }}
         />
       )}

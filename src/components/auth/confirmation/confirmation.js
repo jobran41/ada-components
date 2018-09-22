@@ -18,7 +18,7 @@ class Confirmation extends Component {
         zDepth={1}
         className="authForm confirmation"
       >
-        {checked ? <FontIcon iconClassName="mdi mdi-checkbox-marked-outline"/> : <FontIcon iconClassName="mdi mdi-checkbox-blank-outline"/>}
+        {checked ? <FontIcon iconClassName="mdi mdi-checkbox-marked-outline" /> : <FontIcon iconClassName="mdi mdi-checkbox-blank-outline" />}
         <h2><strong>Success</strong></h2>
         <h5>See Confirmation Link</h5>
         <div className="info">
