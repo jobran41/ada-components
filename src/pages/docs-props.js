@@ -504,7 +504,48 @@ export const docsSupportAssets = [
   },
 ]
 
-export const docsTopBar = []
+export const docsTopBar = [
+  {
+    propsName: "className",
+    propsDescription: "An optional className to apply to the component."
+  },
+  {
+    propsName: "onToggleClick",
+    propsDescription: `trigger function callback return state of sideBarIsTrue.`
+  },
+  {
+    propsName: "sideBarIsTrue",
+    propsDescription: `The sideBarIsTrue is  to collapse the sideBar.`
+  },
+  {
+    propsName: "userName",
+    propsDescription: "The user Name to display on the component."
+  },
+  {
+    propsName: "menu",
+    propsDescription: `The menu props is array of string to display the list of link into the component.`
+  },
+  {
+    propsName: "authUser",
+    propsDescription: `The authUser props define if the user connect (bool).`
+  },
+  {
+    propsName: "underline",
+    propsDescription: `The underline props used if you want the active link is underlined.`
+  },
+  {
+    propsName: "color",
+    propsDescription: `The color props add new class in the components.`
+  },
+  {
+    propsName: "ProfileBar",
+    propsDescription: `The ProfileBar props for display avatar in the components.`
+  },
+  {
+    propsName: "logoName",
+    propsDescription: `The logoName props for display logo in the components.`
+  },
+]
 export const docsSideBar = []
 export const docsMenuList = []
 export const docsMenuIcon = []
