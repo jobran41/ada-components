@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Paper, MenuButton, LinearProgress, FontIcon } from "react-md"
 import { cls } from "reactutils"
 
-import './rating.scss'
+import "./rating.scss"
 
 export default class Rating extends Component {
   initClass = "rating";
@@ -77,12 +77,8 @@ Rating.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
-  onAddEvent: PropTypes.func,
   items: PropTypes.array,
-  onChecklist: PropTypes.func,
   menuButton: PropTypes.array,
-  currentUser: PropTypes.object,
-  onAddComment: PropTypes.func,
   average: PropTypes.string,
   cumulates: PropTypes.string
 }

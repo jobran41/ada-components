@@ -11,7 +11,7 @@ import {
   TableBody
 } from "react-md"
 
-import './style.scss'
+import "./style.scss"
 
 export default class Docs extends Component {
   constructor(props) {
@@ -71,11 +71,21 @@ export default class Docs extends Component {
             }
           />
           <section className="md-toolbar-relative">
-            <iframe title="ada-kit-editor" width="100%" height="500" src="https://stackblitz.com/edit/ada-kit-editor?embed=1&file=index.js">
+            <iframe
+              title="ada-kit-editor"
+              width="100%"
+              height="500"
+              src="https://stackblitz.com/edit/ada-kit-editor?embed=1&file=index.js"
+            >
               <p>Your browser does not support iframes.</p>
             </iframe>
             <div className="description">{description}</div>
-            <pre style={{ 'background': '#f5f2f0', 'paddingBottom': '10px' }} className="descriptionCode">{dataCode}</pre>
+            <pre
+              style={{ background: "#f5f2f0", paddingBottom: "10px" }}
+              className="descriptionCode"
+            >
+              {dataCode}
+            </pre>
             <DataTable plain>
               <TableHeader>
                 <TableRow>
@@ -87,7 +97,7 @@ export default class Docs extends Component {
             </DataTable>
           </section>
         </DialogContainer>
-      </div >
+      </div>
     )
   }
 }

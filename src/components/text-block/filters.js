@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Paper, MenuButton, Slider, Button } from "react-md"
 import { cls } from "reactutils"
 
-import './filters.scss'
+import "./filters.scss"
 
 export default class Filters extends Component {
   initClass = "filters";
@@ -50,8 +50,12 @@ export default class Filters extends Component {
           {this.renderFilters()}
         </div>
         <div className={cls(this.initClass + "-footer")}>
-          <Button flat className="buttonApply">Apply</Button>
-          <Button flat className="buttonReset">Reset</Button>
+          <Button flat className="buttonApply">
+            Apply
+          </Button>
+          <Button flat className="buttonReset">
+            Reset
+          </Button>
         </div>
       </Paper>
     )
@@ -61,10 +65,6 @@ Filters.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
-  onAddEvent: PropTypes.func,
   items: PropTypes.array,
-  onChecklist: PropTypes.func,
-  menuButton: PropTypes.array,
-  currentUser: PropTypes.object,
-  onAddComment: PropTypes.func
+  menuButton: PropTypes.array
 }

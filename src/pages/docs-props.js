@@ -166,12 +166,96 @@ export const docsChatList = [
   }`
   }
 ]
-export const docsUserList = []
-export const docsEventList = []
-export const docsReviews = []
-export const docsFilters = []
-export const docsTrackList = []
-export const docsRating = []
+export const docsUserList = [
+  ...commonDocs,
+  {
+    propsName: "items",
+    propsDescription: `array of object to pass to the component : {
+    path: "http://i.pravatar.cc/150?img=3",
+    name: "Student Name",
+    job: "web",
+    notification: true
+  }`
+  }
+]
+export const docsEventList = [
+  ...commonDocs,
+  {
+    propsName: "items",
+    propsDescription: `array of object to pass to the component : {
+    label: "nobis hoc",
+    description: "Ac ne quis a nobis hoc",
+    createdDate: {
+      day: 13,
+      month: "January",
+      time: "12:37"
+    }
+  }`
+  },
+  {
+    propsName: "onAddEvent",
+    propsDescription: `A Function to add new event`
+  },
+  {
+    propsName: "onChecklist",
+    propsDescription: `A Function to check event`
+  }
+]
+export const docsReviews = [
+  ...commonDocs,
+  {
+    propsName: "negativePorcentage",
+    propsDescription: `A value for negative percentage`
+  },
+  {
+    propsName: "positivePorcentage",
+    propsDescription: `A value for negative percentage`
+  }
+]
+export const docsFilters = [
+  ...commonDocs,
+  {
+    propsName: "items",
+    propsDescription: `array of object to pass to the component : {
+    min: -100,
+    max: 100,
+    value: 50
+  }`
+  }
+]
+export const docsTrackList = [
+  ...commonDocs,
+  {
+    propsName: "items",
+    propsDescription: `array of object to pass to the component : {
+    label: "Skill Done",
+    value: "80%"
+  }`
+  },
+  {
+    propsName: "onClickItem",
+    propsDescription: `A Function to click on Item`
+  }
+]
+export const docsRating = [
+  ...commonDocs,
+  {
+    propsName: "items",
+    propsDescription: `array of object to pass to the component : {
+    star: 5,
+    number: 123,
+    value: 40
+  }`
+  },
+  {
+    propsName: "average",
+    propsDescription: `Average value`
+  },
+  {
+    propsName: "cumulates",
+    propsDescription: `Cumulates value`
+  }
+]
 export const docsProjectList = []
 export const docsTimer = []
 export const docsTrackInfo = []
