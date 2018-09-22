@@ -283,11 +283,65 @@ export const docsUpload = []
 export const docsContainerTab = []
 export const docsInterests = []
 
-export const docsSignUp = []
-export const docsSignIn = []
-export const docsForgetPassword = []
-export const docsConfirmation = []
-export const docsSimpleForm = []
+
+export const docsSignUp = [
+  {
+    propsName: "onSubmit",
+    propsDescription: `trigger function callback return an object { email, password, lastName, firstName }`
+  },
+  {
+    propsName: "existAccount",
+    propsDescription: `A trigger function callback`
+  }
+]
+export const docsSignIn = [
+  {
+    propsName: "onSubmit",
+    propsDescription: `trigger function callback return an object { email, password }`
+  },
+  {
+    propsName: "redirectToForgetPassword",
+    propsDescription: `A trigger function callback`
+  },
+  {
+    propsName: "redirectToSignUp",
+    propsDescription: `A trigger function callback`
+  }
+]
+export const docsForgetPassword = [
+  {
+    propsName: "onSubmit",
+    propsDescription: `trigger function callback return an object { email }`
+  }
+]
+export const docsConfirmation = [
+  {
+    propsName: "checked",
+    propsDescription: `controlled components with props checked`
+  },
+  {
+    propsName: "sendConfirmation",
+    propsDescription: `trigger function callback`
+  }
+]
+export const docsSimpleForm = [
+  {
+    propsName: "onSubmit",
+    propsDescription: `trigger function callback return an object { email, mobile, name, userName }`
+  },
+  {
+    propsName: "title",
+    propsDescription: `The title to display on the component.`
+  },
+  {
+    propsName: "avatar",
+    propsDescription: `Accept node element`
+  },
+  {
+    propsName: "notification",
+    propsDescription: `Array of String`
+  }
+]
 
 export const docsPanelProfile = []
 export const docsSupportAssets = []
