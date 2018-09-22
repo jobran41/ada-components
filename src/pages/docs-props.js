@@ -264,3 +264,10 @@ export const docsDiscover = []
 export const docsUpload = []
 export const docsContainerTab = []
 export const docsInterests = []
+
+
+export const docsSignUp = []
+export const docsSignIn = []
+export const docsForgetPassword = []
+export const docsConfirmation= []
+export const docsSimpleForm= []
