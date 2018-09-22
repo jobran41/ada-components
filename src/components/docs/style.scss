@@ -19,7 +19,7 @@
       transform: translateY(0%);
     }
   }
-  .blocklist-item {
+  > div {
     z-index: 1;
   }
 }
