@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Paper, LinearProgress, Button } from "react-md"
 import { cls } from "reactutils"
 
-import './project-list.scss'
+import "./project-list.scss"
 
 export default class ProjectList extends Component {
   initClass = "project-list";
@@ -61,6 +61,5 @@ ProjectList.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
   items: PropTypes.array,
-  onChecklist: PropTypes.func,
   onAddProject: PropTypes.func
 }

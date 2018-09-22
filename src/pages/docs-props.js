@@ -256,8 +256,26 @@ export const docsRating = [
     propsDescription: `Cumulates value`
   }
 ]
-export const docsProjectList = []
-export const docsTimer = []
+export const docsProjectList = [
+  ...commonDocs,
+  {
+    propsName: "items",
+    propsDescription: `array of object to pass to the component : {
+    label: "Project 1",
+    value: 52
+  }`
+  },
+  {
+    propsName: "onAddProject",
+    propsDescription: `A Function to add project`
+  }
+]
+export const docsTimer = [
+  {
+    propsName: "className",
+    propsDescription: "An optional className to apply to the component."
+  }
+]
 export const docsTrackInfo = []
 export const docsDownload = []
 export const docsDiscover = []
@@ -297,9 +315,22 @@ export const docsForgetPassword = [
   }
 ]
 export const docsConfirmation = [
-
+  {
+    propsName: "checked",
+    propsDescription: `controlled components with props checked`
+  },
+  {
+    propsName: "sendConfirmation",
+    propsDescription: `trigger function callback`
+  }
 ]
 export const docsSimpleForm = []
 
 export const docsPanelProfile = []
 export const docsSupportAssets = []
+
+export const docsTopBar = []
+
+export const docsSideBar = []
+export const docsMenuList = []
+export const docsMenuIcon = []

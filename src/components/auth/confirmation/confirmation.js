@@ -5,10 +5,10 @@ import PropTypes from "prop-types"
 import './Style.scss'
 
 class Confirmation extends Component {
-  checkedItem = () => {
-    const { checkedItem } = this.props
-    if (typeof checkedItem === 'function') {
-      checkedItem()
+  sendConfirmation = () => {
+    const { sendConfirmation } = this.props
+    if (typeof sendConfirmation === 'function') {
+      sendConfirmation()
     }
   }
   render() {
@@ -22,15 +22,15 @@ class Confirmation extends Component {
         <h2><strong>Success</strong></h2>
         <h5>See Confirmation Link</h5>
         <div className="info">
-          <Button flat className="form-button">Send Confirmation</Button>
+          <Button onClick={this.sendConfirmation} flat className="form-button">Send Confirmation</Button>
         </div>
       </Paper >
     )
   }
 }
 Confirmation.propTypes = {
-  checkedItem: PropTypes.func,
-  checked: PropTypes.bool
+  checked: PropTypes.bool,
+  sendConfirmation: PropTypes.func
 
 }
 export default Confirmation
