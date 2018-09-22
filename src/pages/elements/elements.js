@@ -18,6 +18,19 @@ import AdaAvatar from 'components/ada-avatar'
 import AdaTag from 'components/ada-tag'
 import AdaSlider from 'components/ada-slider'
 
+import Docs from "components/docs"
+import {
+  docsAdaSearch,
+  docsAdaCategory,
+  docsAdaStepper,
+  docsSocialPanel,
+  docsBadges,
+  docsTicket,
+  docsAdaTag,
+  docsAdaAlerts,
+  docsAdaPagination
+} from "pages/docs-props"
+
 import './style.scss'
 
 export default class Elements extends Component {
@@ -46,22 +59,73 @@ export default class Elements extends Component {
         <ContentHeader title="Basic Elements Used Across the Dashboard" date="2018" subclass="gray-text" />
         <div className="elementsContainer md-grid">
           <div className="elementsCell md-cell md-cell--4">
-            <AdaSearch onChange={this.handleSearch} />
+            <Docs
+                title={"AdaSearch"}
+                docsProps={docsAdaSearch}
+                dataCode={`<AdaSearch onChange={this.handleSearch} />`}
+            >
+              <AdaSearch onChange={this.handleSearch} />
+            </Docs>
             <br />
-            <AdaCategory
-              id="ada-category"
-              menuItems={STRING_ITEMS}
-              placeholder="Select Category"
-              dropdownIcon={<FontIcon>add</FontIcon>}
-            />
+            <Docs
+              title={"AdaCategory"}
+              docsProps={docsAdaCategory}
+              dataCode={`
+                <AdaCategory
+                  id="ada-category"
+                  menuItems={STRING_ITEMS}
+                  placeholder="Select Category"
+                  dropdownIcon={<FontIcon>add</FontIcon>}
+                />
+              `}
+            >
+              <AdaCategory
+                id="ada-category"
+                menuItems={STRING_ITEMS}
+                placeholder="Select Category"
+                dropdownIcon={<FontIcon>add</FontIcon>}
+              />
+            </Docs>
             <br />
-            <AdaStepper updateField={this.updateField} stepperData={["1", "2", "3", "4", "5", "6", "7", "8", "9"]} />
+            <Docs
+              title={"AdaStepper"}
+              docsProps={docsAdaStepper}
+              dataCode={`
+                <AdaStepper updateField={this.updateField} stepperData={["1", "2", "3", "4", "5", "6", "7", "8", "9"]} />
+              `}
+            >
+              <AdaStepper updateField={this.updateField} stepperData={["1", "2", "3", "4", "5", "6", "7", "8", "9"]} />
+            </Docs>
             <br />
-            <AdaStepper active={1} widthBorder theme="blue" stepperData={["Standard", "Medium", "High"]} />
+            <Docs
+              title={"AdaStepper"}
+              docsProps={docsAdaStepper}
+              dataCode={`
+                <AdaStepper updateField={this.updateField} stepperData={["1", "2", "3", "4", "5", "6", "7", "8", "9"]} />
+              `}
+            >
+              <AdaStepper active={1} widthBorder theme="blue" stepperData={["Standard", "Medium", "High"]} />
+            </Docs>
             <br />
-            <AdaStepper widthBorder theme="green" stepperData={["Standard", "Medium", "High"]} />
+            <Docs
+              title={"AdaStepper"}
+              docsProps={docsAdaStepper}
+              dataCode={`
+                <AdaStepper updateField={this.updateField} stepperData={["1", "2", "3", "4", "5", "6", "7", "8", "9"]} />
+              `}
+            >
+              <AdaStepper widthBorder theme="green" stepperData={["Standard", "Medium", "High"]} />
+            </Docs>
             <br />
-            <AdaStepper active={2} widthBorder stepperData={["Standard", "Medium", "High"]} />
+            <Docs
+              title={"AdaStepper"}
+              docsProps={docsAdaStepper}
+              dataCode={`
+                <AdaStepper updateField={this.updateField} stepperData={["1", "2", "3", "4", "5", "6", "7", "8", "9"]} />
+              `}
+            >
+              <AdaStepper active={2} widthBorder stepperData={["Standard", "Medium", "High"]} />
+            </Docs>
             <br />
             <AdaProgress item={{ value: 50, max: 100, min: 0, id: 'ada-progress' }} />
             <br />
@@ -74,19 +138,56 @@ export default class Elements extends Component {
               valuePrecision={1}
             />
             <br />
-            <SocialPanel color="red" renderButton={() => {
-              return (
-                <Fragment>
-                  <Button icon iconClassName="mdi mdi-google" />
-                  <Button icon iconClassName="mdi mdi-facebook" />
-                  <Button icon iconClassName="mdi mdi-instagram" />
-                  <Button icon iconClassName="mdi mdi-twitter" />
-                  <Button icon iconClassName="mdi mdi-linkedin" />
-                  <Button icon iconClassName="mdi mdi-play-box-outline" />
-                </Fragment>
-              )
-            }} />
+            <Docs
+              title={"SocialPanel"}
+              docsProps={docsSocialPanel}
+              dataCode={`
+                <SocialPanel color="red" renderButton={() => {
+                  return (
+                    <Fragment>
+                      <Button icon iconClassName="mdi mdi-google" />
+                      <Button icon iconClassName="mdi mdi-facebook" />
+                      <Button icon iconClassName="mdi mdi-instagram" />
+                      <Button icon iconClassName="mdi mdi-twitter" />
+                      <Button icon iconClassName="mdi mdi-linkedin" />
+                      <Button icon iconClassName="mdi mdi-play-box-outline" />
+                    </Fragment>
+                  )
+                }} />
+              `}
+            >
+              <SocialPanel color="red" renderButton={() => {
+                return (
+                  <Fragment>
+                    <Button icon iconClassName="mdi mdi-google" />
+                    <Button icon iconClassName="mdi mdi-facebook" />
+                    <Button icon iconClassName="mdi mdi-instagram" />
+                    <Button icon iconClassName="mdi mdi-twitter" />
+                    <Button icon iconClassName="mdi mdi-linkedin" />
+                    <Button icon iconClassName="mdi mdi-play-box-outline" />
+                  </Fragment>
+                )
+              }} />
+            </Docs>
             <br />
+            <Docs
+              title={"SocialPanel"}
+              docsProps={docsSocialPanel}
+              dataCode={`
+                <SocialPanel color="red" renderButton={() => {
+                  return (
+                    <Fragment>
+                      <Button icon iconClassName="mdi mdi-google" />
+                      <Button icon iconClassName="mdi mdi-facebook" />
+                      <Button icon iconClassName="mdi mdi-instagram" />
+                      <Button icon iconClassName="mdi mdi-twitter" />
+                      <Button icon iconClassName="mdi mdi-linkedin" />
+                      <Button icon iconClassName="mdi mdi-play-box-outline" />
+                    </Fragment>
+                  )
+                }} />
+              `}
+            >
             <SocialPanel color="blue" renderButton={() => {
               return (
                 <Fragment>
@@ -99,7 +200,26 @@ export default class Elements extends Component {
                 </Fragment>
               )
             }} />
+            </Docs>
             <br />
+            <Docs
+              title={"SocialPanel"}
+              docsProps={docsSocialPanel}
+              dataCode={`
+                <SocialPanel color="red" renderButton={() => {
+                  return (
+                    <Fragment>
+                      <Button icon iconClassName="mdi mdi-google" />
+                      <Button icon iconClassName="mdi mdi-facebook" />
+                      <Button icon iconClassName="mdi mdi-instagram" />
+                      <Button icon iconClassName="mdi mdi-twitter" />
+                      <Button icon iconClassName="mdi mdi-linkedin" />
+                      <Button icon iconClassName="mdi mdi-play-box-outline" />
+                    </Fragment>
+                  )
+                }} />
+              `}
+            >
             <SocialPanel color="purple" renderButton={() => {
               return (
                 <Fragment>
@@ -112,7 +232,26 @@ export default class Elements extends Component {
                 </Fragment>
               )
             }} />
+            </Docs>
             <br />
+            <Docs
+              title={"SocialPanel"}
+              docsProps={docsSocialPanel}
+              dataCode={`
+                <SocialPanel color="red" renderButton={() => {
+                  return (
+                    <Fragment>
+                      <Button icon iconClassName="mdi mdi-google" />
+                      <Button icon iconClassName="mdi mdi-facebook" />
+                      <Button icon iconClassName="mdi mdi-instagram" />
+                      <Button icon iconClassName="mdi mdi-twitter" />
+                      <Button icon iconClassName="mdi mdi-linkedin" />
+                      <Button icon iconClassName="mdi mdi-play-box-outline" />
+                    </Fragment>
+                  )
+                }} />
+              `}
+            >
             <SocialPanel renderButton={() => {
               return (
                 <Fragment>
@@ -125,6 +264,7 @@ export default class Elements extends Component {
                 </Fragment>
               )
             }} />
+            </Docs>
           </div>
           <div className="elementsCell md-cell md-cell--3">
             <div className="middleComponent">
@@ -173,9 +313,25 @@ export default class Elements extends Component {
 
           </div>
           <div className="elementsCell md-cell md-cell--5">
-            <Badges title="Badges" badgesOfAvatars={["Man01", "Man02", "Man03"]} />
+            <Docs
+              title={"Badges"}
+              docsProps={docsBadges}
+              dataCode={`
+                 <Badges title="Badges" badgesOfAvatars={["Man01", "Man02", "Man03"]} />
+              `}
+            >
+              <Badges title="Badges" badgesOfAvatars={["Man01", "Man02", "Man03"]} />
+            </Docs>
             <br />
-            <Badges title="Badges" badgesOfAvatars={["Man01", "Man02", "Man03"]} theme="dark" />
+            <Docs
+              title={"Badges"}
+              docsProps={docsBadges}
+              dataCode={`
+                 <Badges title="Badges" badgesOfAvatars={["Man01", "Man02", "Man03"]} />
+              `}
+            >
+              <Badges title="Badges" badgesOfAvatars={["Man01", "Man02", "Man03"]} theme="dark" />
+            </Docs>
             <br />
             <div className="ticketWrapper">
               <Ticket titleLeft={<h2>1</h2>} className="ticketItem" titleTop="Step 1" description="Lorem ipsum" />
@@ -183,24 +339,103 @@ export default class Elements extends Component {
               <Ticket titleLeft={<h2>3</h2>} className="ticketItem" theme="purple" titleTop="Step 1" description="Lorem ipsum" />
             </div>
             <br />
+            <Docs
+              title={"AdaTag"}
+              docsProps={docsAdaTag}
+              dataCode={`
+                <AdaTag iconLeft='mdi-check-circle-outline' iconRight='mdi-note-plus-outline' text="New Note" />
+              `}
+            >
             <AdaTag iconLeft='mdi-check-circle-outline' iconRight='mdi-note-plus-outline' text="New Note" />
+            </Docs>
             <br />
+            <Docs
+              title={"AdaTag"}
+              docsProps={docsAdaTag}
+              dataCode={`
+                <AdaTag iconLeft='mdi-check-circle-outline' iconRight='mdi-note-plus-outline' text="New Note" />
+              `}
+            >
             <AdaTag theme="blue" iconLeft='mdi-check-circle-outline' iconRight='mdi-email-outline' text="New Message" />
+            </Docs>
             <br />
+            <Docs
+              title={"AdaTag"}
+              docsProps={docsAdaTag}
+              dataCode={`
+                <AdaTag iconLeft='mdi-check-circle-outline' iconRight='mdi-note-plus-outline' text="New Note" />
+              `}
+            >
             <AdaTag readOnly="true" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
+            </Docs>
             <br />
+            <Docs
+              title={"AdaTag"}
+              docsProps={docsAdaTag}
+              dataCode={`
+                <AdaTag iconLeft='mdi-check-circle-outline' iconRight='mdi-note-plus-outline' text="New Note" />
+              `}
+            >
             <AdaTag theme="blue" readOnly="true" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
+            </Docs>
             <br />
+            <Docs
+              title={"Ticket"}
+              docsProps={docsTicket}
+              dataCode={`
+                <Ticket titleLeft={<h2>1</h2>} className="ticketItem" titleTop="Step 1" description="Lorem ipsum" />
+              `}
+            >
             <Ticket titleLeft="Title" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
+            </Docs>
             <br />
+            <Docs
+              title={"AdaAlerts"}
+              docsProps={docsAdaAlerts}
+              dataCode={`
+                <AdaAlerts theme="green" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
+              `}
+            >
             <AdaAlerts theme="green" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
+            </Docs>
             <br />
+            <Docs
+              title={"AdaAlerts"}
+              docsProps={docsAdaAlerts}
+              dataCode={`
+                <AdaAlerts theme="green" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
+              `}
+            >
             <AdaAlerts iconLeft='mdi-information-outline' iconRight='mdi-close' text="Information" />
+            </Docs>
             <br />
+            <Docs
+              title={"AdaAlerts"}
+              docsProps={docsAdaAlerts}
+              dataCode={`
+                <AdaAlerts theme="green" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
+              `}
+            >
             <AdaAlerts theme="orange" iconLeft='mdi-alert-circle-outline' iconRight='mdi-close' text="Worning" />
+            </Docs>
             <br />
+            <Docs
+              title={"AdaAlerts"}
+              docsProps={docsAdaAlerts}
+              dataCode={`
+                <AdaAlerts theme="green" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
+              `}
+            >
             <AdaAlerts theme="red" iconLeft='mdi-alert-outline' iconRight='mdi-close' text="Alert message" />
+            </Docs>
             <br />
+            <Docs
+              title={"AdaPagination"}
+              docsProps={docsAdaPagination}
+              dataCode={`
+              <AdaPagination items={this.state.exampleItems} onChangePage={this.onChangePage} />
+              `}
+            >
             <div className="paginationWapper">
               <div className="paginationItems">
                 {this.state.pageOfItems.map(item =>
@@ -209,6 +444,7 @@ export default class Elements extends Component {
               </div>
               <AdaPagination items={this.state.exampleItems} onChangePage={this.onChangePage} />
             </div>
+            </Docs>
           </div>
         </div>
       </div>
