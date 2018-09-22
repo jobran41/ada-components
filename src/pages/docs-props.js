@@ -343,11 +343,53 @@ export const docsSimpleForm = [
   }
 ]
 
-export const docsPanelProfile = []
+export const docsPanelProfile = [
+  ...commonDocs,
+  {
+    propsName: "profileName",
+    propsDescription: `The profile Name to display on the component.`
+  },
+  {
+    propsName: "address",
+    propsDescription: `The address to display on the component.`
+  },
+  {
+    propsName: "tel",
+    propsDescription: `The tel to display on the component.`
+  },
+  {
+    propsName: "Email",
+    propsDescription: `The tel to display on the component.`
+  },
+  {
+    propsName: "responsive",
+    propsDescription: `The responsive props to display the component from mode large to mode small (bool).`
+  },
+  {
+    propsName: "colorHeader",
+    propsDescription: `The colorHeader to display new className on the component.`
+  },
+  {
+    propsName: "inlineColorHeader",
+    propsDescription: `The inlineColorHeader to display inline on the component.`
+  },
+  {
+    propsName: "urlImg",
+    propsDescription: `The urlImg to display on the component.`
+  },
+  {
+    propsName: "handleDetails",
+    propsDescription: `trigger function callback.`
+  },
+  {
+    propsName: "details",
+    propsDescription: `The details displayed on the component if is true (bool).`
+  },
+
+].filter(c => c.propsName !== "title")
 export const docsSupportAssets = []
 
 export const docsTopBar = []
-
 export const docsSideBar = []
 export const docsMenuList = []
 export const docsMenuIcon = []

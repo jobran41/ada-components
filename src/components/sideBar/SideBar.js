@@ -75,7 +75,7 @@ class SideBar extends Component {
             address={address}
             tel={tel}
             Email={Email}
-            className={responsive ? "small-header" + className : className }
+            className={responsive ? "small-header" + className : className}
             responsive={responsive}
             colorHeader={colorHeader}
           />
@@ -111,7 +111,7 @@ class SideBar extends Component {
             <hr />
           </div>
           }
-          <div className={responsive ? "" : "SideBar-footer" }>
+          <div className={responsive ? "" : "SideBar-footer"}>
             {renderButton && renderButton()}
             {!responsive && <div className="addMore" onClick={this.addMore}>
               <Button flat onClick={this.addMore} iconBefore={false} iconClassName="mdi mdi-plus">
@@ -131,9 +131,6 @@ class SideBar extends Component {
 SideBar.propTypes = {
   ProgressBar: PropTypes.object,
   className: PropTypes.string,
-  dataSideBar: PropTypes.object,
-  logout: PropTypes.func,
-  history: PropTypes.func,
   profileName: PropTypes.string,
   address: PropTypes.string,
   grade: PropTypes.string,
