@@ -4,9 +4,9 @@ import PropTypes from "prop-types"
 import './menu-icon.scss'
 class MenuIcon extends Component {
   render() {
-    const { renderButton, color } = this.props
+    const { renderButton, className } = this.props
     return (
-      <div className={`menuIcon ${color ? color : ''}`}>
+      <div className={`menuIcon ${className ? className : ''}`}>
         {renderButton && renderButton()}
       </div>
     )
@@ -15,6 +15,6 @@ class MenuIcon extends Component {
 
 MenuIcon.propTypes = {
   renderButton: PropTypes.func,
-  color: PropTypes.string
+  className: PropTypes.string
 }
 export default MenuIcon

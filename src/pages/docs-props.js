@@ -641,8 +641,12 @@ export const docsMenuIcon = [
     propsDescription: `The renderButton is a function Accept node element.`
   },
   {
-    propsName: "color",
+    propsName: "inlineColor",
     propsDescription: `The color display new className on the component.`
+  },
+  {
+    propsName: "className",
+    propsDescription: "An optional className to apply to the component."
   },
 ]
 
@@ -698,8 +702,8 @@ export const docsBadges = [
     propsDescription: `The width of the avatars on the badges.`
   },
   {
-    propsName: " badgesOfAvatars",
-    propsDescription: `array of string to display the list of avatars into the component..`
+    propsName: "badgesOfAvatars",
+    propsDescription: `array of string to display the list of avatars into the component.`
   },
 ].filter(c => c.propsName !== "description")
 export const docsTicket = [
@@ -754,7 +758,7 @@ export const docsAdaAlerts = [
 export const docsAdaPagination = [
   {
     propsName: "items",
-    propsDescription: "array of object to pass to the component : { name: 'Game', id: 355 }."
+    propsDescription: "array of object passed to the component : { name: 'Game', id: 355 }."
   },
   {
     propsName: "onChangePage",
