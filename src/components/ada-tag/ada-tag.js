@@ -6,15 +6,15 @@ import './ada-tag.scss'
 
 class AdaTag extends Component {
   render() {
-    const { iconRight, text, className, theme, readOnly } = this.props
+    const { iconRight, title, className, theme, readOnly } = this.props
     return (
       <div className={`adaTag ${className ? className : ''} ${readOnly ? "readOnly" : ''} ${theme ? theme : ''}`}>
         <div className="adaTag-left">
-          {readOnly && <div className="adaTag-left-text">{text}</div>}
+          {readOnly && <div className="adaTag-left-text">{title}</div>}
           {!readOnly && <div className="adaTag-left-text">
             <TextField
               {...this.props}
-              placeholder={text}
+              placeholder={title}
               type="text"
               block
               className="adaMessage"
@@ -28,7 +28,7 @@ class AdaTag extends Component {
 AdaTag.propTypes = {
   iconLeft: PropTypes.string,
   iconRight: PropTypes.string,
-  text: PropTypes.string,
+  title: PropTypes.string,
   className: PropTypes.string,
   theme: PropTypes.string,
   readOnly: PropTypes.bool

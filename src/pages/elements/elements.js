@@ -50,6 +50,7 @@ export default class Elements extends Component {
 
   render() {
     const STRING_ITEMS = ['Zero', 'One', 'Two', 'Three']
+    const { exampleItems } = this.state
     const roundAvatar = ["Man01", "Man02", "Man03"].map((elem, i) => {
       return <AdaAvatar width={50} height={50} round key={i} name={elem} />
     })
@@ -60,9 +61,9 @@ export default class Elements extends Component {
         <div className="elementsContainer md-grid">
           <div className="elementsCell md-cell md-cell--4">
             <Docs
-                title={"AdaSearch"}
-                docsProps={docsAdaSearch}
-                dataCode={`<AdaSearch onChange={this.handleSearch} />`}
+              title={"AdaSearch"}
+              docsProps={docsAdaSearch}
+              dataCode={`<AdaSearch onChange={this.handleSearch} />`}
             >
               <AdaSearch onChange={this.handleSearch} />
             </Docs>
@@ -188,18 +189,18 @@ export default class Elements extends Component {
                 }} />
               `}
             >
-            <SocialPanel color="blue" renderButton={() => {
-              return (
-                <Fragment>
-                  <Button icon iconClassName="mdi mdi-google" />
-                  <Button icon iconClassName="mdi mdi-facebook" />
-                  <Button icon iconClassName="mdi mdi-instagram" />
-                  <Button icon iconClassName="mdi mdi-twitter" />
-                  <Button icon iconClassName="mdi mdi-linkedin" />
-                  <Button icon iconClassName="mdi mdi-play-box-outline" />
-                </Fragment>
-              )
-            }} />
+              <SocialPanel color="blue" renderButton={() => {
+                return (
+                  <Fragment>
+                    <Button icon iconClassName="mdi mdi-google" />
+                    <Button icon iconClassName="mdi mdi-facebook" />
+                    <Button icon iconClassName="mdi mdi-instagram" />
+                    <Button icon iconClassName="mdi mdi-twitter" />
+                    <Button icon iconClassName="mdi mdi-linkedin" />
+                    <Button icon iconClassName="mdi mdi-play-box-outline" />
+                  </Fragment>
+                )
+              }} />
             </Docs>
             <br />
             <Docs
@@ -220,18 +221,18 @@ export default class Elements extends Component {
                 }} />
               `}
             >
-            <SocialPanel color="purple" renderButton={() => {
-              return (
-                <Fragment>
-                  <Button icon iconClassName="mdi mdi-google" />
-                  <Button icon iconClassName="mdi mdi-facebook" />
-                  <Button icon iconClassName="mdi mdi-instagram" />
-                  <Button icon iconClassName="mdi mdi-twitter" />
-                  <Button icon iconClassName="mdi mdi-linkedin" />
-                  <Button icon iconClassName="mdi mdi-play-box-outline" />
-                </Fragment>
-              )
-            }} />
+              <SocialPanel color="purple" renderButton={() => {
+                return (
+                  <Fragment>
+                    <Button icon iconClassName="mdi mdi-google" />
+                    <Button icon iconClassName="mdi mdi-facebook" />
+                    <Button icon iconClassName="mdi mdi-instagram" />
+                    <Button icon iconClassName="mdi mdi-twitter" />
+                    <Button icon iconClassName="mdi mdi-linkedin" />
+                    <Button icon iconClassName="mdi mdi-play-box-outline" />
+                  </Fragment>
+                )
+              }} />
             </Docs>
             <br />
             <Docs
@@ -252,18 +253,18 @@ export default class Elements extends Component {
                 }} />
               `}
             >
-            <SocialPanel renderButton={() => {
-              return (
-                <Fragment>
-                  <Button icon iconClassName="mdi mdi-google" />
-                  <Button icon iconClassName="mdi mdi-facebook" />
-                  <Button icon iconClassName="mdi mdi-instagram" />
-                  <Button icon iconClassName="mdi mdi-twitter" />
-                  <Button icon iconClassName="mdi mdi-linkedin" />
-                  <Button icon iconClassName="mdi mdi-play-box-outline" />
-                </Fragment>
-              )
-            }} />
+              <SocialPanel renderButton={() => {
+                return (
+                  <Fragment>
+                    <Button icon iconClassName="mdi mdi-google" />
+                    <Button icon iconClassName="mdi mdi-facebook" />
+                    <Button icon iconClassName="mdi mdi-instagram" />
+                    <Button icon iconClassName="mdi mdi-twitter" />
+                    <Button icon iconClassName="mdi mdi-linkedin" />
+                    <Button icon iconClassName="mdi mdi-play-box-outline" />
+                  </Fragment>
+                )
+              }} />
             </Docs>
           </div>
           <div className="elementsCell md-cell md-cell--3">
@@ -346,7 +347,7 @@ export default class Elements extends Component {
                 <AdaTag iconLeft='mdi-check-circle-outline' iconRight='mdi-note-plus-outline' text="New Note" />
               `}
             >
-            <AdaTag iconLeft='mdi-check-circle-outline' iconRight='mdi-note-plus-outline' text="New Note" />
+              <AdaTag iconLeft='mdi-check-circle-outline' iconRight='mdi-note-plus-outline' text="New Note" />
             </Docs>
             <br />
             <Docs
@@ -356,7 +357,7 @@ export default class Elements extends Component {
                 <AdaTag iconLeft='mdi-check-circle-outline' iconRight='mdi-note-plus-outline' text="New Note" />
               `}
             >
-            <AdaTag theme="blue" iconLeft='mdi-check-circle-outline' iconRight='mdi-email-outline' text="New Message" />
+              <AdaTag theme="blue" iconLeft='mdi-check-circle-outline' iconRight='mdi-email-outline' text="New Message" />
             </Docs>
             <br />
             <Docs
@@ -366,7 +367,7 @@ export default class Elements extends Component {
                 <AdaTag iconLeft='mdi-check-circle-outline' iconRight='mdi-note-plus-outline' text="New Note" />
               `}
             >
-            <AdaTag readOnly="true" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
+              <AdaTag readOnly="true" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
             </Docs>
             <br />
             <Docs
@@ -376,7 +377,7 @@ export default class Elements extends Component {
                 <AdaTag iconLeft='mdi-check-circle-outline' iconRight='mdi-note-plus-outline' text="New Note" />
               `}
             >
-            <AdaTag theme="blue" readOnly="true" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
+              <AdaTag theme="blue" readOnly="true" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
             </Docs>
             <br />
             <Docs
@@ -386,7 +387,7 @@ export default class Elements extends Component {
                 <Ticket titleLeft={<h2>1</h2>} className="ticketItem" titleTop="Step 1" description="Lorem ipsum" />
               `}
             >
-            <Ticket titleLeft="Title" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
+              <Ticket titleLeft="Title" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
             </Docs>
             <br />
             <Docs
@@ -396,7 +397,7 @@ export default class Elements extends Component {
                 <AdaAlerts theme="green" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
               `}
             >
-            <AdaAlerts theme="green" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
+              <AdaAlerts theme="green" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
             </Docs>
             <br />
             <Docs
@@ -406,7 +407,7 @@ export default class Elements extends Component {
                 <AdaAlerts theme="green" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
               `}
             >
-            <AdaAlerts iconLeft='mdi-information-outline' iconRight='mdi-close' text="Information" />
+              <AdaAlerts iconLeft='mdi-information-outline' iconRight='mdi-close' text="Information" />
             </Docs>
             <br />
             <Docs
@@ -416,7 +417,7 @@ export default class Elements extends Component {
                 <AdaAlerts theme="green" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
               `}
             >
-            <AdaAlerts theme="orange" iconLeft='mdi-alert-circle-outline' iconRight='mdi-close' text="Worning" />
+              <AdaAlerts theme="orange" iconLeft='mdi-alert-circle-outline' iconRight='mdi-close' text="Worning" />
             </Docs>
             <br />
             <Docs
@@ -426,7 +427,7 @@ export default class Elements extends Component {
                 <AdaAlerts theme="green" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
               `}
             >
-            <AdaAlerts theme="red" iconLeft='mdi-alert-outline' iconRight='mdi-close' text="Alert message" />
+              <AdaAlerts theme="red" iconLeft='mdi-alert-outline' iconRight='mdi-close' text="Alert message" />
             </Docs>
             <br />
             <Docs
@@ -436,14 +437,14 @@ export default class Elements extends Component {
               <AdaPagination items={this.state.exampleItems} onChangePage={this.onChangePage} />
               `}
             >
-            <div className="paginationWapper">
-              <div className="paginationItems">
-                {this.state.pageOfItems.map(item =>
-                  <div className="pagination-item" key={item.id}>{item.name}</div>
-                )}
+              <div className="paginationWapper">
+                <div className="paginationItems">
+                  {this.state.pageOfItems.map(item =>
+                    <div className="pagination-item" key={item.id}>{item.name}</div>
+                  )}
+                </div>
+                <AdaPagination items={exampleItems} onChangePage={this.onChangePage} />
               </div>
-              <AdaPagination items={this.state.exampleItems} onChangePage={this.onChangePage} />
-            </div>
             </Docs>
           </div>
         </div>

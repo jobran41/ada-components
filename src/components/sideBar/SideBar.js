@@ -135,7 +135,6 @@ SideBar.propTypes = {
   address: PropTypes.string,
   grade: PropTypes.string,
   tel: PropTypes.string,
-  skillsName: PropTypes.string,
   Email: PropTypes.string,
   social: PropTypes.array,
   badges: PropTypes.array,

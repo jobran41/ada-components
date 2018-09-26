@@ -546,16 +546,222 @@ export const docsTopBar = [
     propsDescription: `The logoName props for display logo in the components.`
   },
 ]
-export const docsSideBar = []
-export const docsMenuList = []
-export const docsMenuIcon = []
+export const docsSideBar = [
+  ...commonDocs,
+  {
+    propsName: "profileName",
+    propsDescription: `The profile Name to display on the component.`
+  },
+  {
+    propsName: "address",
+    propsDescription: `The address to display on the component.`
+  },
+  {
+    propsName: "tel",
+    propsDescription: `The tel to display on the component.`
+  },
+  {
+    propsName: "Email",
+    propsDescription: `The tel to display on the component.`
+  },
+  {
+    propsName: "responsive",
+    propsDescription: `The responsive props to display the component from mode large to mode small (bool).`
+  },
+  {
+    propsName: "colorHeader",
+    propsDescription: `The colorHeader display new className on the component.`
+  },
+  {
+    propsName: "inlineColorHeader",
+    propsDescription: `The inlineColorHeader  display inline style on the component.`
+  },
+  {
+    propsName: "urlImg",
+    propsDescription: `The urlImg to display on the component.`
+  },
+  {
+    propsName: "social",
+    propsDescription: `array of string to pass to the component`
+  },
+  {
+    propsName: "badges",
+    propsDescription: `array of string to pass to the component`
+  },
+  {
+    propsName: "renderButton",
+    propsDescription: `The renderButton is a function Accept node element.`
+  },
+  {
+    propsName: "colorBody",
+    propsDescription: `The colorHeader display new className on the component.`
+  },
+  {
+    propsName: "addMore",
+    propsDescription: `trigger function callback.`
+  },
+  {
+    propsName: "ProgressBar",
+    propsDescription: `The ProgressBar display { level, indicatorMax, indicatorMin } on the component.`
+  },
+]
+export const docsMenuList = [
+  {
+    propsName: "listPeople",
+    propsDescription: `array of object to pass to the component { name: "user1", urlImg: "http://i.pravatar.cc/150?img=11" }`
+  },
+  {
+    propsName: "listRoom",
+    propsDescription: `array of string to pass to the component { name: "user2", urlImg: "http://i.pravatar.cc/150?img=11" }`
+  },
+  {
+    propsName: "colorBody",
+    propsDescription: `The colorHeader display new className on the component.`
+  },
+  {
+    propsName: "renderButton",
+    propsDescription: `The renderButton is a function Accept node element.`
+  },
+  {
+    propsName: "icon",
+    propsDescription: `The icon props add new icon with the icon name like mdi-dots-horizontal.`
+  },
+  {
+    propsName: "addMore",
+    propsDescription: `trigger function callback.`
+  },
+  {
+    propsName: "plus",
+    propsDescription: `The ProgressBar display { level, indicatorMax, indicatorMin } on the component.`
+  },
+]
+export const docsMenuIcon = [
+  {
+    propsName: "renderButton",
+    propsDescription: `The renderButton is a function Accept node element.`
+  },
+  {
+    propsName: "color",
+    propsDescription: `The color display new className on the component.`
+  },
+]
 
-export const docsAdaSearch = []
-export const docsAdaCategory = []
-export const docsAdaStepper = []
-export const docsSocialPanel = []
-export const docsBadges = []
-export const docsTicket = []
-export const docsAdaTag = []
-export const docsAdaAlerts = []
-export const docsAdaPagination = []
+export const docsAdaSearch = [
+  {
+    propsName: "handleSearch",
+    propsDescription: `trigger function callback.`
+  },
+]
+export const docsAdaCategory = [
+
+]
+export const docsAdaStepper = [
+  {
+    propsName: "stepperData",
+    propsDescription: `The stepperData is a function Accept node element.`
+  },
+  {
+    propsName: "active",
+    propsDescription: `The icon props add new icon with the icon name like mdi-dots-horizontal.`
+  },
+  {
+    propsName: "widthBorder",
+    propsDescription: `The widthBorder props define if the stepper withBorder (bool).`
+  },
+  {
+    propsName: "theme",
+    propsDescription: `The theme display new className on the component.`
+  },
+  {
+    propsName: "updateField",
+    propsDescription: `trigger function callback return element selected.`
+  },
+]
+export const docsSocialPanel = [
+  {
+    propsName: "renderButton",
+    propsDescription: `The renderButton is a function Accept node element.`
+  },
+  {
+    propsName: "color",
+    propsDescription: `The color display new className on the component.`
+  }
+]
+export const docsBadges = [
+  ...commonDocs,
+  {
+    propsName: "stepperData",
+    propsDescription: `The stepperData is a function Accept node element.`
+  },
+  {
+    propsName: "width",
+    propsDescription: `The width of the avatars on the badges.`
+  },
+  {
+    propsName: " badgesOfAvatars",
+    propsDescription: `array of string to display the list of avatars into the component..`
+  },
+].filter(c => c.propsName !== "description")
+export const docsTicket = [
+  ...commonDocs,
+  {
+    propsName: "titleLeft",
+    propsDescription: "The titleLeft props display on the left."
+  },
+  {
+    propsName: "titleTop",
+    propsDescription: "The titleTop props display on the top."
+  },
+  {
+    propsName: "theme",
+    propsDescription: `The theme display new className on the component.`
+  },
+].filter(c => c.propsName !== "title")
+export const docsAdaTag = [
+  ...commonDocs,
+  {
+    propsName: "iconLeft",
+    propsDescription: "The titleLeft props display icon on the left."
+  },
+  {
+    propsName: "iconRight",
+    propsDescription: "The iconRight props display icon on the right."
+  },
+  {
+    propsName: "theme",
+    propsDescription: `The theme display new className on the component.`
+  },
+  {
+    propsName: "readOnly",
+    propsDescription: `The props readOnly display the tag on the component.`
+  },
+].filter(c => c.propsName !== "description")
+export const docsAdaAlerts = [
+  ...commonDocs,
+  {
+    propsName: "iconLeft",
+    propsDescription: "The titleLeft props display icon on the left."
+  },
+  {
+    propsName: "iconRight",
+    propsDescription: "The iconRight props display icon on the right."
+  },
+  {
+    propsName: "theme",
+    propsDescription: `The theme display new className on the component.`
+  }
+].filter(c => c.propsName !== "description")
+export const docsAdaPagination = [
+  {
+    propsName: "items",
+    propsDescription: "array of object to pass to the component : { name: 'Game', id: 355 }."
+  },
+  {
+    propsName: "onChangePage",
+    propsDescription: "A trigger function click event"
+  },
+  {
+    propsName: "pageSize",
+    propsDescription: `The size of page on the component.`
+  }
+]
