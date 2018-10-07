@@ -33,26 +33,41 @@ export default class Menu extends Component {
               title={"TopBar"}
               docsProps={docsTopBar}
               dataCode={`
-                <TopBar 
-                  className="navBar" 
-                  color="blue" 
-                  logoName="Logo" 
-                  authUser={true} 
-                  menu={menu} 
-                  userName="Jobran amairi" 
-                  sideBarIsTrue={sideBarIsTrue} 
-                  onToggleClick={this.onToggleClick}
-                />
+               import TopBar from 'components/top-bar'
+               export default class Menu extends Component {
+                constructor(props) {
+                  super(props)
+                  this.state = {
+                    sideBarIsTrue: false
+                  }
+                }
+              
+                onToggleClick = (v) => {
+                  this.setState({ sideBarIsTrue: v })
+                }
+                render() {
+                  const menu = ["Dashboard", "Aquarium", "Lab", "Form", "Tuto", 'menu']
+                  <TopBar 
+                    className="navBar" 
+                    color="blue" 
+                    logoName="Logo" 
+                    authUser={true} 
+                    menu={menu} 
+                    userName="Jobran amairi" 
+                    sideBarIsTrue={sideBarIsTrue} 
+                    onToggleClick={this.onToggleClick}
+                  />
+                }}
               `}
             >
-              <TopBar 
-                className="navBar" 
-                color="blue" 
-                logoName="Logo" 
-                authUser={true} 
-                menu={menu} 
-                userName="Jobran amairi" 
-                sideBarIsTrue={sideBarIsTrue} 
+              <TopBar
+                className="navBar"
+                color="blue"
+                logoName="Logo"
+                authUser={true}
+                menu={menu}
+                userName="Jobran amairi"
+                sideBarIsTrue={sideBarIsTrue}
                 onToggleClick={this.onToggleClick}
               />
             </Docs>
@@ -72,15 +87,15 @@ export default class Menu extends Component {
                 />
               `}
             >
-              <TopBar 
-                className="navBar" 
-                underline color="blue" 
-                logoName="Logo" 
-                authUser={true} 
-                menu={menu} 
-                userName="Jobran amairi" 
-                sideBarIsTrue={sideBarIsTrue} 
-                onToggleClick={this.onToggleClick} 
+              <TopBar
+                className="navBar"
+                underline color="blue"
+                logoName="Logo"
+                authUser={true}
+                menu={menu}
+                userName="Jobran amairi"
+                sideBarIsTrue={sideBarIsTrue}
+                onToggleClick={this.onToggleClick}
               />
             </Docs>
             <Docs
@@ -99,7 +114,7 @@ export default class Menu extends Component {
                 />
               `}
             >
-            <TopBar className="navBar" logoName="Logo" authUser={true} menu={menu} userName="Jobran amairi" sideBarIsTrue={sideBarIsTrue} onToggleClick={this.onToggleClick} />
+              <TopBar className="navBar" logoName="Logo" authUser={true} menu={menu} userName="Jobran amairi" sideBarIsTrue={sideBarIsTrue} onToggleClick={this.onToggleClick} />
             </Docs>
             <Docs
               title={"TopBar"}
@@ -117,7 +132,7 @@ export default class Menu extends Component {
                 />
               `}
             >
-            <TopBar className="navBar" underline logoName="Logo" authUser={true} menu={menu} userName="Jobran amairi" sideBarIsTrue={sideBarIsTrue} onToggleClick={this.onToggleClick} />
+              <TopBar className="navBar" underline logoName="Logo" authUser={true} menu={menu} userName="Jobran amairi" sideBarIsTrue={sideBarIsTrue} onToggleClick={this.onToggleClick} />
             </Docs>
           </div>
 
@@ -179,7 +194,7 @@ export default class Menu extends Component {
             </Docs>
           </div>
         </div>
-        
+
       </div>
     )
   }
