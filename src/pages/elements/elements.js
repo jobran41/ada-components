@@ -72,12 +72,13 @@ export default class Elements extends Component {
               title={"AdaCategory"}
               docsProps={docsAdaCategory}
               dataCode={`
-                <AdaCategory
-                  id="ada-category"
-                  menuItems={STRING_ITEMS}
-                  placeholder="Select Category"
-                  dropdownIcon={<FontIcon>add</FontIcon>}
-                />
+              import AdaCategory from 'components/ada-category'
+              <AdaCategory
+                id="ada-category"
+                menuItems={STRING_ITEMS}
+                placeholder="Select Category"
+                dropdownIcon={<FontIcon>add</FontIcon>}
+              />
               `}
             >
               <AdaCategory
@@ -102,6 +103,7 @@ export default class Elements extends Component {
               title={"AdaStepper"}
               docsProps={docsAdaStepper}
               dataCode={`
+                import AdaStepper from 'components/ada-stepper'
                 <AdaStepper updateField={this.updateField} stepperData={["1", "2", "3", "4", "5", "6", "7", "8", "9"]} />
               `}
             >
@@ -112,8 +114,9 @@ export default class Elements extends Component {
               title={"AdaStepper"}
               docsProps={docsAdaStepper}
               dataCode={`
-                <AdaStepper updateField={this.updateField} stepperData={["1", "2", "3", "4", "5", "6", "7", "8", "9"]} />
-              `}
+              import AdaStepper from 'components/ada-stepper'
+              <AdaStepper widthBorder theme="green" stepperData={["Standard", "Medium", "High"]} />
+                `}
             >
               <AdaStepper widthBorder theme="green" stepperData={["Standard", "Medium", "High"]} />
             </Docs>
@@ -122,7 +125,8 @@ export default class Elements extends Component {
               title={"AdaStepper"}
               docsProps={docsAdaStepper}
               dataCode={`
-                <AdaStepper updateField={this.updateField} stepperData={["1", "2", "3", "4", "5", "6", "7", "8", "9"]} />
+              import AdaStepper from 'components/ada-stepper'
+              <AdaStepper widthBorder theme="green" stepperData={["Standard", "Medium", "High"]} />
               `}
             >
               <AdaStepper active={2} widthBorder stepperData={["Standard", "Medium", "High"]} />
@@ -143,16 +147,17 @@ export default class Elements extends Component {
               title={"SocialPanel"}
               docsProps={docsSocialPanel}
               dataCode={`
+                import SocialPanel from 'components/social-panel'
                 <SocialPanel color="red" renderButton={() => {
                   return (
                     <Fragment>
-                      <Button icon iconClassName="mdi mdi-google" />
-                      <Button icon iconClassName="mdi mdi-facebook" />
-                      <Button icon iconClassName="mdi mdi-instagram" />
-                      <Button icon iconClassName="mdi mdi-twitter" />
-                      <Button icon iconClassName="mdi mdi-linkedin" />
-                      <Button icon iconClassName="mdi mdi-play-box-outline" />
-                    </Fragment>
+                    <Button icon iconClassName="mdi mdi-google" />
+                    <Button icon iconClassName="mdi mdi-facebook" />
+                    <Button icon iconClassName="mdi mdi-instagram" />
+                    <Button icon iconClassName="mdi mdi-twitter" />
+                    <Button icon iconClassName="mdi mdi-linkedin" />
+                    <Button icon iconClassName="mdi mdi-play-box-outline" />
+                  </Fragment>
                   )
                 }} />
               `}
@@ -175,16 +180,17 @@ export default class Elements extends Component {
               title={"SocialPanel"}
               docsProps={docsSocialPanel}
               dataCode={`
+                import SocialPanel from 'components/social-panel'
                 <SocialPanel color="red" renderButton={() => {
                   return (
                     <Fragment>
-                      <Button icon iconClassName="mdi mdi-google" />
-                      <Button icon iconClassName="mdi mdi-facebook" />
-                      <Button icon iconClassName="mdi mdi-instagram" />
-                      <Button icon iconClassName="mdi mdi-twitter" />
-                      <Button icon iconClassName="mdi mdi-linkedin" />
-                      <Button icon iconClassName="mdi mdi-play-box-outline" />
-                    </Fragment>
+                    <Button icon iconClassName="mdi mdi-google" />
+                    <Button icon iconClassName="mdi mdi-facebook" />
+                    <Button icon iconClassName="mdi mdi-instagram" />
+                    <Button icon iconClassName="mdi mdi-twitter" />
+                    <Button icon iconClassName="mdi mdi-linkedin" />
+                    <Button icon iconClassName="mdi mdi-play-box-outline" />
+                  </Fragment>
                   )
                 }} />
               `}
@@ -207,6 +213,7 @@ export default class Elements extends Component {
               title={"SocialPanel"}
               docsProps={docsSocialPanel}
               dataCode={`
+              import SocialPanel from 'components/social-panel'
                 <SocialPanel color="red" renderButton={() => {
                   return (
                     <Fragment>
@@ -239,6 +246,7 @@ export default class Elements extends Component {
               title={"SocialPanel"}
               docsProps={docsSocialPanel}
               dataCode={`
+                import SocialPanel from 'components/social-panel'
                 <SocialPanel color="red" renderButton={() => {
                   return (
                     <Fragment>
@@ -318,6 +326,7 @@ export default class Elements extends Component {
               title={"Badges"}
               docsProps={docsBadges}
               dataCode={`
+                 import Badges from 'components/badges'
                  <Badges title="Badges" badgesOfAvatars={["Man01", "Man02", "Man03"]} />
               `}
             >
@@ -328,6 +337,7 @@ export default class Elements extends Component {
               title={"Badges"}
               docsProps={docsBadges}
               dataCode={`
+                 import Badges from 'components/badges'
                  <Badges title="Badges" badgesOfAvatars={["Man01", "Man02", "Man03"]} />
               `}
             >
@@ -344,6 +354,7 @@ export default class Elements extends Component {
               title={"AdaTag"}
               docsProps={docsAdaTag}
               dataCode={`
+                import AdaTag from 'components/ada-tag'
                 <AdaTag iconLeft='mdi-check-circle-outline' iconRight='mdi-note-plus-outline' text="New Note" />
               `}
             >
@@ -354,6 +365,7 @@ export default class Elements extends Component {
               title={"AdaTag"}
               docsProps={docsAdaTag}
               dataCode={`
+                import AdaTag from 'components/ada-tag'
                 <AdaTag iconLeft='mdi-check-circle-outline' iconRight='mdi-note-plus-outline' text="New Note" />
               `}
             >
@@ -364,7 +376,8 @@ export default class Elements extends Component {
               title={"AdaTag"}
               docsProps={docsAdaTag}
               dataCode={`
-                <AdaTag iconLeft='mdi-check-circle-outline' iconRight='mdi-note-plus-outline' text="New Note" />
+                 import AdaTag from 'components/ada-tag'
+                 <AdaTag readOnly="true" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
               `}
             >
               <AdaTag readOnly="true" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
@@ -374,6 +387,7 @@ export default class Elements extends Component {
               title={"AdaTag"}
               docsProps={docsAdaTag}
               dataCode={`
+                import AdaTag from 'components/ada-tag'
                 <AdaTag iconLeft='mdi-check-circle-outline' iconRight='mdi-note-plus-outline' text="New Note" />
               `}
             >
@@ -384,7 +398,8 @@ export default class Elements extends Component {
               title={"Ticket"}
               docsProps={docsTicket}
               dataCode={`
-                <Ticket titleLeft={<h2>1</h2>} className="ticketItem" titleTop="Step 1" description="Lorem ipsum" />
+                import Ticket from 'components/ticket'
+                <Ticket titleLeft="Title" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
               `}
             >
               <Ticket titleLeft="Title" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
@@ -394,6 +409,7 @@ export default class Elements extends Component {
               title={"AdaAlerts"}
               docsProps={docsAdaAlerts}
               dataCode={`
+                import AdaAlerts from 'components/ada-alerts'
                 <AdaAlerts theme="green" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
               `}
             >
@@ -404,7 +420,8 @@ export default class Elements extends Component {
               title={"AdaAlerts"}
               docsProps={docsAdaAlerts}
               dataCode={`
-                <AdaAlerts theme="green" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
+                import AdaAlerts from 'components/ada-alerts'
+                <AdaAlerts iconLeft='mdi-information-outline' iconRight='mdi-close' text="Information" />
               `}
             >
               <AdaAlerts iconLeft='mdi-information-outline' iconRight='mdi-close' text="Information" />
@@ -414,7 +431,8 @@ export default class Elements extends Component {
               title={"AdaAlerts"}
               docsProps={docsAdaAlerts}
               dataCode={`
-                <AdaAlerts theme="green" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
+                import AdaAlerts from 'components/ada-alerts'
+                <AdaAlerts theme="orange" iconLeft='mdi-alert-circle-outline' iconRight='mdi-close' text="Worning" />
               `}
             >
               <AdaAlerts theme="orange" iconLeft='mdi-alert-circle-outline' iconRight='mdi-close' text="Worning" />
@@ -424,7 +442,8 @@ export default class Elements extends Component {
               title={"AdaAlerts"}
               docsProps={docsAdaAlerts}
               dataCode={`
-                <AdaAlerts theme="green" iconLeft='mdi-check-circle-outline' iconRight='mdi-close' text="Success" />
+                import AdaAlerts from 'components/ada-alerts'
+                <AdaAlerts theme="red" iconLeft='mdi-alert-outline' iconRight='mdi-close' text="Alert message" />
               `}
             >
               <AdaAlerts theme="red" iconLeft='mdi-alert-outline' iconRight='mdi-close' text="Alert message" />
@@ -434,7 +453,32 @@ export default class Elements extends Component {
               title={"AdaPagination"}
               docsProps={docsAdaPagination}
               dataCode={`
-              <AdaPagination items={this.state.exampleItems} onChangePage={this.onChangePage} />
+              import AdaPagination from 'components/ada-pagination'
+              export default class Pagination extends Component {
+                constructor(props) {
+                  super(props)
+                  this.state = {
+                    exampleItems: [...Array(150).keys()].map(i => ({ id: (i + 1), name: 'Item ' + (i + 1) })),
+                    pageOfItems: []
+                  }
+                }
+                onChangePage = (pageOfItems) => {
+                  // update state with new page of items
+                  this.setState({ pageOfItems: pageOfItems })
+                }
+              render(){
+                return(
+                  <div className="paginationWapper">
+                  <div className="paginationItems">
+                    {this.state.pageOfItems.map(item =>
+                      <div className="pagination-item" key={item.id}>{item.name}</div>
+                    )}
+                  </div>
+                  <AdaPagination items={exampleItems} onChangePage={this.onChangePage} />
+                </div>
+                )
+              }
+            }
               `}
             >
               <div className="paginationWapper">

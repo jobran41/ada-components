@@ -29,6 +29,7 @@ export default class Forms extends Component {
               title={"SignUp"}
               docsProps={docsSignUp}
               dataCode={`
+              import {SignUp } from 'components/auth'
                 <SignUp onSubmit={this.onSubmitSignUp} />`}
             >
               <SignUp onSubmit={this.onSubmitSignUp} />
@@ -37,6 +38,7 @@ export default class Forms extends Component {
               title={"SignIn"}
               docsProps={docsSignIn}
               dataCode={`
+              import { SignIn} from 'components/auth'
                 <SignIn onSubmit={this.onSubmitSignIn} />`}
             >
               <SignIn onSubmit={this.onSubmitSignIn} />
@@ -46,14 +48,18 @@ export default class Forms extends Component {
             <Docs
               title={"ForgetPassword"}
               docsProps={docsForgetPassword}
-              dataCode={`<ForgetPassword />`}
+              dataCode={`
+              import { ForgetPassword } from 'components/auth'
+              <ForgetPassword />`}
             >
               <ForgetPassword />
             </Docs>
             <Docs
               title={"Confirmation"}
               docsProps={docsConfirmation}
-              dataCode={`<Confirmation checked={true} checkedItem={() => null} />`}
+              dataCode={`
+              import { Confirmation } from 'components/auth'
+              <Confirmation checked={true} checkedItem={() => null} />`}
             >
               <Confirmation checked={true} checkedItem={() => null} />
             </Docs>
@@ -64,6 +70,7 @@ export default class Forms extends Component {
               title={"SimpleForm"}
               docsProps={docsSimpleForm}
               dataCode={`
+              import SimpleForm from './components/custom-form'
                 <SimpleForm
                   avatar={<FontIcon>add</FontIcon>}
                   title="Profile Setting"

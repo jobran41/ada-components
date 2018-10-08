@@ -11,7 +11,7 @@ import {
   docsSupportAssets,
 } from "pages/docs-props"
 
-import  './media.scss'
+import './media.scss'
 
 
 export default class Media extends Component {
@@ -29,6 +29,7 @@ export default class Media extends Component {
               title={"PanelProfile"}
               docsProps={docsPanelProfile}
               dataCode={`
+              import PanelProfile from 'components/panel-profile'
               <PanelProfile
                 urlImg="http://i.pravatar.cc/150?img=11"
                 profileName="Instructor Name"
@@ -54,6 +55,7 @@ export default class Media extends Component {
               title={"PanelProfile"}
               docsProps={docsPanelProfile}
               dataCode={`
+              import PanelProfile from 'components/panel-profile'
               <PanelProfile
                 urlImg="http://i.pravatar.cc/150?img=11"
                 profileName="Instructor Name"
@@ -61,7 +63,7 @@ export default class Media extends Component {
                 tel="00218867234"
                 Email="jobran@gmail.com"
                 className="media"
-                colorHeader="bleuGardian"
+                colorHeader="light"
               />
               `}
             >
@@ -81,13 +83,12 @@ export default class Media extends Component {
                   title={"PanelProfile"}
                   docsProps={docsPanelProfile}
                   dataCode={`
+                  import PanelProfile from 'components/panel-profile'
                   <PanelProfile
                     urlImg="http://i.pravatar.cc/150?img=11"
                     profileName="Instructor Name"
-                    adress="Tunis, Tunisia"
-                    tel="00218867234"
-                    Email="jobran@gmail.com"
                     className="media"
+                    responsive
                     colorHeader="bleuGardian"
                   />
                   `}
@@ -106,14 +107,13 @@ export default class Media extends Component {
                   title={"PanelProfile"}
                   docsProps={docsPanelProfile}
                   dataCode={`
+                  import PanelProfile from 'components/panel-profile'
                   <PanelProfile
                     urlImg="http://i.pravatar.cc/150?img=11"
                     profileName="Instructor Name"
-                    adress="Tunis, Tunisia"
-                    tel="00218867234"
-                    Email="jobran@gmail.com"
                     className="media"
-                    colorHeader="bleuGardian"
+                    responsive
+                    colorHeader="light"
                   />
                   `}
                 >
@@ -134,12 +134,13 @@ export default class Media extends Component {
                 title={"SupportAssets"}
                 docsProps={docsSupportAssets}
                 dataCode={`
+                import SupportAssets from 'components/support-assets'
                 <SupportAssets
                   type="img"
                   title="Project images"
                   description="Project details and information"
                   url="https://picsum.photos/300/200?image=0"
-                  actionButton={()=> <Button icon onClick={this.plus} iconClassName="mdi mdi-plus" />}
+                  actionButton={() => <Button icon onClick={this.plus} iconClassName="mdi mdi-plus" />}
                 />
                 `}
               >
@@ -148,7 +149,7 @@ export default class Media extends Component {
                   title="Project images"
                   description="Project details and information"
                   url="https://picsum.photos/300/200?image=0"
-                  actionButton={()=> <Button icon onClick={this.plus} iconClassName="mdi mdi-plus" />}
+                  actionButton={() => <Button icon onClick={this.plus} iconClassName="mdi mdi-plus" />}
                 />
               </Docs>
             </div>
@@ -157,12 +158,14 @@ export default class Media extends Component {
                 title={"SupportAssets"}
                 docsProps={docsSupportAssets}
                 dataCode={`
+                import SupportAssets from 'components/support-assets'
                 <SupportAssets
                   type="img"
+                  responsive
                   title="Project images"
                   description="Project details and information"
                   url="https://picsum.photos/300/200?image=0"
-                  actionButton={()=> <Button icon onClick={this.plus} iconClassName="mdi mdi-plus" />}
+                  actionButton={() => <Button icon onClick={this.plus} iconClassName="mdi mdi-plus" />}
                 />
                 `}
               >
@@ -172,7 +175,7 @@ export default class Media extends Component {
                   title="Project images"
                   description="Project details and information"
                   url="https://picsum.photos/300/200?image=0"
-                  actionButton={()=> <Button icon onClick={this.plus} iconClassName="mdi mdi-plus" />}
+                  actionButton={() => <Button icon onClick={this.plus} iconClassName="mdi mdi-plus" />}
                 />
               </Docs>
             </div>
@@ -181,12 +184,14 @@ export default class Media extends Component {
                 title={"SupportAssets"}
                 docsProps={docsSupportAssets}
                 dataCode={`
+                import SupportAssets from 'components/support-assets'
                 <SupportAssets
                   type="img"
+                  responsive
                   title="Project images"
                   description="Project details and information"
                   url="https://picsum.photos/300/200?image=0"
-                  actionButton={()=> <Button icon onClick={this.plus} iconClassName="mdi mdi-plus" />}
+                  className="costumColor"
                 />
                 `}
               >
@@ -207,12 +212,13 @@ export default class Media extends Component {
                 title={"SupportAssets"}
                 docsProps={docsSupportAssets}
                 dataCode={`
+                import SupportAssets from 'components/support-assets'
                 <SupportAssets
-                  type="img"
+                  type="video"
                   title="Project images"
-                  description="Project details and information"
-                  url="https://picsum.photos/300/200?image=0"
-                  actionButton={()=> <Button icon onClick={this.plus} iconClassName="mdi mdi-plus" />}
+                  playlist
+                  poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
+                  url="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
                 />
                 `}
               >
@@ -230,12 +236,13 @@ export default class Media extends Component {
                 title={"SupportAssets"}
                 docsProps={docsSupportAssets}
                 dataCode={`
+                import SupportAssets from 'components/support-assets'
                 <SupportAssets
                   type="img"
                   title="Project images"
                   description="Project details and information"
-                  url="https://picsum.photos/300/200?image=0"
-                  actionButton={()=> <Button icon onClick={this.plus} iconClassName="mdi mdi-plus" />}
+                  url="https://picsum.photos/500/200?image=0"
+                  actionButton={() => <Button icon onClick={this.plus} iconClassName="mdi mdi-plus" />}
                 />
                 `}
               >
@@ -244,7 +251,7 @@ export default class Media extends Component {
                   title="Project images"
                   description="Project details and information"
                   url="https://picsum.photos/500/200?image=0"
-                  actionButton={()=> <Button icon onClick={this.plus} iconClassName="mdi mdi-plus" />}
+                  actionButton={() => <Button icon onClick={this.plus} iconClassName="mdi mdi-plus" />}
                 />
               </Docs>
             </div>
