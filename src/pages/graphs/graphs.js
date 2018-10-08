@@ -92,13 +92,18 @@ export default class Graphs extends Component {
                 title={"PieCircle"}
                 docsProps={docsPieCircle}
                 dataCode={`
-              <PieCircle
-                title="Activities"
-                description="Total Skills progress graph"
-                items={itemsActivities}
-                menuButton={menuButtonExpertise}
-                className="Graphs-item"
-              />`}
+                import {
+                  PieCircle,
+                } from "components/charts"
+                const menuButtonExpertise = ["View", "Edit"]
+                <PieCircle
+                  title="Activities"
+                  description="Total Skills progress graph"
+                  items={itemsActivities}
+                  menuButton={menuButtonExpertise}
+                  className="Graphs-item"
+                />
+              `}
               >
                 <PieCircle
                   title="Activities"
@@ -112,6 +117,10 @@ export default class Graphs extends Component {
                 title={"NewChart"}
                 docsProps={docsNewChart}
                 dataCode={`
+                import {
+                  NewChart
+                } from "components/charts"
+                const menuButtonExpertise = ["View", "Edit"]
                 <NewChart
                 menuButton={menuButtonExpertise}
                 className="Graphs-item"
@@ -129,13 +138,25 @@ export default class Graphs extends Component {
                 title={"LogChart"}
                 docsProps={docsLogChart}
                 dataCode={`
+                import {
+                  LogChart
+                } from "components/charts"
+                const menuButtonExpertise = ["View", "Edit"]
+                const LogTimeItems = [
+                  { name: "M", value: { from: 9, to: 18 } },
+                  { name: "T", value: { from: 12, to: 20 } },
+                  { name: "T", value: { from: 9, to: 15 } },
+                  { name: "M", value: { from: 9, to: 13 } },
+                  { name: "M", value: { from: 13, to: 20 } }
+                ]
                 <LogChart
-                title="LogTime"
-                description="weekly in and Out"
-                items={LogTimeItems}
-                menuButton={menuButtonExpertise}
-                className="Graphs-item"
-              />`}
+                  title="LogTime"
+                  description="weekly in and Out"
+                  items={LogTimeItems}
+                  menuButton={menuButtonExpertise}
+                  className="Graphs-item"
+                />
+              `}
               >
                 <LogChart
                   title="LogTime"
@@ -152,13 +173,56 @@ export default class Graphs extends Component {
                 title={"Evaluation"}
                 docsProps={docsEvaluation}
                 dataCode={`
+                import {
+                  Evaluation,
+                } from "components/charts"
+                const menuButtonExpertise = ["View", "Edit"]
+                const itemsExpertise = [
+                  {
+                    label: "css",
+                    progress: 30
+                  },
+                  {
+                    label: "Javascript",
+                    progress: 70
+                  },
+                  {
+                    label: "Html",
+                    progress: 10
+                  },
+                  {
+                    label: "Other",
+                    progress: 50
+                  },
+                  {
+                    label: "Other",
+                    progress: 0
+                  },
+                  {
+                    label: "Other",
+                    progress: 0
+                  },
+                  {
+                    label: "Other",
+                    progress: 0
+                  },
+                  {
+                    label: "Other",
+                    progress: 0
+                  },
+                  {
+                    label: "Other",
+                    progress: 0
+                  }
+                ]
                 <Evaluation
-                title="Expertise"
-                description="Expertise levels"
-                menuButton={menuButtonExpertise}
-                items={itemsExpertise}
-                className="Graphs-item"
-              />`}
+                  title="Expertise"
+                  description="Expertise levels"
+                  menuButton={menuButtonExpertise}
+                  items={itemsExpertise}
+                  className="Graphs-item"
+                />
+              `}
               >
                 <Evaluation
                   title="Expertise"
@@ -175,11 +239,15 @@ export default class Graphs extends Component {
                 title={"NewCalendar"}
                 docsProps={docsNewCalendar}
                 dataCode={`
+                import {
+                  NewChart
+                } from "components/charts"
                 <NewCalendar
-                title="Calendar"
-                year={"2018"}
-                className="Graphs-item "
-              />`}
+                  title="Calendar"
+                  year={"2018"}
+                  className="Graphs-item "
+                />
+              `}
               >
                 <NewCalendar
                   title="Calendar"
@@ -191,9 +259,13 @@ export default class Graphs extends Component {
                 title={"Calendar"}
                 docsProps={docsCalendar}
                 dataCode={`
+                import {
+                  Calendar
+                } from "components/charts"
                 <Calendar
                 className="Graphs-item"
-              />`}
+              />
+              `}
               >
                 <Calendar className="Graphs-item" />
               </Docs>

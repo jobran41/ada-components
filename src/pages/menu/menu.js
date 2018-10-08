@@ -219,8 +219,6 @@ export default class Menu extends Component {
                />
               `}
             >
-              `}
-            >
               <TopBar
                 className="navBar"
                 ProfileBar
