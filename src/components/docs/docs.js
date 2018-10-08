@@ -42,11 +42,11 @@ export default class Docs extends Component {
     ))
   };
   render() {
-    const { children, title, description, dataCode } = this.props
+    const { children, title, description, dataCode, small } = this.props
     const { visible, pageX, pageY } = this.state
     return (
       <div className="docs">
-        <Button icon primary className="docsButton" onClick={this.show}>
+        <Button icon primary className={`docsButton${small && "-small"}`} onClick={this.show}>
           code
         </Button>
         {children}
@@ -107,5 +107,6 @@ Docs.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   dataCode: PropTypes.string,
-  docsProps: PropTypes.array
+  docsProps: PropTypes.array,
+  small: PropTypes.bool
 }

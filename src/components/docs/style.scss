@@ -13,12 +13,29 @@
     transform: translateY(100%);
     z-index: 0;
     opacity: 0;
+
+    &-small {
+      background: #fff;
+      height: 23px;
+      width: 23px;
+      padding: 1px;
+      margin: auto;
+      transition: all 400ms;
+      -webkit-transform: scale(0.2);
+      transform: scale(0.2);
+      opacity: 0;
+    }
   }
   &:hover {
     .docsButton {
       -webkit-transform: translateY(0%);
       transform: translateY(0%);
       opacity: 1;
+      &-small {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+      }
     }
   }
   > div {
