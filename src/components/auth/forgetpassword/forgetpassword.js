@@ -61,7 +61,7 @@ class ForgetPassword extends Component {
           onChange={v => this.setState({ email: v })}
         />
         <div className="info">
-          <Button onSubmit={this.onSubmit} flat className="form-button">Submit</Button>
+          <Button onClick={this.onSubmit} flat className="form-button">Submit</Button>
         </div>
         <Snackbar
           id="example-snackbar"
