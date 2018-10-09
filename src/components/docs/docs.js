@@ -46,7 +46,7 @@ export default class Docs extends Component {
     const { visible, pageX, pageY } = this.state
     return (
       <div className="docs">
-        <Button icon primary className={`docsButton${small && "-small"}`} onClick={this.show}>
+        <Button icon primary className={`docsButton${small ? "-small" : ""}`} onClick={this.show}>
           code
         </Button>
         {children}

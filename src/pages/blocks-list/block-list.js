@@ -491,7 +491,11 @@ export default class BlockList extends Component {
       members: [],
       chats: []
     }*/
-    const lorem = `Elit cupidatat excepteur ullamco labore exercitation amet consectetur. Sunt duis ipsum voluptate commodo ipsum mollit quis elit tempor anim eiusmod aliqua. Elit sint minim eiusmod consectetur cillum aliqua est exercitation. Amet anim occaecat excepteur velit. Fugiat id consequat cillum non quis nisi anim non magna proident fugiat magna duis.`
+    const lorem = `Elit cupidatat excepteur ullamco labore exercitation amet consectetur. 
+    Sunt duis ipsum voluptate commodo ipsum mollit quis elit tempor anim eiusmod aliqua. 
+    Elit sint minim eiusmod consectetur cillum aliqua est exercitation. 
+    Amet anim occaecat excepteur velit. 
+    Fugiat id consequat cillum non quis nisi anim non magna proident fugiat magna duis.`
 
     return (
       <div className="blocklist">
@@ -509,6 +513,10 @@ export default class BlockList extends Component {
               title={"ToDoList"}
               docsProps={docsToDoList}
               dataCode={`
+              import { ToDoList } from "components/block-list"
+
+              const menuButtonExpertise = ["View", "Edit"]
+
               <ToDoList
               title="To do list"
               description="Mon 20 January"
@@ -529,6 +537,31 @@ export default class BlockList extends Component {
               title={"NotificationList"}
               docsProps={docsNotificationList}
               dataCode={`
+              import { NotificationList } from "components/block-list"
+
+              const menuButtonExpertise = ["View", "Edit"]
+
+              const itemsNotificationList = [
+                {
+                  numberOfNotification: 2,
+                  label: "Lorem ipsum",
+                  description: "Ac ne quis a nobis hoc",
+                  createdDate: "12:37"
+                },
+                {
+                  numberOfNotification: 1,
+                  label: "Lorem ipsum",
+                  description: "Ac ne quis a nobis hoc",
+                  createdDate: "12:37"
+                },
+                {
+                  numberOfNotification: 16,
+                  label: "Lorem ipsum",
+                  description: "Ac ne quis a nobis hoc",
+                  createdDate: "12:37"
+                }
+              ]
+
               <NotificationList
               title="Notifications"
               description="Mon 20 January"
@@ -549,6 +582,35 @@ export default class BlockList extends Component {
               title={"Comments"}
               docsProps={docsComments}
               dataCode={`
+              import { Comment } from "components/text-block"
+
+              const commentItems = [
+                {
+                  path: "http://i.pravatar.cc/150?img=33",
+                  name: "Student Name",
+                  createdDate: "2 Month ago",
+                  description: "lorem ipsum dolerm tsoun dfrizer uplod ishler conita"
+                },
+                {
+                  path: "http://i.pravatar.cc/150?img=11",
+                  name: "Student Name",
+                  createdDate: "2 Month ago",
+                  description: "lorem ipsum dolerm tsoun dfrizer uplod ishler conita"
+                },
+                {
+                  path: "http://i.pravatar.cc/150?img=65",
+                  name: "Student Name",
+                  createdDate: "2 Month ago",
+                  description: "lorem ipsum dolerm tsoun dfrizer uplod ishler conita"
+                },
+                {
+                  path: "http://i.pravatar.cc/150?img=12",
+                  name: "Student Name",
+                  createdDate: "2 Month ago",
+                  description: "lorem ipsum dolerm tsoun dfrizer uplod ishler conita"
+                }
+              ]
+
               <Comment
               title="Comments"
               description="4 Comments"
@@ -569,6 +631,18 @@ export default class BlockList extends Component {
               title={"PersonalInfo"}
               docsProps={docsPersonalInfo}
               dataCode={`
+              import { PersonalInfo } from "components/text-block"
+
+              const menuButtonExpertise = ["View", "Edit"]
+
+              const userObject = {
+                name: "Student Name",
+                points: 741,
+                maxPoints: 1000,
+                path: "http://i.pravatar.cc/150?img=49",
+                percent: 70
+              }
+
               <PersonalInfo
               userObject={userObject}
               menuButton={menuButtonExpertise}
@@ -585,6 +659,8 @@ export default class BlockList extends Component {
               title={"Gift"}
               docsProps={docsGift}
               dataCode={`
+              import { Gift } from "components/text-block"
+
               <Gift
               title="New Arrivals !"
               message="See how they are"
@@ -607,14 +683,19 @@ export default class BlockList extends Component {
               title={"Gift"}
               docsProps={docsGift}
               dataCode={`
-              <Gift
-              title="New Arrivals !"
-              message="See how they are"
-              icon="mdi-bike"
-              theme="blue"
-              className="blocklist-item"
-              linkObject={{ title: "Say Hello", position: "center" }}
-            />`}
+              import { Gift } from "components/text-block"
+
+                <Gift
+                  title="Product 2"
+                  message="species matrimonii, dotis"
+                  className="blocklist-item"
+                  avatar={{
+                    path:
+                      "https://imgplaceholder.com/100x100/1876d1/ffffff/fa-image"
+                  }}
+                  linkObject={{ title: "Details", position: "right" }}
+                />`
+              }
             >
               <Gift
                 title="Product 2"
@@ -631,6 +712,48 @@ export default class BlockList extends Component {
               title={"ChatList"}
               docsProps={docsChatList}
               dataCode={`
+              import { ChatList } from "components/text-block"
+
+              const menuButtonExpertise = ["View", "Edit"]
+
+              const itemsChatList = [
+                {
+                  name: "Student Name",
+                  path: "http://i.pravatar.cc/150?img=49",
+                  status: "onLine"
+                },
+                {
+                  name: "Student Name",
+                  path: "http://i.pravatar.cc/150?img=33",
+                  status: "offLine"
+                },
+                {
+                  name: "Student Name",
+                  path: "http://i.pravatar.cc/150?img=25",
+                  status: "onLine"
+                },
+                {
+                  name: "Student Name",
+                  path: "http://i.pravatar.cc/150?img=12",
+                  status: "offLine"
+                },
+                {
+                  name: "Student Name",
+                  path: "http://i.pravatar.cc/150?img=3",
+                  status: "onLine"
+                },
+                {
+                  name: "Student Name",
+                  path: "http://i.pravatar.cc/150?img=11",
+                  status: "offLine"
+                },
+                {
+                  name: "Student Name",
+                  path: "http://i.pravatar.cc/150?img=69",
+                  status: "onLine"
+                }
+              ]
+
               <ChatList
               title="Chat List"
               className="blocklist-item"
@@ -654,6 +777,49 @@ export default class BlockList extends Component {
               title={"UserList"}
               docsProps={docsUserList}
               dataCode={`
+              import { UserList } from "components/block-list"
+
+              const menuButtonExpertise = ["View", "Edit"]
+
+              const itemsUserList = [
+                {
+                  path: "http://i.pravatar.cc/150?img=3",
+                  name: "Student Name",
+                  job: "web",
+                  notification: true
+                },
+                {
+                  path: "http://i.pravatar.cc/150?img=68",
+                  name: "Student Name",
+                  job: "web",
+                  notification: false
+                },
+                {
+                  path: "http://i.pravatar.cc/150?img=49",
+                  name: "Student Name",
+                  job: "web",
+                  notification: true
+                },
+                {
+                  path: "http://i.pravatar.cc/150?img=36",
+                  name: "Student Name",
+                  job: "web",
+                  notification: false
+                },
+                {
+                  path: "http://i.pravatar.cc/150?img=33",
+                  name: "Student Name",
+                  job: "web",
+                  notification: true
+                },
+                {
+                  path: "http://i.pravatar.cc/150?img=12",
+                  name: "Student Name",
+                  job: "web",
+                  notification: true
+                }
+              ]
+
               <UserList
               title="User list"
               description="These students can help you"
@@ -674,6 +840,47 @@ export default class BlockList extends Component {
               title={"EventList"}
               docsProps={docsEventList}
               dataCode={`
+              import { EventList } from "components/block-list"
+
+              const itemsEventList = [
+                {
+                  label: "nobis hoc",
+                  description: "Ac ne quis a nobis hoc",
+                  createdDate: {
+                    day: 13,
+                    month: "January",
+                    time: "12:37"
+                  }
+                },
+                {
+                  label: "nobis hoc",
+                  description: "Ac ne quis a nobis hoc",
+                  createdDate: {
+                    day: 13,
+                    month: "January",
+                    time: "12:37"
+                  }
+                },
+                {
+                  label: "nobis hoc",
+                  description: "Ac ne quis a nobis hoc",
+                  createdDate: {
+                    day: 13,
+                    month: "January",
+                    time: "12:37"
+                  }
+                },
+                {
+                  label: "nobis hoc",
+                  description: "Ac ne quis a nobis hoc",
+                  createdDate: {
+                    day: 13,
+                    month: "January",
+                    time: "12:37"
+                  }
+                }
+              ]
+
               <EventList
               title="Agenda"
               description="Weekly events"
@@ -694,6 +901,8 @@ export default class BlockList extends Component {
               title={"Reviews"}
               docsProps={docsReviews}
               dataCode={`
+              import { Reviews } from "components/text-block"
+
               <Reviews
               title="Reviews"
               className="blocklist-item"
@@ -712,6 +921,38 @@ export default class BlockList extends Component {
               title={"Filters"}
               docsProps={docsFilters}
               dataCode={`
+              import { Filters } from "components/text-block"
+
+              const menuButtonExpertise = ["View", "Edit"]
+
+              const FiltersItems = [
+                {
+                  min: -100,
+                  max: 100,
+                  value: 50
+                },
+                {
+                  min: -100,
+                  max: 100,
+                  value: 50
+                },
+                {
+                  min: -100,
+                  max: 100,
+                  value: 50
+                },
+                {
+                  min: -100,
+                  max: 100,
+                  value: 50
+                },
+                {
+                  min: -100,
+                  max: 100,
+                  value: 50
+                }
+              ]
+
               <Filters
               className="blocklist-item"
               title="Filters"
@@ -730,14 +971,16 @@ export default class BlockList extends Component {
               title={"Gift"}
               docsProps={docsGift}
               dataCode={`
+              import { Gift } from "components/text-block"
+
               <Gift
-              title="New Arrivals !"
-              message="See how they are"
-              icon="mdi-bike"
-              theme="blue"
-              className="blocklist-item"
-              linkObject={{ title: "Say Hello", position: "center" }}
-            />`}
+                title="Awesome!"
+                message="You've reached the first level."
+                icon="mdi-gift"
+                theme="light"
+                className="blocklist-item"
+                linkObject={{ title: "See Gifts", position: "center" }}
+              />`}
             >
               <Gift
                 title="Awesome!"
@@ -752,14 +995,17 @@ export default class BlockList extends Component {
               title={"Gift"}
               docsProps={docsGift}
               dataCode={`
+              import { Gift } from "components/text-block"
+
               <Gift
-              title="New Arrivals !"
-              message="See how they are"
-              icon="mdi-bike"
-              theme="blue"
-              className="blocklist-item"
-              linkObject={{ title: "Say Hello", position: "center" }}
-            />`}
+                title="Product 1"
+                message="species matrimonii, dotis"
+                className="blocklist-item"
+                avatar={{
+                  path: "http://placehold.jp/1876d1/ffffff/150x150.png"
+                }}
+                linkObject={{ title: "Details", position: "right" }}
+              />`}
             >
               <Gift
                 title="Product 1"
@@ -775,14 +1021,15 @@ export default class BlockList extends Component {
               title={"Gift"}
               docsProps={docsGift}
               dataCode={`
+              import { Gift } from "components/text-block"
+
               <Gift
-              title="New Arrivals !"
-              message="See how they are"
-              icon="mdi-bike"
-              theme="blue"
-              className="blocklist-item"
-              linkObject={{ title: "Say Hello", position: "center" }}
-            />`}
+                title="1 New update"
+                icon="mdi-puzzle"
+                theme="blue"
+                className="blocklist-item"
+                linkObject={{ title: "Continue", position: "center" }}
+              />`}
             >
               <Gift
                 title="1 New update"
@@ -807,13 +1054,40 @@ export default class BlockList extends Component {
                   title={"TrackList"}
                   docsProps={docsTrackList}
                   dataCode={`
-              <TrackList
-                  title="Recent Updates"
-                  description="Student’s recents achievements"
-                  menuButton={menuButtonExpertise}
-                  items={itemsTrackList}
-                  className="blocklist-item"
-                />`}
+                  import { TrackList } from "components/block-list"
+
+                  const menuButtonExpertise = ["View", "Edit"]
+
+                  const itemsTrackList = [
+                    {
+                      label: "Skill Done",
+                      value: "80%"
+                    },
+                    {
+                      label: "Wallet",
+                      value: "100$"
+                    },
+                    {
+                      label: "Tracks",
+                      value: "Game"
+                    },
+                    {
+                      label: "Time",
+                      value: "85 Hours"
+                    },
+                    {
+                      label: "Contract",
+                      value: "Game track,3 months"
+                    }
+                  ]
+                    <TrackList
+                      title="Recent Updates"
+                      description="Student’s recents achievements"
+                      menuButton={menuButtonExpertise}
+                      items={itemsTrackList}
+                      className="blocklist-item"
+                    />
+                  `}
                 >
                   <TrackList
                     title="Recent Updates"
@@ -826,13 +1100,44 @@ export default class BlockList extends Component {
                 <Docs
                   title={"Rating"}
                   docsProps={docsRating}
-                  dataCode={`<Rating
-              title="Rating"
-              items={ratingItems}
-              average={"4.7"}
-              cumulates={"0.4"}
-              className="blocklist-item"
-            />`}
+                  dataCode={`
+                  import { Rating } from "components/text-block"
+
+                  const ratingItems = [
+                    {
+                      star: 5,
+                      number: 123,
+                      value: 40
+                    },
+                    {
+                      star: 5,
+                      number: 123,
+                      value: 40
+                    },
+                    {
+                      star: 5,
+                      number: 123,
+                      value: 40
+                    },
+                    {
+                      star: 5,
+                      number: 123,
+                      value: 40
+                    },
+                    {
+                      star: 5,
+                      number: 123,
+                      value: 40
+                    }
+                  ]
+
+                  <Rating
+                    title="Rating"
+                    items={ratingItems}
+                    average={"4.7"}
+                    cumulates={"0.4"}
+                    className="blocklist-item"
+                  />`}
                 >
                   <Rating
                     title="Rating"
@@ -847,13 +1152,50 @@ export default class BlockList extends Component {
                 <Docs
                   title={"ProjectList"}
                   docsProps={docsProjectList}
-                  dataCode={`<ProjectList
-              title="Projects"
-              description="All projects in progress"
-              items={itemsProjectList}
-              className="blocklist-item"
-              onAddProject={() => {}}
-            />`}
+                  dataCode={`
+                  import { ProjectList } from "components/block-list"
+
+                  const itemsProjectList = [
+                    {
+                      label: "Project 1",
+                      value: 52
+                    },
+                    {
+                      label: "Project 2",
+                      value: 30
+                    },
+                    {
+                      label: "Project 1",
+                      value: 52
+                    },
+                    {
+                      label: "Project 1",
+                      value: 52
+                    },
+                    {
+                      label: "Project 1",
+                      value: 42
+                    },
+                    {
+                      label: "Project 1",
+                      value: 52
+                    },
+                    {
+                      label: "Project 1",
+                      value: 52
+                    },
+                    {
+                      label: "Project 1",
+                      value: 72
+                    }
+                  ]
+                  <ProjectList
+                    title="Projects"
+                    description="All projects in progress"
+                    items={itemsProjectList}
+                    className="blocklist-item"
+                    onAddProject={() => {}}
+                  />`}
                 >
                   <ProjectList
                     title="Projects"
@@ -866,7 +1208,11 @@ export default class BlockList extends Component {
                 <Docs
                   title={"Timer"}
                   docsProps={docsTimer}
-                  dataCode={`<Timer className="blocklist-item" />`}
+                  dataCode={`
+                  import { Timer } from "components/text-block"
+
+                  <Timer className="blocklist-item" />
+                  `}
                 >
                   <Timer className="blocklist-item" />
                 </Docs>
@@ -876,15 +1222,100 @@ export default class BlockList extends Component {
               <Docs
                 title={"TrackInfo"}
                 docsProps={docsTrackInfo}
-                dataCode={`<TrackInfo
-              imagePath="https://picsum.photos/300/200?image=1"
-              title="Track"
-              description="Project details and infomation"
-              items={itemsTrackInfo}
-              progress={50}
-              className="blocklist-item"
-              menuButton={menuButtonExpertise}
-            />`}
+                dataCode={`
+                import { TrackInfo } from "components/block-list"
+
+                const menuButtonExpertise = ["View", "Edit"]
+
+                const itemsTrackInfo = [
+                  {
+                    color: "red",
+                    title: "Workshop 1",
+                    createdAt: "21 Oct",
+                    time: "12:37",
+                    avatars: [
+                      "http://i.pravatar.cc/150?img=25",
+                      "http://i.pravatar.cc/150?img=68",
+                      "http://i.pravatar.cc/150?img=3",
+                      "http://i.pravatar.cc/150?img=12"
+                    ],
+                    status: "Closed"
+                  },
+                  {
+                    color: "red",
+                    title: "Workshop 1",
+                    createdAt: "21 Oct",
+                    time: "12:37",
+                    avatars: [
+                      "http://i.pravatar.cc/150?img=49",
+                      "http://i.pravatar.cc/150?img=36"
+                    ],
+                    status: "2 Places left"
+                  },
+                  {
+                    color: "red",
+                    title: "Workshop 1",
+                    createdAt: "21 Oct",
+                    time: "12:37",
+                    avatars: ["http://i.pravatar.cc/150?img=33"],
+                    status: "3 Places left"
+                  },
+                  {
+                    color: "red",
+                    title: "Workshop 1",
+                    createdAt: "21 Oct",
+                    time: "12:37",
+                    avatars: [
+                      "http://i.pravatar.cc/150?img=12",
+                      "http://i.pravatar.cc/150?img=11",
+                      "http://i.pravatar.cc/150?img=56"
+                    ],
+                    status: "1 Places left"
+                  },
+                  {
+                    color: "red",
+                    title: "Workshop 1",
+                    createdAt: "21 Oct",
+                    time: "12:37",
+                    avatars: [
+                      "http://i.pravatar.cc/150?img=3",
+                      "http://i.pravatar.cc/150?img=49"
+                    ],
+                    status: "2 Places left"
+                  },
+                  {
+                    color: "red",
+                    title: "Workshop 1",
+                    createdAt: "21 Oct",
+                    time: "12:37",
+                    avatars: [
+                      "http://i.pravatar.cc/150?img=68",
+                      "http://i.pravatar.cc/150?img=25"
+                    ],
+                    status: "2 Places left"
+                  },
+                  {
+                    color: "red",
+                    title: "Workshop 1",
+                    createdAt: "21 Oct",
+                    time: "12:37",
+                    avatars: [
+                      "http://i.pravatar.cc/150?img=33",
+                      "http://i.pravatar.cc/150?img=12",
+                      "http://i.pravatar.cc/150?img=49"
+                    ],
+                    status: "1 Places left"
+                  }
+                ]
+                <TrackInfo
+                  imagePath="https://picsum.photos/300/200?image=1"
+                  title="Track"
+                  description="Project details and infomation"
+                  items={itemsTrackInfo}
+                  progress={50}
+                  className="blocklist-item"
+                  menuButton={menuButtonExpertise}
+              />`}
               >
                 <TrackInfo
                   imagePath="https://picsum.photos/300/200?image=1"
@@ -902,12 +1333,15 @@ export default class BlockList extends Component {
                 <Docs
                   title={"Download"}
                   docsProps={docsDownload}
-                  dataCode={`<Download
-              fileSize={"700"}
-              typeFile={"ZIP"}
-              filePath={""}
-              className="blocklist-item"
-            />`}
+                  dataCode={`
+                  import { Download } from "components/text-block"
+
+                  <Download
+                    fileSize={"700"}
+                    typeFile={"ZIP"}
+                    filePath={""}
+                    className="blocklist-item"
+                  />`}
                 >
                   <Download
                     fileSize={"700"}
@@ -920,14 +1354,16 @@ export default class BlockList extends Component {
                   title={"Gift"}
                   docsProps={docsGift}
                   dataCode={`
-              <Gift
-              title="New Arrivals !"
-              message="See how they are"
-              icon="mdi-bike"
-              theme="blue"
-              className="blocklist-item"
-              linkObject={{ title: "Say Hello", position: "center" }}
-            />`}
+                  import { Gift } from "components/text-block"
+
+                  <Gift
+                    title="Any Idea ?"
+                    message="Note all your great ideas"
+                    icon="mdi-lightbulb-on-outline"
+                    theme="dark"
+                    className="blocklist-item"
+                    linkObject={{ title: "Make a note", position: "center" }}
+                  />`}
                 >
                   <Gift
                     title="Any Idea ?"
@@ -942,14 +1378,18 @@ export default class BlockList extends Component {
                   title={"Gift"}
                   docsProps={docsGift}
                   dataCode={`
-              <Gift
-              title="New Arrivals !"
-              message="See how they are"
-              icon="mdi-bike"
-              theme="blue"
-              className="blocklist-item"
-              linkObject={{ title: "Say Hello", position: "center" }}
-            />`}
+                  import { Gift } from "components/text-block"
+
+                  <Gift
+                    title="Product 3"
+                    message="species matrimonii, dotis"
+                    className="blocklist-item"
+                    avatar={{
+                      path:
+                        "https://imgplaceholder.com/100x100/1de9b6/ffffff/fa-image"
+                    }}
+                    linkObject={{ title: "Details", position: "right" }}
+                  />`}
                 >
                   <Gift
                     title="Product 3"
@@ -966,13 +1406,55 @@ export default class BlockList extends Component {
                   title={"Discover"}
                   docsProps={docsDiscover}
                   dataCode={`
-              <Discover
-                  title="Discover"
-                  description="Find someone to follow"
-                  className="blocklist-item"
-                  items={itemsUserList}
-                  menuButton={menuButtonExpertise}
-                />`}
+                  import { Discover } from "components/text-block"
+
+                  const menuButtonExpertise = ["View", "Edit"]
+
+                  const itemsUserList = [
+                    {
+                      path: "http://i.pravatar.cc/150?img=3",
+                      name: "Student Name",
+                      job: "web",
+                      notification: true
+                    },
+                    {
+                      path: "http://i.pravatar.cc/150?img=68",
+                      name: "Student Name",
+                      job: "web",
+                      notification: false
+                    },
+                    {
+                      path: "http://i.pravatar.cc/150?img=49",
+                      name: "Student Name",
+                      job: "web",
+                      notification: true
+                    },
+                    {
+                      path: "http://i.pravatar.cc/150?img=36",
+                      name: "Student Name",
+                      job: "web",
+                      notification: false
+                    },
+                    {
+                      path: "http://i.pravatar.cc/150?img=33",
+                      name: "Student Name",
+                      job: "web",
+                      notification: true
+                    },
+                    {
+                      path: "http://i.pravatar.cc/150?img=12",
+                      name: "Student Name",
+                      job: "web",
+                      notification: true
+                    }
+                  ]
+                  <Discover
+                    title="Discover"
+                    description="Find someone to follow"
+                    className="blocklist-item"
+                    items={itemsUserList}
+                    menuButton={menuButtonExpertise}
+                  />`}
                 >
                   <Discover
                     title="Discover"
@@ -987,7 +1469,11 @@ export default class BlockList extends Component {
                 <Docs
                   title={"Upload"}
                   docsProps={docsUpload}
-                  dataCode={`<Upload fileSize={"700"} className="blocklist-item" />`}
+                  dataCode={`
+                  import { Upload } from "components/text-block"
+
+                  <Upload fileSize={"700"} className="blocklist-item" 
+                  />`}
                 >
                   <Upload fileSize={"700"} className="blocklist-item" />
                 </Docs>
@@ -995,14 +1481,15 @@ export default class BlockList extends Component {
                   title={"Gift"}
                   docsProps={docsGift}
                   dataCode={`
-              <Gift
-              title="New Arrivals !"
-              message="See how they are"
-              icon="mdi-bike"
-              theme="blue"
-              className="blocklist-item"
-              linkObject={{ title: "Say Hello", position: "center" }}
-            />`}
+                  import { Gift } from "components/text-block"
+
+                  <Gift
+                    title="Great work !"
+                    className="blocklist-item"
+                    message="Project finished"
+                    theme="light"
+                    icon="mdi-trophy-outline"
+                  />`}
                 >
                   <Gift
                     title="Great work !"
@@ -1016,14 +1503,16 @@ export default class BlockList extends Component {
                   title={"Gift"}
                   docsProps={docsGift}
                   dataCode={`
-              <Gift
-              title="New Arrivals !"
-              message="See how they are"
-              icon="mdi-bike"
-              theme="blue"
-              className="blocklist-item"
-              linkObject={{ title: "Say Hello", position: "center" }}
-            />`}
+                  import { Gift } from "components/text-block"
+
+                  <Gift
+                    title="Save your data"
+                    message="Don't forget to save your data"
+                    icon="mdi-content-save"
+                    theme="green"
+                    className="blocklist-item"
+                    linkObject={{ title: "Save now", position: "center" }}
+                  />`}
                 >
                   <Gift
                     title="Save your data"
@@ -1038,12 +1527,20 @@ export default class BlockList extends Component {
                   title={"ContainerTab"}
                   docsProps={docsContainerTab}
                   dataCode={`
-              <ContainerTab className="blocklist-item">
-                  <Tab label="Tab 1">{lorem}</Tab>
-                  <Tab label="Tab 2">{lorem}</Tab>
-                  <Tab label="Tab 3">{lorem}</Tab>
-                  <Tab label="Tab 4">{lorem}</Tab>
-                </ContainerTab>`}
+                  import { ContainerTab } from "components/text-block"
+
+                  const lorem = "Elit cupidatat excepteur ullamco labore exercitation amet consectetur. 
+                  Sunt duis ipsum voluptate commodo ipsum mollit quis elit tempor anim eiusmod aliqua. 
+                  Elit sint minim eiusmod consectetur cillum aliqua est exercitation. 
+                  Amet anim occaecat excepteur velit. 
+                  Fugiat id consequat cillum non quis nisi anim non magna proident fugiat magna duis."
+
+                  <ContainerTab className="blocklist-item">
+                    <Tab label="Tab 1">{lorem}</Tab>
+                    <Tab label="Tab 2">{lorem}</Tab>
+                    <Tab label="Tab 3">{lorem}</Tab>
+                    <Tab label="Tab 4">{lorem}</Tab>
+                  </ContainerTab>`}
                 >
                   <ContainerTab className="blocklist-item">
                     <Tab label="Tab 1">{lorem}</Tab>
@@ -1056,11 +1553,53 @@ export default class BlockList extends Component {
                   title={"Interests"}
                   docsProps={docsInterests}
                   dataCode={`
-              <Interests
-                  items={interestsItems}
-                  className="blocklist-item"
-                  title="Choose your interest"
-                />`}
+                  import { Interests } from "components/text-block"
+
+                  const interestsItems = [
+                    {
+                      label: "Gaming",
+                      className: "customClassName",
+                      classNameActive: "orange"
+                    },
+                    {
+                      label: "Techno",
+                      className: "customClassName",
+                      classNameActive: "blue"
+                    },
+                    {
+                      label: "Web",
+                      classNameActive: "green"
+                    },
+                    {
+                      label: "Web design",
+                      classNameActive: "purple"
+                    },
+                    {
+                      label: "3D",
+                      classNameActive: "grey"
+                    },
+                    {
+                      label: "Html",
+                      classNameActive: "red"
+                    },
+                    {
+                      label: "Javascript",
+                      classNameActive: "orange"
+                    },
+                    {
+                      label: "Gaming",
+                      classNameActive: "grey"
+                    },
+                    {
+                      label: "web",
+                      classNameActive: "blue"
+                    }
+                  ]
+                  <Interests
+                    items={interestsItems}
+                    className="blocklist-item"
+                    title="Choose your interest"
+                  />`}
                 >
                   <Interests
                     items={interestsItems}
@@ -1072,14 +1611,6 @@ export default class BlockList extends Component {
             </div>
           </div>
         </div>
-        {/*
-        
-       
-        
-        
-        
-        
-        */}
       </div>
     )
   }
