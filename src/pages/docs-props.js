@@ -783,3 +783,6 @@ export const avatars = [
     propsDescription: "name of avatar selected"
   }
 ]
+
+export const docsAdaProgress = []
+export const docsAdaSlider = []

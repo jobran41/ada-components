@@ -28,7 +28,9 @@ import {
   docsTicket,
   docsAdaTag,
   docsAdaAlerts,
-  docsAdaPagination
+  docsAdaPagination,
+  docsAdaProgress,
+  docsAdaSlider
 } from "pages/docs-props"
 
 import './style.scss'
@@ -73,6 +75,9 @@ export default class Elements extends Component {
               docsProps={docsAdaCategory}
               dataCode={`
               import AdaCategory from 'components/ada-category'
+
+              const STRING_ITEMS = ['Zero', 'One', 'Two', 'Three']
+
               <AdaCategory
                 id="ada-category"
                 menuItems={STRING_ITEMS}
@@ -93,6 +98,8 @@ export default class Elements extends Component {
               title={"AdaStepper"}
               docsProps={docsAdaStepper}
               dataCode={`
+                import AdaStepper from 'components/ada-stepper'
+
                 <AdaStepper updateField={this.updateField} stepperData={["1", "2", "3", "4", "5", "6", "7", "8", "9"]} />
               `}
             >
@@ -104,7 +111,8 @@ export default class Elements extends Component {
               docsProps={docsAdaStepper}
               dataCode={`
                 import AdaStepper from 'components/ada-stepper'
-                <AdaStepper updateField={this.updateField} stepperData={["1", "2", "3", "4", "5", "6", "7", "8", "9"]} />
+
+                <AdaStepper active={1} widthBorder theme="blue" stepperData={["Standard", "Medium", "High"]} />
               `}
             >
               <AdaStepper active={1} widthBorder theme="blue" stepperData={["Standard", "Medium", "High"]} />
@@ -126,28 +134,59 @@ export default class Elements extends Component {
               docsProps={docsAdaStepper}
               dataCode={`
               import AdaStepper from 'components/ada-stepper'
+
               <AdaStepper widthBorder theme="green" stepperData={["Standard", "Medium", "High"]} />
               `}
             >
               <AdaStepper active={2} widthBorder stepperData={["Standard", "Medium", "High"]} />
             </Docs>
             <br />
-            <AdaProgress item={{ value: 50, max: 100, min: 0, id: 'ada-progress' }} />
+            <Docs
+              title={"AdaProgress"}
+              docsProps={docsAdaProgress}
+              small
+              dataCode={`
+              import AdaProgress from 'components/ada-progress'
+              
+              <AdaProgress item={{ value: 50, max: 100, min: 0, id: 'ada-progress' }} />
+              `}
+            >
+              <AdaProgress item={{ value: 50, max: 100, min: 0, id: 'ada-progress' }} />
+            </Docs>
             <br />
-            <AdaSlider
-              id="disctete-ticks-slider"
-              label="Slider"
-              max={7}
-              step={0.5}
-              discreteTicks={1}
-              valuePrecision={1}
-            />
+            <Docs
+              title={"AdaSlider"}
+              docsProps={docsAdaSlider}
+              small
+              dataCode={`
+              import AdaSlider from 'components/ada-slider'
+
+              <AdaSlider
+                id="disctete-ticks-slider"
+                label="Slider"
+                max={7}
+                step={0.5}
+                discreteTicks={1}
+                valuePrecision={1}
+              />
+              `}
+            >
+              <AdaSlider
+                id="disctete-ticks-slider"
+                label="Slider"
+                max={7}
+                step={0.5}
+                discreteTicks={1}
+                valuePrecision={1}
+              />
+            </Docs>
             <br />
             <Docs
               title={"SocialPanel"}
               docsProps={docsSocialPanel}
               dataCode={`
                 import SocialPanel from 'components/social-panel'
+
                 <SocialPanel color="red" renderButton={() => {
                   return (
                     <Fragment>
@@ -181,7 +220,8 @@ export default class Elements extends Component {
               docsProps={docsSocialPanel}
               dataCode={`
                 import SocialPanel from 'components/social-panel'
-                <SocialPanel color="red" renderButton={() => {
+
+                <SocialPanel color="blue" renderButton={() => {
                   return (
                     <Fragment>
                     <Button icon iconClassName="mdi mdi-google" />
@@ -214,7 +254,8 @@ export default class Elements extends Component {
               docsProps={docsSocialPanel}
               dataCode={`
               import SocialPanel from 'components/social-panel'
-                <SocialPanel color="red" renderButton={() => {
+
+                <SocialPanel color="purple" renderButton={() => {
                   return (
                     <Fragment>
                       <Button icon iconClassName="mdi mdi-google" />
@@ -247,7 +288,8 @@ export default class Elements extends Component {
               docsProps={docsSocialPanel}
               dataCode={`
                 import SocialPanel from 'components/social-panel'
-                <SocialPanel color="red" renderButton={() => {
+
+                <SocialPanel renderButton={() => {
                   return (
                     <Fragment>
                       <Button icon iconClassName="mdi mdi-google" />
@@ -277,42 +319,186 @@ export default class Elements extends Component {
           </div>
           <div className="elementsCell md-cell md-cell--3">
             <div className="middleComponent">
-              <AdaNotifications
-                iconName="notifications"
-                alertItem="2"
-              />
+              <Docs
+                title={"SocialPanel"}
+                docsProps={docsSocialPanel}
+                small
+                dataCode={`
+                  import AdaNotifications from 'components/ada-notifications'
+
+                  <AdaNotifications
+                    iconName="notifications"
+                    alertItem="2"
+                  />
+                `}
+              >
+                <AdaNotifications
+                  iconName="notifications"
+                  alertItem="2"
+                />
+              </Docs>
+              <Docs
+                title={"SocialPanel"}
+                docsProps={docsSocialPanel}
+                small
+                dataCode={`
+                  import AdaNotifications from 'components/ada-notifications'
+
+                  <AdaNotifications
+                    iconName="message"
+                    alertItem="1"
+                  />
+                `}
+              >
               <AdaNotifications
                 iconName="message"
                 alertItem="1"
               />
+              </Docs>
             </div>
             <div className="middleComponent">
+            <Docs
+              title={"SocialPanel"}
+              docsProps={docsSocialPanel}
+              small
+              dataCode={`
+                import AdaNotifications from 'components/ada-notifications'
+
+                <AdaNotifications
+                  iconName="add"
+                  alertItem="2"
+                />
+              `}
+            >
               <AdaNotifications
                 iconName="add"
                 alertItem="2"
               />
+            </Docs>
+            <Docs
+              title={"SocialPanel"}
+              docsProps={docsSocialPanel}
+              small
+              dataCode={`
+                import AdaNotifications from 'components/ada-notifications'
+
+                <AdaNotifications
+                  iconName="folder"
+                  alertItem="1"
+                />
+              `}
+            >
               <AdaNotifications
                 iconName="folder"
                 alertItem="1"
               />
+              </Docs>
             </div>
             <div className="middleComponent">
+            <Docs
+              title={"SocialPanel"}
+              docsProps={docsSocialPanel}
+              small
+              dataCode={`
+                import ProfileAvatar from 'components/profile-avatar'
+
+                <ProfileAvatar active path="http://i.pravatar.cc/150?img=3" />
+              `}
+            >
               <ProfileAvatar active path="http://i.pravatar.cc/150?img=3" />
+            </Docs>
+            <Docs
+              title={"SocialPanel"}
+              docsProps={docsSocialPanel}
+              small
+              dataCode={`
+                import ProfileAvatar from 'components/profile-avatar'
+
+                <ProfileAvatar path="http://i.pravatar.cc/150?img=3" />
+              `}
+            >
               <ProfileAvatar path="http://i.pravatar.cc/150?img=3" />
+            </Docs>
             </div>
             <br />
             <div className="elemButtonWrapper">
+            <Docs
+              title={"SocialPanel"}
+              docsProps={docsSocialPanel}
+              small
+              dataCode={`
+                import AdaHeart from 'components/ada-heart'
+
+                <AdaHeart label="design" checked={true} id="checkbox1" />
+              `}
+            >
               <AdaHeart label="design" checked={true} id="checkbox1" />
+            </Docs>
+            <Docs
+              title={"SocialPanel"}
+              docsProps={docsSocialPanel}
+              small
+              dataCode={`
+                import AdaHeart from 'components/ada-heart'
+
+                <AdaHeart label="developpement" checked={false} id="checkbox2" />
+              `}
+            >
               <AdaHeart label="developpement" checked={false} id="checkbox2" />
+            </Docs>
             </div>
             <br />
+            <Docs
+              title={"SocialPanel"}
+              docsProps={docsSocialPanel}
+              small
+              dataCode={`
+                import AdaHeart from 'components/ada-heart'
+
+                <AdaHeart heart="true" label="Likes" id="checkbox3" />
+              `}
+            >
             <AdaHeart heart="true" label="Likes" id="checkbox3" />
+            </Docs>
             <br />
+            <Docs
+              title={"SocialPanel"}
+              docsProps={docsSocialPanel}
+              small
+              dataCode={`
+                import AdaHeart from 'components/ada-heart'
+
+                <AdaHeart star="true" label="Rate" id="checkbox4" />
+              `}
+            >
             <AdaHeart star="true" label="Rate" id="checkbox4" />
+            </Docs>
             <br />
             <div className="elemButtonWrapper">
+            <Docs
+              title={"SocialPanel"}
+              docsProps={docsSocialPanel}
+              small
+              dataCode={`
+                import AdaHeart from 'components/ada-heart'
+
+                <AdaHeart name="switcher1" switcher="true" label="on" checked={true} id="checkbox5" />
+              `}
+            >
               <AdaHeart name="switcher1" switcher="true" label="on" checked={true} id="checkbox5" />
+            </Docs>
+            <Docs
+              title={"SocialPanel"}
+              docsProps={docsSocialPanel}
+              small
+              dataCode={`
+                import AdaHeart from 'components/ada-heart'
+
+                <AdaHeart name="switcher2" switcher="true" label="off" checked={false} id="checkbox5" />
+              `}
+            >
               <AdaHeart name="switcher2" switcher="true" label="off" checked={false} id="checkbox5" />
+              </Docs>
             </div>
             <br />
             <AdaHeart eye="true" label="Views" id="checkbox6" />
