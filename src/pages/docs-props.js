@@ -784,5 +784,69 @@ export const avatars = [
   }
 ]
 
-export const docsAdaProgress = []
-export const docsAdaSlider = []
+export const docsAdaProgress = [
+  {
+    propsName: "item",
+    propsDescription: "variable need it to use progressBar item={{ value: 50, max: 100, min: 0, id: 'ada-progress' }}"
+  }
+]
+export const docsAdaSlider = [
+  {
+    propsName: "className",
+    propsDescription: "An optional className to apply to the component."
+  },
+  {
+    propsName: "label",
+    propsDescription: 'name of the slider'
+  },
+  {
+    propsName: "max",
+    propsDescription: 'maximum value'
+  },
+  {
+    propsName: "step",
+    propsDescription: 'step between slide'
+  },
+  {
+    propsName: "discreteTicks",
+    propsDescription: ''
+  },
+  {
+    propsName: "valuePrecision",
+    propsDescription: ''
+  },
+]
+export const docsAdaNotifications = [
+  {
+    propsName: "iconName",
+    propsDescription: 'name of the icon'
+  },
+  {
+    propsName: "alertItem",
+    propsDescription: 'show alert item'
+  },
+]
+export const docsProfileAvatar = [
+  {
+    propsName: "active",
+    propsDescription: 'if the components is active he show the point green'
+  },
+  {
+    propsName: "path",
+    propsDescription: 'path of the img'
+  },
+]
+export const docsAdaHeart = [
+  {
+    propsName: "id",
+    propsDescription: 'id of the components'
+  },
+  {
+    propsName: "checked",
+    propsDescription: 'path of the img'
+  },
+  {
+    propsName: "label",
+    propsDescription: 'name of the components'
+  },
+]
