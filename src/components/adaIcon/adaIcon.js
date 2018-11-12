@@ -6,11 +6,11 @@ import ListIcons from './list-icon'
 import './adaIcon.scss'
 
 class AddIcon extends Component {
-    renderGroupe = () => {
-        const { width, height, viewBox, fill, icon } = this.props
+    renderGroup = () => {
+        const { size, viewBox, fill, icon } = this.props
         let view = viewBox ? viewBox : "0 0 330 330"
-        let inlineWidth = width ? width : "30px"
-        let inlineHeight = height ? height : "30px"
+        let inlineWidth = size ? size : "30px"
+        let inlineHeight = size ? size : "30px"
         const currentIcon = ListIcons[icon]
 
         if (Array.isArray(currentIcon)) {
@@ -40,13 +40,12 @@ class AddIcon extends Component {
         }
     }
     render() {
-        return (<div className="dddIcon" onClick={this.renderName} >{this.renderGroupe()}</div>)
+        return (<div className="dddIcon" onClick={this.renderName} >{this.renderGroup()}</div>)
     }
 }
 
 AddIcon.propTypes = {
-    width: PropTypes.string,
-    height: PropTypes.string,
+    size: PropTypes.string,
     viewBox: PropTypes.string,
     fill: PropTypes.string,
     renderName: PropTypes.func,
