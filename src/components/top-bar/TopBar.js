@@ -11,11 +11,11 @@ import "./styles.scss"
 @withRouter
 class TopBar extends Component {
   onToggleClick = (v) => {
-    const { onToggleClick } = this.props
+    const { onChangeTopBar: { onToggleClick } } = this.props
     onToggleClick(!v)
   };
   render() {
-    const { sideBarIsTrue, userName, menu, authUser, logoName, ProfileBar, underline, color, className } = this.props
+    const { onChangeTopBar: { sideBarIsTrue }, userName, menu, authUser, logoName, ProfileBar, underline, color, className } = this.props
     const letter = userName ? userName.charAt(0).toUpperCase() : ''
     return (
       <div className={`${color ? "topBar " + color + " " + className : "topBar " + className
@@ -47,8 +47,10 @@ class TopBar extends Component {
   }
 }
 TopBar.propTypes = {
-  onToggleClick: PropTypes.func,
-  sideBarIsTrue: PropTypes.bool,
+  onChangeTopBar: {
+    onToggleClick: PropTypes.func,
+    sideBarIsTrue: PropTypes.bool,
+  },
   userName: PropTypes.string,
   menu: PropTypes.array,
   authUser: PropTypes.bool,

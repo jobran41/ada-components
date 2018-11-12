@@ -23,6 +23,10 @@ export default class Menu extends Component {
 
   render() {
     const { sideBarIsTrue } = this.state
+    const topBarProps = {
+      sideBarIsTrue: sideBarIsTrue,
+      onToggleClick: this.onToggleClick
+    }
     return (
       <div className="menu">
         <ContentHeader title="ADA INTERFACES / BRAND BOOK" date="2018" subclass="gray-text" />
@@ -47,6 +51,11 @@ export default class Menu extends Component {
                 }
                 render() {
                   const menu = ["Dashboard", "Aquarium", "Lab", "Form", "Tuto", 'menu']
+                  const { sideBarIsTrue } = this.state
+                  const topBarProps = {
+                    sideBarIsTrue: sideBarIsTrue,
+                    onToggleClick: this.onToggleClick
+                  }
                   <TopBar 
                     className="navBar" 
                     color="blue" 
@@ -54,8 +63,7 @@ export default class Menu extends Component {
                     authUser={true} 
                     menu={menu} 
                     userName="Jobran amairi" 
-                    sideBarIsTrue={sideBarIsTrue} 
-                    onToggleClick={this.onToggleClick}
+                    onChangeTopBar={topBarProps}
                   />
                 }}
               `}
@@ -67,8 +75,7 @@ export default class Menu extends Component {
                 authUser={true}
                 menu={menu}
                 userName="Jobran amairi"
-                sideBarIsTrue={sideBarIsTrue}
-                onToggleClick={this.onToggleClick}
+                onChangeTopBar={topBarProps}
               />
             </Docs>
             <Docs
@@ -88,7 +95,12 @@ export default class Menu extends Component {
                  this.setState({ sideBarIsTrue: v })
                }
                render() {
+                const { sideBarIsTrue } = this.state
                  const menu = ["Dashboard", "Aquarium", "Lab", "Form", "Tuto", 'menu']
+                 const topBarProps = {
+                  sideBarIsTrue: sideBarIsTrue,
+                  onToggleClick: this.onToggleClick
+                }
               <TopBar
                 className="navBar"
                 underline color="blue"
@@ -96,8 +108,7 @@ export default class Menu extends Component {
                 authUser={true}
                 menu={menu}
                 userName="Jobran amairi"
-                sideBarIsTrue={sideBarIsTrue}
-                onToggleClick={this.onToggleClick}
+                onChangeTopBar={topBarProps}
               />
                }}
               `}
@@ -109,8 +120,7 @@ export default class Menu extends Component {
                 authUser={true}
                 menu={menu}
                 userName="Jobran amairi"
-                sideBarIsTrue={sideBarIsTrue}
-                onToggleClick={this.onToggleClick}
+                onChangeTopBar={topBarProps}
               />
             </Docs>
             <Docs
@@ -131,13 +141,17 @@ export default class Menu extends Component {
                }
                render() {
                  const menu = ["Dashboard", "Aquarium", "Lab", "Form", "Tuto", 'menu']
+                 const { sideBarIsTrue } = this.state
+                 const topBarProps = {
+                  sideBarIsTrue: sideBarIsTrue,
+                  onToggleClick: this.onToggleClick
+                }
                  <TopBar className="navBar"
                  logoName="Logo"
                  authUser={true}
                  menu={menu}
                  userName="Jobran amairi"
-                 sideBarIsTrue={sideBarIsTrue}
-                 onToggleClick={this.onToggleClick}
+                 onChangeTopBar={topBarProps}
                />
               `}
             >
@@ -146,8 +160,7 @@ export default class Menu extends Component {
                 authUser={true}
                 menu={menu}
                 userName="Jobran amairi"
-                sideBarIsTrue={sideBarIsTrue}
-                onToggleClick={this.onToggleClick}
+                onChangeTopBar={topBarProps}
               />
             </Docs>
             <Docs
@@ -168,12 +181,18 @@ export default class Menu extends Component {
                }
                render() {
                  const menu = ["Dashboard", "Aquarium", "Lab", "Form", "Tuto", 'menu']
-                 <TopBar className="navBar" 
-                 underline logoName="Logo"
+                 const { sideBarIsTrue } = this.state
+                 const topBarProps = {
+                  sideBarIsTrue: sideBarIsTrue,
+                  onToggleClick: this.onToggleClick
+                }
+                 <TopBar
+                  className="navBar" 
+                  underline logoName="Logo"
                   authUser={true} menu={menu} 
                   userName="richard amairi"
-                   sideBarIsTrue={sideBarIsTrue}
-                   onToggleClick={this.onToggleClick} />
+                  onChangeTopBar={topBarProps} 
+                />
               `}
             >
               <TopBar
@@ -182,8 +201,8 @@ export default class Menu extends Component {
                 logoName="Logo"
                 authUser={true}
                 menu={menu} userName="Jobran amairi"
-                sideBarIsTrue={sideBarIsTrue}
-                onToggleClick={this.onToggleClick} />
+                onChangeTopBar={topBarProps}
+              />
             </Docs>
           </div>
 
@@ -207,6 +226,11 @@ export default class Menu extends Component {
                }
                render() {
                  const menu = ["Dashboard", "Aquarium", "Lab", "Form", "Tuto", 'menu']
+                 const { sideBarIsTrue } = this.state
+                 const topBarProps = {
+                  sideBarIsTrue: sideBarIsTrue,
+                  onToggleClick: this.onToggleClick
+                }
                  <TopBar
                  className="navBar"
                  ProfileBar
@@ -214,8 +238,7 @@ export default class Menu extends Component {
                  authUser={true}
                  menu={menu}
                  userName="Jobran amairi"
-                 sideBarIsTrue={sideBarIsTrue}
-                 onToggleClick={this.onToggleClick}
+                 onChangeTopBar={topBarProps}
                />
               `}
             >
@@ -226,8 +249,7 @@ export default class Menu extends Component {
                 authUser={true}
                 menu={menu}
                 userName="Jobran amairi"
-                sideBarIsTrue={sideBarIsTrue}
-                onToggleClick={this.onToggleClick}
+                onChangeTopBar={topBarProps}
               />
             </Docs>
             <Docs
@@ -248,6 +270,11 @@ export default class Menu extends Component {
                }
                render() {
                  const menu = ["Dashboard", "Aquarium", "Lab", "Form", "Tuto", 'menu']
+                 const topBarProps = {
+                  sideBarIsTrue: sideBarIsTrue,
+                  onToggleClick: this.onToggleClick
+                }
+                 const { sideBarIsTrue } = this.state
                  <TopBar
                  className="navBar"
                  ProfileBar
@@ -255,8 +282,7 @@ export default class Menu extends Component {
                  authUser={true}
                  menu={menu}
                  userName="Jobran amairi"
-                 sideBarIsTrue={sideBarIsTrue}
-                 onToggleClick={this.onToggleClick}
+                 onChangeTopBar={topBarProps}
                />
               `}
             >
@@ -268,8 +294,7 @@ export default class Menu extends Component {
                 authUser={true}
                 menu={menu}
                 userName="Jobran amairi"
-                sideBarIsTrue={sideBarIsTrue}
-                onToggleClick={this.onToggleClick}
+                onChangeTopBar={topBarProps}
               />
             </Docs>
             <Docs
@@ -290,6 +315,11 @@ export default class Menu extends Component {
                }
                render() {
                  const menu = ["Dashboard", "Aquarium", "Lab", "Form", "Tuto", 'menu']
+                 const { sideBarIsTrue } = this.state
+                 const topBarProps = {
+                  sideBarIsTrue: sideBarIsTrue,
+                  onToggleClick: this.onToggleClick
+                }
                  <TopBar
                  className="navBar"
                  underline
@@ -299,8 +329,7 @@ export default class Menu extends Component {
                  authUser={true}
                  menu={menu}
                  userName="Jobran amairi"
-                 sideBarIsTrue={sideBarIsTrue}
-                 onToggleClick={this.onToggleClick}
+                 onChangeTopBar={topBarProps}
                />
               `}
             >
@@ -313,8 +342,7 @@ export default class Menu extends Component {
                 authUser={true}
                 menu={menu}
                 userName="Jobran amairi"
-                sideBarIsTrue={sideBarIsTrue}
-                onToggleClick={this.onToggleClick}
+                onChangeTopBar={topBarProps}
               />
             </Docs>
           </div>
